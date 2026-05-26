@@ -24,11 +24,24 @@ without changing its public interface.
 
 ## Current Status
 
-Phase 0 scaffold:
+Backend MVP in progress:
 
-- Master planning documents
-- FastAPI backend skeleton
-- Pipeline base contracts
-- Example health and pipeline endpoints
-- Initial tests
+- FastAPI modular-monolith backend
+- corpus folder import for TXT, PDF, and DOCX
+- Serbian Cyrillic-to-Latin normalization before parsing/indexing
+- document classification for laws, regulations, rulebooks, orders, strategies,
+  and unknown documents
+- legal structure parsing into articles, paragraphs, items, subitems, and alineas
+- canonical JSON model and Akoma Ntoso XML export
+- reference extraction/resolution and deterministic draft checkers
+- lexical retrieval over imported legal units with corpus filtering
+- draft review creation from text or file, with findings and artifacts
+- Markdown, DOCX, and PDF report generation
+- grounded assistant API skeleton with deterministic intent/query/answer flow
+
+Run tests with:
+
+```powershell
+python -m pytest backend\tests -q
+```
 
