@@ -7,7 +7,9 @@ from uuid import UUID
 from zaikon.core.config import settings
 from zaikon.core.schemas import FindingStatus, JobStatus
 from zaikon.core.time import utc_now
+from zaikon.modules.canonical.schemas import CanonicalDocument
 from zaikon.modules.canonical.schemas import CanonicalizeRequest
+from zaikon.modules.canonical.schemas import ExportAkomaNtosoRequest
 from zaikon.modules.canonical.service import get_canonical_service
 from zaikon.modules.checkers.schemas import FindingRecord
 from zaikon.modules.checkers.service import get_definition_consistency_checker
@@ -130,6 +132,19 @@ class DraftReviewService:
             findings=self.list_findings(pipeline_run_id),
             artifacts=self._load_artifacts(pipeline_run_id),
         )
+
+    def export_akoma_ntoso(self, pipeline_run_id: UUID) -> str | None:
+        if pipeline_run_id not in self._records:
+            return None
+        artifacts = self._load_artifacts(pipeline_run_id)
+        canonical_payload = artifacts.get("canonical_document")
+        if canonical_payload is None:
+            return None
+        canonical_document = CanonicalDocument.model_validate(canonical_payload)
+        response = get_canonical_service().export_akoma_ntoso(
+            ExportAkomaNtosoRequest(document=canonical_document)
+        )
+        return response.xml_text
 
     def list_findings(self, pipeline_run_id: UUID) -> list[FindingRecord]:
         path = self.finding_dir / f"{pipeline_run_id}.json"

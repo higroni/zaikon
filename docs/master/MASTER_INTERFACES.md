@@ -175,6 +175,7 @@ list_draft_reviews() -> list[DraftReviewRecord]
 get_draft_review(pipeline_run_id: UUID) -> DraftReviewDetail | None
 run_draft_review(pipeline_run_id: UUID) -> RunDraftReviewResponse
 list_findings(pipeline_run_id: UUID) -> list[FindingRecord]
+export_akoma_ntoso(pipeline_run_id: UUID) -> str | None
 ```
 
 Initial schema names:

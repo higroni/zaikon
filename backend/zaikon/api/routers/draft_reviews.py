@@ -3,6 +3,7 @@
 from uuid import UUID
 
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import Response
 
 from zaikon.modules.checkers.schemas import FindingRecord
 from zaikon.modules.draft_reviews.schemas import (
@@ -48,6 +49,17 @@ def get_draft_review(pipeline_run_id: UUID) -> DraftReviewDetail:
     if detail is None:
         raise HTTPException(status_code=404, detail="Draft review not found")
     return detail
+
+
+@router.get("/{pipeline_run_id}/akoma-ntoso")
+def export_draft_review_akoma_ntoso(pipeline_run_id: UUID) -> Response:
+    xml_text = get_draft_review_service().export_akoma_ntoso(pipeline_run_id)
+    if xml_text is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Draft review Akoma Ntoso artifact not found",
+        )
+    return Response(content=xml_text, media_type="application/xml")
 
 
 @router.post("/{pipeline_run_id}/run", response_model=RunDraftReviewResponse)

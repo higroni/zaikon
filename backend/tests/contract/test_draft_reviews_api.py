@@ -177,3 +177,22 @@ def test_draft_review_reports_definition_conflicts(client):
         finding["finding_type"] for finding in run_response.json()["findings"]
     }
     assert "definition_conflict" in finding_types
+
+
+def test_draft_review_can_export_akoma_ntoso_after_run(client):
+    create_response = client.post(
+        "/api/v1/draft-reviews",
+        json={
+            "title": "Nacrt za Akoma",
+            "content_text": "NACRT\n\nClan 1.\nOvim nacrtom uredjuje se primer.",
+        },
+    )
+    pipeline_run_id = create_response.json()["draft_review"]["pipeline_run_id"]
+    client.post(f"/api/v1/draft-reviews/{pipeline_run_id}/run")
+
+    response = client.get(f"/api/v1/draft-reviews/{pipeline_run_id}/akoma-ntoso")
+
+    assert response.status_code == 200
+    assert response.headers["content-type"].startswith("application/xml")
+    assert "<akomaNtoso" in response.text
+    assert "<FRBRlanguage language=\"srp\"" in response.text
