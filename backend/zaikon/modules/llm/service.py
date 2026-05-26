@@ -146,18 +146,28 @@ class LLMService:
                     "za ovo pitanje. Probaj uži upit ili proveri da li je korpus importovan."
                 ),
                 citations=[],
-                metadata={"provider": self._provider_name(), "grounded": False},
+                metadata={
+                    "provider": self._provider_name(),
+                    "grounded": False,
+                    "citation_guard": {
+                        "status": "no_citations",
+                        "citation_count": 0,
+                    },
+                },
             )
 
         deterministic_answer = self._deterministic_answer(question, citations)
         provider_answer = self._provider_answer(question, citations)
+        answer_text = provider_answer or deterministic_answer
+        citation_guard = self._citation_guard(answer_text, citations)
         return GenerateAnswerResponse(
-            answer_text=provider_answer or deterministic_answer,
+            answer_text=answer_text,
             citations=citations,
             metadata={
                 "provider": self._provider_name(provider_answer_used=bool(provider_answer)),
-                "grounded": True,
+                "grounded": citation_guard["status"] == "passed",
                 "fallback_used": provider_answer is None,
+                "citation_guard": citation_guard,
             },
         )
 
@@ -226,6 +236,24 @@ class LLMService:
                 quote = f"{quote[:357]}..."
             lines.append(f"{index}. {result.filename}, {result.path}: {quote}")
         return "\n".join(lines)
+
+    def _citation_guard(self, answer_text: str, citations: list[Any]) -> dict[str, Any]:
+        if not citations:
+            return {"status": "no_citations", "citation_count": 0}
+        missing = []
+        for result in citations:
+            if result.filename not in answer_text and result.path not in answer_text:
+                missing.append(
+                    {
+                        "filename": result.filename,
+                        "path": result.path,
+                    }
+                )
+        return {
+            "status": "passed" if not missing else "missing_citation_markers",
+            "citation_count": len(citations),
+            "missing_citations": missing,
+        }
 
     def _provider_name(self, *, provider_answer_used: bool = False) -> str:
         if provider_answer_used:

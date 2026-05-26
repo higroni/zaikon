@@ -20,4 +20,6 @@ Current MVP behavior:
 - Ollama provider calls are available behind `ZAIKON_LLM_USE_PROVIDER=true`
 - when provider output is unavailable, grounded deterministic answers remain the
   fallback
+- generated answers include citation guard metadata; ungrounded answers are
+  marked when no citations are available
 

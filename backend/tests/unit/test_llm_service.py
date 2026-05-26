@@ -55,6 +55,7 @@ def test_llm_service_generates_grounded_deterministic_answer():
 
     assert response.metadata["provider"] == "deterministic"
     assert response.metadata["grounded"] is True
+    assert response.metadata["citation_guard"]["status"] == "passed"
     assert "zakon.txt, article:1" in response.answer_text
 
 
@@ -85,5 +86,21 @@ def test_llm_service_can_use_enabled_provider_for_grounded_answer():
 
     assert response.metadata["provider"] == "ollama"
     assert response.metadata["fallback_used"] is False
+    assert response.metadata["citation_guard"]["status"] == "passed"
     assert "Generisani odgovor" in response.answer_text
     assert "Citati:" in response.answer_text
+
+
+def test_llm_service_marks_answer_without_citations_as_ungrounded():
+    response = LLMService().generate_answer(
+        GenerateAnswerRequest(
+            question="Gde se pominju šume?",
+            retrieval_results=[],
+        )
+    )
+
+    assert response.metadata["grounded"] is False
+    assert response.metadata["citation_guard"] == {
+        "status": "no_citations",
+        "citation_count": 0,
+    }
