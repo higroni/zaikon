@@ -22,4 +22,14 @@ class FindingRecord(BaseModel):
     source_path: str | None = None
     evidence: dict[str, Any] = Field(default_factory=dict)
     created_at: datetime = Field(default_factory=datetime.utcnow)
+    updated_at: datetime | None = None
+    review_note: str | None = None
 
+
+class UpdateFindingReviewDecisionRequest(BaseModel):
+    status: FindingStatus
+    review_note: str | None = None
+
+
+class UpdateFindingReviewDecisionResponse(BaseModel):
+    finding: FindingRecord

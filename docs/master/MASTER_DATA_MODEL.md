@@ -344,7 +344,9 @@ extraction metadata when the draft originates from a file.
   "explanation": "The draft refers to article 12, but no such article exists.",
   "recommendation": "Update the reference or add the missing provision.",
   "source_legal_unit_id": "uuid",
-  "created_at": "datetime"
+  "created_at": "datetime",
+  "updated_at": "datetime",
+  "review_note": "Expert review note"
 }
 ```
 

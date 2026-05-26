@@ -6,7 +6,7 @@ from pathlib import Path
 from uuid import UUID
 
 from zaikon.core.config import settings
-from zaikon.core.schemas import JobStatus
+from zaikon.core.schemas import FindingStatus, JobStatus
 from zaikon.modules.canonical.schemas import CanonicalizeRequest
 from zaikon.modules.canonical.service import get_canonical_service
 from zaikon.modules.checkers.schemas import FindingRecord
@@ -133,6 +133,38 @@ class DraftReviewService:
         payload = self._read_json(path, [])
         return [FindingRecord.model_validate(item) for item in payload]
 
+    def get_finding(self, finding_id: UUID) -> FindingRecord | None:
+        for path in self.finding_dir.glob("*.json"):
+            for finding in self._load_findings_path(path):
+                if finding.finding_id == finding_id:
+                    return finding
+        return None
+
+    def update_finding_review_decision(
+        self,
+        finding_id: UUID,
+        status: FindingStatus,
+        review_note: str | None = None,
+    ) -> FindingRecord | None:
+        for path in self.finding_dir.glob("*.json"):
+            findings = self._load_findings_path(path)
+            for index, finding in enumerate(findings):
+                if finding.finding_id != finding_id:
+                    continue
+                findings[index] = finding.model_copy(
+                    update={
+                        "status": status,
+                        "review_note": review_note,
+                        "updated_at": datetime.utcnow(),
+                    }
+                )
+                self._write_json(
+                    path,
+                    [item.model_dump(mode="json") for item in findings],
+                )
+                return findings[index]
+        return None
+
     def run_draft_review(self, pipeline_run_id: UUID) -> RunDraftReviewResponse:
         record = self._records.get(pipeline_run_id)
         if record is None:
@@ -244,6 +276,10 @@ class DraftReviewService:
             self.finding_dir / f"{pipeline_run_id}.json",
             [finding.model_dump(mode="json") for finding in findings],
         )
+
+    def _load_findings_path(self, path: Path) -> list[FindingRecord]:
+        payload = self._read_json(path, [])
+        return [FindingRecord.model_validate(item) for item in payload]
 
     def _save_artifacts(self, pipeline_run_id: UUID, artifacts: dict) -> None:
         self._write_json(self.artifact_dir / f"{pipeline_run_id}.json", artifacts)

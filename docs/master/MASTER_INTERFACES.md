@@ -155,6 +155,8 @@ ReferenceChecker.check(
 Initial schema names:
 
 - `FindingRecord`
+- `UpdateFindingReviewDecisionRequest`
+- `UpdateFindingReviewDecisionResponse`
 
 ## Draft Review Service
 
