@@ -220,6 +220,10 @@ class DraftReviewService:
                 record=record,
                 query=normalized_text,
             )
+            findings = self._attach_retrieval_evidence(
+                findings=findings,
+                retrieval_results=retrieval_results,
+            )
 
             self._save_findings(pipeline_run_id, findings)
             self._save_artifacts(
@@ -293,6 +297,41 @@ class DraftReviewService:
             )
         )
         return [result.model_dump(mode="json") for result in response.results]
+
+    def _attach_retrieval_evidence(
+        self,
+        *,
+        findings: list[FindingRecord],
+        retrieval_results: list[dict],
+    ) -> list[FindingRecord]:
+        if not retrieval_results:
+            return findings
+        related_legal_units = [
+            {
+                "document_id": result["document_id"],
+                "corpus_id": result.get("corpus_id"),
+                "legal_unit_id": result["legal_unit_id"],
+                "filename": result["filename"],
+                "document_type": result["document_type"],
+                "unit_type": result["unit_type"],
+                "path": result["path"],
+                "score": result["score"],
+                "matched_terms": result.get("metadata", {}).get("matched_terms", []),
+                "quote": result["content_text"][:500],
+            }
+            for result in retrieval_results[:3]
+        ]
+        return [
+            finding.model_copy(
+                update={
+                    "evidence": {
+                        **finding.evidence,
+                        "related_legal_units": related_legal_units,
+                    }
+                }
+            )
+            for finding in findings
+        ]
 
     def _save_findings(
         self, pipeline_run_id: UUID, findings: list[FindingRecord]

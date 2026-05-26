@@ -140,6 +140,9 @@ def test_draft_review_uses_selected_corpus_for_retrieval_artifact(client):
     assert run_response.status_code == 200
     payload = run_response.json()
     assert payload["draft_review"]["metadata"]["retrieval_result_count"] > 0
+    related_units = payload["findings"][0]["evidence"]["related_legal_units"]
+    assert related_units
+    assert {unit["corpus_id"] for unit in related_units} == {corpus["corpus_id"]}
 
     detail_response = client.get(f"/api/v1/draft-reviews/{pipeline_run_id}")
 

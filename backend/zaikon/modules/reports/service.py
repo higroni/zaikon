@@ -120,6 +120,15 @@ class ReportService:
             if finding.review_note:
                 document.add_paragraph("Beleška pregleda:")
                 document.add_paragraph(finding.review_note)
+            related_units = finding.evidence.get("related_legal_units", [])
+            if related_units:
+                document.add_paragraph("Povezane pravne jedinice:")
+                for related in related_units:
+                    document.add_paragraph(
+                        f"{related.get('filename')} {related.get('path')} "
+                        f"(score: {related.get('score')})",
+                        style="List Bullet",
+                    )
 
         path = self.download_dir / f"{report.report_id}.docx"
         document.save(path)
@@ -195,6 +204,17 @@ class ReportService:
                 lines.extend(["Preporuka:", "", finding.recommendation, ""])
             if finding.review_note:
                 lines.extend(["Beleška pregleda:", "", finding.review_note, ""])
+            related_units = finding.evidence.get("related_legal_units", [])
+            if related_units:
+                lines.extend(["Povezane pravne jedinice:", ""])
+                for related in related_units:
+                    lines.append(
+                        "- "
+                        f"{related.get('filename')} "
+                        f"{related.get('path')} "
+                        f"(score: {related.get('score')})"
+                    )
+                lines.append("")
         return "\n".join(lines).strip() + "\n"
 
 
