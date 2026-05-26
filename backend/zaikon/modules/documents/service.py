@@ -200,7 +200,11 @@ class DocumentService:
             for page in pdf_document:
                 pages.append(page.get_text("text").strip())
             page_count = pdf_document.page_count
-        return "\n\n".join(page for page in pages if page), {"page_count": page_count}
+        content_text = "\n\n".join(page for page in pages if page)
+        return content_text, {
+            "page_count": page_count,
+            "needs_ocr": page_count > 0 and not content_text.strip(),
+        }
 
     def _extract_docx(self, path: Path) -> tuple[str, dict]:
         document = Document(path)

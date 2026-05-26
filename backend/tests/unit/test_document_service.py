@@ -2,6 +2,8 @@
 
 from pathlib import Path
 
+import fitz
+
 from zaikon.modules.documents.schemas import ExtractTextRequest
 from zaikon.modules.documents.schemas import ClassifyDocumentRequest
 from zaikon.modules.documents.service import DocumentService
@@ -39,7 +41,28 @@ def test_document_service_extracts_text_from_pdf_fixture():
 
     assert response.document.extraction_status == "completed"
     assert response.document.metadata["page_count"] == 1
+    assert response.document.metadata["needs_ocr"] is False
     assert "PDF tekst za regresioni test" in response.document.content_text
+
+
+def test_document_service_marks_blank_pdf_as_needing_ocr(tmp_path):
+    source_path = tmp_path / "scan.pdf"
+    pdf = fitz.open()
+    pdf.new_page()
+    pdf.save(source_path)
+    pdf.close()
+
+    response = DocumentService().extract_text(
+        ExtractTextRequest(
+            source_uri=str(source_path),
+            filename="scan.pdf",
+            file_type="pdf",
+        )
+    )
+
+    assert response.document.content_text == ""
+    assert response.document.metadata["page_count"] == 1
+    assert response.document.metadata["needs_ocr"] is True
 
 
 def test_document_service_extracts_text_from_docx_fixture():

@@ -105,6 +105,7 @@ format, not the primary runtime representation.
   "metadata": {
     "character_count": 1234,
     "page_count": 1,
+    "needs_ocr": false,
     "paragraph_count": null,
     "normalization_applied": true,
     "normalization": "sr_cyrillic_to_latin"
