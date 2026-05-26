@@ -18,8 +18,8 @@ router = APIRouter(tags=["documents"])
 
 
 @router.get("/documents", response_model=list[DocumentSummary])
-def list_documents() -> list[DocumentSummary]:
-    return DocumentCatalogService().list_documents()
+def list_documents(corpus_id: UUID | None = None) -> list[DocumentSummary]:
+    return DocumentCatalogService().list_documents(corpus_id=corpus_id)
 
 
 @router.get("/documents/{document_id}", response_model=DocumentDetail)

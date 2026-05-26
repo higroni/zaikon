@@ -45,11 +45,14 @@ class DocumentCatalogService:
             self.root / "corpus" / "pipeline_artifacts"
         )
 
-    def list_documents(self) -> list[DocumentSummary]:
-        return [
+    def list_documents(self, corpus_id: UUID | None = None) -> list[DocumentSummary]:
+        documents = [
             self._summary_from_record(import_job_id, record)
             for import_job_id, record, _ in self._iter_document_records()
         ]
+        if corpus_id is None:
+            return documents
+        return [document for document in documents if document.corpus_id == corpus_id]
 
     def get_document(self, document_id: UUID) -> DocumentDetail | None:
         for import_job_id, record, canonical_document in self._iter_document_records():

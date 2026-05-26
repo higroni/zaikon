@@ -29,6 +29,8 @@ Base path: `/api/v1`
 - `GET /api/v1/document-versions/{document_version_id}`
 - `GET /api/v1/legal-units/{legal_unit_id}`
 
+`GET /api/v1/documents` supports optional `corpus_id` filtering.
+
 ## Draft Reviews
 
 - `POST /api/v1/draft-reviews`

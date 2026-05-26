@@ -49,3 +49,47 @@ def test_document_catalog_endpoints_after_import(client):
     assert akoma_response.headers["content-type"].startswith("application/xml")
     assert "<akomaNtoso" in akoma_response.text
     assert "<FRBRlanguage language=\"srp\"" in akoma_response.text
+
+
+def test_document_catalog_can_be_filtered_by_corpus(client, tmp_path):
+    first_dir = tmp_path / "first"
+    second_dir = tmp_path / "second"
+    first_dir.mkdir()
+    second_dir.mkdir()
+    (first_dir / "zakon-a.txt").write_text(
+        "Zakon A\n\nClan 1.\nPrvi korpus.",
+        encoding="utf-8",
+    )
+    (second_dir / "zakon-b.txt").write_text(
+        "Zakon B\n\nClan 1.\nDrugi korpus.",
+        encoding="utf-8",
+    )
+    first_corpus = client.post(
+        "/api/v1/corpora", json={"name": "First document corpus"}
+    ).json()["corpus"]
+    second_corpus = client.post(
+        "/api/v1/corpora", json={"name": "Second document corpus"}
+    ).json()["corpus"]
+    client.post(
+        f"/api/v1/corpora/{first_corpus['corpus_id']}/import-folder",
+        json={
+            "corpus_id": first_corpus["corpus_id"],
+            "folder_uri": str(first_dir),
+        },
+    )
+    client.post(
+        f"/api/v1/corpora/{second_corpus['corpus_id']}/import-folder",
+        json={
+            "corpus_id": second_corpus["corpus_id"],
+            "folder_uri": str(second_dir),
+        },
+    )
+
+    response = client.get(f"/api/v1/documents?corpus_id={first_corpus['corpus_id']}")
+
+    assert response.status_code == 200
+    documents = response.json()
+    assert documents
+    assert {document["corpus_id"] for document in documents} == {
+        first_corpus["corpus_id"]
+    }

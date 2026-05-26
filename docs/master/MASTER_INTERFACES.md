@@ -58,6 +58,9 @@ extract_text(request: ExtractTextRequest) -> ExtractTextResponse
 classify_document(request: ClassifyDocumentRequest) -> ClassifyDocumentResponse
 ```
 
+Document catalog endpoints support optional `corpus_id` filtering when listing
+stored documents.
+
 Initial schema names:
 
 - `ExtractTextRequest`
