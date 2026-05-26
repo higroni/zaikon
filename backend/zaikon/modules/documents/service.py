@@ -109,6 +109,40 @@ _BODY_REFERENCE_PATTERNS = (
     ("order", (r"\bovom\s+naredbom\b",)),
     ("strategy", (r"\bstrategija\s+razvoja\b",)),
 )
+_SERBIAN_MONTHS = {
+    "januar": "01",
+    "januara": "01",
+    "februar": "02",
+    "februara": "02",
+    "mart": "03",
+    "marta": "03",
+    "april": "04",
+    "aprila": "04",
+    "maj": "05",
+    "maja": "05",
+    "jun": "06",
+    "juna": "06",
+    "jul": "07",
+    "jula": "07",
+    "avgust": "08",
+    "avgusta": "08",
+    "septembar": "09",
+    "septembra": "09",
+    "oktobar": "10",
+    "oktobra": "10",
+    "novembar": "11",
+    "novembra": "11",
+    "decembar": "12",
+    "decembra": "12",
+}
+_OFFICIAL_GAZETTE_NUMBER_RE = re.compile(
+    r"sluzbeni\s+glasnik\s+(?:rs|republike\s+srbije)\s+"
+    r"(?:broj|br)\s+(?P<number>\d+(?:/\d+)?)"
+)
+_OFFICIAL_GAZETTE_DATE_RE = re.compile(
+    r"(?:broj|br)\s+(?P<number>\d+(?:/\d+)?)\s+od\s+"
+    r"(?P<day>\d{1,2})\s+(?P<month>[a-z]+)\s+(?P<year>\d{4})"
+)
 
 
 def _normalize_for_classification(value: str) -> str:
@@ -199,6 +233,7 @@ class DocumentService:
             _normalize_for_classification(line).strip() for line in title_lines
         ]
         title_area_normalized = _normalize_for_classification(title_area)
+        metadata = self._publication_metadata(request.content_text)
 
         title_candidates = []
         for line_index, line in enumerate(normalized_lines):
@@ -211,7 +246,7 @@ class DocumentService:
         if title_candidates:
             _, document_type = max(title_candidates, key=lambda item: item[0])
             return ClassifyDocumentResponse(
-                document_type=document_type, confidence=0.95
+                document_type=document_type, confidence=0.95, metadata=metadata
             )
 
         body_normalized = _normalize_for_classification(request.content_text)
@@ -221,7 +256,7 @@ class DocumentService:
                 for pattern in patterns
             ):
                 return ClassifyDocumentResponse(
-                    document_type=document_type, confidence=0.65
+                    document_type=document_type, confidence=0.65, metadata=metadata
                 )
 
         for document_type, keywords in _DOCUMENT_TYPE_KEYWORDS:
@@ -230,7 +265,7 @@ class DocumentService:
                 for keyword in keywords
             ):
                 return ClassifyDocumentResponse(
-                    document_type=document_type, confidence=0.55
+                    document_type=document_type, confidence=0.55, metadata=metadata
                 )
 
         filename_normalized = _normalize_for_classification(filename)
@@ -241,10 +276,36 @@ class DocumentService:
                 for keyword in keywords
             ):
                 return ClassifyDocumentResponse(
-                    document_type=document_type, confidence=0.45
+                    document_type=document_type, confidence=0.45, metadata=metadata
                 )
 
-        return ClassifyDocumentResponse(document_type="unknown", confidence=0.40)
+        return ClassifyDocumentResponse(
+            document_type="unknown", confidence=0.40, metadata=metadata
+        )
+
+    def _publication_metadata(self, content_text: str) -> dict:
+        normalized = _normalize_for_classification("\n".join(content_text.splitlines()[:40]))
+        gazette_numbers = [
+            match.group("number")
+            for match in _OFFICIAL_GAZETTE_NUMBER_RE.finditer(normalized)
+        ]
+        publication_dates = []
+        for match in _OFFICIAL_GAZETTE_DATE_RE.finditer(normalized):
+            month = _SERBIAN_MONTHS.get(match.group("month"))
+            if month is None:
+                continue
+            publication_dates.append(
+                {
+                    "official_gazette_number": match.group("number"),
+                    "published_at": (
+                        f"{match.group('year')}-{month}-{int(match.group('day')):02d}"
+                    ),
+                }
+            )
+        return {
+            "official_gazette_numbers": sorted(set(gazette_numbers)),
+            "publication_dates": publication_dates,
+        }
 
 
 @lru_cache

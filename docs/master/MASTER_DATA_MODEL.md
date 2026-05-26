@@ -38,6 +38,15 @@ format, not the primary runtime representation.
   "import_status": "completed",
   "document_type": "law",
   "document_type_confidence": 0.95,
+  "publication_metadata": {
+    "official_gazette_numbers": ["30"],
+    "publication_dates": [
+      {
+        "official_gazette_number": "30",
+        "published_at": "2010-05-07"
+      }
+    ]
+  },
   "error_message": null,
   "created_at": "datetime"
 }
@@ -165,6 +174,7 @@ format, not the primary runtime representation.
   "language_code": "sr",
   "jurisdiction": "RS",
   "canonical_json": {},
+  "publication_metadata": {},
   "created_at": "datetime",
   "updated_at": "datetime"
 }

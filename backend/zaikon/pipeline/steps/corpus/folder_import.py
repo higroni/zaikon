@@ -396,6 +396,7 @@ class IdentifyLegalDocumentsStep(PipelineStep):
                         **document.get("metadata", {}),
                         "document_type": classification.document_type,
                         "document_type_confidence": classification.confidence,
+                        "publication_metadata": classification.metadata,
                     },
                 }
             )
@@ -436,6 +437,9 @@ class IdentifyLegalDocumentsStep(PipelineStep):
                             "document_type_confidence": classification_by_source_uri[
                                 source_file["source_uri"]
                             ].confidence,
+                            "publication_metadata": classification_by_source_uri[
+                                source_file["source_uri"]
+                            ].metadata,
                         }
                         if source_file["source_uri"] in classification_by_source_uri
                         else source_file
@@ -703,6 +707,10 @@ class StoreDocumentsStep(PipelineStep):
     def run(self, context: PipelineContext) -> PipelineContext:
         canonical_documents = context.get_artifact("canonical_documents").payload
         import_report = context.get_artifact("import_report")
+        source_files_by_uri = {
+            source_file["source_uri"]: source_file
+            for source_file in import_report.payload["source_files"]
+        }
         stored_documents = [
             {
                 "document_id": str(uuid5(NAMESPACE_URL, document["source_uri"])),
@@ -714,6 +722,9 @@ class StoreDocumentsStep(PipelineStep):
                 "canonical_unit_count": document["canonical_json"]["metadata"][
                     "canonical_unit_count"
                 ],
+                "publication_metadata": source_files_by_uri.get(
+                    document["source_uri"], {}
+                ).get("publication_metadata", {}),
                 "storage_status": "ready",
             }
             for document in canonical_documents

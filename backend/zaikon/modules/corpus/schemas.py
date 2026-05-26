@@ -64,6 +64,7 @@ class SourceFileRecord(BaseModel):
     import_status: str = JobStatus.pending.value
     document_type: str | None = None
     document_type_confidence: float | None = None
+    publication_metadata: dict[str, Any] = Field(default_factory=dict)
     error_message: str | None = None
     created_at: datetime = Field(default_factory=utc_now)
 

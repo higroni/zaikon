@@ -123,3 +123,27 @@ def test_document_service_uses_filename_only_as_low_confidence_fallback():
 
     assert response.document_type == "rulebook"
     assert response.confidence < 0.50
+
+
+def test_document_service_extracts_official_gazette_publication_metadata():
+    response = DocumentService().classify_document(
+        ClassifyDocumentRequest(
+            content_text=(
+                "ZAKON\n"
+                "o sumama\n"
+                "Službeni glasnik RS, broj 30 od 7. maja 2010.\n"
+                "Clan 1.\n"
+                "Ovim zakonom uredjuju se sume."
+            ),
+            filename="zakon_o_sumama.pdf",
+        )
+    )
+
+    assert response.document_type == "law"
+    assert response.metadata["official_gazette_numbers"] == ["30"]
+    assert response.metadata["publication_dates"] == [
+        {
+            "official_gazette_number": "30",
+            "published_at": "2010-05-07",
+        }
+    ]

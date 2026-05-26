@@ -38,3 +38,4 @@ class ClassifyDocumentRequest(BaseModel):
 class ClassifyDocumentResponse(BaseModel):
     document_type: str
     confidence: float
+    metadata: dict[str, Any] = Field(default_factory=dict)

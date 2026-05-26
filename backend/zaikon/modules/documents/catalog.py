@@ -19,6 +19,7 @@ class DocumentSummary(BaseModel):
     title: str | None = None
     canonical_unit_count: int = 0
     import_job_id: UUID
+    publication_metadata: dict = Field(default_factory=dict)
 
 
 class DocumentDetail(DocumentSummary):
@@ -35,6 +36,7 @@ class DocumentVersionRecord(BaseModel):
     document_type: str
     title: str | None = None
     canonical_json: dict = Field(default_factory=dict)
+    publication_metadata: dict = Field(default_factory=dict)
 
 
 class LegalUnitRecord(BaseModel):
@@ -99,6 +101,7 @@ class DocumentCatalogService:
                 document_type=record["document_type"],
                 title=record.get("title"),
                 canonical_json=canonical_document.get("canonical_json", {}),
+                publication_metadata=record.get("publication_metadata", {}),
             )
         return None
 
@@ -162,6 +165,7 @@ class DocumentCatalogService:
             title=record.get("title"),
             canonical_unit_count=record.get("canonical_unit_count", 0),
             import_job_id=import_job_id,
+            publication_metadata=record.get("publication_metadata", {}),
         )
 
     def _document_id(self, record: dict) -> str:
