@@ -72,3 +72,13 @@ This document is the golden copy for zAIkon user journeys.
 2. User generates report.
 3. User downloads DOCX/PDF.
 
+## Current Lightweight Frontend
+
+The current static console in `frontend/index.html` supports:
+
+- creating a corpus and importing a folder
+- running hybrid search
+- creating and running a draft review
+
+It is intentionally API-focused until a full application frontend is introduced.
+

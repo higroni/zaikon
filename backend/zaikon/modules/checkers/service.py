@@ -40,6 +40,9 @@ _TEXTUAL_DATE_RE = re.compile(
     + r")\s+(?P<year>\d{4})\b",
     re.IGNORECASE,
 )
+_OBLIGATION_RE = re.compile(r"\b(?:mora|duzan|duzna|duzno|obavezan|obavezna)\b")
+_PROHIBITION_RE = re.compile(r"\b(?:ne\s+sme|zabranjuje\s+se|zabranjeno)\b")
+_REPEAL_RE = re.compile(r"\b(?:prestaje\s+da\s+vazi|prestaju\s+da\s+vaze)\b")
 
 
 class ReferenceChecker:
@@ -237,6 +240,133 @@ class TemporalValidityChecker:
         return findings
 
 
+class NormConflictChecker:
+    """Flags provisions that combine obligation and prohibition signals."""
+
+    def check(
+        self,
+        *,
+        pipeline_run_id: UUID,
+        document: CanonicalDocument,
+    ) -> list[FindingRecord]:
+        findings: list[FindingRecord] = []
+        for unit in document.canonical_json.get("legal_units", []):
+            content_text = unit.get("content_text") or ""
+            normalized = content_text.lower()
+            if not (_OBLIGATION_RE.search(normalized) and _PROHIBITION_RE.search(normalized)):
+                continue
+            findings.append(
+                FindingRecord(
+                    pipeline_run_id=pipeline_run_id,
+                    finding_type="possible_norm_conflict",
+                    risk_level=RiskLevel.medium,
+                    title="Possible conflict between obligation and prohibition",
+                    explanation=(
+                        "The same provision appears to combine mandatory and "
+                        "prohibitive language, which may require legal review."
+                    ),
+                    recommendation=(
+                        "Separate the obligation and prohibition or clarify the "
+                        "conditions under which each rule applies."
+                    ),
+                    source_legal_unit_id=unit.get("legal_unit_id"),
+                    source_path=unit.get("path"),
+                    evidence={"content_text": content_text},
+                )
+            )
+        return findings
+
+
+class OverlapChecker:
+    """Finds repeated provision wording inside the same draft."""
+
+    def check(
+        self,
+        *,
+        pipeline_run_id: UUID,
+        document: CanonicalDocument,
+    ) -> list[FindingRecord]:
+        seen: dict[str, dict] = {}
+        findings: list[FindingRecord] = []
+        legal_units = document.canonical_json.get("legal_units", [])
+        parent_ids = {
+            unit.get("parent_legal_unit_id")
+            for unit in legal_units
+            if unit.get("parent_legal_unit_id") is not None
+        }
+        for unit in legal_units:
+            if unit.get("legal_unit_id") in parent_ids:
+                continue
+            content_text = unit.get("content_text") or ""
+            normalized = re.sub(r"\s+", " ", content_text.strip().lower())
+            if len(normalized) < 30:
+                continue
+            previous = seen.get(normalized)
+            if previous is None:
+                seen[normalized] = unit
+                continue
+            findings.append(
+                FindingRecord(
+                    pipeline_run_id=pipeline_run_id,
+                    finding_type="possible_overlap",
+                    risk_level=RiskLevel.low,
+                    title="Possible duplicated provision",
+                    explanation=(
+                        "Two provisions in the draft have the same or nearly same "
+                        "wording and may overlap."
+                    ),
+                    recommendation=(
+                        "Merge the provisions or make the scope of each provision "
+                        "distinct."
+                    ),
+                    source_legal_unit_id=unit.get("legal_unit_id"),
+                    source_path=unit.get("path"),
+                    evidence={
+                        "duplicate_of_legal_unit_id": previous.get("legal_unit_id"),
+                        "duplicate_of_path": previous.get("path"),
+                        "content_text": content_text,
+                    },
+                )
+            )
+        return findings
+
+
+class StaleReferenceChecker:
+    """Flags references near text saying that provisions cease to apply."""
+
+    def check(
+        self,
+        *,
+        pipeline_run_id: UUID,
+        document: CanonicalDocument,
+    ) -> list[FindingRecord]:
+        findings: list[FindingRecord] = []
+        for unit in document.canonical_json.get("legal_units", []):
+            content_text = unit.get("content_text") or ""
+            if not _REPEAL_RE.search(content_text.lower()):
+                continue
+            findings.append(
+                FindingRecord(
+                    pipeline_run_id=pipeline_run_id,
+                    finding_type="reference_stale",
+                    risk_level=RiskLevel.medium,
+                    title="Reference may point to repealed provisions",
+                    explanation=(
+                        "The reference text contains a signal that the cited "
+                        "provision or act ceases to apply."
+                    ),
+                    recommendation=(
+                        "Verify whether the referenced act or provision is still "
+                        "valid before relying on it."
+                    ),
+                    source_legal_unit_id=unit.get("legal_unit_id"),
+                    source_path=unit.get("path"),
+                    evidence={"content_text": content_text},
+                )
+            )
+        return findings
+
+
 @lru_cache
 def get_reference_checker() -> ReferenceChecker:
     return ReferenceChecker()
@@ -255,3 +385,18 @@ def get_terminology_consistency_checker() -> TerminologyConsistencyChecker:
 @lru_cache
 def get_temporal_validity_checker() -> TemporalValidityChecker:
     return TemporalValidityChecker()
+
+
+@lru_cache
+def get_norm_conflict_checker() -> NormConflictChecker:
+    return NormConflictChecker()
+
+
+@lru_cache
+def get_overlap_checker() -> OverlapChecker:
+    return OverlapChecker()
+
+
+@lru_cache
+def get_stale_reference_checker() -> StaleReferenceChecker:
+    return StaleReferenceChecker()

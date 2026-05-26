@@ -13,7 +13,10 @@ from zaikon.modules.canonical.schemas import ExportAkomaNtosoRequest
 from zaikon.modules.canonical.service import get_canonical_service
 from zaikon.modules.checkers.schemas import FindingRecord
 from zaikon.modules.checkers.service import get_definition_consistency_checker
+from zaikon.modules.checkers.service import get_norm_conflict_checker
+from zaikon.modules.checkers.service import get_overlap_checker
 from zaikon.modules.checkers.service import get_reference_checker
+from zaikon.modules.checkers.service import get_stale_reference_checker
 from zaikon.modules.checkers.service import get_temporal_validity_checker
 from zaikon.modules.checkers.service import get_terminology_consistency_checker
 from zaikon.modules.documents.schemas import ClassifyDocumentRequest
@@ -283,6 +286,24 @@ class DraftReviewService:
             )
             findings.extend(
                 get_temporal_validity_checker().check(
+                    pipeline_run_id=pipeline_run_id,
+                    document=canonical.document,
+                )
+            )
+            findings.extend(
+                get_norm_conflict_checker().check(
+                    pipeline_run_id=pipeline_run_id,
+                    document=canonical.document,
+                )
+            )
+            findings.extend(
+                get_overlap_checker().check(
+                    pipeline_run_id=pipeline_run_id,
+                    document=canonical.document,
+                )
+            )
+            findings.extend(
+                get_stale_reference_checker().check(
                     pipeline_run_id=pipeline_run_id,
                     document=canonical.document,
                 )

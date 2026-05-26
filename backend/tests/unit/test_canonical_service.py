@@ -149,6 +149,49 @@ def test_canonical_service_imports_basic_akoma_ntoso_xml():
     assert legal_units[1]["content_text"] == "Šume su dobro od opšteg interesa."
 
 
+def test_canonical_service_imports_akoma_items_and_subitems():
+    xml_text = """<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="law">
+    <body>
+      <article>
+        <num>Clan 1.</num>
+        <paragraph>
+          <num>(1)</num>
+          <hcontainer name="item" eId="item_1">
+            <num>1</num>
+            <content><p>Prva tacka.</p></content>
+            <hcontainer name="subpoint" eId="sub_1">
+              <num>1</num>
+              <content><p>Prva podtacka.</p></content>
+            </hcontainer>
+          </hcontainer>
+        </paragraph>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>
+"""
+
+    response = CanonicalService().import_akoma_ntoso(
+        ImportAkomaNtosoRequest(
+            xml_text=xml_text,
+            source_uri="file:///tmp/items.xml",
+            filename="items.xml",
+        )
+    )
+
+    legal_units = response.document.canonical_json["legal_units"]
+    assert [unit["unit_type"] for unit in legal_units] == [
+        "article",
+        "paragraph",
+        "item",
+        "subitem",
+    ]
+    assert legal_units[2]["path"] == "article:1/paragraph:1/item:1"
+    assert legal_units[3]["path"] == "article:1/paragraph:1/item:1/subitem:1"
+
+
 def test_canonical_service_exports_subitems_as_akoma_subpoints():
     article = ParsedLegalUnit(
         unit_type="article",

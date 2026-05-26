@@ -35,13 +35,18 @@ Backend MVP in progress:
 - canonical JSON model and Akoma Ntoso XML export
 - reference extraction/resolution and deterministic draft checkers
 - lexical retrieval over imported legal units with corpus filtering
+- deterministic semantic fallback retrieval and vector index reports
 - draft review creation from text or file, with findings and artifacts
 - Markdown, DOCX, and PDF report generation
 - grounded assistant API skeleton with deterministic intent/query/answer flow
+- SQLite mirror storage for imported canonical documents
+- static frontend API console in `frontend/index.html`
 
 Run tests with:
 
 ```powershell
 python -m pytest backend\tests -q
 ```
+
+Open `frontend/index.html` directly in a browser for the current lightweight UI.
 

@@ -138,6 +138,9 @@ Initial schema names:
 - `RefreshIndexesResponse`
 - `IndexReport`
 
+Vector index reports may use deterministic fallback embeddings when an external
+embedding model or Qdrant-backed query path is not enabled.
+
 ## Retrieval Service
 
 ```python
@@ -154,6 +157,22 @@ Initial schema names:
 - `RetrievalResult`
 
 Search requests accept optional `corpus_id` to limit retrieval to one corpus.
+Current MVP retrieval combines lexical score and deterministic semantic fallback
+score, and returns score components in result metadata.
+
+## Storage Service
+
+```python
+upsert_document(record: dict, canonical_json: dict) -> None
+get_document(document_id: str) -> dict | None
+list_documents(corpus_id: str | None = None) -> list[dict]
+```
+
+Initial implementation:
+
+- `SQLiteDocumentStore`
+- mirrors imported canonical documents while JSON artifacts remain the primary
+  compatibility store during migration
 
 ## Checker Service
 

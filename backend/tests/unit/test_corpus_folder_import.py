@@ -152,7 +152,11 @@ def test_corpus_folder_import_chain_matches_regression_fixture():
     reference_graph_report = context.get_artifact("reference_graph_report").payload
     assert keyword_index_report["status"] == "completed"
     assert keyword_index_report["indexed_documents"] == 3
-    assert vector_index_report["metadata"]["status_note"] == "report_only_no_embeddings_computed"
+    assert (
+        vector_index_report["metadata"]["status_note"]
+        == "deterministic_fallback_embeddings_computed"
+    )
+    assert vector_index_report["metadata"]["computed_vectors"] > 0
     assert structure_index_report["metadata"]["document_types"]["law"] == 1
     assert "resolved_references" in reference_graph_report["metadata"]
 

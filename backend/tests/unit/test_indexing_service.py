@@ -49,6 +49,11 @@ def test_indexing_service_builds_deterministic_reports():
         item["term"] == "šume"
         for item in response.keyword_index_report.metadata["top_terms"]
     )
+    assert response.vector_index_report.metadata["computed_vectors"] == 2
+    assert (
+        response.vector_index_report.metadata["status_note"]
+        == "deterministic_fallback_embeddings_computed"
+    )
     assert response.structure_index_report.metadata["document_types"] == {"law": 1}
     assert response.reference_graph_report.metadata == {
         "resolved_references": 1,

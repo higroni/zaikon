@@ -22,6 +22,7 @@ from zaikon.modules.references.schemas import ExtractReferencesRequest
 from zaikon.modules.references.schemas import LegalReferenceRecord
 from zaikon.modules.references.schemas import ResolveReferencesRequest
 from zaikon.modules.references.service import get_reference_service
+from zaikon.modules.storage.sqlite_store import SQLiteDocumentStore
 from zaikon.pipeline.base import PipelineStep
 from zaikon.pipeline.chains import PipelineChain
 from zaikon.pipeline.context import PipelineContext
@@ -729,6 +730,7 @@ class StoreDocumentsStep(PipelineStep):
             }
             for document in canonical_documents
         ]
+        self._mirror_to_sqlite(stored_documents, canonical_documents)
         stored_documents_report = {
             "stored_documents": stored_documents,
             "metadata": {
@@ -764,6 +766,23 @@ class StoreDocumentsStep(PipelineStep):
             self.step_name,
         )
         return context
+
+    def _mirror_to_sqlite(
+        self, stored_documents: list[dict], canonical_documents: list[dict]
+    ) -> None:
+        if not settings.database_url.startswith("sqlite:///"):
+            return
+        database_path = settings.database_url.removeprefix("sqlite:///")
+        store = SQLiteDocumentStore(database_path)
+        canonical_by_source_uri = {
+            document["source_uri"]: document["canonical_json"]
+            for document in canonical_documents
+        }
+        for record in stored_documents:
+            store.upsert_document(
+                record=record,
+                canonical_json=canonical_by_source_uri.get(record["source_uri"], {}),
+            )
 
 
 class _BaseIndexReportStep(PipelineStep):

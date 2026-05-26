@@ -1,9 +1,14 @@
-"""Deterministic lexical retrieval over persisted legal units."""
+"""Deterministic hybrid retrieval over persisted legal units."""
 
 from functools import lru_cache
 import re
 
 from zaikon.modules.documents.catalog import DocumentCatalogService
+from zaikon.modules.indexing.embeddings import (
+    cosine_similarity,
+    deterministic_embedding,
+    tokens,
+)
 from zaikon.modules.retrieval.schemas import (
     HybridSearchRequest,
     HybridSearchResponse,
@@ -14,15 +19,15 @@ from zaikon.modules.retrieval.schemas import (
 
 
 def _tokens(value: str) -> set[str]:
-    return {
-        token
-        for token in re.findall(r"\w+", value.lower())
-        if len(token) >= 3
-    }
+    return set(tokens(value))
+
+
+def _raw_tokens(value: str) -> set[str]:
+    return {token.lower() for token in re.findall(r"\w+", value) if len(token) >= 3}
 
 
 class RetrievalService:
-    """Simple lexical retrieval used until hybrid indexes are fully backed."""
+    """Hybrid lexical plus deterministic semantic fallback retrieval."""
 
     def __init__(self, catalog: DocumentCatalogService | None = None) -> None:
         self.catalog = catalog or DocumentCatalogService()
@@ -51,7 +56,9 @@ class RetrievalService:
         self, query: str, top_k: int, corpus_id: str | None = None
     ) -> list[RetrievalResult]:
         query_tokens = _tokens(query)
-        if not query_tokens:
+        raw_query_tokens = _raw_tokens(query)
+        query_vector = deterministic_embedding(query)
+        if not query_tokens and not any(query_vector):
             return []
 
         results = []
@@ -65,9 +72,17 @@ class RetrievalService:
                 content_text = unit.get("content_text") or ""
                 content_tokens = _tokens(content_text)
                 matches = query_tokens & content_tokens
-                if not matches:
+                raw_matches = raw_query_tokens & _raw_tokens(content_text)
+                lexical_score = (
+                    len(matches) / len(query_tokens) if query_tokens else 0.0
+                )
+                semantic_score = cosine_similarity(
+                    query_vector,
+                    deterministic_embedding(content_text),
+                )
+                score = 0.65 * lexical_score + 0.35 * semantic_score
+                if score <= 0:
                     continue
-                score = len(matches) / len(query_tokens)
                 results.append(
                     RetrievalResult(
                         document_id=str(document.document_id),
@@ -81,7 +96,12 @@ class RetrievalService:
                         path=unit["path"],
                         content_text=content_text,
                         score=score,
-                        metadata={"matched_terms": sorted(matches)},
+                        metadata={
+                            "matched_terms": sorted(matches | raw_matches),
+                            "lexical_score": lexical_score,
+                            "semantic_score": semantic_score,
+                            "retrieval_mode": "hybrid_deterministic",
+                        },
                     )
                 )
 

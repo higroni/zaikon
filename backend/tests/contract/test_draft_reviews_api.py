@@ -260,6 +260,36 @@ def test_draft_review_runs_terminology_and_temporal_checkers(client):
     assert "temporal_validity_issue" in finding_types
 
 
+def test_draft_review_runs_advanced_checker_skeletons(client):
+    repeated = "Organ vodi evidenciju o korisnicima sredstava i merama zastite."
+    create_response = client.post(
+        "/api/v1/draft-reviews",
+        json={
+            "title": "Nacrt sa naprednim proverama",
+            "content_text": (
+                "NACRT\n\n"
+                "Clan 1.\n"
+                "Organ mora da postupi, ali ne sme da izda odobrenje.\n\n"
+                f"{repeated}\n\n"
+                "Clan 2.\n"
+                f"{repeated}\n\n"
+                "Danom stupanja na snagu ovog zakona prestaje da vazi raniji pravilnik."
+            ),
+        },
+    )
+    pipeline_run_id = create_response.json()["draft_review"]["pipeline_run_id"]
+
+    run_response = client.post(f"/api/v1/draft-reviews/{pipeline_run_id}/run")
+
+    assert run_response.status_code == 200
+    finding_types = {
+        finding["finding_type"] for finding in run_response.json()["findings"]
+    }
+    assert "possible_norm_conflict" in finding_types
+    assert "possible_overlap" in finding_types
+    assert "reference_stale" in finding_types
+
+
 def test_draft_review_can_export_akoma_ntoso_after_run(client):
     create_response = client.post(
         "/api/v1/draft-reviews",

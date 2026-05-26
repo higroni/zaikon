@@ -109,11 +109,12 @@ class CanonicalService:
                         self._number_from_element(paragraph) or str(paragraph_ordinal)
                     )
                     paragraph_path = f"{article_path}/paragraph:{paragraph_number}"
+                    paragraph_id = str(
+                        uuid5(NAMESPACE_URL, f"{request.source_uri}#{paragraph_path}")
+                    )
                     legal_units.append(
                         {
-                            "legal_unit_id": str(
-                                uuid5(NAMESPACE_URL, f"{request.source_uri}#{paragraph_path}")
-                            ),
+                            "legal_unit_id": paragraph_id,
                             "parent_legal_unit_id": article_id,
                             "unit_type": "paragraph",
                             "number": paragraph_number,
@@ -123,6 +124,13 @@ class CanonicalService:
                             "path": paragraph_path,
                             "metadata": {"akoma_eid": paragraph.get("eId")},
                         }
+                    )
+                    self._append_imported_child_units(
+                        legal_units=legal_units,
+                        source_uri=request.source_uri,
+                        parent=paragraph,
+                        parent_id=paragraph_id,
+                        parent_path=paragraph_path,
                     )
 
         title = self._title_from_akoma(root) or request.filename
@@ -320,6 +328,58 @@ class CanonicalService:
             if self._local_name(item) == "p"
         ]
         return "\n".join(item for item in paragraphs if item)
+
+    def _append_imported_child_units(
+        self,
+        *,
+        legal_units: list[dict],
+        source_uri: str,
+        parent: ET.Element,
+        parent_id: str,
+        parent_path: str,
+    ) -> None:
+        child_ordinal = 0
+        for child in list(parent):
+            unit_type = self._unit_type_from_akoma_element(child)
+            if unit_type is None:
+                continue
+            child_ordinal += 1
+            number = self._number_from_element(child) or str(child_ordinal)
+            child_path = f"{parent_path}/{unit_type}:{number}"
+            child_id = str(uuid5(NAMESPACE_URL, f"{source_uri}#{child_path}"))
+            legal_units.append(
+                {
+                    "legal_unit_id": child_id,
+                    "parent_legal_unit_id": parent_id,
+                    "unit_type": unit_type,
+                    "number": number,
+                    "ordinal": child_ordinal,
+                    "heading": self._text_of_child(child, "heading"),
+                    "content_text": self._content_text(child),
+                    "path": child_path,
+                    "metadata": {"akoma_eid": child.get("eId")},
+                }
+            )
+            self._append_imported_child_units(
+                legal_units=legal_units,
+                source_uri=source_uri,
+                parent=child,
+                parent_id=child_id,
+                parent_path=child_path,
+            )
+
+    def _unit_type_from_akoma_element(self, element: ET.Element) -> str | None:
+        local_name = self._local_name(element)
+        if local_name == "alinea":
+            return "alinea"
+        if local_name != "hcontainer":
+            return None
+        name = element.get("name")
+        if name == "item":
+            return "item"
+        if name == "subpoint":
+            return "subitem"
+        return None
 
     def _language_from_akoma(self, root: ET.Element) -> LanguageCode | None:
         language = self._find_first(root, "FRBRlanguage")

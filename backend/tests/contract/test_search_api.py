@@ -121,3 +121,35 @@ def test_search_matches_serbian_latin_diacritics(client, tmp_path):
     results = response.json()["results"]
     assert results
     assert "šume" in results[0]["metadata"]["matched_terms"]
+def test_search_uses_semantic_fallback_terms(client, tmp_path):
+    corpus_dir = tmp_path / "semantic"
+    corpus_dir.mkdir()
+    (corpus_dir / "pravilnik.txt").write_text(
+        "Pravilnik o gazdovanju\n\nClan 1.\nUpravljanje sumama vrsi se planski.",
+        encoding="utf-8",
+    )
+    corpus = client.post(
+        "/api/v1/corpora", json={"name": "Semantic fallback corpus"}
+    ).json()["corpus"]
+    client.post(
+        f"/api/v1/corpora/{corpus['corpus_id']}/import-folder",
+        json={
+            "corpus_id": corpus["corpus_id"],
+            "folder_uri": str(corpus_dir),
+        },
+    )
+
+    response = client.post(
+        "/api/v1/search/hybrid",
+        json={
+            "query": "gazdovanje sumama",
+            "top_k": 5,
+            "corpus_id": corpus["corpus_id"],
+        },
+    )
+
+    assert response.status_code == 200
+    results = response.json()["results"]
+    assert results
+    assert results[0]["metadata"]["retrieval_mode"] == "hybrid_deterministic"
+    assert results[0]["metadata"]["semantic_score"] > 0

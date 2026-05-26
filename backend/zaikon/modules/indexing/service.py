@@ -6,6 +6,7 @@ import re
 
 from zaikon.core.config import settings
 from zaikon.core.schemas import ModuleHealth
+from zaikon.modules.indexing.embeddings import deterministic_embedding
 from zaikon.modules.indexing.schemas import (
     BuildIndexesRequest,
     BuildIndexesResponse,
@@ -33,8 +34,12 @@ class IndexingService:
         ]
         document_types = Counter(document.document_type for document in request.documents)
         tokens = Counter()
+        vector_count = 0
         for unit in legal_units:
             tokens.update(_tokens(unit.get("content_text") or ""))
+            if unit.get("content_text"):
+                deterministic_embedding(unit.get("content_text") or "")
+                vector_count += 1
 
         resolved_count = 0
         missing_count = 0
@@ -69,7 +74,9 @@ class IndexingService:
                     "backend": settings.vector_backend,
                     "embedding_model": settings.embedding_model,
                     "embedding_dimensions": settings.embedding_dimensions,
-                    "status_note": "report_only_no_embeddings_computed",
+                    "fallback_embedding_dimensions": 64,
+                    "computed_vectors": vector_count,
+                    "status_note": "deterministic_fallback_embeddings_computed",
                 },
             ),
             structure_index_report=IndexReport(
