@@ -10,6 +10,7 @@ from zaikon.core.time import utc_now
 from zaikon.modules.canonical.schemas import CanonicalizeRequest
 from zaikon.modules.canonical.service import get_canonical_service
 from zaikon.modules.checkers.schemas import FindingRecord
+from zaikon.modules.checkers.service import get_definition_consistency_checker
 from zaikon.modules.checkers.service import get_reference_checker
 from zaikon.modules.documents.schemas import ClassifyDocumentRequest
 from zaikon.modules.documents.schemas import ExtractTextRequest
@@ -215,6 +216,12 @@ class DraftReviewService:
                 pipeline_run_id=pipeline_run_id,
                 references=references.references,
                 resolved_references=resolved.resolved_references,
+            )
+            findings.extend(
+                get_definition_consistency_checker().check(
+                    pipeline_run_id=pipeline_run_id,
+                    document=canonical.document,
+                )
             )
             retrieval_results = self._retrieve_related_corpus_units(
                 record=record,

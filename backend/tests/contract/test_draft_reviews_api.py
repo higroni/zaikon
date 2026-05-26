@@ -152,3 +152,28 @@ def test_draft_review_uses_selected_corpus_for_retrieval_artifact(client):
     assert {result["corpus_id"] for result in retrieval_results} == {
         corpus["corpus_id"]
     }
+
+
+def test_draft_review_reports_definition_conflicts(client):
+    create_response = client.post(
+        "/api/v1/draft-reviews",
+        json={
+            "title": "Nacrt sa definicijama",
+            "content_text": (
+                "NACRT\n\n"
+                "Clan 1.\n"
+                "Ministarstvo nadlezno za sume (u daljem tekstu: Ministarstvo).\n\n"
+                "Clan 2.\n"
+                "Ministarstvo nadlezno za finansije (u daljem tekstu: Ministarstvo).\n"
+            ),
+        },
+    )
+    pipeline_run_id = create_response.json()["draft_review"]["pipeline_run_id"]
+
+    run_response = client.post(f"/api/v1/draft-reviews/{pipeline_run_id}/run")
+
+    assert run_response.status_code == 200
+    finding_types = {
+        finding["finding_type"] for finding in run_response.json()["findings"]
+    }
+    assert "definition_conflict" in finding_types

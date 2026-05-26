@@ -152,6 +152,10 @@ ReferenceChecker.check(
     references: list[LegalReferenceRecord],
     resolved_references: list[ResolvedReferenceRecord],
 ) -> list[FindingRecord]
+DefinitionConsistencyChecker.check(
+    pipeline_run_id: UUID,
+    document: CanonicalDocument,
+) -> list[FindingRecord]
 ```
 
 Initial schema names:
