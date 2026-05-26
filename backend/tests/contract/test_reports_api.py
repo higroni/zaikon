@@ -154,3 +154,4 @@ def test_report_includes_related_legal_units_from_finding_evidence(client):
     content_text = report_response.json()["report"]["content_text"]
     assert "Povezane pravne jedinice:" in content_text
     assert "score:" in content_text
+    assert "Citat:" in content_text

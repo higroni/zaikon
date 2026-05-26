@@ -129,6 +129,9 @@ class ReportService:
                         f"(score: {related.get('score')})",
                         style="List Bullet",
                     )
+                    quote = (related.get("quote") or "").strip()
+                    if quote:
+                        document.add_paragraph(f"Citat: {quote}")
 
         path = self.download_dir / f"{report.report_id}.docx"
         document.save(path)
@@ -214,6 +217,9 @@ class ReportService:
                         f"{related.get('path')} "
                         f"(score: {related.get('score')})"
                     )
+                    quote = (related.get("quote") or "").strip()
+                    if quote:
+                        lines.append(f"  - Citat: {quote}")
                 lines.append("")
         return "\n".join(lines).strip() + "\n"
 
