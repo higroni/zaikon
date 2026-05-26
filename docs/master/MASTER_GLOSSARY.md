@@ -16,6 +16,8 @@ database fields, APIs, or UI without updating this file first.
 - `paragraph`: a legal unit within an article.
 - `item`: a legal unit within a paragraph; Serbian inline markers such as `1)`
   are parsed below the containing paragraph.
+- `alinea`: a legal unit within a paragraph, commonly introduced by a dash in
+  extracted Serbian legal text.
 - `reference`: a detected citation or legal reference.
 - `resolved_reference`: a reference linked to a target legal unit.
 - `index_job`: a job that creates or refreshes indexes.

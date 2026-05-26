@@ -149,3 +149,49 @@ def test_canonical_service_exports_subitems_as_akoma_subpoints():
     assert subpoint is not None
     assert subpoint.attrib["eId"] == "article_1_paragraph_1_item_1_subitem_1"
     assert subpoint.find("akn:content/akn:p", namespace).text == "Prvi poduslov."
+
+
+def test_canonical_service_exports_alineas_as_akoma_alineas():
+    article = ParsedLegalUnit(
+        unit_type="article",
+        number="1",
+        ordinal=1,
+        path="article:1",
+        content_text="",
+    )
+    paragraph = ParsedLegalUnit(
+        parent_legal_unit_id=article.legal_unit_id,
+        unit_type="paragraph",
+        number="1",
+        ordinal=1,
+        path="article:1/paragraph:1",
+        content_text="",
+    )
+    alinea = ParsedLegalUnit(
+        parent_legal_unit_id=paragraph.legal_unit_id,
+        unit_type="alinea",
+        number="1",
+        ordinal=1,
+        path="article:1/paragraph:1/alinea:1",
+        content_text="Prva mera.",
+    )
+    parsed = ParsedLegalDocument(
+        source_uri="file:///tmp/zakon.txt",
+        filename="zakon.txt",
+        document_type="law",
+        title="Zakon o alinejama",
+        legal_units=[article, paragraph, alinea],
+    )
+    service = CanonicalService()
+    canonical = service.to_canonical_json(CanonicalizeRequest(document=parsed))
+
+    response = service.export_akoma_ntoso(
+        ExportAkomaNtosoRequest(document=canonical.document)
+    )
+
+    root = ET.fromstring(response.xml_text)
+    namespace = {"akn": "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"}
+    alinea_node = root.find(".//akn:alinea", namespace)
+    assert alinea_node is not None
+    assert alinea_node.attrib["eId"] == "article_1_paragraph_1_alinea_1"
+    assert alinea_node.find("akn:content/akn:p", namespace).text == "Prva mera."

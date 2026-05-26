@@ -34,6 +34,7 @@ Jedini pasus drugog clana.
         "paragraph_count": 3,
         "item_count": 0,
         "subitem_count": 0,
+        "alinea_count": 0,
     }
 
     articles = [unit for unit in document.legal_units if unit.unit_type == "article"]
@@ -161,3 +162,34 @@ Uslovi su: 1) prva tacka sadrzi (1) prvi uslov; (2) drugi uslov; 2) druga tacka.
     assert subitems[0].parent_legal_unit_id == items[0].legal_unit_id
     assert subitems[0].path == "article:1/paragraph:1/item:1/subitem:1"
     assert subitems[1].content_text == "drugi uslov;"
+
+
+def test_legal_parser_extracts_alineas_inside_article_paragraph():
+    content_text = """Zakon o alinejama
+
+Clan 1.
+Mere obuhvataju:
+- prvu meru;
+- drugu meru.
+"""
+
+    response = LegalParserService().parse_legal_structure(
+        ParseLegalStructureRequest(
+            source_uri="file:///tmp/zakon.txt",
+            filename="zakon.txt",
+            content_text=content_text,
+            document_type="law",
+        )
+    )
+
+    document = response.document
+    paragraphs = [
+        unit for unit in document.legal_units if unit.unit_type == "paragraph"
+    ]
+    alineas = [unit for unit in document.legal_units if unit.unit_type == "alinea"]
+
+    assert document.metadata["alinea_count"] == 2
+    assert [alinea.number for alinea in alineas] == ["1", "2"]
+    assert alineas[0].parent_legal_unit_id == paragraphs[0].legal_unit_id
+    assert alineas[0].path == "article:1/paragraph:1/alinea:1"
+    assert alineas[1].content_text == "drugu meru."

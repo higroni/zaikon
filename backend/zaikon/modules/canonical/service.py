@@ -163,6 +163,8 @@ class CanonicalService:
             return "article"
         if unit_type == "paragraph":
             return "paragraph"
+        if unit_type == "alinea":
+            return "alinea"
         return "hcontainer"
 
     def _hcontainer_name_for_unit(self, unit_type: str | None) -> str | None:

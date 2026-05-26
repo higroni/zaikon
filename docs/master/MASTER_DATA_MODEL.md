@@ -243,6 +243,8 @@ Allowed hierarchy for Serbian Akoma export:
 
 Parser MVP extracts inline Serbian item markers such as `1) ... 2) ...` as
 internal `item` legal units below the containing paragraph.
+It also extracts inline subitem markers such as `(1) ... (2) ...` below an item
+and alinea markers such as `- ...` below a paragraph.
 
 Akoma FRBR export naming:
 

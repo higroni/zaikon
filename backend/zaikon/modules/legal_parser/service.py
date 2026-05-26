@@ -40,6 +40,7 @@ _INLINE_SUBITEM_RE = re.compile(
     r"(?:^|\s)\((\d+[a-z]?)\)\s+(.+?)(?=\s+\(\d+[a-z]?\)\s+|$)",
     re.IGNORECASE | re.DOTALL,
 )
+_ALINEA_RE = re.compile(r"(?:^|\s)[-\u2013]\s+(.+?)(?=\s+[-\u2013]\s+|$)", re.DOTALL)
 
 
 def _fold_serbian_latin(value: str) -> str:
@@ -131,6 +132,12 @@ class LegalParserService:
                         paragraph_unit=paragraph_unit,
                     )
                 )
+                legal_units.extend(
+                    self._parse_alineas(
+                        paragraph_text=paragraph_text,
+                        paragraph_unit=paragraph_unit,
+                    )
+                )
 
         if not article_markers:
             legal_units.extend(self._parse_numbered_items(lines))
@@ -157,6 +164,9 @@ class LegalParserService:
                 ),
                 "subitem_count": sum(
                     1 for unit in legal_units if unit.unit_type == "subitem"
+                ),
+                "alinea_count": sum(
+                    1 for unit in legal_units if unit.unit_type == "alinea"
                 ),
             },
         )
@@ -274,6 +284,28 @@ class LegalParserService:
                 )
             )
         return subitems
+
+    def _parse_alineas(
+        self,
+        paragraph_text: str,
+        paragraph_unit: ParsedLegalUnit,
+    ) -> list[ParsedLegalUnit]:
+        alineas = []
+        for alinea_ordinal, match in enumerate(
+            _ALINEA_RE.finditer(paragraph_text), start=1
+        ):
+            alineas.append(
+                ParsedLegalUnit(
+                    parent_legal_unit_id=paragraph_unit.legal_unit_id,
+                    unit_type="alinea",
+                    number=str(alinea_ordinal),
+                    ordinal=alinea_ordinal,
+                    heading=None,
+                    content_text=match.group(1).strip(),
+                    path=f"{paragraph_unit.path}/alinea:{alinea_ordinal}",
+                )
+            )
+        return alineas
 
     def _title_before_first_article(
         self, lines: list[str], article_markers: list[tuple[int, str]]
