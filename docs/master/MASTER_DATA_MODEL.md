@@ -150,6 +150,7 @@ format, not the primary runtime representation.
 ```json
 {
   "document_id": "uuid",
+  "document_version_id": "uuid",
   "corpus_id": "uuid",
   "source_file_id": "uuid",
   "document_type": "law",
@@ -190,6 +191,10 @@ Allowed `document_type` for Serbian MVP:
   "canonical_json": {}
 }
 ```
+
+For MVP imports, `document_version_id` is generated deterministically from the
+stored `document_id`, `version_label` is `imported`, and temporal validity fields
+may be absent until official gazette metadata extraction is implemented.
 
 ### LegalUnit
 

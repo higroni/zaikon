@@ -59,7 +59,9 @@ classify_document(request: ClassifyDocumentRequest) -> ClassifyDocumentResponse
 ```
 
 Document catalog endpoints support optional `corpus_id` filtering when listing
-stored documents.
+stored documents. Imported document summaries expose `document_version_id`, and
+`GET /api/v1/document-versions/{document_version_id}` returns the canonical JSON
+for that stored version.
 
 Initial schema names:
 

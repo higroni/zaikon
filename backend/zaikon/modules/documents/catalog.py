@@ -11,6 +11,7 @@ from zaikon.core.config import settings
 
 class DocumentSummary(BaseModel):
     document_id: UUID
+    document_version_id: UUID
     corpus_id: UUID | None = None
     source_uri: str
     filename: str
@@ -21,6 +22,18 @@ class DocumentSummary(BaseModel):
 
 
 class DocumentDetail(DocumentSummary):
+    canonical_json: dict = Field(default_factory=dict)
+
+
+class DocumentVersionRecord(BaseModel):
+    document_version_id: UUID
+    document_id: UUID
+    corpus_id: UUID | None = None
+    version_label: str
+    source_uri: str
+    filename: str
+    document_type: str
+    title: str | None = None
     canonical_json: dict = Field(default_factory=dict)
 
 
@@ -60,7 +73,7 @@ class DocumentCatalogService:
 
     def get_document(self, document_id: UUID) -> DocumentDetail | None:
         for import_job_id, record, canonical_document in self._iter_document_records():
-            if str(document_id) != record.get("document_id"):
+            if str(document_id) != self._document_id(record):
                 continue
             summary = self._summary_from_record(import_job_id, record)
             return DocumentDetail(
@@ -69,12 +82,29 @@ class DocumentCatalogService:
             )
         return None
 
+    def get_document_version(
+        self, document_version_id: UUID
+    ) -> DocumentVersionRecord | None:
+        for _, record, canonical_document in self._iter_document_records():
+            if str(document_version_id) != self._document_version_id(record):
+                continue
+            document_id = self._document_id(record)
+            return DocumentVersionRecord(
+                document_version_id=document_version_id,
+                document_id=UUID(document_id),
+                corpus_id=UUID(record["corpus_id"]) if record.get("corpus_id") else None,
+                version_label=record.get("version_label") or "imported",
+                source_uri=record["source_uri"],
+                filename=record["filename"],
+                document_type=record["document_type"],
+                title=record.get("title"),
+                canonical_json=canonical_document.get("canonical_json", {}),
+            )
+        return None
+
     def get_legal_unit(self, legal_unit_id: str) -> LegalUnitRecord | None:
         for import_job_id, record, canonical_document in self._iter_document_records():
-            document_id = UUID(
-                record.get("document_id")
-                or str(uuid5(NAMESPACE_URL, record["source_uri"]))
-            )
+            document_id = UUID(self._document_id(record))
             for unit in canonical_document.get("canonical_json", {}).get(
                 "legal_units", []
             ):
@@ -121,11 +151,10 @@ class DocumentCatalogService:
                 yield UUID(import_job_dir.name), record, canonical_document
 
     def _summary_from_record(self, import_job_id: UUID, record: dict) -> DocumentSummary:
-        document_id = record.get("document_id") or str(
-            uuid5(NAMESPACE_URL, record["source_uri"])
-        )
+        document_id = self._document_id(record)
         return DocumentSummary(
             document_id=UUID(document_id),
+            document_version_id=UUID(self._document_version_id(record)),
             corpus_id=UUID(record["corpus_id"]) if record.get("corpus_id") else None,
             source_uri=record["source_uri"],
             filename=record["filename"],
@@ -133,6 +162,14 @@ class DocumentCatalogService:
             title=record.get("title"),
             canonical_unit_count=record.get("canonical_unit_count", 0),
             import_job_id=import_job_id,
+        )
+
+    def _document_id(self, record: dict) -> str:
+        return record.get("document_id") or str(uuid5(NAMESPACE_URL, record["source_uri"]))
+
+    def _document_version_id(self, record: dict) -> str:
+        return record.get("document_version_id") or str(
+            uuid5(NAMESPACE_URL, f"{self._document_id(record)}#imported")
         )
 
     def _load_artifact_payload(self, path: Path):

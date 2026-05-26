@@ -45,6 +45,17 @@ def test_document_catalog_endpoints_after_import(client):
     assert legal_unit["filename"] == "zakon.txt"
     assert legal_unit["document_type"] == "law"
 
+    document_version_id = document["document_version_id"]
+    version_response = client.get(
+        f"/api/v1/document-versions/{document_version_id}"
+    )
+
+    assert version_response.status_code == 200
+    version = version_response.json()
+    assert version["document_id"] == document_id
+    assert version["document_version_id"] == document_version_id
+    assert version["canonical_json"]["schema_version"] == "0.1"
+
     akoma_response = client.get(f"/api/v1/documents/{document_id}/akoma-ntoso")
 
     assert akoma_response.status_code == 200

@@ -11,6 +11,7 @@ from zaikon.modules.documents.catalog import (
     DocumentCatalogService,
     DocumentDetail,
     DocumentSummary,
+    DocumentVersionRecord,
     LegalUnitRecord,
 )
 
@@ -28,6 +29,19 @@ def get_document(document_id: UUID) -> DocumentDetail:
     if document is None:
         raise HTTPException(status_code=404, detail="Document not found")
     return document
+
+
+@router.get(
+    "/document-versions/{document_version_id}",
+    response_model=DocumentVersionRecord,
+)
+def get_document_version(document_version_id: UUID) -> DocumentVersionRecord:
+    document_version = DocumentCatalogService().get_document_version(
+        document_version_id
+    )
+    if document_version is None:
+        raise HTTPException(status_code=404, detail="Document version not found")
+    return document_version
 
 
 @router.get("/documents/{document_id}/akoma-ntoso")
