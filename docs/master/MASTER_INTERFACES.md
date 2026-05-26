@@ -192,5 +192,12 @@ suggest_revision(request: SuggestRevisionRequest) -> SuggestRevisionResponse
 
 ```python
 generate_report(request: GenerateReportRequest) -> GenerateReportResponse
+get_report(report_id: UUID) -> ReportRecord | None
 ```
+
+Initial schema names:
+
+- `GenerateReportRequest`
+- `GenerateReportResponse`
+- `ReportRecord`
 

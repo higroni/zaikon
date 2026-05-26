@@ -9,6 +9,7 @@ from zaikon.api.routers.draft_reviews import router as draft_reviews_router
 from zaikon.api.routers.findings import router as findings_router
 from zaikon.api.routers.health import router as health_router
 from zaikon.api.routers.pipeline import router as pipeline_router
+from zaikon.api.routers.reports import router as reports_router
 from zaikon.api.routers.search import router as search_router
 from zaikon.core.config import settings
 
@@ -35,6 +36,7 @@ def create_app() -> FastAPI:
     app.include_router(findings_router, prefix="/api/v1")
     app.include_router(import_jobs_router, prefix="/api/v1")
     app.include_router(pipeline_router, prefix="/api/v1")
+    app.include_router(reports_router, prefix="/api/v1")
     app.include_router(search_router, prefix="/api/v1")
     return app
 

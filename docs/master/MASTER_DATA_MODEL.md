@@ -376,3 +376,24 @@ Allowed `finding_type` for MVP:
 }
 ```
 
+### Report
+
+```json
+{
+  "report_id": "uuid",
+  "pipeline_run_id": "uuid",
+  "report_format": "markdown",
+  "title": "Izvestaj - Nacrt zakona",
+  "finding_count": 1,
+  "content_text": "# Izvestaj ...",
+  "metadata": {
+    "draft_review_status": "completed",
+    "document_type": "law"
+  },
+  "created_at": "datetime"
+}
+```
+
+MVP reports are stored Markdown artifacts generated from draft review findings.
+DOCX/PDF remain later export formats.
+

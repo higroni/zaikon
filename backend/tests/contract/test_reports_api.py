@@ -1,0 +1,39 @@
+"""Contract tests for report endpoints."""
+
+
+def test_generate_and_download_markdown_report(client):
+    create_response = client.post(
+        "/api/v1/draft-reviews",
+        json={
+            "title": "Nacrt za izvestaj",
+            "content_text": (
+                "NACRT ZAKONA O IZVESTAJU\n\n"
+                "Clan 1.\n"
+                "Ovaj nacrt upucuje na clan 99.\n"
+            ),
+        },
+    )
+    pipeline_run_id = create_response.json()["draft_review"]["pipeline_run_id"]
+    client.post(f"/api/v1/draft-reviews/{pipeline_run_id}/run")
+
+    report_response = client.post(
+        "/api/v1/reports",
+        json={"pipeline_run_id": pipeline_run_id, "report_format": "markdown"},
+    )
+
+    assert report_response.status_code == 200
+    report = report_response.json()["report"]
+    assert report["pipeline_run_id"] == pipeline_run_id
+    assert report["finding_count"] == 1
+    assert "reference_missing" in report["content_text"]
+
+    get_response = client.get(f"/api/v1/reports/{report['report_id']}")
+
+    assert get_response.status_code == 200
+    assert get_response.json()["report_id"] == report["report_id"]
+
+    download_response = client.get(f"/api/v1/reports/{report['report_id']}/download")
+
+    assert download_response.status_code == 200
+    assert download_response.headers["content-type"].startswith("text/markdown")
+    assert "Izvestaj - Nacrt za izvestaj" in download_response.text
