@@ -39,9 +39,27 @@ def test_create_corpus_and_import_folder_contract(client):
         "unsupported_files": 1,
         "extracted_documents": 3,
         "failed_files": 0,
+        "document_types": {
+            "law": 1,
+            "regulation": 1,
+            "rulebook": 1,
+        },
         "stored_documents": 3,
     }
     assert body["report"]["source_files"][0]["source_uri"].startswith("file://")
+    completed_source_files = [
+        item
+        for item in body["report"]["source_files"]
+        if item["import_status"] == "completed"
+    ]
+    assert {item["document_type"] for item in completed_source_files} == {
+        "law",
+        "regulation",
+        "rulebook",
+    }
+    assert all(
+        item["document_type_confidence"] >= 0.55 for item in completed_source_files
+    )
     assert "canonical_documents" in body["report"]["artifact_names"]
     assert set(body["report"]["index_reports"]) == {
         "keyword",

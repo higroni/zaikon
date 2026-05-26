@@ -62,6 +62,8 @@ class SourceFileRecord(BaseModel):
     content_hash: str
     size_bytes: int
     import_status: str = JobStatus.pending.value
+    document_type: str | None = None
+    document_type_confidence: float | None = None
     error_message: str | None = None
     created_at: datetime = Field(default_factory=utc_now)
 
@@ -85,7 +87,7 @@ class ImportReport(BaseModel):
     status: JobStatus
     source_files: list[SourceFileRecord] = Field(default_factory=list)
     warnings: list[dict[str, Any]] = Field(default_factory=list)
-    summary: dict[str, int] = Field(default_factory=dict)
+    summary: dict[str, Any] = Field(default_factory=dict)
     index_reports: dict[str, Any] = Field(default_factory=dict)
     storage_report: dict[str, Any] | None = None
     pipeline_run_id: str | None = None

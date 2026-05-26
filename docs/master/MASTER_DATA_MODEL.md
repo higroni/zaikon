@@ -36,6 +36,8 @@ format, not the primary runtime representation.
   "content_hash": "sha256",
   "size_bytes": 12345,
   "import_status": "completed",
+  "document_type": "law",
+  "document_type_confidence": 0.95,
   "error_message": null,
   "created_at": "datetime"
 }
@@ -71,7 +73,11 @@ format, not the primary runtime representation.
     "total_files": 3,
     "supported_files": 2,
     "unsupported_files": 1,
-    "duplicate_files": 0
+    "duplicate_files": 0,
+    "document_types": {
+      "law": 1,
+      "rulebook": 1
+    }
   }
 }
 ```

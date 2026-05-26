@@ -5,6 +5,11 @@
     "unsupported_files": 1,
     "extracted_documents": 3,
     "failed_files": 0,
+    "document_types": {
+      "law": 1,
+      "regulation": 1,
+      "rulebook": 1
+    },
     "stored_documents": 3
   },
   "supported_filenames": ["pravilnik.docx", "uredba.pdf", "zakon.txt"],

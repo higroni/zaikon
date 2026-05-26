@@ -79,6 +79,12 @@ def test_corpus_folder_import_chain_matches_regression_fixture():
     assert identified_types["zakon.txt"] == "law"
     assert identified_types["uredba.pdf"] == "regulation"
     assert identified_types["pravilnik.docx"] == "rulebook"
+    source_file_types = {
+        item["filename"]: item.get("document_type")
+        for item in report["source_files"]
+        if item["import_status"] == "completed"
+    }
+    assert source_file_types == identified_types
 
     parsed_documents = context.get_artifact("parsed_legal_documents").payload
     parsed_by_filename = {document["filename"]: document for document in parsed_documents}

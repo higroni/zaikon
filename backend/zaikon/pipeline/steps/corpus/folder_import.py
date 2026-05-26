@@ -370,13 +370,15 @@ class NormalizeTextStep(PipelineStep):
 
 class IdentifyLegalDocumentsStep(PipelineStep):
     step_name = "identify_legal_documents"
-    requires = ("extracted_documents",)
-    produces = ("identified_documents", "extracted_documents")
+    requires = ("extracted_documents", "import_report")
+    produces = ("identified_documents", "extracted_documents", "import_report")
 
     def run(self, context: PipelineContext) -> PipelineContext:
         extracted = context.get_artifact("extracted_documents")
+        import_report = context.get_artifact("import_report")
         document_service = get_document_service()
         identified_documents = []
+        classification_by_source_uri = {}
 
         for document in extracted.payload:
             classification = document_service.classify_document(
@@ -397,6 +399,7 @@ class IdentifyLegalDocumentsStep(PipelineStep):
                     },
                 }
             )
+            classification_by_source_uri[document["source_uri"]] = classification
 
         context.add_artifact(
             self.artifact(
@@ -412,12 +415,49 @@ class IdentifyLegalDocumentsStep(PipelineStep):
                 payload=identified_documents,
             )
         )
+        context.add_artifact(
+            self.artifact(
+                name="import_report",
+                artifact_type="import_report",
+                payload={
+                    **import_report.payload,
+                    "summary": {
+                        **import_report.payload["summary"],
+                        "document_types": self._document_type_counts(
+                            classification_by_source_uri.values()
+                        ),
+                    },
+                    "source_files": [
+                        {
+                            **source_file,
+                            "document_type": classification_by_source_uri[
+                                source_file["source_uri"]
+                            ].document_type,
+                            "document_type_confidence": classification_by_source_uri[
+                                source_file["source_uri"]
+                            ].confidence,
+                        }
+                        if source_file["source_uri"] in classification_by_source_uri
+                        else source_file
+                        for source_file in import_report.payload["source_files"]
+                    ],
+                },
+            )
+        )
         context.log(
             "INFO",
             f"Identified {len(identified_documents)} legal documents",
             self.step_name,
         )
         return context
+
+    def _document_type_counts(self, classifications) -> dict[str, int]:
+        counts: dict[str, int] = {}
+        for classification in classifications:
+            counts[classification.document_type] = (
+                counts.get(classification.document_type, 0) + 1
+            )
+        return counts
 
 
 class ParseLegalStructureStep(PipelineStep):
