@@ -26,6 +26,20 @@ _FOLD_TRANSLATION = str.maketrans(
         "Ž": "Z",
     }
 )
+_FOLD_TRANSLATION = str.maketrans(
+    {
+        "č": "c",
+        "ć": "c",
+        "š": "s",
+        "đ": "dj",
+        "ž": "z",
+        "Č": "C",
+        "Ć": "C",
+        "Š": "S",
+        "Đ": "Dj",
+        "Ž": "Z",
+    }
+)
 _ARTICLE_RE = re.compile(r"^clan\s+(\d+[a-z]?)\.?$", re.IGNORECASE)
 _ROMAN_SECTION_RE = re.compile(
     r"^([IVXLCDM]+)\.\s+(.+)$",

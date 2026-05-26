@@ -79,6 +79,23 @@ Ovim pravilnikom uredjuje se primer.
     assert document.metadata["section_count"] == 1
 
 
+def test_legal_parser_extracts_real_serbian_latin_article_marker():
+    response = LegalParserService().parse_legal_structure(
+        ParseLegalStructureRequest(
+            source_uri="file:///tmp/zakon.txt",
+            filename="zakon.txt",
+            content_text="Zakon o šumama\n\nČlan 1.\nŠume su dobro od interesa.",
+            document_type="law",
+        )
+    )
+
+    document = response.document
+    articles = [unit for unit in document.legal_units if unit.unit_type == "article"]
+
+    assert document.metadata["article_count"] == 1
+    assert articles[0].number == "1"
+
+
 def test_legal_parser_extracts_numbered_items_when_document_has_no_articles():
     content_text = """NAREDBA
 o merama zastite
