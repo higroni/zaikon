@@ -36,6 +36,8 @@ Base path: `/api/v1`
 - `GET /api/v1/draft-reviews`
 - `GET /api/v1/draft-reviews/{pipeline_run_id}`
 - `GET /api/v1/draft-reviews/{pipeline_run_id}/akoma-ntoso`
+- `GET /api/v1/draft-reviews/{pipeline_run_id}/artifacts`
+- `GET /api/v1/draft-reviews/{pipeline_run_id}/artifacts/{artifact_name}`
 - `POST /api/v1/draft-reviews/{pipeline_run_id}/run`
 - `GET /api/v1/draft-reviews/{pipeline_run_id}/findings`
 

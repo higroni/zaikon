@@ -146,6 +146,17 @@ class DraftReviewService:
         )
         return response.xml_text
 
+    def list_artifacts(self, pipeline_run_id: UUID) -> list[str] | None:
+        if pipeline_run_id not in self._records:
+            return None
+        return sorted(self._load_artifacts(pipeline_run_id))
+
+    def get_artifact(self, pipeline_run_id: UUID, artifact_name: str):
+        if pipeline_run_id not in self._records:
+            return None
+        artifacts = self._load_artifacts(pipeline_run_id)
+        return artifacts.get(artifact_name)
+
     def list_findings(self, pipeline_run_id: UUID) -> list[FindingRecord]:
         path = self.finding_dir / f"{pipeline_run_id}.json"
         payload = self._read_json(path, [])

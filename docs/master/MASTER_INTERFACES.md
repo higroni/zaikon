@@ -176,6 +176,8 @@ get_draft_review(pipeline_run_id: UUID) -> DraftReviewDetail | None
 run_draft_review(pipeline_run_id: UUID) -> RunDraftReviewResponse
 list_findings(pipeline_run_id: UUID) -> list[FindingRecord]
 export_akoma_ntoso(pipeline_run_id: UUID) -> str | None
+list_artifacts(pipeline_run_id: UUID) -> list[str] | None
+get_artifact(pipeline_run_id: UUID, artifact_name: str) -> Any
 ```
 
 Initial schema names:

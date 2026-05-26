@@ -196,3 +196,29 @@ def test_draft_review_can_export_akoma_ntoso_after_run(client):
     assert response.headers["content-type"].startswith("application/xml")
     assert "<akomaNtoso" in response.text
     assert "<FRBRlanguage language=\"srp\"" in response.text
+
+
+def test_draft_review_artifact_endpoints_after_run(client):
+    create_response = client.post(
+        "/api/v1/draft-reviews",
+        json={
+            "title": "Nacrt sa artefaktima",
+            "content_text": "NACRT\n\nClan 1.\nOvim nacrtom uredjuje se primer.",
+        },
+    )
+    pipeline_run_id = create_response.json()["draft_review"]["pipeline_run_id"]
+    client.post(f"/api/v1/draft-reviews/{pipeline_run_id}/run")
+
+    list_response = client.get(f"/api/v1/draft-reviews/{pipeline_run_id}/artifacts")
+
+    assert list_response.status_code == 200
+    artifact_names = list_response.json()
+    assert "canonical_document" in artifact_names
+    assert "parsed_document" in artifact_names
+
+    artifact_response = client.get(
+        f"/api/v1/draft-reviews/{pipeline_run_id}/artifacts/canonical_document"
+    )
+
+    assert artifact_response.status_code == 200
+    assert artifact_response.json()["canonical_json"]["schema_version"] == "0.1"
