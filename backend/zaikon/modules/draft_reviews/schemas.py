@@ -17,6 +17,14 @@ class CreateDraftReviewRequest(BaseModel):
     selected_corpus_id: UUID | None = None
 
 
+class CreateDraftReviewFromFileRequest(BaseModel):
+    source_uri: str
+    title: str | None = None
+    file_type: str | None = None
+    language_code: LanguageCode = LanguageCode.sr
+    selected_corpus_id: UUID | None = None
+
+
 class DraftReviewRecord(BaseModel):
     pipeline_run_id: UUID = Field(default_factory=uuid4)
     title: str
@@ -43,4 +51,3 @@ class DraftReviewDetail(BaseModel):
     content_text: str
     findings: list[FindingRecord] = Field(default_factory=list)
     artifacts: dict[str, Any] = Field(default_factory=dict)
-

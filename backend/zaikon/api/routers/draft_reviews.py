@@ -6,6 +6,7 @@ from fastapi import APIRouter, HTTPException
 
 from zaikon.modules.checkers.schemas import FindingRecord
 from zaikon.modules.draft_reviews.schemas import (
+    CreateDraftReviewFromFileRequest,
     CreateDraftReviewRequest,
     CreateDraftReviewResponse,
     DraftReviewDetail,
@@ -22,6 +23,18 @@ def create_draft_review(
     request: CreateDraftReviewRequest,
 ) -> CreateDraftReviewResponse:
     return get_draft_review_service().create_draft_review(request)
+
+
+@router.post("/from-file", response_model=CreateDraftReviewResponse)
+def create_draft_review_from_file(
+    request: CreateDraftReviewFromFileRequest,
+) -> CreateDraftReviewResponse:
+    try:
+        return get_draft_review_service().create_draft_review_from_file(request)
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
 
 
 @router.get("", response_model=list[DraftReviewRecord])
@@ -51,4 +64,3 @@ def list_findings(pipeline_run_id: UUID) -> list[FindingRecord]:
     if detail is None:
         raise HTTPException(status_code=404, detail="Draft review not found")
     return detail.findings
-

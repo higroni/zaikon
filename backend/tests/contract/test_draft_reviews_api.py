@@ -1,5 +1,16 @@
 """Contract tests for draft review endpoints."""
 
+from pathlib import Path
+
+
+FIXTURE_DIR = (
+    Path(__file__).parents[1]
+    / "regression"
+    / "fixtures"
+    / "corpus_folder_import"
+    / "small_txt_corpus"
+)
+
 
 def test_draft_review_run_reports_missing_internal_reference(client):
     create_response = client.post(
@@ -59,3 +70,41 @@ def test_draft_review_normalizes_cyrillic_before_reference_check(client):
     assert len(findings) == 1
     assert findings[0]["finding_type"] == "reference_missing"
     assert findings[0]["evidence"]["target_article_number"] == "99"
+
+
+def test_draft_review_can_be_created_from_docx_file(client):
+    create_response = client.post(
+        "/api/v1/draft-reviews/from-file",
+        json={"source_uri": str(FIXTURE_DIR / "pravilnik.docx")},
+    )
+
+    assert create_response.status_code == 200
+    draft_review = create_response.json()["draft_review"]
+    assert draft_review["title"] == "pravilnik"
+    assert draft_review["metadata"]["input_type"] == "file"
+    assert draft_review["metadata"]["file_type"] == "docx"
+
+    detail_response = client.get(
+        f"/api/v1/draft-reviews/{draft_review['pipeline_run_id']}"
+    )
+
+    assert detail_response.status_code == 200
+    assert "Pravilnik" in detail_response.json()["content_text"]
+
+
+def test_draft_review_can_be_created_and_run_from_pdf_file(client):
+    create_response = client.post(
+        "/api/v1/draft-reviews/from-file",
+        json={"source_uri": str(FIXTURE_DIR / "uredba.pdf")},
+    )
+
+    assert create_response.status_code == 200
+    pipeline_run_id = create_response.json()["draft_review"]["pipeline_run_id"]
+
+    run_response = client.post(f"/api/v1/draft-reviews/{pipeline_run_id}/run")
+
+    assert run_response.status_code == 200
+    payload = run_response.json()
+    assert payload["draft_review"]["status"] == "completed"
+    assert payload["draft_review"]["metadata"]["input_type"] == "file"
+    assert payload["draft_review"]["metadata"]["file_type"] == "pdf"

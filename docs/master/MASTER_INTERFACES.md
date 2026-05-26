@@ -160,6 +160,7 @@ Initial schema names:
 
 ```python
 create_draft_review(request: CreateDraftReviewRequest) -> CreateDraftReviewResponse
+create_draft_review_from_file(request: CreateDraftReviewFromFileRequest) -> CreateDraftReviewResponse
 list_draft_reviews() -> list[DraftReviewRecord]
 get_draft_review(pipeline_run_id: UUID) -> DraftReviewDetail | None
 run_draft_review(pipeline_run_id: UUID) -> RunDraftReviewResponse
@@ -169,6 +170,7 @@ list_findings(pipeline_run_id: UUID) -> list[FindingRecord]
 Initial schema names:
 
 - `CreateDraftReviewRequest`
+- `CreateDraftReviewFromFileRequest`
 - `CreateDraftReviewResponse`
 - `DraftReviewRecord`
 - `DraftReviewDetail`

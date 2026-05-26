@@ -326,6 +326,11 @@ MVP draft reviews accept draft text, normalize Serbian Cyrillic to Latin when
 enabled, parse the legal structure, canonicalize it, extract and resolve
 references, then store review findings and run artifacts.
 
+Draft reviews can also be created from supported local files (`txt`, `pdf`,
+`docx`) through the same extraction service used by corpus imports. The record
+metadata stores `input_type`, `source_uri`, `filename`, `file_type`, and
+extraction metadata when the draft originates from a file.
+
 ### Finding
 
 ```json

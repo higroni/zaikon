@@ -12,8 +12,11 @@ from zaikon.modules.canonical.service import get_canonical_service
 from zaikon.modules.checkers.schemas import FindingRecord
 from zaikon.modules.checkers.service import get_reference_checker
 from zaikon.modules.documents.schemas import ClassifyDocumentRequest
+from zaikon.modules.documents.schemas import ExtractTextRequest
 from zaikon.modules.documents.service import get_document_service
+from zaikon.modules.documents.service import path_from_uri
 from zaikon.modules.draft_reviews.schemas import (
+    CreateDraftReviewFromFileRequest,
     CreateDraftReviewRequest,
     CreateDraftReviewResponse,
     DraftReviewDetail,
@@ -48,15 +51,63 @@ class DraftReviewService:
     def create_draft_review(
         self, request: CreateDraftReviewRequest
     ) -> CreateDraftReviewResponse:
-        record = DraftReviewRecord(
+        return self._create_record(
             title=request.title,
+            content_text=request.content_text,
             language_code=request.language_code,
             selected_corpus_id=request.selected_corpus_id,
+            metadata={"input_type": "text"},
+        )
+
+    def create_draft_review_from_file(
+        self, request: CreateDraftReviewFromFileRequest
+    ) -> CreateDraftReviewResponse:
+        path = path_from_uri(request.source_uri)
+        file_type = (request.file_type or path.suffix.lstrip(".")).lower()
+        if file_type not in {"txt", "pdf", "docx"}:
+            raise ValueError(f"Unsupported draft file_type: {file_type}")
+
+        extracted = get_document_service().extract_text(
+            ExtractTextRequest(
+                source_uri=request.source_uri,
+                filename=path.name,
+                file_type=file_type,
+                language_code=request.language_code,
+            )
+        )
+        return self._create_record(
+            title=request.title or path.stem,
+            content_text=extracted.document.content_text,
+            language_code=request.language_code,
+            selected_corpus_id=request.selected_corpus_id,
+            metadata={
+                "input_type": "file",
+                "source_uri": request.source_uri,
+                "filename": path.name,
+                "file_type": file_type,
+                "extraction": extracted.document.metadata,
+            },
+        )
+
+    def _create_record(
+        self,
+        *,
+        title: str,
+        content_text: str,
+        language_code,
+        selected_corpus_id: UUID | None,
+        metadata: dict,
+    ) -> CreateDraftReviewResponse:
+        record = DraftReviewRecord(
+            title=title,
+            language_code=language_code,
+            selected_corpus_id=selected_corpus_id,
+            metadata=metadata,
         )
         self._records[record.pipeline_run_id] = record
         self._write_json(
             self.content_dir / f"{record.pipeline_run_id}.json",
-            {"content_text": request.content_text},
+            {"content_text": content_text},
         )
         self._save_records()
         return CreateDraftReviewResponse(draft_review=record)
@@ -101,14 +152,14 @@ class DraftReviewService:
             document_type = get_document_service().classify_document(
                 ClassifyDocumentRequest(
                     content_text=normalized_text,
-                    filename=f"{record.title}.txt",
+                    filename=self._filename_for_record(record),
                     language_code=record.language_code,
                 )
             )
             parsed = get_legal_parser_service().parse_legal_structure(
                 ParseLegalStructureRequest(
                     source_uri=f"draft-review://{pipeline_run_id}",
-                    filename=f"{record.title}.txt",
+                    filename=self._filename_for_record(record),
                     content_text=normalized_text,
                     document_type=document_type.document_type,
                     language_code=record.language_code,
@@ -148,6 +199,7 @@ class DraftReviewService:
             record.finding_count = len(findings)
             record.updated_at = datetime.utcnow()
             record.metadata = {
+                **record.metadata,
                 "document_type": document_type.document_type,
                 "classification_confidence": document_type.confidence,
                 "reference_count": len(references.references),
@@ -179,6 +231,12 @@ class DraftReviewService:
         )
         return payload["content_text"]
 
+    def _filename_for_record(self, record: DraftReviewRecord) -> str:
+        filename = record.metadata.get("filename")
+        if isinstance(filename, str) and filename:
+            return filename
+        return f"{record.title}.txt"
+
     def _save_findings(
         self, pipeline_run_id: UUID, findings: list[FindingRecord]
     ) -> None:
@@ -208,4 +266,3 @@ class DraftReviewService:
 
 def get_draft_review_service() -> DraftReviewService:
     return DraftReviewService()
-

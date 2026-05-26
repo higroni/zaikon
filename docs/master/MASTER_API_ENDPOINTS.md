@@ -32,6 +32,7 @@ Base path: `/api/v1`
 ## Draft Reviews
 
 - `POST /api/v1/draft-reviews`
+- `POST /api/v1/draft-reviews/from-file`
 - `GET /api/v1/draft-reviews`
 - `GET /api/v1/draft-reviews/{pipeline_run_id}`
 - `POST /api/v1/draft-reviews/{pipeline_run_id}/run`
