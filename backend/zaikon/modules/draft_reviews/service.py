@@ -18,6 +18,7 @@ from zaikon.modules.checkers.service import get_temporal_validity_checker
 from zaikon.modules.checkers.service import get_terminology_consistency_checker
 from zaikon.modules.documents.schemas import ClassifyDocumentRequest
 from zaikon.modules.documents.schemas import ExtractTextRequest
+from zaikon.modules.documents.catalog import DocumentCatalogService
 from zaikon.modules.documents.service import get_document_service
 from zaikon.modules.documents.service import path_from_uri
 from zaikon.modules.draft_reviews.schemas import (
@@ -260,6 +261,7 @@ class DraftReviewService:
                 ResolveReferencesRequest(
                     references=references.references,
                     document=canonical.document,
+                    corpus_documents=self._load_corpus_documents(record),
                 )
             )
             findings = get_reference_checker().check(
@@ -366,6 +368,26 @@ class DraftReviewService:
             )
         )
         return [result.model_dump(mode="json") for result in response.results]
+
+    def _load_corpus_documents(self, record: DraftReviewRecord) -> list[CanonicalDocument]:
+        if record.selected_corpus_id is None:
+            return []
+        catalog = DocumentCatalogService()
+        documents = []
+        for summary in catalog.list_documents(corpus_id=record.selected_corpus_id):
+            detail = catalog.get_document(summary.document_id)
+            if detail is None:
+                continue
+            documents.append(
+                CanonicalDocument(
+                    source_uri=detail.source_uri,
+                    filename=detail.filename,
+                    document_type=detail.document_type,
+                    title=detail.title,
+                    canonical_json=detail.canonical_json,
+                )
+            )
+        return documents
 
     def _attach_retrieval_evidence(
         self,

@@ -164,6 +164,53 @@ def test_draft_review_uses_selected_corpus_for_retrieval_artifact(client):
     }
 
 
+def test_draft_review_resolves_cross_document_reference_from_selected_corpus(
+    client, tmp_path
+):
+    corpus_dir = tmp_path / "cross"
+    corpus_dir.mkdir()
+    (corpus_dir / "zakon-o-sumama.txt").write_text(
+        "Zakon o šumama\n\nČlan 2.\nŠume su dobro od opšteg interesa.",
+        encoding="utf-8",
+    )
+    corpus = client.post(
+        "/api/v1/corpora", json={"name": "Cross reference corpus"}
+    ).json()["corpus"]
+    client.post(
+        f"/api/v1/corpora/{corpus['corpus_id']}/import-folder",
+        json={
+            "corpus_id": corpus["corpus_id"],
+            "folder_uri": str(corpus_dir),
+        },
+    )
+    create_response = client.post(
+        "/api/v1/draft-reviews",
+        json={
+            "title": "Nacrt sa eksternom referencom",
+            "content_text": (
+                "NACRT\n\n"
+                "Član 1.\n"
+                "Postupak se sprovodi u skladu sa članom 2. Zakona o šumama."
+            ),
+            "selected_corpus_id": corpus["corpus_id"],
+        },
+    )
+    pipeline_run_id = create_response.json()["draft_review"]["pipeline_run_id"]
+
+    run_response = client.post(f"/api/v1/draft-reviews/{pipeline_run_id}/run")
+
+    assert run_response.status_code == 200
+    assert {
+        finding["finding_type"] for finding in run_response.json()["findings"]
+    } == set()
+    detail_response = client.get(f"/api/v1/draft-reviews/{pipeline_run_id}")
+    resolved_references = detail_response.json()["artifacts"]["resolved_references"][
+        "resolved_references"
+    ]
+    assert resolved_references[0]["resolution_status"] == "resolved"
+    assert "Zakon o šumama" in resolved_references[0]["resolution_note"]
+
+
 def test_draft_review_reports_definition_conflicts(client):
     create_response = client.post(
         "/api/v1/draft-reviews",
