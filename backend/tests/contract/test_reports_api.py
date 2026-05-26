@@ -32,6 +32,11 @@ def test_generate_and_download_markdown_report(client):
     assert get_response.status_code == 200
     assert get_response.json()["report_id"] == report["report_id"]
 
+    list_response = client.get("/api/v1/reports")
+
+    assert list_response.status_code == 200
+    assert any(item["report_id"] == report["report_id"] for item in list_response.json())
+
     download_response = client.get(f"/api/v1/reports/{report['report_id']}/download")
 
     assert download_response.status_code == 200

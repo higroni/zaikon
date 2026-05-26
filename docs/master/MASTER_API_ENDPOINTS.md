@@ -57,6 +57,7 @@ Base path: `/api/v1`
 ## Reports
 
 - `POST /api/v1/reports`
+- `GET /api/v1/reports`
 - `GET /api/v1/reports/{report_id}`
 - `GET /api/v1/reports/{report_id}/download`
 

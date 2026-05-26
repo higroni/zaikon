@@ -192,6 +192,7 @@ suggest_revision(request: SuggestRevisionRequest) -> SuggestRevisionResponse
 
 ```python
 generate_report(request: GenerateReportRequest) -> GenerateReportResponse
+list_reports() -> list[ReportRecord]
 get_report(report_id: UUID) -> ReportRecord | None
 ```
 

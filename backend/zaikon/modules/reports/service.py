@@ -49,6 +49,17 @@ class ReportService:
             return None
         return ReportRecord.model_validate(json.loads(path.read_text(encoding="utf-8")))
 
+    def list_reports(self) -> list[ReportRecord]:
+        reports = [
+            ReportRecord.model_validate(json.loads(path.read_text(encoding="utf-8")))
+            for path in self.root.glob("*.json")
+        ]
+        return sorted(
+            reports,
+            key=lambda report: report.created_at.isoformat(),
+            reverse=True,
+        )
+
     def _save_report(self, report: ReportRecord) -> None:
         path = self.root / f"{report.report_id}.json"
         path.write_text(
@@ -95,4 +106,3 @@ class ReportService:
 @lru_cache
 def get_report_service() -> ReportService:
     return ReportService()
-

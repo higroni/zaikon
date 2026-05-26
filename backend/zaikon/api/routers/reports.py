@@ -25,6 +25,11 @@ def generate_report(request: GenerateReportRequest) -> GenerateReportResponse:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
 
+@router.get("", response_model=list[ReportRecord])
+def list_reports() -> list[ReportRecord]:
+    return get_report_service().list_reports()
+
+
 @router.get("/{report_id}", response_model=ReportRecord)
 def get_report(report_id: UUID) -> ReportRecord:
     report = get_report_service().get_report(report_id)
@@ -44,4 +49,3 @@ def download_report(report_id: UUID) -> Response:
         media_type="text/markdown; charset=utf-8",
         headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )
-
