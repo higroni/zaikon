@@ -170,3 +170,60 @@ def test_reference_service_keeps_paragraph_references_when_paragraph_has_items()
 
     assert len(response.references) == 1
     assert response.references[0].source_path == "article:1/paragraph:1"
+
+
+def test_reference_service_resolves_cross_document_article_reference():
+    draft = CanonicalDocument(
+        source_uri="draft-review://test",
+        filename="nacrt.txt",
+        document_type="law",
+        title="Nacrt zakona",
+        canonical_json={
+            "schema_version": "0.1",
+            "document": {},
+            "legal_units": [
+                {
+                    "legal_unit_id": "draft-paragraph-1",
+                    "unit_type": "paragraph",
+                    "path": "article:1/paragraph:1",
+                    "content_text": "Postupak se sprovodi u skladu sa članom 5. Zakona o šumama.",
+                }
+            ],
+            "metadata": {},
+        },
+    )
+    corpus_document = CanonicalDocument(
+        source_uri="file:///tmp/zakon-o-sumama.txt",
+        filename="zakon-o-sumama.txt",
+        document_type="law",
+        title="Zakon o šumama",
+        canonical_json={
+            "schema_version": "0.1",
+            "document": {},
+            "legal_units": [
+                {
+                    "legal_unit_id": "forest-article-5",
+                    "unit_type": "article",
+                    "path": "article:5",
+                    "content_text": "Član 5.",
+                }
+            ],
+            "metadata": {},
+        },
+    )
+    service = ReferenceService()
+    extracted = service.extract_references(ExtractReferencesRequest(document=draft))
+
+    response = service.resolve_references(
+        ResolveReferencesRequest(
+            references=extracted.references,
+            document=draft,
+            corpus_documents=[corpus_document],
+        )
+    )
+
+    assert len(extracted.references) == 1
+    assert extracted.references[0].target_document_title == "Zakon o šumama"
+    assert response.resolved_references[0].resolution_status == "resolved"
+    assert response.resolved_references[0].target_legal_unit_id == "forest-article-5"
+    assert "Zakon o šumama" in response.resolved_references[0].resolution_note

@@ -1,9 +1,11 @@
-"""Rule-based Serbian legal reference extraction."""
+"""Rule-based Serbian legal reference extraction and resolution."""
 
 from functools import lru_cache
 import re
+import unicodedata
 
 from zaikon.core.schemas import ModuleHealth
+from zaikon.modules.canonical.schemas import CanonicalDocument
 from zaikon.modules.references.schemas import (
     ExtractReferencesRequest,
     ExtractReferencesResponse,
@@ -17,7 +19,8 @@ from zaikon.modules.references.schemas import (
 _ARTICLE_REFERENCE_RE = re.compile(
     r"\b(?:clan|član)(?:a|u|om)?\s+(?P<article>\d+[a-z]?)\.?"
     r"(?:\s+stav(?:a|u|om)?\s+(?P<paragraph>\d+[a-z]?)\.?)?"
-    r"(?:\s+(?:tack|tačk)(?:a|e|i|om)?\s+(?P<item>\d+[a-z]?)\.?)?",
+    r"(?:\s+(?:tack|tačk)(?:a|e|i|om)?\s+(?P<item>\d+[a-z]?)\.?)?"
+    r"(?:\s+(?:ovog\s+zakona|zakona\s+o\s+(?P<title>[^.;,\n]+)))?",
     re.IGNORECASE,
 )
 _OFFICIAL_GAZETTE_RE = re.compile(
@@ -25,6 +28,27 @@ _OFFICIAL_GAZETTE_RE = re.compile(
     r"(?:broj|br)\.?\s+(?P<number>[\d/]+)",
     re.IGNORECASE,
 )
+_LATIN_FOLD = str.maketrans(
+    {
+        "č": "c",
+        "ć": "c",
+        "š": "s",
+        "đ": "dj",
+        "ž": "z",
+        "Č": "c",
+        "Ć": "c",
+        "Š": "s",
+        "Đ": "dj",
+        "Ž": "z",
+    }
+)
+
+
+def _fold(value: str | None) -> str:
+    if not value:
+        return ""
+    normalized = unicodedata.normalize("NFKC", value).translate(_LATIN_FOLD).lower()
+    return re.sub(r"[^a-z0-9]+", " ", normalized).strip()
 
 
 class ReferenceService:
@@ -58,6 +82,7 @@ class ReferenceService:
                         source_path=source_path,
                         raw_text=match.group(0),
                         reference_type="article_reference",
+                        target_document_title=self._target_title(match.group("title")),
                         target_article_number=match.group("article"),
                         target_paragraph_number=match.group("paragraph"),
                         target_item_number=match.group("item"),
@@ -82,7 +107,7 @@ class ReferenceService:
     def resolve_references(
         self, request: ResolveReferencesRequest
     ) -> ResolveReferencesResponse:
-        if request.document is None:
+        if request.document is None and not request.corpus_documents:
             resolved_references = [
                 ResolvedReferenceRecord(
                     reference_id=reference.reference_id,
@@ -93,10 +118,7 @@ class ReferenceService:
             ]
             return ResolveReferencesResponse(resolved_references=resolved_references)
 
-        units_by_path = {
-            unit.get("path"): unit
-            for unit in request.document.canonical_json.get("legal_units", [])
-        }
+        document_units_by_path = self._units_by_path(request.document)
         resolved_references = []
 
         for reference in request.references:
@@ -110,18 +132,8 @@ class ReferenceService:
                 )
                 continue
 
-            path = self._target_path_for_reference(reference, units_by_path)
-            target = units_by_path.get(path)
-
-            if target is None:
-                resolved_references.append(
-                    ResolvedReferenceRecord(
-                        reference_id=reference.reference_id,
-                        resolution_status="missing",
-                        resolution_note=f"Target path not found: {path}",
-                    )
-                )
-            else:
+            target = self._resolve_internal(reference, document_units_by_path)
+            if target is not None:
                 resolved_references.append(
                     ResolvedReferenceRecord(
                         reference_id=reference.reference_id,
@@ -130,8 +142,85 @@ class ReferenceService:
                         resolution_note=target.get("path"),
                     )
                 )
+                continue
+
+            corpus_target = self._resolve_in_corpus(
+                reference=reference,
+                corpus_documents=request.corpus_documents,
+            )
+            if corpus_target is not None:
+                document, unit = corpus_target
+                resolved_references.append(
+                    ResolvedReferenceRecord(
+                        reference_id=reference.reference_id,
+                        target_legal_unit_id=unit.get("legal_unit_id"),
+                        resolution_status="resolved",
+                        resolution_note=(
+                            f"{document.title or document.filename}: {unit.get('path')}"
+                        ),
+                    )
+                )
+                continue
+
+            path = self._target_path_for_reference(reference, document_units_by_path)
+            resolved_references.append(
+                ResolvedReferenceRecord(
+                    reference_id=reference.reference_id,
+                    resolution_status="missing",
+                    resolution_note=f"Target path not found: {path}",
+                )
+            )
 
         return ResolveReferencesResponse(resolved_references=resolved_references)
+
+    def _target_title(self, title_fragment: str | None) -> str | None:
+        if not title_fragment:
+            return None
+        title = title_fragment.strip(" :;,.")
+        if not title:
+            return None
+        return f"Zakon o {title}"
+
+    def _units_by_path(self, document: CanonicalDocument | None) -> dict:
+        if document is None:
+            return {}
+        return {
+            unit.get("path"): unit
+            for unit in document.canonical_json.get("legal_units", [])
+        }
+
+    def _resolve_internal(
+        self,
+        reference: LegalReferenceRecord,
+        units_by_path: dict,
+    ) -> dict | None:
+        target = units_by_path.get(self._target_path_for_reference(reference, units_by_path))
+        return target
+
+    def _resolve_in_corpus(
+        self,
+        *,
+        reference: LegalReferenceRecord,
+        corpus_documents: list[CanonicalDocument],
+    ) -> tuple[CanonicalDocument, dict] | None:
+        if not reference.target_document_title:
+            return None
+        folded_target_title = _fold(reference.target_document_title)
+        candidates = [
+            document
+            for document in corpus_documents
+            if folded_target_title
+            and (
+                folded_target_title in _fold(document.title)
+                or folded_target_title in _fold(document.filename)
+            )
+        ]
+        for document in candidates:
+            units_by_path = self._units_by_path(document)
+            unit = self._resolve_internal(reference, units_by_path)
+            if unit is not None:
+                return document, unit
+        return None
 
     def _is_container_unit(self, unit: dict) -> bool:
         unit_type = unit.get("unit_type")

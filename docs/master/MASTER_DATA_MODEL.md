@@ -323,6 +323,8 @@ Allowed `reference_type` for MVP:
 
 Internal article references can resolve to article, paragraph, or item paths
 when the reference includes `clan`, optional `stav`, and optional `tacka`.
+When `target_document_title` is extracted, MVP resolution can also match the
+article reference against supplied canonical corpus documents.
 
 ### DraftReview
 

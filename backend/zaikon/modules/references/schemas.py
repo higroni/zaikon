@@ -39,6 +39,7 @@ class ResolvedReferenceRecord(BaseModel):
 class ResolveReferencesRequest(BaseModel):
     references: list[LegalReferenceRecord]
     document: CanonicalDocument | None = None
+    corpus_documents: list[CanonicalDocument] = Field(default_factory=list)
 
 
 class ResolveReferencesResponse(BaseModel):

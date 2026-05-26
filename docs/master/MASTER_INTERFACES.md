@@ -108,6 +108,9 @@ extract_references(request: ExtractReferencesRequest) -> ExtractReferencesRespon
 resolve_references(request: ResolveReferencesRequest) -> ResolveReferencesResponse
 ```
 
+`ResolveReferencesRequest` may include `corpus_documents` for deterministic
+cross-document article resolution, for example `član 5. Zakona o šumama`.
+
 Initial schema names:
 
 - `ExtractReferencesRequest`
