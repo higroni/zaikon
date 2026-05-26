@@ -71,6 +71,8 @@ class DraftReviewService:
         file_type = (request.file_type or path.suffix.lstrip(".")).lower()
         if file_type not in {"txt", "pdf", "docx"}:
             raise ValueError(f"Unsupported draft file_type: {file_type}")
+        if not path.exists() or not path.is_file():
+            raise FileNotFoundError(f"Draft file not found: {request.source_uri}")
 
         extracted = get_document_service().extract_text(
             ExtractTextRequest(

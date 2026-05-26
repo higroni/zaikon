@@ -92,6 +92,16 @@ def test_draft_review_can_be_created_from_docx_file(client):
     assert "Pravilnik" in detail_response.json()["content_text"]
 
 
+def test_draft_review_from_file_returns_400_for_missing_file(client, tmp_path):
+    response = client.post(
+        "/api/v1/draft-reviews/from-file",
+        json={"source_uri": str(tmp_path / "missing.docx")},
+    )
+
+    assert response.status_code == 400
+    assert "Draft file not found" in response.json()["detail"]
+
+
 def test_draft_review_can_be_created_and_run_from_pdf_file(client):
     create_response = client.post(
         "/api/v1/draft-reviews/from-file",
