@@ -412,3 +412,39 @@ MVP reports are stored artifacts generated from draft review findings. Markdown
 is stored as text; DOCX and PDF store generated download artifact paths in
 metadata.
 
+### AssistantSession
+
+```json
+{
+  "session_id": "uuid",
+  "title": "Pravna pretraga",
+  "language_code": "sr",
+  "selected_corpus_id": "uuid",
+  "created_at": "datetime",
+  "updated_at": "datetime",
+  "metadata": {}
+}
+```
+
+### AssistantMessage
+
+```json
+{
+  "message_id": "uuid",
+  "session_id": "uuid",
+  "role": "user | assistant | system",
+  "content_text": "Tekst poruke",
+  "created_at": "datetime",
+  "metadata": {
+    "intent": "search",
+    "expanded_query": "ministarstvo evidencija",
+    "retrieval_result_count": 3,
+    "citations": []
+  }
+}
+```
+
+MVP assistant messages are grounded by deterministic retrieval over the selected
+corpus. The LLM module currently exposes a provider-ready deterministic facade
+for intent parsing, query expansion, answer generation, and revision suggestions.
+

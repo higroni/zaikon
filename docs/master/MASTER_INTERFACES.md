@@ -202,6 +202,34 @@ generate_answer(request: GenerateAnswerRequest) -> GenerateAnswerResponse
 suggest_revision(request: SuggestRevisionRequest) -> SuggestRevisionResponse
 ```
 
+Initial schema names:
+
+- `ParseIntentRequest`
+- `ParseIntentResponse`
+- `ExpandQueryRequest`
+- `ExpandQueryResponse`
+- `GenerateAnswerRequest`
+- `GenerateAnswerResponse`
+- `SuggestRevisionRequest`
+- `SuggestRevisionResponse`
+
+## Assistant Service
+
+```python
+create_session(request: CreateAssistantSessionRequest) -> CreateAssistantSessionResponse
+create_message(session_id: UUID, request: CreateAssistantMessageRequest) -> CreateAssistantMessageResponse
+list_messages(session_id: UUID) -> list[AssistantMessageRecord] | None
+```
+
+Initial schema names:
+
+- `CreateAssistantSessionRequest`
+- `CreateAssistantSessionResponse`
+- `AssistantSessionRecord`
+- `CreateAssistantMessageRequest`
+- `CreateAssistantMessageResponse`
+- `AssistantMessageRecord`
+
 ## Report Service
 
 ```python
