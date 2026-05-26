@@ -1,0 +1,10 @@
+[project]
+name = "zaikon"
+version = "0.1.0"
+description = "AI-assisted legislative compliance review platform"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["backend/tests"]
+pythonpath = ["backend"]
+
