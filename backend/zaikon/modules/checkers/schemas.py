@@ -7,6 +7,7 @@ from uuid import UUID, uuid4
 from pydantic import BaseModel, Field
 
 from zaikon.core.schemas import FindingStatus, RiskLevel
+from zaikon.core.time import utc_now
 
 
 class FindingRecord(BaseModel):
@@ -21,7 +22,7 @@ class FindingRecord(BaseModel):
     source_legal_unit_id: str | None = None
     source_path: str | None = None
     evidence: dict[str, Any] = Field(default_factory=dict)
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=utc_now)
     updated_at: datetime | None = None
     review_note: str | None = None
 

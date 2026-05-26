@@ -7,6 +7,8 @@ from uuid import UUID, uuid4
 
 from pydantic import BaseModel, Field
 
+from zaikon.core.time import utc_now
+
 
 class JobStatus(StrEnum):
     pending = "pending"
@@ -64,7 +66,7 @@ class ModuleHealth(BaseModel):
     module_name: str
     status: str = "ok"
     version: str = "0.1.0"
-    checked_at: datetime = Field(default_factory=datetime.utcnow)
+    checked_at: datetime = Field(default_factory=utc_now)
 
 
 class PipelineArtifact(BaseModel):
@@ -72,12 +74,12 @@ class PipelineArtifact(BaseModel):
     name: str
     artifact_type: str
     payload: dict[str, Any] | list[Any] | str | int | float | bool | None = None
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=utc_now)
 
 
 class PipelineLogEntry(BaseModel):
     level: str
     message: str
     step_name: str | None = None
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=utc_now)
 

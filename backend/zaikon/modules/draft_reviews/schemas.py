@@ -7,6 +7,7 @@ from uuid import UUID, uuid4
 from pydantic import BaseModel, Field
 
 from zaikon.core.schemas import JobStatus, LanguageCode
+from zaikon.core.time import utc_now
 from zaikon.modules.checkers.schemas import FindingRecord
 
 
@@ -32,8 +33,8 @@ class DraftReviewRecord(BaseModel):
     selected_corpus_id: UUID | None = None
     status: JobStatus = JobStatus.pending
     finding_count: int = 0
-    created_at: datetime = Field(default_factory=datetime.utcnow)
-    updated_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=utc_now)
+    updated_at: datetime = Field(default_factory=utc_now)
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 

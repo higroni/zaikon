@@ -1,12 +1,12 @@
 """Corpus module service implementation."""
 
-from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
 from uuid import UUID
 
 from zaikon.core.config import settings
 from zaikon.core.schemas import JobStatus, ModuleHealth
+from zaikon.core.time import utc_now
 from zaikon.modules.corpus.artifact_store import CorpusArtifactStore
 from zaikon.modules.corpus.schemas import (
     CorpusRecord,
@@ -80,7 +80,7 @@ class CorpusService:
             total_files=summary["total_files"],
             supported_files=summary["supported_files"],
             unsupported_files=summary["unsupported_files"],
-            completed_at=datetime.utcnow(),
+            completed_at=utc_now(),
         )
         report = ImportReport(
             import_job_id=import_job.import_job_id,

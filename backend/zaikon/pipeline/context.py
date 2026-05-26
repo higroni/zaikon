@@ -7,6 +7,7 @@ from uuid import UUID, uuid4
 from pydantic import BaseModel, Field
 
 from zaikon.core.schemas import JobStatus, PipelineArtifact, PipelineLogEntry
+from zaikon.core.time import utc_now
 
 
 class PipelineContext(BaseModel):
@@ -17,8 +18,8 @@ class PipelineContext(BaseModel):
     artifacts: dict[str, PipelineArtifact] = Field(default_factory=dict)
     logs: list[PipelineLogEntry] = Field(default_factory=list)
     metadata: dict[str, Any] = Field(default_factory=dict)
-    created_at: datetime = Field(default_factory=datetime.utcnow)
-    updated_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=utc_now)
+    updated_at: datetime = Field(default_factory=utc_now)
 
     def add_artifact(self, artifact: PipelineArtifact) -> None:
         self.artifacts[artifact.name] = artifact
@@ -34,5 +35,5 @@ class PipelineContext(BaseModel):
         self.touch()
 
     def touch(self) -> None:
-        self.updated_at = datetime.utcnow()
+        self.updated_at = utc_now()
 

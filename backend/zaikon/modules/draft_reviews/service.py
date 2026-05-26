@@ -1,12 +1,12 @@
 """Draft review service."""
 
-from datetime import datetime
 import json
 from pathlib import Path
 from uuid import UUID
 
 from zaikon.core.config import settings
 from zaikon.core.schemas import FindingStatus, JobStatus
+from zaikon.core.time import utc_now
 from zaikon.modules.canonical.schemas import CanonicalizeRequest
 from zaikon.modules.canonical.service import get_canonical_service
 from zaikon.modules.checkers.schemas import FindingRecord
@@ -155,7 +155,7 @@ class DraftReviewService:
                     update={
                         "status": status,
                         "review_note": review_note,
-                        "updated_at": datetime.utcnow(),
+                        "updated_at": utc_now(),
                     }
                 )
                 self._write_json(
@@ -171,7 +171,7 @@ class DraftReviewService:
             raise KeyError(f"Draft review not found: {pipeline_run_id}")
 
         record.status = JobStatus.running
-        record.updated_at = datetime.utcnow()
+        record.updated_at = utc_now()
         self._save_records()
 
         try:
@@ -229,7 +229,7 @@ class DraftReviewService:
             )
             record.status = JobStatus.completed
             record.finding_count = len(findings)
-            record.updated_at = datetime.utcnow()
+            record.updated_at = utc_now()
             record.metadata = {
                 **record.metadata,
                 "document_type": document_type.document_type,
@@ -241,7 +241,7 @@ class DraftReviewService:
             return RunDraftReviewResponse(draft_review=record, findings=findings)
         except Exception:
             record.status = JobStatus.failed
-            record.updated_at = datetime.utcnow()
+            record.updated_at = utc_now()
             self._save_records()
             raise
 

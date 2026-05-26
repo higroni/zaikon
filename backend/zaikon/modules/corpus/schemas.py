@@ -10,6 +10,7 @@ from urllib.parse import unquote, urlparse
 from pydantic import BaseModel, Field
 
 from zaikon.core.schemas import JobStatus, LanguageCode
+from zaikon.core.time import utc_now
 
 
 class CorpusRecord(BaseModel):
@@ -19,8 +20,8 @@ class CorpusRecord(BaseModel):
     language_code: LanguageCode = LanguageCode.sr
     domain: str | None = None
     status: str = "active"
-    created_at: datetime = Field(default_factory=datetime.utcnow)
-    updated_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=utc_now)
+    updated_at: datetime = Field(default_factory=utc_now)
 
 
 class CreateCorpusRequest(BaseModel):
@@ -62,7 +63,7 @@ class SourceFileRecord(BaseModel):
     size_bytes: int
     import_status: str = JobStatus.pending.value
     error_message: str | None = None
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=utc_now)
 
 
 class ImportJobRecord(BaseModel):
@@ -73,7 +74,7 @@ class ImportJobRecord(BaseModel):
     total_files: int = 0
     supported_files: int = 0
     unsupported_files: int = 0
-    started_at: datetime = Field(default_factory=datetime.utcnow)
+    started_at: datetime = Field(default_factory=utc_now)
     completed_at: datetime | None = None
     error_message: str | None = None
 
