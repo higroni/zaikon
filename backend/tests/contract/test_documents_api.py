@@ -42,6 +42,8 @@ def test_document_catalog_endpoints_after_import(client):
     legal_unit = legal_unit_response.json()
     assert legal_unit["document_id"] == document_id
     assert legal_unit["legal_unit_id"] == legal_unit_id
+    assert legal_unit["filename"] == "zakon.txt"
+    assert legal_unit["document_type"] == "law"
 
     akoma_response = client.get(f"/api/v1/documents/{document_id}/akoma-ntoso")
 

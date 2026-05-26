@@ -27,6 +27,10 @@ class DocumentDetail(DocumentSummary):
 class LegalUnitRecord(BaseModel):
     legal_unit_id: str
     document_id: UUID
+    corpus_id: UUID | None = None
+    filename: str
+    document_type: str
+    title: str | None = None
     unit_type: str
     number: str | None = None
     ordinal: int
@@ -78,6 +82,10 @@ class DocumentCatalogService:
                     continue
                 return LegalUnitRecord(
                     document_id=document_id,
+                    corpus_id=UUID(record["corpus_id"]) if record.get("corpus_id") else None,
+                    filename=record["filename"],
+                    document_type=record["document_type"],
+                    title=record.get("title"),
                     legal_unit_id=unit["legal_unit_id"],
                     unit_type=unit["unit_type"],
                     number=unit.get("number"),
