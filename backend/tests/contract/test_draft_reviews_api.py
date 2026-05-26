@@ -189,6 +189,30 @@ def test_draft_review_reports_definition_conflicts(client):
     assert "definition_conflict" in finding_types
 
 
+def test_draft_review_runs_terminology_and_temporal_checkers(client):
+    create_response = client.post(
+        "/api/v1/draft-reviews",
+        json={
+            "title": "Nacrt sa dodatnim proverama",
+            "content_text": (
+                "NACRT\n\n"
+                "Clan 1.\n"
+                "Nadlezni organ vodi evidenciju od 31. februar 2026."
+            ),
+        },
+    )
+    pipeline_run_id = create_response.json()["draft_review"]["pipeline_run_id"]
+
+    run_response = client.post(f"/api/v1/draft-reviews/{pipeline_run_id}/run")
+
+    assert run_response.status_code == 200
+    finding_types = {
+        finding["finding_type"] for finding in run_response.json()["findings"]
+    }
+    assert "terminology_inconsistent" in finding_types
+    assert "temporal_validity_issue" in finding_types
+
+
 def test_draft_review_can_export_akoma_ntoso_after_run(client):
     create_response = client.post(
         "/api/v1/draft-reviews",

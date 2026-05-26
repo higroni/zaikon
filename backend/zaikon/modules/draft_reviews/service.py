@@ -14,6 +14,8 @@ from zaikon.modules.canonical.service import get_canonical_service
 from zaikon.modules.checkers.schemas import FindingRecord
 from zaikon.modules.checkers.service import get_definition_consistency_checker
 from zaikon.modules.checkers.service import get_reference_checker
+from zaikon.modules.checkers.service import get_temporal_validity_checker
+from zaikon.modules.checkers.service import get_terminology_consistency_checker
 from zaikon.modules.documents.schemas import ClassifyDocumentRequest
 from zaikon.modules.documents.schemas import ExtractTextRequest
 from zaikon.modules.documents.service import get_document_service
@@ -267,6 +269,18 @@ class DraftReviewService:
             )
             findings.extend(
                 get_definition_consistency_checker().check(
+                    pipeline_run_id=pipeline_run_id,
+                    document=canonical.document,
+                )
+            )
+            findings.extend(
+                get_terminology_consistency_checker().check(
+                    pipeline_run_id=pipeline_run_id,
+                    document=canonical.document,
+                )
+            )
+            findings.extend(
+                get_temporal_validity_checker().check(
                     pipeline_run_id=pipeline_run_id,
                     document=canonical.document,
                 )
