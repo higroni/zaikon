@@ -88,3 +88,36 @@ def test_search_can_be_limited_to_corpus(client, tmp_path):
     results = matching_response.json()["results"]
     assert results
     assert {result["corpus_id"] for result in results} == {first_corpus["corpus_id"]}
+
+
+def test_search_matches_serbian_latin_diacritics(client, tmp_path):
+    corpus_dir = tmp_path / "diacritics"
+    corpus_dir.mkdir()
+    (corpus_dir / "zakon-sume.txt").write_text(
+        "Zakon o šumama\n\nClan 1.\nŠume su dobro od opšteg interesa.",
+        encoding="utf-8",
+    )
+    corpus = client.post(
+        "/api/v1/corpora", json={"name": "Diacritics search corpus"}
+    ).json()["corpus"]
+    client.post(
+        f"/api/v1/corpora/{corpus['corpus_id']}/import-folder",
+        json={
+            "corpus_id": corpus["corpus_id"],
+            "folder_uri": str(corpus_dir),
+        },
+    )
+
+    response = client.post(
+        "/api/v1/search/hybrid",
+        json={
+            "query": "šume interes",
+            "top_k": 5,
+            "corpus_id": corpus["corpus_id"],
+        },
+    )
+
+    assert response.status_code == 200
+    results = response.json()["results"]
+    assert results
+    assert "šume" in results[0]["metadata"]["matched_terms"]

@@ -16,7 +16,7 @@ def test_indexing_service_builds_deterministic_reports():
             "legal_units": [
                 {
                     "unit_type": "article",
-                    "content_text": "Sume i sumarsko zemljiste su dobro od interesa.",
+                    "content_text": "Šume i šumarsko zemljište su dobro od interesa.",
                 },
                 {
                     "unit_type": "paragraph",
@@ -45,6 +45,10 @@ def test_indexing_service_builds_deterministic_reports():
     assert response.keyword_index_report.indexed_documents == 1
     assert response.keyword_index_report.indexed_legal_units == 2
     assert response.keyword_index_report.metadata["unique_terms"] > 0
+    assert any(
+        item["term"] == "šume"
+        for item in response.keyword_index_report.metadata["top_terms"]
+    )
     assert response.structure_index_report.metadata["document_types"] == {"law": 1}
     assert response.reference_graph_report.metadata == {
         "resolved_references": 1,

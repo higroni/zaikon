@@ -15,6 +15,10 @@ from zaikon.modules.indexing.schemas import (
 )
 
 
+def _tokens(value: str) -> list[str]:
+    return [token for token in re.findall(r"\w+", value.lower()) if len(token) >= 3]
+
+
 class IndexingService:
     """Builds deterministic index reports without external storage."""
 
@@ -30,11 +34,7 @@ class IndexingService:
         document_types = Counter(document.document_type for document in request.documents)
         tokens = Counter()
         for unit in legal_units:
-            tokens.update(
-                token
-                for token in re.findall(r"[A-Za-zČĆŠĐŽčćšđž0-9]+", unit.get("content_text") or "")
-                if len(token) >= 3
-            )
+            tokens.update(_tokens(unit.get("content_text") or ""))
 
         resolved_count = 0
         missing_count = 0
@@ -77,7 +77,9 @@ class IndexingService:
                 **common,
                 metadata={
                     "document_types": dict(document_types),
-                    "unit_types": dict(Counter(unit.get("unit_type") for unit in legal_units)),
+                    "unit_types": dict(
+                        Counter(unit.get("unit_type") for unit in legal_units)
+                    ),
                 },
             ),
             reference_graph_report=IndexReport(

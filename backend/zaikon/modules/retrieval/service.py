@@ -15,8 +15,8 @@ from zaikon.modules.retrieval.schemas import (
 
 def _tokens(value: str) -> set[str]:
     return {
-        token.lower()
-        for token in re.findall(r"[A-Za-zČĆŠĐŽčćšđž0-9]+", value)
+        token
+        for token in re.findall(r"\w+", value.lower())
         if len(token) >= 3
     }
 
