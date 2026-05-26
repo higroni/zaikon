@@ -62,6 +62,9 @@ hash within the same import job.
 13. `generate_findings`
 14. `generate_review_report`
 
+Current draft review MVP runs retrieval against `selected_corpus_id` when one is
+provided and stores the results in `retrieval_results`.
+
 ## InteractiveLegalAssistantChain
 
 1. `parse_user_intent`

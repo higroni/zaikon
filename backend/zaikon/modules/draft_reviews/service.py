@@ -30,6 +30,8 @@ from zaikon.modules.references.schemas import (
     ResolveReferencesRequest,
 )
 from zaikon.modules.references.service import get_reference_service
+from zaikon.modules.retrieval.schemas import HybridSearchRequest
+from zaikon.modules.retrieval.service import get_retrieval_service
 from zaikon.pipeline.steps.corpus.folder_import import serbian_cyrillic_to_latin
 
 
@@ -214,6 +216,10 @@ class DraftReviewService:
                 references=references.references,
                 resolved_references=resolved.resolved_references,
             )
+            retrieval_results = self._retrieve_related_corpus_units(
+                record=record,
+                query=normalized_text,
+            )
 
             self._save_findings(pipeline_run_id, findings)
             self._save_artifacts(
@@ -225,6 +231,7 @@ class DraftReviewService:
                     "canonical_document": canonical.document.model_dump(mode="json"),
                     "references": references.model_dump(mode="json"),
                     "resolved_references": resolved.model_dump(mode="json"),
+                    "retrieval_results": retrieval_results,
                 },
             )
             record.status = JobStatus.completed
@@ -236,6 +243,7 @@ class DraftReviewService:
                 "classification_confidence": document_type.confidence,
                 "reference_count": len(references.references),
                 "resolved_reference_count": len(resolved.resolved_references),
+                "retrieval_result_count": len(retrieval_results),
             }
             self._save_records()
             return RunDraftReviewResponse(draft_review=record, findings=findings)
@@ -268,6 +276,23 @@ class DraftReviewService:
         if isinstance(filename, str) and filename:
             return filename
         return f"{record.title}.txt"
+
+    def _retrieve_related_corpus_units(
+        self,
+        *,
+        record: DraftReviewRecord,
+        query: str,
+    ) -> list[dict]:
+        if record.selected_corpus_id is None:
+            return []
+        response = get_retrieval_service().hybrid_search(
+            HybridSearchRequest(
+                query=query,
+                top_k=5,
+                corpus_id=record.selected_corpus_id,
+            )
+        )
+        return [result.model_dump(mode="json") for result in response.results]
 
     def _save_findings(
         self, pipeline_run_id: UUID, findings: list[FindingRecord]

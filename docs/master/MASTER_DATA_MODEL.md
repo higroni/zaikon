@@ -337,6 +337,8 @@ when the reference includes `clan`, optional `stav`, and optional `tacka`.
 MVP draft reviews accept draft text, normalize Serbian Cyrillic to Latin when
 enabled, parse the legal structure, canonicalize it, extract and resolve
 references, then store review findings and run artifacts.
+When `selected_corpus_id` is present, the review run also stores corpus-scoped
+retrieval results as a review artifact for later evidence/reporting use.
 
 Draft reviews can also be created from supported local files (`txt`, `pdf`,
 `docx`) through the same extraction service used by corpus imports. The record

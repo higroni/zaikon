@@ -108,3 +108,44 @@ def test_draft_review_can_be_created_and_run_from_pdf_file(client):
     assert payload["draft_review"]["status"] == "completed"
     assert payload["draft_review"]["metadata"]["input_type"] == "file"
     assert payload["draft_review"]["metadata"]["file_type"] == "pdf"
+
+
+def test_draft_review_uses_selected_corpus_for_retrieval_artifact(client):
+    corpus = client.post(
+        "/api/v1/corpora", json={"name": "Draft retrieval corpus"}
+    ).json()["corpus"]
+    client.post(
+        f"/api/v1/corpora/{corpus['corpus_id']}/import-folder",
+        json={
+            "corpus_id": corpus["corpus_id"],
+            "folder_uri": str(FIXTURE_DIR),
+        },
+    )
+    create_response = client.post(
+        "/api/v1/draft-reviews",
+        json={
+            "title": "Nacrt sa retrieval kontekstom",
+            "content_text": (
+                "NACRT\n\n"
+                "Clan 1.\n"
+                "Ministarstvo vodi evidenciju i upucuje na clan 99.\n"
+            ),
+            "selected_corpus_id": corpus["corpus_id"],
+        },
+    )
+    pipeline_run_id = create_response.json()["draft_review"]["pipeline_run_id"]
+
+    run_response = client.post(f"/api/v1/draft-reviews/{pipeline_run_id}/run")
+
+    assert run_response.status_code == 200
+    payload = run_response.json()
+    assert payload["draft_review"]["metadata"]["retrieval_result_count"] > 0
+
+    detail_response = client.get(f"/api/v1/draft-reviews/{pipeline_run_id}")
+
+    assert detail_response.status_code == 200
+    retrieval_results = detail_response.json()["artifacts"]["retrieval_results"]
+    assert retrieval_results
+    assert {result["corpus_id"] for result in retrieval_results} == {
+        corpus["corpus_id"]
+    }
