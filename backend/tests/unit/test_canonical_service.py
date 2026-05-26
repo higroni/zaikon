@@ -5,6 +5,7 @@ import xml.etree.ElementTree as ET
 from zaikon.modules.canonical.schemas import (
     CanonicalizeRequest,
     ExportAkomaNtosoRequest,
+    ImportAkomaNtosoRequest,
 )
 from zaikon.modules.canonical.service import CanonicalService
 from zaikon.modules.legal_parser.schemas import ParsedLegalDocument, ParsedLegalUnit
@@ -95,6 +96,57 @@ def test_canonical_service_exports_basic_akoma_ntoso_xml():
     assert root.find(".//akn:paragraph/akn:content/akn:p", namespace).text == (
         "Ovim zakonom uredjuje se primer."
     )
+
+
+def test_canonical_service_imports_basic_akoma_ntoso_xml():
+    xml_text = """<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="law">
+    <meta>
+      <identification source="#test">
+        <FRBRWork>
+          <FRBRuri value="/akn/rs/act/zakon-o-sumama"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRlanguage language="srp"/>
+        </FRBRExpression>
+      </identification>
+    </meta>
+    <body>
+      <article eId="art_1">
+        <num>Clan 1.</num>
+        <heading>Predmet</heading>
+        <paragraph eId="art_1_para_1">
+          <num>(1)</num>
+          <content>
+            <p>Šume su dobro od opšteg interesa.</p>
+          </content>
+        </paragraph>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>
+"""
+
+    response = CanonicalService().import_akoma_ntoso(
+        ImportAkomaNtosoRequest(
+            xml_text=xml_text,
+            source_uri="file:///tmp/zakon.xml",
+            filename="zakon.xml",
+        )
+    )
+
+    document = response.document
+    legal_units = document.canonical_json["legal_units"]
+
+    assert document.document_type == "law"
+    assert document.language_code == "sr"
+    assert document.title == "Zakon O Sumama"
+    assert document.canonical_json["metadata"]["akoma_import"] is True
+    assert [unit["unit_type"] for unit in legal_units] == ["article", "paragraph"]
+    assert legal_units[0]["number"] == "1"
+    assert legal_units[0]["heading"] == "Predmet"
+    assert legal_units[1]["content_text"] == "Šume su dobro od opšteg interesa."
 
 
 def test_canonical_service_exports_subitems_as_akoma_subpoints():

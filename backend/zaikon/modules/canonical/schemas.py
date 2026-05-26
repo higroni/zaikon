@@ -25,6 +25,18 @@ class CanonicalizeResponse(BaseModel):
     document: CanonicalDocument
 
 
+class ImportAkomaNtosoRequest(BaseModel):
+    xml_text: str
+    source_uri: str
+    filename: str
+    document_type: str = "law"
+    language_code: LanguageCode = LanguageCode.sr
+
+
+class ImportAkomaNtosoResponse(BaseModel):
+    document: CanonicalDocument
+
+
 class ExportAkomaNtosoRequest(BaseModel):
     document: CanonicalDocument
 

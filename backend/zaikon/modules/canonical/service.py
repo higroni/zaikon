@@ -3,14 +3,17 @@
 from functools import lru_cache
 import re
 import xml.etree.ElementTree as ET
+from uuid import NAMESPACE_URL, uuid5
 
-from zaikon.core.schemas import ModuleHealth
+from zaikon.core.schemas import LanguageCode, ModuleHealth
 from zaikon.modules.canonical.schemas import (
     CanonicalDocument,
     CanonicalizeRequest,
     CanonicalizeResponse,
     ExportAkomaNtosoRequest,
     ExportAkomaNtosoResponse,
+    ImportAkomaNtosoRequest,
+    ImportAkomaNtosoResponse,
 )
 
 
@@ -69,6 +72,85 @@ class CanonicalService:
             canonical_json=canonical_json,
         )
         return CanonicalizeResponse(document=document)
+
+    def import_akoma_ntoso(
+        self, request: ImportAkomaNtosoRequest
+    ) -> ImportAkomaNtosoResponse:
+        root = ET.fromstring(request.xml_text)
+        act = self._find_first(root, "act")
+        document_type = act.get("name") if act is not None and act.get("name") else request.document_type
+        language_code = self._language_from_akoma(root) or request.language_code
+        legal_units = []
+
+        body = self._find_first(root, "body")
+        if body is not None:
+            for article_ordinal, article in enumerate(
+                self._children_named(body, "article"), start=1
+            ):
+                article_number = self._number_from_element(article) or str(article_ordinal)
+                article_path = f"article:{article_number}"
+                article_id = str(uuid5(NAMESPACE_URL, f"{request.source_uri}#{article_path}"))
+                paragraphs = list(self._children_named(article, "paragraph"))
+                legal_units.append(
+                    {
+                        "legal_unit_id": article_id,
+                        "parent_legal_unit_id": None,
+                        "unit_type": "article",
+                        "number": article_number,
+                        "ordinal": article_ordinal,
+                        "heading": self._text_of_child(article, "heading"),
+                        "content_text": self._content_text(article) if not paragraphs else "",
+                        "path": article_path,
+                        "metadata": {"akoma_eid": article.get("eId")},
+                    }
+                )
+                for paragraph_ordinal, paragraph in enumerate(paragraphs, start=1):
+                    paragraph_number = (
+                        self._number_from_element(paragraph) or str(paragraph_ordinal)
+                    )
+                    paragraph_path = f"{article_path}/paragraph:{paragraph_number}"
+                    legal_units.append(
+                        {
+                            "legal_unit_id": str(
+                                uuid5(NAMESPACE_URL, f"{request.source_uri}#{paragraph_path}")
+                            ),
+                            "parent_legal_unit_id": article_id,
+                            "unit_type": "paragraph",
+                            "number": paragraph_number,
+                            "ordinal": paragraph_ordinal,
+                            "heading": None,
+                            "content_text": self._content_text(paragraph),
+                            "path": paragraph_path,
+                            "metadata": {"akoma_eid": paragraph.get("eId")},
+                        }
+                    )
+
+        title = self._title_from_akoma(root) or request.filename
+        canonical_json = {
+            "schema_version": self.schema_version,
+            "document": {
+                "source_uri": request.source_uri,
+                "filename": request.filename,
+                "document_type": document_type,
+                "title": title,
+                "language_code": language_code.value,
+            },
+            "legal_units": legal_units,
+            "metadata": {
+                "canonical_unit_count": len(legal_units),
+                "akoma_import": True,
+            },
+        }
+        return ImportAkomaNtosoResponse(
+            document=CanonicalDocument(
+                source_uri=request.source_uri,
+                filename=request.filename,
+                document_type=document_type,
+                title=title,
+                language_code=language_code,
+                canonical_json=canonical_json,
+            )
+        )
 
     def export_akoma_ntoso(
         self, request: ExportAkomaNtosoRequest
@@ -195,6 +277,65 @@ class CanonicalService:
 
     def _akn_tag(self, name: str) -> str:
         return f"{{{self.akoma_namespace}}}{name}"
+
+    def _local_name(self, element: ET.Element) -> str:
+        return element.tag.rsplit("}", 1)[-1]
+
+    def _find_first(self, root: ET.Element, name: str) -> ET.Element | None:
+        for element in root.iter():
+            if self._local_name(element) == name:
+                return element
+        return None
+
+    def _children_named(self, element: ET.Element, name: str) -> list[ET.Element]:
+        return [child for child in list(element) if self._local_name(child) == name]
+
+    def _text_of_child(self, element: ET.Element, name: str) -> str | None:
+        child = next(
+            (item for item in list(element) if self._local_name(item) == name),
+            None,
+        )
+        if child is None or child.text is None:
+            return None
+        value = child.text.strip()
+        return value or None
+
+    def _number_from_element(self, element: ET.Element) -> str | None:
+        raw = self._text_of_child(element, "num")
+        if raw is None:
+            return None
+        match = re.search(r"(\d+[a-z]?)", raw, re.IGNORECASE)
+        return match.group(1) if match else raw.strip(" .()")
+
+    def _content_text(self, element: ET.Element) -> str:
+        content = next(
+            (item for item in list(element) if self._local_name(item) == "content"),
+            None,
+        )
+        if content is None:
+            return ""
+        paragraphs = [
+            "".join(item.itertext()).strip()
+            for item in content.iter()
+            if self._local_name(item) == "p"
+        ]
+        return "\n".join(item for item in paragraphs if item)
+
+    def _language_from_akoma(self, root: ET.Element) -> LanguageCode | None:
+        language = self._find_first(root, "FRBRlanguage")
+        value = language.get("language") if language is not None else None
+        if value in {"sr", "srp"}:
+            return LanguageCode.sr
+        if value in {"mk", "mkd"}:
+            return LanguageCode.mk
+        return None
+
+    def _title_from_akoma(self, root: ET.Element) -> str | None:
+        frbr_uri = self._find_first(root, "FRBRuri")
+        value = frbr_uri.get("value") if frbr_uri is not None else None
+        if not value:
+            return None
+        return value.rstrip("/").split("/")[-1].replace("-", " ").title()
 
     def _indent(self, element: ET.Element, level: int = 0) -> None:
         indentation = "\n" + level * "  "

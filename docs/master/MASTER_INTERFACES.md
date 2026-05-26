@@ -90,6 +90,7 @@ Initial schema names:
 
 ```python
 to_canonical_json(request: CanonicalizeRequest) -> CanonicalizeResponse
+import_akoma_ntoso(request: ImportAkomaNtosoRequest) -> ImportAkomaNtosoResponse
 export_akoma_ntoso(request: ExportAkomaNtosoRequest) -> ExportAkomaNtosoResponse
 ```
 
@@ -97,6 +98,8 @@ Initial schema names:
 
 - `CanonicalizeRequest`
 - `CanonicalizeResponse`
+- `ImportAkomaNtosoRequest`
+- `ImportAkomaNtosoResponse`
 - `CanonicalDocument`
 - `ExportAkomaNtosoRequest`
 - `ExportAkomaNtosoResponse`
