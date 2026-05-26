@@ -135,8 +135,9 @@ class CanonicalService:
         unit_type = unit.get("unit_type")
         tag = self._akoma_tag_for_unit(unit_type)
         attributes = {"eId": self._eid(unit)}
-        if unit_type in {"section", "item", "subitem"}:
-            attributes["name"] = unit_type or "unit"
+        hcontainer_name = self._hcontainer_name_for_unit(unit_type)
+        if hcontainer_name is not None:
+            attributes["name"] = hcontainer_name
         element = ET.SubElement(parent, self._akn_tag(tag), attributes)
 
         number = unit.get("number")
@@ -163,6 +164,13 @@ class CanonicalService:
         if unit_type == "paragraph":
             return "paragraph"
         return "hcontainer"
+
+    def _hcontainer_name_for_unit(self, unit_type: str | None) -> str | None:
+        if unit_type == "subitem":
+            return "subpoint"
+        if unit_type in {"section", "item"}:
+            return unit_type
+        return None
 
     def _unit_num_text(self, unit_type: str | None, number: str) -> str:
         if unit_type == "article":

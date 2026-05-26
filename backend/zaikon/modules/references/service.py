@@ -45,7 +45,7 @@ class ReferenceService:
         }
 
         for unit in legal_units:
-            if unit.get("legal_unit_id") in parent_ids:
+            if unit.get("legal_unit_id") in parent_ids and self._is_container_unit(unit):
                 continue
             content_text = unit.get("content_text") or ""
             source_legal_unit_id = unit.get("legal_unit_id")
@@ -110,12 +110,8 @@ class ReferenceService:
                 )
                 continue
 
-            path = f"article:{reference.target_article_number}"
-            if reference.target_paragraph_number:
-                path = f"{path}/paragraph:{reference.target_paragraph_number}"
+            path = self._target_path_for_reference(reference, units_by_path)
             target = units_by_path.get(path)
-            if target is None and reference.target_paragraph_number:
-                target = units_by_path.get(f"article:{reference.target_article_number}")
 
             if target is None:
                 resolved_references.append(
@@ -136,6 +132,63 @@ class ReferenceService:
                 )
 
         return ResolveReferencesResponse(resolved_references=resolved_references)
+
+    def _is_container_unit(self, unit: dict) -> bool:
+        unit_type = unit.get("unit_type")
+        if unit_type in {"article", "section"}:
+            return True
+        path = unit.get("path")
+        if not isinstance(path, str):
+            return False
+        return (
+            path.startswith("article:")
+            and "/" not in path
+            or path.startswith("section:")
+            and "/" not in path
+        )
+
+    def _target_path_for_reference(
+        self,
+        reference: LegalReferenceRecord,
+        units_by_path: dict,
+    ) -> str:
+        article_path = f"article:{reference.target_article_number}"
+        paragraph_path = article_path
+        if reference.target_paragraph_number:
+            paragraph_path = (
+                f"{article_path}/paragraph:{reference.target_paragraph_number}"
+            )
+        if reference.target_item_number:
+            if reference.target_paragraph_number:
+                return f"{paragraph_path}/item:{reference.target_item_number}"
+            item_path = self._find_item_path_in_article(
+                article_path=article_path,
+                item_number=reference.target_item_number,
+                units_by_path=units_by_path,
+            )
+            if item_path is not None:
+                return item_path
+            return f"{article_path}/item:{reference.target_item_number}"
+        return paragraph_path
+
+    def _find_item_path_in_article(
+        self,
+        *,
+        article_path: str,
+        item_number: str,
+        units_by_path: dict,
+    ) -> str | None:
+        candidates = [
+            path
+            for path, unit in units_by_path.items()
+            if isinstance(path, str)
+            and path.startswith(f"{article_path}/")
+            and path.endswith(f"/item:{item_number}")
+            and unit.get("unit_type") == "item"
+        ]
+        if len(candidates) == 1:
+            return candidates[0]
+        return None
 
 
 @lru_cache

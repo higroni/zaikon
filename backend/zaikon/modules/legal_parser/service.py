@@ -36,6 +36,10 @@ _INLINE_ITEM_RE = re.compile(
     r"(?:^|\s)(\d+)\)\s+(.+?)(?=\s+\d+\)\s+|$)",
     re.DOTALL,
 )
+_INLINE_SUBITEM_RE = re.compile(
+    r"(?:^|\s)\((\d+[a-z]?)\)\s+(.+?)(?=\s+\(\d+[a-z]?\)\s+|$)",
+    re.IGNORECASE | re.DOTALL,
+)
 
 
 def _fold_serbian_latin(value: str) -> str:
@@ -151,6 +155,9 @@ class LegalParserService:
                 "item_count": sum(
                     1 for unit in legal_units if unit.unit_type == "item"
                 ),
+                "subitem_count": sum(
+                    1 for unit in legal_units if unit.unit_type == "subitem"
+                ),
             },
         )
         return ParseLegalStructureResponse(document=document)
@@ -232,7 +239,7 @@ class LegalParserService:
             number = match.group(1)
             content_text = match.group(2).strip()
             items.append(
-                ParsedLegalUnit(
+                item_unit := ParsedLegalUnit(
                     parent_legal_unit_id=paragraph_unit.legal_unit_id,
                     unit_type="item",
                     number=number,
@@ -242,7 +249,31 @@ class LegalParserService:
                     path=f"{paragraph_unit.path}/item:{number}",
                 )
             )
+            items.extend(self._parse_inline_subitems(content_text, item_unit))
         return items
+
+    def _parse_inline_subitems(
+        self,
+        item_text: str,
+        item_unit: ParsedLegalUnit,
+    ) -> list[ParsedLegalUnit]:
+        subitems = []
+        for subitem_ordinal, match in enumerate(
+            _INLINE_SUBITEM_RE.finditer(item_text), start=1
+        ):
+            number = match.group(1)
+            subitems.append(
+                ParsedLegalUnit(
+                    parent_legal_unit_id=item_unit.legal_unit_id,
+                    unit_type="subitem",
+                    number=number,
+                    ordinal=subitem_ordinal,
+                    heading=None,
+                    content_text=match.group(2).strip(),
+                    path=f"{item_unit.path}/subitem:{number}",
+                )
+            )
+        return subitems
 
     def _title_before_first_article(
         self, lines: list[str], article_markers: list[tuple[int, str]]

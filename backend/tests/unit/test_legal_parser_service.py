@@ -33,6 +33,7 @@ Jedini pasus drugog clana.
         "article_count": 2,
         "paragraph_count": 3,
         "item_count": 0,
+        "subitem_count": 0,
     }
 
     articles = [unit for unit in document.legal_units if unit.unit_type == "article"]
@@ -132,3 +133,31 @@ U postupku se obezbedjuje: 1) prvi uslov; 2) drugi uslov.
     assert items[0].parent_legal_unit_id == paragraphs[0].legal_unit_id
     assert items[0].path == "article:1/paragraph:1/item:1"
     assert items[1].content_text == "drugi uslov."
+
+
+def test_legal_parser_extracts_inline_subitems_inside_item():
+    content_text = """Zakon o podtackama
+
+Clan 1.
+Uslovi su: 1) prva tacka sadrzi (1) prvi uslov; (2) drugi uslov; 2) druga tacka.
+"""
+
+    response = LegalParserService().parse_legal_structure(
+        ParseLegalStructureRequest(
+            source_uri="file:///tmp/zakon.txt",
+            filename="zakon.txt",
+            content_text=content_text,
+            document_type="law",
+        )
+    )
+
+    document = response.document
+    items = [unit for unit in document.legal_units if unit.unit_type == "item"]
+    subitems = [unit for unit in document.legal_units if unit.unit_type == "subitem"]
+
+    assert document.metadata["item_count"] == 2
+    assert document.metadata["subitem_count"] == 2
+    assert [subitem.number for subitem in subitems] == ["1", "2"]
+    assert subitems[0].parent_legal_unit_id == items[0].legal_unit_id
+    assert subitems[0].path == "article:1/paragraph:1/item:1/subitem:1"
+    assert subitems[1].content_text == "drugi uslov;"

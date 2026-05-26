@@ -304,6 +304,9 @@ Allowed `reference_type` for MVP:
 - `article_reference`
 - `official_gazette_reference`
 
+Internal article references can resolve to article, paragraph, or item paths
+when the reference includes `clan`, optional `stav`, and optional `tacka`.
+
 ### DraftReview
 
 ```json

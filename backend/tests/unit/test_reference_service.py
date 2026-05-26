@@ -84,3 +84,89 @@ def test_reference_service_resolves_internal_article_references():
     statuses = [item.resolution_status for item in response.resolved_references]
     assert statuses == ["resolved", "missing"]
     assert response.resolved_references[0].target_legal_unit_id == "paragraph-5-2"
+
+
+def test_reference_service_resolves_internal_item_references():
+    document = CanonicalDocument(
+        source_uri="file:///tmp/zakon.txt",
+        filename="zakon.txt",
+        document_type="law",
+        canonical_json={
+            "schema_version": "0.1",
+            "document": {},
+            "legal_units": [
+                {
+                    "legal_unit_id": "article-5",
+                    "unit_type": "article",
+                    "path": "article:5",
+                    "content_text": "",
+                },
+                {
+                    "legal_unit_id": "paragraph-5-2",
+                    "unit_type": "paragraph",
+                    "parent_legal_unit_id": "article-5",
+                    "path": "article:5/paragraph:2",
+                    "content_text": "",
+                },
+                {
+                    "legal_unit_id": "item-5-2-1",
+                    "unit_type": "item",
+                    "parent_legal_unit_id": "paragraph-5-2",
+                    "path": "article:5/paragraph:2/item:1",
+                    "content_text": "Prva tacka.",
+                },
+                {
+                    "legal_unit_id": "paragraph-1-1",
+                    "unit_type": "paragraph",
+                    "path": "article:1/paragraph:1",
+                    "content_text": "Upucuje se na clan 5. stav 2. tacka 1.",
+                },
+            ],
+            "metadata": {},
+        },
+    )
+    service = ReferenceService()
+    extracted = service.extract_references(ExtractReferencesRequest(document=document))
+
+    response = service.resolve_references(
+        ResolveReferencesRequest(references=extracted.references, document=document)
+    )
+
+    assert len(response.resolved_references) == 1
+    assert response.resolved_references[0].resolution_status == "resolved"
+    assert response.resolved_references[0].target_legal_unit_id == "item-5-2-1"
+
+
+def test_reference_service_keeps_paragraph_references_when_paragraph_has_items():
+    document = CanonicalDocument(
+        source_uri="file:///tmp/zakon.txt",
+        filename="zakon.txt",
+        document_type="law",
+        canonical_json={
+            "schema_version": "0.1",
+            "document": {},
+            "legal_units": [
+                {
+                    "legal_unit_id": "paragraph-1-1",
+                    "unit_type": "paragraph",
+                    "path": "article:1/paragraph:1",
+                    "content_text": "Preambula upucuje na clan 5. 1) prva tacka.",
+                },
+                {
+                    "legal_unit_id": "item-1-1-1",
+                    "unit_type": "item",
+                    "parent_legal_unit_id": "paragraph-1-1",
+                    "path": "article:1/paragraph:1/item:1",
+                    "content_text": "prva tacka.",
+                },
+            ],
+            "metadata": {},
+        },
+    )
+
+    response = ReferenceService().extract_references(
+        ExtractReferencesRequest(document=document)
+    )
+
+    assert len(response.references) == 1
+    assert response.references[0].source_path == "article:1/paragraph:1"

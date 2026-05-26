@@ -95,3 +95,57 @@ def test_canonical_service_exports_basic_akoma_ntoso_xml():
     assert root.find(".//akn:paragraph/akn:content/akn:p", namespace).text == (
         "Ovim zakonom uredjuje se primer."
     )
+
+
+def test_canonical_service_exports_subitems_as_akoma_subpoints():
+    article = ParsedLegalUnit(
+        unit_type="article",
+        number="1",
+        ordinal=1,
+        path="article:1",
+        content_text="",
+    )
+    paragraph = ParsedLegalUnit(
+        parent_legal_unit_id=article.legal_unit_id,
+        unit_type="paragraph",
+        number="1",
+        ordinal=1,
+        path="article:1/paragraph:1",
+        content_text="",
+    )
+    item = ParsedLegalUnit(
+        parent_legal_unit_id=paragraph.legal_unit_id,
+        unit_type="item",
+        number="1",
+        ordinal=1,
+        path="article:1/paragraph:1/item:1",
+        content_text="",
+    )
+    subitem = ParsedLegalUnit(
+        parent_legal_unit_id=item.legal_unit_id,
+        unit_type="subitem",
+        number="1",
+        ordinal=1,
+        path="article:1/paragraph:1/item:1/subitem:1",
+        content_text="Prvi poduslov.",
+    )
+    parsed = ParsedLegalDocument(
+        source_uri="file:///tmp/zakon.txt",
+        filename="zakon.txt",
+        document_type="law",
+        title="Zakon o podtackama",
+        legal_units=[article, paragraph, item, subitem],
+    )
+    service = CanonicalService()
+    canonical = service.to_canonical_json(CanonicalizeRequest(document=parsed))
+
+    response = service.export_akoma_ntoso(
+        ExportAkomaNtosoRequest(document=canonical.document)
+    )
+
+    root = ET.fromstring(response.xml_text)
+    namespace = {"akn": "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"}
+    subpoint = root.find(".//akn:hcontainer[@name='subpoint']", namespace)
+    assert subpoint is not None
+    assert subpoint.attrib["eId"] == "article_1_paragraph_1_item_1_subitem_1"
+    assert subpoint.find("akn:content/akn:p", namespace).text == "Prvi poduslov."
