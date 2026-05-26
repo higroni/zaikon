@@ -32,6 +32,10 @@ _ROMAN_SECTION_RE = re.compile(
     re.IGNORECASE,
 )
 _NUMBERED_ITEM_RE = re.compile(r"^(\d+)\.\s+(.+)$")
+_INLINE_ITEM_RE = re.compile(
+    r"(?:^|\s)(\d+)\)\s+(.+?)(?=\s+\d+\)\s+|$)",
+    re.DOTALL,
+)
 
 
 def _fold_serbian_latin(value: str) -> str:
@@ -107,15 +111,20 @@ class LegalParserService:
             for paragraph_ordinal, paragraph_text in enumerate(
                 paragraph_blocks, start=1
             ):
-                legal_units.append(
-                    ParsedLegalUnit(
-                        parent_legal_unit_id=article_unit.legal_unit_id,
-                        unit_type="paragraph",
-                        number=str(paragraph_ordinal),
-                        ordinal=paragraph_ordinal,
-                        heading=None,
-                        content_text=paragraph_text,
-                        path=f"article:{number}/paragraph:{paragraph_ordinal}",
+                paragraph_unit = ParsedLegalUnit(
+                    parent_legal_unit_id=article_unit.legal_unit_id,
+                    unit_type="paragraph",
+                    number=str(paragraph_ordinal),
+                    ordinal=paragraph_ordinal,
+                    heading=None,
+                    content_text=paragraph_text,
+                    path=f"article:{number}/paragraph:{paragraph_ordinal}",
+                )
+                legal_units.append(paragraph_unit)
+                legal_units.extend(
+                    self._parse_inline_items(
+                        paragraph_text=paragraph_text,
+                        paragraph_unit=paragraph_unit,
                     )
                 )
 
@@ -210,6 +219,30 @@ class LegalParserService:
                 )
             )
         return units
+
+    def _parse_inline_items(
+        self,
+        paragraph_text: str,
+        paragraph_unit: ParsedLegalUnit,
+    ) -> list[ParsedLegalUnit]:
+        items = []
+        for item_ordinal, match in enumerate(
+            _INLINE_ITEM_RE.finditer(paragraph_text), start=1
+        ):
+            number = match.group(1)
+            content_text = match.group(2).strip()
+            items.append(
+                ParsedLegalUnit(
+                    parent_legal_unit_id=paragraph_unit.legal_unit_id,
+                    unit_type="item",
+                    number=number,
+                    ordinal=item_ordinal,
+                    heading=None,
+                    content_text=content_text,
+                    path=f"{paragraph_unit.path}/item:{number}",
+                )
+            )
+        return items
 
     def _title_before_first_article(
         self, lines: list[str], article_markers: list[tuple[int, str]]

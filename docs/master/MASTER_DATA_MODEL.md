@@ -241,6 +241,9 @@ Allowed hierarchy for Serbian Akoma export:
 - `point` contains `subitem` or `intro`
 - `subitem` contains `alinea` or `intro`
 
+Parser MVP extracts inline Serbian item markers such as `1) ... 2) ...` as
+internal `item` legal units below the containing paragraph.
+
 Akoma FRBR export naming:
 
 - country: `rs`

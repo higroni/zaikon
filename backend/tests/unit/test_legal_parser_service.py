@@ -103,3 +103,32 @@ o merama zastite
     assert document.metadata["item_count"] == 2
     assert [item.number for item in items] == ["1", "2"]
     assert "prvi podkorak" in items[1].content_text
+
+
+def test_legal_parser_extracts_inline_items_inside_article_paragraph():
+    content_text = """Zakon o tackama
+
+Clan 1.
+U postupku se obezbedjuje: 1) prvi uslov; 2) drugi uslov.
+"""
+
+    response = LegalParserService().parse_legal_structure(
+        ParseLegalStructureRequest(
+            source_uri="file:///tmp/zakon.txt",
+            filename="zakon.txt",
+            content_text=content_text,
+            document_type="law",
+        )
+    )
+
+    document = response.document
+    paragraphs = [
+        unit for unit in document.legal_units if unit.unit_type == "paragraph"
+    ]
+    items = [unit for unit in document.legal_units if unit.unit_type == "item"]
+
+    assert document.metadata["item_count"] == 2
+    assert [item.number for item in items] == ["1", "2"]
+    assert items[0].parent_legal_unit_id == paragraphs[0].legal_unit_id
+    assert items[0].path == "article:1/paragraph:1/item:1"
+    assert items[1].content_text == "drugi uslov."
