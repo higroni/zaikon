@@ -1,7 +1,10 @@
-"""Deterministic LLM facade used until a provider-backed adapter is enabled."""
+"""LLM facade with deterministic grounding and optional Ollama provider calls."""
 
 from functools import lru_cache
 import re
+from typing import Any
+
+import httpx
 
 from zaikon.core.config import settings
 from zaikon.core.schemas import ModuleHealth
@@ -30,16 +33,56 @@ def _normalize_query(value: str) -> str:
 
 def _terms(value: str) -> list[str]:
     return sorted(
-        {
-            token.lower()
-            for token in re.findall(r"[A-Za-zČĆŠĐŽčćšđž0-9]+", value)
-            if len(token) >= 3
-        }
+        {token for token in re.findall(r"\w+", value.lower()) if len(token) >= 3}
     )
+
+
+class OllamaProvider:
+    """Small Ollama adapter kept isolated from deterministic grounding logic."""
+
+    def __init__(
+        self,
+        *,
+        base_url: str = settings.llm_base_url,
+        model: str = settings.llm_model,
+        timeout_seconds: float = 10.0,
+    ) -> None:
+        self.base_url = base_url.rstrip("/")
+        self.model = model
+        self.timeout_seconds = timeout_seconds
+
+    def generate(self, prompt: str) -> str | None:
+        try:
+            response = httpx.post(
+                f"{self.base_url}/api/generate",
+                json={
+                    "model": self.model,
+                    "prompt": prompt,
+                    "stream": False,
+                    "options": {
+                        "temperature": settings.llm_temperature,
+                        "num_predict": settings.llm_max_tokens,
+                    },
+                },
+                timeout=self.timeout_seconds,
+            )
+            response.raise_for_status()
+            payload = response.json()
+        except (httpx.HTTPError, ValueError):
+            return None
+        generated = payload.get("response")
+        return generated.strip() if isinstance(generated, str) else None
 
 
 class LLMService:
     """Grounded helper for intent, query expansion, answers, and revision hints."""
+
+    def __init__(self, provider: OllamaProvider | None = None) -> None:
+        self.provider = (
+            provider
+            if settings.llm_use_provider and settings.llm_provider == "ollama"
+            else None
+        )
 
     def health(self) -> ModuleHealth:
         return ModuleHealth(module_name="llm")
@@ -55,7 +98,13 @@ class LLMService:
             confidence = 0.76
         elif any(
             term in folded
-            for term in ["predlozi", "predloži", "preformulisi", "preformuliši", "izmeni"]
+            for term in [
+                "predlozi",
+                "predloži",
+                "preformulisi",
+                "preformuliši",
+                "izmeni",
+            ]
         ):
             intent = IntentType.draft_revision
             confidence = 0.74
@@ -67,7 +116,7 @@ class LLMService:
             intent=intent,
             query=query,
             confidence=confidence,
-            metadata={"provider": "deterministic", "model": settings.llm_model},
+            metadata={"provider": self._provider_name(), "model": settings.llm_model},
         )
 
     def expand_query(self, request: ExpandQueryRequest) -> ExpandQueryResponse:
@@ -97,30 +146,19 @@ class LLMService:
                     "za ovo pitanje. Probaj uži upit ili proveri da li je korpus importovan."
                 ),
                 citations=[],
-                metadata={"provider": "deterministic", "grounded": False},
+                metadata={"provider": self._provider_name(), "grounded": False},
             )
 
-        lines = [
-            f"Za pitanje: {question}",
-            "",
-            "Relevantne odredbe u korpusu:",
-        ]
-        for index, result in enumerate(citations, start=1):
-            quote = result.content_text.strip().replace("\n", " ")
-            if len(quote) > 240:
-                quote = f"{quote[:237]}..."
-            lines.append(
-                f"{index}. {result.filename}, {result.path}: {quote}"
-            )
-        lines.append("")
-        lines.append(
-            "Zaključak je informativan i mora ostati vezan za navedene citate; "
-            "pravnik treba da potvrdi konačnu ocenu."
-        )
+        deterministic_answer = self._deterministic_answer(question, citations)
+        provider_answer = self._provider_answer(question, citations)
         return GenerateAnswerResponse(
-            answer_text="\n".join(lines),
+            answer_text=provider_answer or deterministic_answer,
             citations=citations,
-            metadata={"provider": "deterministic", "grounded": True},
+            metadata={
+                "provider": self._provider_name(provider_answer_used=bool(provider_answer)),
+                "grounded": True,
+                "fallback_used": provider_answer is None,
+            },
         )
 
     def suggest_revision(
@@ -139,13 +177,62 @@ class LLMService:
         return SuggestRevisionResponse(
             suggested_text=suggested_text,
             explanation=(
-                "Deterministički predlog koristi instrukciju i dostupne citate; "
+                "Predlog koristi instrukciju i dostupne citate; "
                 f"instrukcija: {instruction}"
             ),
             citations=citations,
         )
 
+    def _deterministic_answer(self, question: str, citations: list[Any]) -> str:
+        lines = [
+            f"Za pitanje: {question}",
+            "",
+            "Relevantne odredbe u korpusu:",
+        ]
+        for index, result in enumerate(citations, start=1):
+            quote = result.content_text.strip().replace("\n", " ")
+            if len(quote) > 240:
+                quote = f"{quote[:237]}..."
+            lines.append(f"{index}. {result.filename}, {result.path}: {quote}")
+        lines.append("")
+        lines.append(
+            "Zaključak je informativan i mora ostati vezan za navedene citate; "
+            "pravnik treba da potvrdi konačnu ocenu."
+        )
+        return "\n".join(lines)
+
+    def _provider_answer(self, question: str, citations: list[Any]) -> str | None:
+        if self.provider is None:
+            return None
+        prompt = self._grounded_prompt(question, citations)
+        generated = self.provider.generate(prompt)
+        if not generated:
+            return None
+        return f"{generated}\n\nCitati:\n{self._citation_lines(citations)}"
+
+    def _grounded_prompt(self, question: str, citations: list[Any]) -> str:
+        return (
+            "Odgovori na srpskom latinicom. Koristi samo navedene citate. "
+            "Ne iznosi pravni zaključak bez ograde da pravnik mora da potvrdi ocenu.\n\n"
+            f"Pitanje: {question}\n\n"
+            f"Citati:\n{self._citation_lines(citations)}"
+        )
+
+    def _citation_lines(self, citations: list[Any]) -> str:
+        lines = []
+        for index, result in enumerate(citations, start=1):
+            quote = result.content_text.strip().replace("\n", " ")
+            if len(quote) > 360:
+                quote = f"{quote[:357]}..."
+            lines.append(f"{index}. {result.filename}, {result.path}: {quote}")
+        return "\n".join(lines)
+
+    def _provider_name(self, *, provider_answer_used: bool = False) -> str:
+        if provider_answer_used:
+            return settings.llm_provider
+        return "deterministic"
+
 
 @lru_cache
 def get_llm_service() -> LLMService:
-    return LLMService()
+    return LLMService(provider=OllamaProvider())

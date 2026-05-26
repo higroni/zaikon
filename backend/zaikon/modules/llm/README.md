@@ -13,3 +13,11 @@ LLM roles:
 
 LLM output must be grounded in retrieved evidence.
 
+Current MVP behavior:
+
+- deterministic intent parsing, query expansion, answer generation, and revision
+  suggestions are always available
+- Ollama provider calls are available behind `ZAIKON_LLM_USE_PROVIDER=true`
+- when provider output is unavailable, grounded deterministic answers remain the
+  fallback
+

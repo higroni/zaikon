@@ -45,6 +45,7 @@ class Settings(BaseSettings):
     keyword_backend: str = "postgres_fts"
 
     llm_provider: str = "ollama"
+    llm_use_provider: bool = False
     llm_base_url: str = "http://localhost:11434"
     llm_model: str = "mistral:latest"
     llm_temperature: float = 0.1
