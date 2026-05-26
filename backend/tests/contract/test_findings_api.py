@@ -40,3 +40,11 @@ def test_finding_detail_and_review_decision_endpoints(client):
 
     assert repeated_get.status_code == 200
     assert repeated_get.json()["status"] == "accepted"
+
+    list_response = client.get(
+        f"/api/v1/findings?pipeline_run_id={pipeline_run_id}&status=accepted"
+    )
+
+    assert list_response.status_code == 200
+    listed_findings = list_response.json()
+    assert [finding["finding_id"] for finding in listed_findings] == [finding_id]

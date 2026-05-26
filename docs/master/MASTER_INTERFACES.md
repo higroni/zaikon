@@ -164,6 +164,8 @@ Initial schema names:
 - `UpdateFindingReviewDecisionRequest`
 - `UpdateFindingReviewDecisionResponse`
 
+Finding list endpoints support optional `pipeline_run_id` and `status` filters.
+
 ## Draft Review Service
 
 ```python

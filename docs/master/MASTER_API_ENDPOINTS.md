@@ -40,6 +40,7 @@ Base path: `/api/v1`
 
 ## Findings
 
+- `GET /api/v1/findings`
 - `GET /api/v1/findings/{finding_id}`
 - `PATCH /api/v1/findings/{finding_id}/review-decision`
 

@@ -2,8 +2,9 @@
 
 from uuid import UUID
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 
+from zaikon.core.schemas import FindingStatus
 from zaikon.modules.checkers.schemas import (
     FindingRecord,
     UpdateFindingReviewDecisionRequest,
@@ -12,6 +13,17 @@ from zaikon.modules.checkers.schemas import (
 from zaikon.modules.draft_reviews.service import get_draft_review_service
 
 router = APIRouter(prefix="/findings", tags=["findings"])
+
+
+@router.get("", response_model=list[FindingRecord])
+def list_findings(
+    pipeline_run_id: UUID | None = None,
+    status: FindingStatus | None = Query(default=None),
+) -> list[FindingRecord]:
+    return get_draft_review_service().list_all_findings(
+        pipeline_run_id=pipeline_run_id,
+        status=status,
+    )
 
 
 @router.get("/{finding_id}", response_model=FindingRecord)
@@ -38,4 +50,3 @@ def update_finding_review_decision(
     if finding is None:
         raise HTTPException(status_code=404, detail="Finding not found")
     return UpdateFindingReviewDecisionResponse(finding=finding)
-

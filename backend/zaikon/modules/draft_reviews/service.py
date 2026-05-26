@@ -136,6 +136,26 @@ class DraftReviewService:
         payload = self._read_json(path, [])
         return [FindingRecord.model_validate(item) for item in payload]
 
+    def list_all_findings(
+        self,
+        *,
+        pipeline_run_id: UUID | None = None,
+        status: FindingStatus | None = None,
+    ) -> list[FindingRecord]:
+        paths = (
+            [self.finding_dir / f"{pipeline_run_id}.json"]
+            if pipeline_run_id is not None
+            else list(self.finding_dir.glob("*.json"))
+        )
+        findings = []
+        for path in paths:
+            if not path.exists():
+                continue
+            findings.extend(self._load_findings_path(path))
+        if status is not None:
+            findings = [finding for finding in findings if finding.status == status]
+        return sorted(findings, key=lambda finding: finding.created_at, reverse=True)
+
     def get_finding(self, finding_id: UUID) -> FindingRecord | None:
         for path in self.finding_dir.glob("*.json"):
             for finding in self._load_findings_path(path):
