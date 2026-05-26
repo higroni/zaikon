@@ -8,6 +8,8 @@ database fields, APIs, or UI without updating this file first.
 - `corpus`: a named collection of processed laws and regulations.
 - `source_file`: a physical file discovered during import.
 - `document`: a legal document or draft legal document.
+- `document_type`: category of legal document, such as `law`, `regulation`,
+  `rulebook`, `order`, or `strategy`.
 - `document_version`: a version of a legal document valid in a time interval.
 - `legal_unit`: any addressable part of a document.
 - `article`: a legal unit at article level.
@@ -21,6 +23,11 @@ database fields, APIs, or UI without updating this file first.
 - `finding`: a potential compliance issue.
 - `evidence`: source text supporting a finding.
 - `review_decision`: human decision on a finding.
+- `akoma_ntoso`: LegalDocML/Akoma Ntoso XML interoperability format.
+- `frbr_uri`: Akoma Ntoso FRBR URI identifying a work, expression, or
+  manifestation.
+- `subitem`: internal canonical representation of Serbian `podtačka`; exported
+  to Akoma as `hcontainer name="subpoint"`.
 
 ## Required Field Names
 

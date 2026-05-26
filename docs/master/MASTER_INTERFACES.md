@@ -39,6 +39,18 @@ import_folder(request: ImportFolderRequest) -> ImportFolderResponse
 get_import_report(import_job_id: str) -> ImportReportResponse
 ```
 
+Initial schema names:
+
+- `CreateCorpusRequest`
+- `CreateCorpusResponse`
+- `ImportFolderRequest`
+- `ImportFolderResponse`
+- `ImportReportResponse`
+- `CorpusRecord`
+- `SourceFileRecord`
+- `ImportJobRecord`
+- `ImportReport`
+
 ## Document Service
 
 ```python
@@ -46,11 +58,28 @@ extract_text(request: ExtractTextRequest) -> ExtractTextResponse
 classify_document(request: ClassifyDocumentRequest) -> ClassifyDocumentResponse
 ```
 
+Initial schema names:
+
+- `ExtractTextRequest`
+- `ExtractTextResponse`
+- `ExtractedDocument`
+- `ClassifyDocumentRequest`
+- `ClassifyDocumentResponse`
+- `document_type` values: `law`, `regulation`, `rulebook`, `order`, `strategy`,
+  `unknown`
+
 ## Legal Parser Service
 
 ```python
 parse_legal_structure(request: ParseLegalStructureRequest) -> ParseLegalStructureResponse
 ```
+
+Initial schema names:
+
+- `ParseLegalStructureRequest`
+- `ParseLegalStructureResponse`
+- `ParsedLegalDocument`
+- `ParsedLegalUnit`
 
 ## Canonical Service
 
@@ -59,12 +88,29 @@ to_canonical_json(request: CanonicalizeRequest) -> CanonicalizeResponse
 export_akoma_ntoso(request: ExportAkomaNtosoRequest) -> ExportAkomaNtosoResponse
 ```
 
+Initial schema names:
+
+- `CanonicalizeRequest`
+- `CanonicalizeResponse`
+- `CanonicalDocument`
+- `ExportAkomaNtosoRequest`
+- `ExportAkomaNtosoResponse`
+
 ## Reference Service
 
 ```python
 extract_references(request: ExtractReferencesRequest) -> ExtractReferencesResponse
 resolve_references(request: ResolveReferencesRequest) -> ResolveReferencesResponse
 ```
+
+Initial schema names:
+
+- `ExtractReferencesRequest`
+- `ExtractReferencesResponse`
+- `ResolveReferencesRequest`
+- `ResolveReferencesResponse`
+- `LegalReferenceRecord`
+- `ResolvedReferenceRecord`
 
 ## Indexing Service
 
@@ -73,6 +119,14 @@ build_indexes(request: BuildIndexesRequest) -> BuildIndexesResponse
 refresh_indexes(request: RefreshIndexesRequest) -> RefreshIndexesResponse
 ```
 
+Initial schema names:
+
+- `BuildIndexesRequest`
+- `BuildIndexesResponse`
+- `RefreshIndexesRequest`
+- `RefreshIndexesResponse`
+- `IndexReport`
+
 ## Retrieval Service
 
 ```python
@@ -80,12 +134,46 @@ hybrid_search(request: HybridSearchRequest) -> HybridSearchResponse
 retrieve_for_legal_unit(request: RetrieveForLegalUnitRequest) -> RetrieveForLegalUnitResponse
 ```
 
+Initial schema names:
+
+- `HybridSearchRequest`
+- `HybridSearchResponse`
+- `RetrieveForLegalUnitRequest`
+- `RetrieveForLegalUnitResponse`
+- `RetrievalResult`
+
 ## Checker Service
 
 ```python
-run_checker(request: RunCheckerRequest) -> RunCheckerResponse
-run_checker_suite(request: RunCheckerSuiteRequest) -> RunCheckerSuiteResponse
+ReferenceChecker.check(
+    pipeline_run_id: UUID,
+    references: list[LegalReferenceRecord],
+    resolved_references: list[ResolvedReferenceRecord],
+) -> list[FindingRecord]
 ```
+
+Initial schema names:
+
+- `FindingRecord`
+
+## Draft Review Service
+
+```python
+create_draft_review(request: CreateDraftReviewRequest) -> CreateDraftReviewResponse
+list_draft_reviews() -> list[DraftReviewRecord]
+get_draft_review(pipeline_run_id: UUID) -> DraftReviewDetail | None
+run_draft_review(pipeline_run_id: UUID) -> RunDraftReviewResponse
+list_findings(pipeline_run_id: UUID) -> list[FindingRecord]
+```
+
+Initial schema names:
+
+- `CreateDraftReviewRequest`
+- `CreateDraftReviewResponse`
+- `DraftReviewRecord`
+- `DraftReviewDetail`
+- `RunDraftReviewResponse`
+- `FindingRecord`
 
 ## LLM Service
 

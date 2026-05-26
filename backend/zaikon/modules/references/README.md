@@ -2,6 +2,12 @@
 
 Owns reference extraction and resolution.
 
+Current MVP implementation:
+
+- extracts normalized Latin article references such as `clan 5. stav 2.`
+- extracts `Sluzbeni glasnik RS` references
+- leaves cross-document resolution for the next slice.
+
 Examples:
 
 - `član 5.`

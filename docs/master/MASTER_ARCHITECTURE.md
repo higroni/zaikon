@@ -130,6 +130,9 @@ Phase 1:
 
 - Serbian.
 - Cyrillic/Latin normalization.
+- Internal storage and indexes use normalized Latin `content_text`.
+- Akoma Ntoso export uses ISO 639-2 language value `srp` for Serbian, regardless
+  of source script.
 
 Phase 2:
 
@@ -143,4 +146,23 @@ Phase 2:
 - Every finding must include evidence.
 - Every module must have regression fixtures.
 - Master documents are updated before schema or API changes.
+
+## Serbian Akoma Ntoso Direction
+
+The Serbian Akoma implementation follows the layered approach described in
+`Automatic Transformation of Plain-text Legislation into Machine-readable
+Format` by Cvejic et al.:
+
+1. metadata layer
+2. structural/hierarchical layer
+3. text/reference layer
+
+Akoma Ntoso / LegalDocML remains an import/export and interoperability format.
+The runtime canonical model remains JSON. Parser and canonical modules should
+preserve enough structure to export valid Akoma later without reparsing raw text.
+
+Initial Akoma support should prioritize deterministic hierarchy parsing and
+schema validation. Metadata and references are expected to require human review
+or confidence scoring because published Serbian regulations vary in formatting
+and reference style.
 

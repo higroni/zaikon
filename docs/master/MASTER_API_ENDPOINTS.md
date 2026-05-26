@@ -18,11 +18,14 @@ Base path: `/api/v1`
 - `GET /api/v1/corpora/{corpus_id}/import-jobs`
 - `GET /api/v1/import-jobs/{import_job_id}`
 - `GET /api/v1/import-jobs/{import_job_id}/report`
+- `GET /api/v1/import-jobs/{import_job_id}/artifacts`
+- `GET /api/v1/import-jobs/{import_job_id}/artifacts/{artifact_name}`
 
 ## Documents
 
 - `GET /api/v1/documents`
 - `GET /api/v1/documents/{document_id}`
+- `GET /api/v1/documents/{document_id}/akoma-ntoso`
 - `GET /api/v1/document-versions/{document_version_id}`
 - `GET /api/v1/legal-units/{legal_unit_id}`
 

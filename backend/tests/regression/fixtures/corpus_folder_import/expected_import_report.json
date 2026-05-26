@@ -1,0 +1,13 @@
+{
+  "summary": {
+    "total_files": 4,
+    "supported_files": 3,
+    "unsupported_files": 1,
+    "extracted_documents": 3,
+    "failed_files": 0,
+    "stored_documents": 3
+  },
+  "supported_filenames": ["pravilnik.docx", "uredba.pdf", "zakon.txt"],
+  "unsupported_filenames": ["notes.md"],
+  "expected_warnings": ["unsupported_file_type"]
+}

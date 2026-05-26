@@ -12,3 +12,8 @@ Retrieval components:
 - LLM query expansion
 - reranking
 
+Current MVP implementation:
+
+- deterministic lexical search over persisted canonical legal units
+- exposes the same service shape planned for later hybrid retrieval
+

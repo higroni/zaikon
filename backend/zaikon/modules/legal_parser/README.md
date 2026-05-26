@@ -12,3 +12,9 @@ Initial Serbian units:
 - transitional provision
 - final provision
 
+Current MVP implementation:
+
+- parses normalized Serbian Latin text
+- detects article headers matching `Clan N.` / `Član N.`
+- emits article and paragraph `ParsedLegalUnit` records
+

@@ -41,6 +41,109 @@ format, not the primary runtime representation.
 }
 ```
 
+### ImportJob
+
+```json
+{
+  "import_job_id": "uuid",
+  "corpus_id": "uuid",
+  "folder_uri": "file:///D:/laws",
+  "status": "completed",
+  "total_files": 3,
+  "supported_files": 2,
+  "unsupported_files": 1,
+  "started_at": "datetime",
+  "completed_at": "datetime",
+  "error_message": null
+}
+```
+
+### ImportReport
+
+```json
+{
+  "import_job_id": "uuid",
+  "corpus_id": "uuid",
+  "status": "completed",
+  "source_files": [],
+  "warnings": [],
+  "summary": {
+    "total_files": 3,
+    "supported_files": 2,
+    "unsupported_files": 1
+  }
+}
+```
+
+### ExtractedDocument
+
+```json
+{
+  "source_uri": "file:///D:/laws/Zakon.txt",
+  "filename": "Zakon.txt",
+  "file_type": "txt",
+  "content_text": "Full extracted text",
+  "language_code": "sr",
+  "extraction_status": "completed",
+  "error_message": null,
+  "metadata": {
+    "character_count": 1234,
+    "page_count": 1,
+    "paragraph_count": null,
+    "normalization_applied": true,
+    "normalization": "sr_cyrillic_to_latin"
+  }
+}
+```
+
+### ParsedLegalDocument
+
+```json
+{
+  "source_uri": "file:///D:/laws/Zakon.txt",
+  "filename": "Zakon.txt",
+  "document_type": "law",
+  "title": "Zakon o ...",
+  "language_code": "sr",
+  "legal_units": [
+    {
+      "legal_unit_id": "uuid",
+      "parent_legal_unit_id": null,
+      "unit_type": "article",
+      "number": "1",
+      "ordinal": 1,
+      "heading": null,
+      "content_text": "Article text",
+      "path": "article:1"
+    }
+  ],
+  "metadata": {
+    "section_count": 0,
+    "article_count": 1,
+    "paragraph_count": 2,
+    "item_count": 0
+  }
+}
+```
+
+### CanonicalDocument
+
+```json
+{
+  "source_uri": "file:///D:/laws/Zakon.txt",
+  "filename": "Zakon.txt",
+  "document_type": "law",
+  "title": "Zakon o ...",
+  "language_code": "sr",
+  "canonical_json": {
+    "schema_version": "0.1",
+    "document": {},
+    "legal_units": [],
+    "metadata": {}
+  }
+}
+```
+
 ### Document
 
 ```json
@@ -58,6 +161,15 @@ format, not the primary runtime representation.
   "updated_at": "datetime"
 }
 ```
+
+Allowed `document_type` for Serbian MVP:
+
+- `law` for `zakon`
+- `regulation` for `uredba`
+- `rulebook` for `pravilnik`
+- `order` for `naredba`
+- `strategy` for `strategija`
+- `unknown` when the type cannot be identified with sufficient confidence
 
 ### DocumentVersion
 
@@ -105,6 +217,37 @@ Allowed `unit_type`:
 - `transitional_provision`
 - `final_provision`
 
+Serbian legal structure to Akoma Ntoso mapping:
+
+- `deo` -> `part`
+- `glava` -> `chapter`
+- `odeljak` -> `section`
+- `pododeljak` -> `subsection`
+- `clan` / `član` -> `article`
+- `stav` -> `paragraph`
+- `tacka` / `tačka` -> `point`
+- `podtacka` / `podtačka` -> `hcontainer name="subpoint"` in Akoma export and
+  `subitem` in the internal canonical model
+- `alineja` -> `alinea`
+
+Allowed hierarchy for Serbian Akoma export:
+
+- `part` contains `chapter`
+- `chapter` contains `section`, `article`, or `intro`
+- `section` contains `subsection` or `article`
+- `subsection` contains `article`
+- `article` contains `paragraph` or `intro`
+- `paragraph` contains `point`, `alinea`, or `intro`
+- `point` contains `subitem` or `intro`
+- `subitem` contains `alinea` or `intro`
+
+Akoma FRBR export naming:
+
+- country: `rs`
+- document type: `act` for MVP legislation exports
+- language: `srp` for Serbian, regardless of original Cyrillic or Latin script
+- manifestation format: `xml`
+
 ### LegalReference
 
 ```json
@@ -117,6 +260,19 @@ Allowed `unit_type`:
   "target_article_number": "5",
   "target_paragraph_number": "2",
   "confidence": 0.93
+}
+```
+
+### ExtractedDefinition
+
+```json
+{
+  "definition_id": "uuid",
+  "source_legal_unit_id": "uuid",
+  "source_path": "article:2/paragraph:1",
+  "term": "Ministarstvo",
+  "definition_text": "ministarstvo nadlezno za poslove sumarstva",
+  "confidence": 0.78
 }
 ```
 
@@ -139,6 +295,36 @@ Allowed `resolution_status`:
 - `missing`
 - `stale`
 - `out_of_scope`
+
+Allowed `reference_type` for MVP:
+
+- `article_reference`
+- `official_gazette_reference`
+
+### DraftReview
+
+```json
+{
+  "pipeline_run_id": "uuid",
+  "title": "Nacrt zakona o ...",
+  "language_code": "sr",
+  "selected_corpus_id": "uuid",
+  "status": "completed",
+  "finding_count": 1,
+  "created_at": "datetime",
+  "updated_at": "datetime",
+  "metadata": {
+    "document_type": "law",
+    "classification_confidence": 0.95,
+    "reference_count": 1,
+    "resolved_reference_count": 1
+  }
+}
+```
+
+MVP draft reviews accept draft text, normalize Serbian Cyrillic to Latin when
+enabled, parse the legal structure, canonicalize it, extract and resolve
+references, then store review findings and run artifacts.
 
 ### Finding
 

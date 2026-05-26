@@ -5,3 +5,9 @@ import/export.
 
 Runtime canonical format is JSON. XML is interoperability format.
 
+Current MVP implementation:
+
+- converts `ParsedLegalDocument` to `CanonicalDocument`
+- preserves legal unit hierarchy fields required for storage, indexing, and
+  later Akoma Ntoso export
+
