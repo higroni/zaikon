@@ -142,6 +142,8 @@ Initial schema names:
 - `RetrieveForLegalUnitResponse`
 - `RetrievalResult`
 
+Search requests accept optional `corpus_id` to limit retrieval to one corpus.
+
 ## Checker Service
 
 ```python

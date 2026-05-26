@@ -11,6 +11,7 @@ from zaikon.core.config import settings
 
 class DocumentSummary(BaseModel):
     document_id: UUID
+    corpus_id: UUID | None = None
     source_uri: str
     filename: str
     document_type: str
@@ -114,6 +115,7 @@ class DocumentCatalogService:
         )
         return DocumentSummary(
             document_id=UUID(document_id),
+            corpus_id=UUID(record["corpus_id"]) if record.get("corpus_id") else None,
             source_uri=record["source_uri"],
             filename=record["filename"],
             document_type=record["document_type"],

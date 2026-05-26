@@ -163,6 +163,9 @@ format, not the primary runtime representation.
 }
 ```
 
+Stored document summaries include `corpus_id` when created by corpus import, so
+retrieval can filter results by corpus.
+
 Allowed `document_type` for Serbian MVP:
 
 - `law` for `zakon`

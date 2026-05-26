@@ -666,6 +666,7 @@ class StoreDocumentsStep(PipelineStep):
         stored_documents = [
             {
                 "document_id": str(uuid5(NAMESPACE_URL, document["source_uri"])),
+                "corpus_id": context.inputs.get("corpus_id"),
                 "source_uri": document["source_uri"],
                 "filename": document["filename"],
                 "document_type": document["document_type"],

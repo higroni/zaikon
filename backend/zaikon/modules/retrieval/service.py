@@ -29,23 +29,35 @@ class RetrievalService:
 
     def hybrid_search(self, request: HybridSearchRequest) -> HybridSearchResponse:
         return HybridSearchResponse(
-            results=self._search(query=request.query, top_k=request.top_k)
+            results=self._search(
+                query=request.query,
+                top_k=request.top_k,
+                corpus_id=str(request.corpus_id) if request.corpus_id else None,
+            )
         )
 
     def retrieve_for_legal_unit(
         self, request: RetrieveForLegalUnitRequest
     ) -> RetrieveForLegalUnitResponse:
         return RetrieveForLegalUnitResponse(
-            results=self._search(query=request.query, top_k=request.top_k)
+            results=self._search(
+                query=request.query,
+                top_k=request.top_k,
+                corpus_id=str(request.corpus_id) if request.corpus_id else None,
+            )
         )
 
-    def _search(self, query: str, top_k: int) -> list[RetrievalResult]:
+    def _search(
+        self, query: str, top_k: int, corpus_id: str | None = None
+    ) -> list[RetrievalResult]:
         query_tokens = _tokens(query)
         if not query_tokens:
             return []
 
         results = []
         for document in self.catalog.list_documents():
+            if corpus_id and str(document.corpus_id) != corpus_id:
+                continue
             detail = self.catalog.get_document(document.document_id)
             if detail is None:
                 continue
@@ -59,6 +71,9 @@ class RetrievalService:
                 results.append(
                     RetrievalResult(
                         document_id=str(document.document_id),
+                        corpus_id=str(document.corpus_id)
+                        if document.corpus_id is not None
+                        else None,
                         legal_unit_id=unit["legal_unit_id"],
                         document_type=document.document_type,
                         filename=document.filename,

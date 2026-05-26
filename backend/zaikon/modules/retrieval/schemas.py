@@ -1,10 +1,13 @@
 """Retrieval module schemas."""
 
+from uuid import UUID
+
 from pydantic import BaseModel, Field
 
 
 class RetrievalResult(BaseModel):
     document_id: str
+    corpus_id: str | None = None
     legal_unit_id: str
     document_type: str
     filename: str
@@ -18,6 +21,7 @@ class RetrievalResult(BaseModel):
 class HybridSearchRequest(BaseModel):
     query: str
     top_k: int = 10
+    corpus_id: UUID | None = None
 
 
 class HybridSearchResponse(BaseModel):
@@ -27,6 +31,7 @@ class HybridSearchResponse(BaseModel):
 class RetrieveForLegalUnitRequest(BaseModel):
     query: str
     top_k: int = 10
+    corpus_id: UUID | None = None
 
 
 class RetrieveForLegalUnitResponse(BaseModel):
