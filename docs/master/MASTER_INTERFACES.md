@@ -206,4 +206,5 @@ Supported `report_format` values:
 
 - `markdown`
 - `docx`
+- `pdf`
 

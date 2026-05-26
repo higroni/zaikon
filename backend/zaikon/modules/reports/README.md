@@ -10,6 +10,6 @@ Target outputs:
 
 Implemented MVP:
 
-- Generates stored Markdown and DOCX reports from draft review findings.
+- Generates stored Markdown, DOCX, and PDF reports from draft review findings.
 - Exposes report metadata/content and report download through HTTP API.
 

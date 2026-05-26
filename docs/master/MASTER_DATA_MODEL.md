@@ -382,7 +382,7 @@ Allowed `finding_type` for MVP:
 {
   "report_id": "uuid",
   "pipeline_run_id": "uuid",
-  "report_format": "markdown | docx",
+  "report_format": "markdown | docx | pdf",
   "title": "Izvestaj - Nacrt zakona",
   "finding_count": 1,
   "content_text": "# Izvestaj ...",
@@ -395,6 +395,6 @@ Allowed `finding_type` for MVP:
 ```
 
 MVP reports are stored artifacts generated from draft review findings. Markdown
-is stored as text; DOCX stores a generated download artifact path in metadata.
-PDF remains a later export format.
+is stored as text; DOCX and PDF store generated download artifact paths in
+metadata.
 

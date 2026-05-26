@@ -3,9 +3,11 @@
 from functools import lru_cache
 import json
 from pathlib import Path
+import textwrap
 from uuid import UUID
 
 from docx import Document
+import fitz
 
 from zaikon.core.config import settings
 from zaikon.modules.draft_reviews.service import get_draft_review_service
@@ -26,8 +28,8 @@ class ReportService:
         self.download_dir.mkdir(parents=True, exist_ok=True)
 
     def generate_report(self, request: GenerateReportRequest) -> GenerateReportResponse:
-        if request.report_format not in {"markdown", "docx"}:
-            raise ValueError("Supported report formats: markdown, docx")
+        if request.report_format not in {"markdown", "docx", "pdf"}:
+            raise ValueError("Supported report formats: markdown, docx, pdf")
         detail = get_draft_review_service().get_draft_review(request.pipeline_run_id)
         if detail is None:
             raise KeyError(f"Draft review not found: {request.pipeline_run_id}")
@@ -46,6 +48,8 @@ class ReportService:
         )
         if request.report_format == "docx":
             report.metadata["download_path"] = str(self._save_docx_report(report, detail))
+        if request.report_format == "pdf":
+            report.metadata["download_path"] = str(self._save_pdf_report(report))
         self._save_report(report)
         return GenerateReportResponse(report=report)
 
@@ -79,6 +83,11 @@ class ReportService:
                 "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                 f"{report.report_id}.docx",
             )
+        if report.report_format == "pdf":
+            path = Path(report.metadata.get("download_path", ""))
+            if not path.exists():
+                return None
+            return path.read_bytes(), "application/pdf", f"{report.report_id}.pdf"
         return report.content_text, "text/markdown; charset=utf-8", f"{report.report_id}.md"
 
     def _save_report(self, report: ReportRecord) -> None:
@@ -115,6 +124,43 @@ class ReportService:
         path = self.download_dir / f"{report.report_id}.docx"
         document.save(path)
         return path
+
+    def _save_pdf_report(self, report: ReportRecord) -> Path:
+        pdf_document = fitz.open()
+        margin = 54
+        page_width = 595
+        page_height = 842
+        line_height = 14
+        max_lines = int((page_height - 2 * margin) / line_height)
+        lines = self._wrap_for_pdf(report.content_text)
+
+        for page_start in range(0, len(lines), max_lines):
+            page = pdf_document.new_page(width=page_width, height=page_height)
+            text = "\n".join(lines[page_start : page_start + max_lines])
+            page.insert_textbox(
+                fitz.Rect(margin, margin, page_width - margin, page_height - margin),
+                text,
+                fontsize=10,
+                fontname="helv",
+                lineheight=1.2,
+            )
+
+        if not lines:
+            pdf_document.new_page(width=page_width, height=page_height)
+        path = self.download_dir / f"{report.report_id}.pdf"
+        pdf_document.save(path)
+        pdf_document.close()
+        return path
+
+    def _wrap_for_pdf(self, content_text: str) -> list[str]:
+        lines: list[str] = []
+        for line in content_text.splitlines():
+            if not line:
+                lines.append("")
+                continue
+            stripped = line.replace("`", "")
+            lines.extend(textwrap.wrap(stripped, width=88) or [""])
+        return lines
 
     def _render_markdown(self, detail) -> str:
         lines = [
