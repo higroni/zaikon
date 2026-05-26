@@ -158,28 +158,50 @@ class DetectFileTypesStep(PipelineStep):
         allowed_extensions = settings.allowed_extensions
         source_files = []
         warnings = []
+        seen_hashes: dict[str, str] = {}
+        duplicate_files = 0
 
         for item in manifest.payload:
             path = _path_from_uri(item["source_uri"])
             suffix = item["suffix"]
             supported = suffix in allowed_extensions
             file_type = suffix.removeprefix(".") if suffix else "unknown"
+            content_hash = sha256(path.read_bytes()).hexdigest()
+            is_duplicate = (
+                settings.import_skip_duplicates
+                and supported
+                and content_hash in seen_hashes
+            )
             source_file = {
                 "source_uri": item["source_uri"],
                 "filename": item["filename"],
                 "file_type": file_type,
-                "content_hash": sha256(path.read_bytes()).hexdigest(),
+                "content_hash": content_hash,
                 "size_bytes": item["size_bytes"],
-                "import_status": "pending" if supported else "skipped",
-                "error_message": None if supported else "unsupported_file_type",
+                "import_status": "pending"
+                if supported and not is_duplicate
+                else "skipped",
+                "error_message": self._skip_reason(supported, is_duplicate),
             }
             source_files.append(source_file)
+            if supported and not is_duplicate:
+                seen_hashes[content_hash] = item["source_uri"]
             if not supported:
                 warnings.append(
                     {
                         "code": "unsupported_file_type",
                         "message": f"Unsupported file type: {item['filename']}",
                         "source_uri": item["source_uri"],
+                    }
+                )
+            if is_duplicate:
+                duplicate_files += 1
+                warnings.append(
+                    {
+                        "code": "duplicate_file",
+                        "message": f"Duplicate source file skipped: {item['filename']}",
+                        "source_uri": item["source_uri"],
+                        "duplicate_of": seen_hashes[content_hash],
                     }
                 )
 
@@ -189,9 +211,13 @@ class DetectFileTypesStep(PipelineStep):
                 1 for item in source_files if item["import_status"] == "pending"
             ),
             "unsupported_files": sum(
-                1 for item in source_files if item["import_status"] == "skipped"
+                1
+                for item in source_files
+                if item["error_message"] == "unsupported_file_type"
             ),
         }
+        if duplicate_files:
+            summary["duplicate_files"] = duplicate_files
         context.add_artifact(
             self.artifact(
                 name="import_report",
@@ -209,6 +235,13 @@ class DetectFileTypesStep(PipelineStep):
             self.step_name,
         )
         return context
+
+    def _skip_reason(self, supported: bool, is_duplicate: bool) -> str | None:
+        if is_duplicate:
+            return "duplicate_file"
+        if not supported:
+            return "unsupported_file_type"
+        return None
 
 
 class ExtractTextStep(PipelineStep):

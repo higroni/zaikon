@@ -41,6 +41,10 @@ Each step:
 15. `build_reference_graph`
 16. `generate_import_report`
 
+`detect_file_types` validates allowed extensions and, when
+`import_skip_duplicates` is enabled, skips duplicate supported files by content
+hash within the same import job.
+
 ## DraftComplianceReviewChain
 
 1. `upload_draft`

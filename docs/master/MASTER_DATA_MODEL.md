@@ -70,7 +70,8 @@ format, not the primary runtime representation.
   "summary": {
     "total_files": 3,
     "supported_files": 2,
-    "unsupported_files": 1
+    "unsupported_files": 1,
+    "duplicate_files": 0
   }
 }
 ```
