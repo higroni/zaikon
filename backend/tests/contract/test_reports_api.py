@@ -42,3 +42,37 @@ def test_generate_and_download_markdown_report(client):
     assert download_response.status_code == 200
     assert download_response.headers["content-type"].startswith("text/markdown")
     assert "Izvestaj - Nacrt za izvestaj" in download_response.text
+
+
+def test_generate_and_download_docx_report(client):
+    create_response = client.post(
+        "/api/v1/draft-reviews",
+        json={
+            "title": "Nacrt za Word izvestaj",
+            "content_text": (
+                "NACRT ZAKONA O WORD IZVESTAJU\n\n"
+                "Clan 1.\n"
+                "Ovaj nacrt upucuje na clan 99.\n"
+            ),
+        },
+    )
+    pipeline_run_id = create_response.json()["draft_review"]["pipeline_run_id"]
+    client.post(f"/api/v1/draft-reviews/{pipeline_run_id}/run")
+
+    report_response = client.post(
+        "/api/v1/reports",
+        json={"pipeline_run_id": pipeline_run_id, "report_format": "docx"},
+    )
+
+    assert report_response.status_code == 200
+    report = report_response.json()["report"]
+    assert report["report_format"] == "docx"
+    assert report["metadata"]["download_path"].endswith(".docx")
+
+    download_response = client.get(f"/api/v1/reports/{report['report_id']}/download")
+
+    assert download_response.status_code == 200
+    assert download_response.headers["content-type"].startswith(
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    )
+    assert download_response.content[:2] == b"PK"

@@ -40,12 +40,12 @@ def get_report(report_id: UUID) -> ReportRecord:
 
 @router.get("/{report_id}/download")
 def download_report(report_id: UUID) -> Response:
-    report = get_report_service().get_report(report_id)
-    if report is None:
+    download = get_report_service().get_download(report_id)
+    if download is None:
         raise HTTPException(status_code=404, detail="Report not found")
-    filename = f"{report.report_id}.md"
+    content, media_type, filename = download
     return Response(
-        content=report.content_text,
-        media_type="text/markdown; charset=utf-8",
+        content=content,
+        media_type=media_type,
         headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )

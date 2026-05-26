@@ -202,3 +202,8 @@ Initial schema names:
 - `GenerateReportResponse`
 - `ReportRecord`
 
+Supported `report_format` values:
+
+- `markdown`
+- `docx`
+
