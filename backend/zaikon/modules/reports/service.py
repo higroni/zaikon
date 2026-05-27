@@ -92,6 +92,7 @@ class ReportService:
 
     def _save_report(self, report: ReportRecord) -> None:
         path = self.root / f"{report.report_id}.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(
             json.dumps(report.model_dump(mode="json"), ensure_ascii=False, indent=2),
             encoding="utf-8",
@@ -134,6 +135,7 @@ class ReportService:
                         document.add_paragraph(f"Citat: {quote}")
 
         path = self.download_dir / f"{report.report_id}.docx"
+        path.parent.mkdir(parents=True, exist_ok=True)
         document.save(path)
         return path
 
@@ -160,6 +162,7 @@ class ReportService:
         if not lines:
             pdf_document.new_page(width=page_width, height=page_height)
         path = self.download_dir / f"{report.report_id}.pdf"
+        path.parent.mkdir(parents=True, exist_ok=True)
         pdf_document.save(path)
         pdf_document.close()
         return path

@@ -40,13 +40,30 @@ Backend MVP in progress:
 - Markdown, DOCX, and PDF report generation
 - grounded assistant API skeleton with deterministic intent/query/answer flow
 - SQLite mirror storage for imported canonical documents
-- static frontend API console in `frontend/index.html`
+- React/Vite operational frontend with corpus import, document explorer, search,
+  draft review, findings, reports, assistant, and per-phase processing trace
 
 Run tests with:
 
 ```powershell
 python -m pytest backend\tests -q
+cd frontend
+npm run build
+npm test
 ```
 
-Open `frontend/index.html` directly in a browser for the current lightweight UI.
+Run the backend with:
+
+```powershell
+$env:PYTHONPATH="backend"
+python -m uvicorn zaikon.main:app --host 127.0.0.1 --port 8100
+```
+
+Run the frontend with:
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
 

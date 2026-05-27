@@ -72,13 +72,23 @@ This document is the golden copy for zAIkon user journeys.
 2. User generates report.
 3. User downloads DOCX/PDF.
 
-## Current Lightweight Frontend
+## Current React Frontend
 
-The current static console in `frontend/index.html` supports:
+The current React/Vite operational MVP supports:
 
-- creating a corpus and importing a folder
-- running hybrid search
-- creating and running a draft review
+- creating/listing corpora and importing local folders
+- import reports and phase-by-phase output tracing
+- document explorer with legal unit tree and Akoma export link
+- hybrid search with score breakdown and cited results
+- draft review creation from text or local path, run control, artifacts, findings,
+  and Akoma export link
+- findings table with review decisions
+- report generation/download for Markdown, DOCX, and PDF
+- assistant sessions with cited answers
+- a shared processing trace panel so one document, draft, or query can be followed
+  through input, extraction, classification, canonical model, references,
+  indexing/retrieval, findings, and report stages
 
-It is intentionally API-focused until a full application frontend is introduced.
+The GUI remains an internal legal back-office application and uses the existing
+FastAPI routes without frontend-specific backend endpoints.
 

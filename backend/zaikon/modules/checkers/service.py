@@ -43,6 +43,92 @@ _TEXTUAL_DATE_RE = re.compile(
 _OBLIGATION_RE = re.compile(r"\b(?:mora|duzan|duzna|duzno|obavezan|obavezna)\b")
 _PROHIBITION_RE = re.compile(r"\b(?:ne\s+sme|zabranjuje\s+se|zabranjeno)\b")
 _REPEAL_RE = re.compile(r"\b(?:prestaje\s+da\s+vazi|prestaju\s+da\s+vaze)\b")
+_FOLD_MAP = str.maketrans(
+    {
+        "č": "c",
+        "ć": "c",
+        "š": "s",
+        "đ": "dj",
+        "ž": "z",
+        "Č": "c",
+        "Ć": "c",
+        "Š": "s",
+        "Đ": "dj",
+        "Ž": "z",
+        "а": "a",
+        "б": "b",
+        "в": "v",
+        "г": "g",
+        "д": "d",
+        "ђ": "dj",
+        "е": "e",
+        "ж": "z",
+        "з": "z",
+        "и": "i",
+        "ј": "j",
+        "к": "k",
+        "л": "l",
+        "љ": "lj",
+        "м": "m",
+        "н": "n",
+        "њ": "nj",
+        "о": "o",
+        "п": "p",
+        "р": "r",
+        "с": "s",
+        "т": "t",
+        "ћ": "c",
+        "у": "u",
+        "ф": "f",
+        "х": "h",
+        "ц": "c",
+        "ч": "c",
+        "џ": "dz",
+        "ш": "s",
+        "А": "a",
+        "Б": "b",
+        "В": "v",
+        "Г": "g",
+        "Д": "d",
+        "Ђ": "dj",
+        "Е": "e",
+        "Ж": "z",
+        "З": "z",
+        "И": "i",
+        "Ј": "j",
+        "К": "k",
+        "Л": "l",
+        "Љ": "lj",
+        "М": "m",
+        "Н": "n",
+        "Њ": "nj",
+        "О": "o",
+        "П": "p",
+        "Р": "r",
+        "С": "s",
+        "Т": "t",
+        "Ћ": "c",
+        "У": "u",
+        "Ф": "f",
+        "Х": "h",
+        "Ц": "c",
+        "Ч": "c",
+        "Џ": "dz",
+        "Ш": "s",
+    }
+)
+_TREE_MARKING_RE = re.compile(r"\bobelezavanj\w*\s+(?:drveca|stabala|sumsk\w+\s+stabala)\b")
+_BROAD_ACTOR_RE = re.compile(
+    r"\b(?:svaki\s+gradjanin|svako\s+lice|bilo\s+koje\s+lice|fizicko\s+lice|gradjanin)\b"
+)
+_AUTHORIZED_ACTOR_RE = re.compile(
+    r"\b(?:ovlascen\w+\s+(?:preduzec\w+|pravnom?\s+lic\w+|lic\w+)|strucn\w+\s+sluzb\w+)\b"
+)
+
+
+def _normalize_legal_text(value: str) -> str:
+    folded = value.translate(_FOLD_MAP).lower()
+    return re.sub(r"\s+", " ", folded)
 
 
 class ReferenceChecker:
@@ -277,6 +363,82 @@ class NormConflictChecker:
         return findings
 
 
+class CorpusAuthorityConflictChecker:
+    """Flags draft permissions that conflict with authorized-actor rules in corpus."""
+
+    def check(
+        self,
+        *,
+        pipeline_run_id: UUID,
+        document: CanonicalDocument,
+        corpus_documents: list[CanonicalDocument],
+    ) -> list[FindingRecord]:
+        findings: list[FindingRecord] = []
+        corpus_units = self._authorized_tree_marking_units(corpus_documents)
+        if not corpus_units:
+            return findings
+
+        for unit in document.canonical_json.get("legal_units", []):
+            content_text = unit.get("content_text") or ""
+            normalized = _normalize_legal_text(content_text)
+            if not (
+                _TREE_MARKING_RE.search(normalized)
+                and _BROAD_ACTOR_RE.search(normalized)
+            ):
+                continue
+            findings.append(
+                FindingRecord(
+                    pipeline_run_id=pipeline_run_id,
+                    finding_type="corpus_authority_conflict",
+                    risk_level=RiskLevel.high,
+                    title="Nacrt širi ovlašćenje suprotno korpusu",
+                    explanation=(
+                        "Nacrt dozvoljava da obeležavanje drveća vrši širok krug "
+                        "lica, dok relevantna odredba iz korpusa vezuje tu radnju "
+                        "za ovlašćeno preduzeće ili drugo ovlašćeno lice."
+                    ),
+                    recommendation=(
+                        "Uskladiti nacrt sa odredbom iz korpusa: zameniti široku "
+                        "formulaciju preciznim ovlašćenim subjektom ili dodati "
+                        "izuzetak sa jasnim pravnim osnovom."
+                    ),
+                    source_legal_unit_id=unit.get("legal_unit_id"),
+                    source_path=unit.get("path"),
+                    evidence={
+                        "draft_quote": content_text,
+                        "matched_rule": "tree_marking_authorized_actor",
+                        "corpus_conflicts": corpus_units[:3],
+                    },
+                )
+            )
+        return findings
+
+    def _authorized_tree_marking_units(
+        self, corpus_documents: list[CanonicalDocument]
+    ) -> list[dict]:
+        matches: list[dict] = []
+        for document in corpus_documents:
+            for unit in document.canonical_json.get("legal_units", []):
+                content_text = unit.get("content_text") or ""
+                normalized = _normalize_legal_text(content_text)
+                if not (
+                    _TREE_MARKING_RE.search(normalized)
+                    and _AUTHORIZED_ACTOR_RE.search(normalized)
+                ):
+                    continue
+                matches.append(
+                    {
+                        "filename": document.filename,
+                        "document_type": document.document_type,
+                        "title": document.title,
+                        "legal_unit_id": unit.get("legal_unit_id"),
+                        "path": unit.get("path"),
+                        "quote": content_text,
+                    }
+                )
+        return matches
+
+
 class OverlapChecker:
     """Finds repeated provision wording inside the same draft."""
 
@@ -390,6 +552,11 @@ def get_temporal_validity_checker() -> TemporalValidityChecker:
 @lru_cache
 def get_norm_conflict_checker() -> NormConflictChecker:
     return NormConflictChecker()
+
+
+@lru_cache
+def get_corpus_authority_conflict_checker() -> CorpusAuthorityConflictChecker:
+    return CorpusAuthorityConflictChecker()
 
 
 @lru_cache

@@ -164,6 +164,64 @@ def test_draft_review_uses_selected_corpus_for_retrieval_artifact(client):
     }
 
 
+def test_draft_review_flags_authorized_actor_conflict_from_selected_corpus(
+    client, tmp_path
+):
+    corpus_dir = tmp_path / "authority"
+    corpus_dir.mkdir()
+    (corpus_dir / "zakon-o-sumama.txt").write_text(
+        (
+            "Zakon o sumama\n\n"
+            "Clan 45.\n"
+            "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu "
+            "sa zakonom i planom gazdovanja sumama.\n"
+        ),
+        encoding="utf-8",
+    )
+    corpus = client.post(
+        "/api/v1/corpora", json={"name": "Authority conflict corpus"}
+    ).json()["corpus"]
+    client.post(
+        f"/api/v1/corpora/{corpus['corpus_id']}/import-folder",
+        json={
+            "corpus_id": corpus["corpus_id"],
+            "folder_uri": str(corpus_dir),
+        },
+    )
+    create_response = client.post(
+        "/api/v1/draft-reviews",
+        json={
+            "title": "Nacrt sa prosirenim ovlascenjem",
+            "content_text": (
+                "NACRT\n\n"
+                "Clan 1.\n"
+                "Postupak se sprovodi u skladu sa clanom 2. Zakona o sumama. "
+                "Obelezavanje drveca moze da radi svaki gradjanin.\n"
+            ),
+            "selected_corpus_id": corpus["corpus_id"],
+        },
+    )
+    pipeline_run_id = create_response.json()["draft_review"]["pipeline_run_id"]
+
+    run_response = client.post(f"/api/v1/draft-reviews/{pipeline_run_id}/run")
+
+    assert run_response.status_code == 200
+    findings = run_response.json()["findings"]
+    authority_findings = [
+        finding
+        for finding in findings
+        if finding["finding_type"] == "corpus_authority_conflict"
+    ]
+    assert authority_findings
+    finding = authority_findings[0]
+    assert finding["risk_level"] == "high"
+    assert "svaki gradjanin" in finding["evidence"]["draft_quote"].lower()
+    assert finding["evidence"]["corpus_conflicts"]
+    assert "ovlasceno preduzece" in finding["evidence"]["corpus_conflicts"][0][
+        "quote"
+    ].lower()
+
+
 def test_draft_review_resolves_cross_document_reference_from_selected_corpus(
     client, tmp_path
 ):

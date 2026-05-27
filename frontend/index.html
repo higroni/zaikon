@@ -1,54 +1,12 @@
 <!doctype html>
-<html lang="sr">
+<html lang="sr-Latn">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>zAIkon</title>
-    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="shell">
-      <header class="topbar">
-        <div>
-          <h1>zAIkon</h1>
-          <p>Pregled korpusa, pretraga i provera nacrta</p>
-        </div>
-        <label>
-          API
-          <input id="apiBase" value="http://127.0.0.1:8100" />
-        </label>
-      </header>
-
-      <section class="grid">
-        <form id="corpusForm" class="panel">
-          <h2>Korpus</h2>
-          <input name="name" placeholder="Naziv korpusa" value="Šumarstvo" />
-          <input name="folder_uri" placeholder="Folder dokumenata" />
-          <button type="submit">Importuj folder</button>
-          <pre id="corpusOutput"></pre>
-        </form>
-
-        <form id="searchForm" class="panel">
-          <h2>Pretraga</h2>
-          <input name="corpus_id" placeholder="corpus_id" />
-          <input name="query" placeholder="Upit" value="šume evidencija" />
-          <button type="submit">Pretraži</button>
-          <div id="searchResults" class="results"></div>
-        </form>
-
-        <form id="draftForm" class="panel wide">
-          <h2>Nacrt</h2>
-          <input name="title" placeholder="Naslov nacrta" value="Nacrt" />
-          <input name="selected_corpus_id" placeholder="selected_corpus_id" />
-          <textarea name="content_text">NACRT
-
-Član 1.
-Postupak se sprovodi u skladu sa članom 2. Zakona o šumama.</textarea>
-          <button type="submit">Pokreni proveru</button>
-          <pre id="draftOutput"></pre>
-        </form>
-      </section>
-    </main>
-    <script src="./src/app.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

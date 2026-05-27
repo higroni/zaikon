@@ -15,5 +15,10 @@ logs/
 .pytest_cache/
 htmlcov/
 .coverage
+*.tsbuildinfo
 node_modules/
 frontend/dist/
+frontend/*.log
+frontend/playwright-report/
+frontend/test-results/
+backend-dev*.log

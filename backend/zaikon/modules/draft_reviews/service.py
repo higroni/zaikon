@@ -1,6 +1,7 @@
 """Draft review service."""
 
 import json
+from datetime import timezone
 from pathlib import Path
 from uuid import UUID
 
@@ -13,6 +14,7 @@ from zaikon.modules.canonical.schemas import ExportAkomaNtosoRequest
 from zaikon.modules.canonical.service import get_canonical_service
 from zaikon.modules.checkers.schemas import FindingRecord
 from zaikon.modules.checkers.service import get_definition_consistency_checker
+from zaikon.modules.checkers.service import get_corpus_authority_conflict_checker
 from zaikon.modules.checkers.service import get_norm_conflict_checker
 from zaikon.modules.checkers.service import get_overlap_checker
 from zaikon.modules.checkers.service import get_reference_checker
@@ -127,7 +129,7 @@ class DraftReviewService:
 
     def list_draft_reviews(self) -> list[DraftReviewRecord]:
         return sorted(
-            self._records.values(), key=lambda record: record.created_at, reverse=True
+            self._records.values(), key=_record_created_at_sort_key, reverse=True
         )
 
     def get_draft_review(self, pipeline_run_id: UUID) -> DraftReviewDetail | None:
@@ -188,7 +190,7 @@ class DraftReviewService:
             findings.extend(self._load_findings_path(path))
         if status is not None:
             findings = [finding for finding in findings if finding.status == status]
-        return sorted(findings, key=lambda finding: finding.created_at, reverse=True)
+        return sorted(findings, key=_finding_created_at_sort_key, reverse=True)
 
     def get_finding(self, finding_id: UUID) -> FindingRecord | None:
         for path in self.finding_dir.glob("*.json"):
@@ -260,11 +262,12 @@ class DraftReviewService:
             references = get_reference_service().extract_references(
                 ExtractReferencesRequest(document=canonical.document)
             )
+            corpus_documents = self._load_corpus_documents(record)
             resolved = get_reference_service().resolve_references(
                 ResolveReferencesRequest(
                     references=references.references,
                     document=canonical.document,
-                    corpus_documents=self._load_corpus_documents(record),
+                    corpus_documents=corpus_documents,
                 )
             )
             findings = get_reference_checker().check(
@@ -294,6 +297,13 @@ class DraftReviewService:
                 get_norm_conflict_checker().check(
                     pipeline_run_id=pipeline_run_id,
                     document=canonical.document,
+                )
+            )
+            findings.extend(
+                get_corpus_authority_conflict_checker().check(
+                    pipeline_run_id=pipeline_run_id,
+                    document=canonical.document,
+                    corpus_documents=corpus_documents,
                 )
             )
             findings.extend(
@@ -478,3 +488,17 @@ class DraftReviewService:
 
 def get_draft_review_service() -> DraftReviewService:
     return DraftReviewService()
+
+
+def _finding_created_at_sort_key(finding: FindingRecord):
+    return _normalize_datetime_for_sort(finding.created_at)
+
+
+def _record_created_at_sort_key(record: DraftReviewRecord):
+    return _normalize_datetime_for_sort(record.created_at)
+
+
+def _normalize_datetime_for_sort(created_at):
+    if created_at.tzinfo is None:
+        created_at = created_at.replace(tzinfo=timezone.utc)
+    return created_at.astimezone(timezone.utc)
