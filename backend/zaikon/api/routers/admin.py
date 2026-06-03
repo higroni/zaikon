@@ -268,10 +268,9 @@ def _qdrant_path() -> Path | None:
 def _reset_service_caches() -> None:
     from zaikon.modules.assistant.service import get_assistant_service
     from zaikon.modules.corpus.service import get_corpus_service
-    from zaikon.modules.draft_reviews.service import get_draft_review_service
     from zaikon.modules.reports.service import get_report_service
 
     get_assistant_service.cache_clear()
     get_corpus_service.cache_clear()
-    get_draft_review_service.cache_clear()
     get_report_service.cache_clear()
+    # Note: get_draft_review_service does not use @lru_cache, so no cache_clear() needed
