@@ -1,0 +1,46 @@
+[
+  {
+    "created_at": "2026-06-03T18:33:29.308276Z",
+    "evidence": {
+      "definitions": [
+        {
+          "definition_text": "Ministarstvo nadlezno za sume",
+          "source_legal_unit_id": "510d36ba-dc43-4969-a1e9-e108a72ba7cb",
+          "source_path": "article:1",
+          "term": "Ministarstvo"
+        },
+        {
+          "definition_text": "Ministarstvo nadlezno za sume",
+          "source_legal_unit_id": "8cba69fd-55c9-40bd-af39-8ee4c5423bad",
+          "source_path": "article:1/paragraph:1",
+          "term": "Ministarstvo"
+        },
+        {
+          "definition_text": "Ministarstvo nadlezno za finansije",
+          "source_legal_unit_id": "89dfe284-146f-49bb-af27-85e9ee0c3c9c",
+          "source_path": "article:2",
+          "term": "Ministarstvo"
+        },
+        {
+          "definition_text": "Ministarstvo nadlezno za finansije",
+          "source_legal_unit_id": "8aa2d937-9c83-4864-8523-761ad7dba98c",
+          "source_path": "article:2/paragraph:1",
+          "term": "Ministarstvo"
+        }
+      ],
+      "term": "Ministarstvo"
+    },
+    "explanation": "The same term appears to be defined more than once with different wording in the draft.",
+    "finding_id": "b51fed34-a324-4c3c-8bd9-43020b7a4662",
+    "finding_type": "definition_conflict",
+    "pipeline_run_id": "2971b88b-c895-4189-b9b1-62190ceab5d5",
+    "recommendation": "Keep one definition for the term or harmonize all repeated definitions.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "510d36ba-dc43-4969-a1e9-e108a72ba7cb",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Term is defined inconsistently",
+    "updated_at": null
+  }
+]

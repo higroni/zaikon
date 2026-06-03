@@ -1,0 +1,119 @@
+{
+  "artifact_id": "bdf15a80-b5b3-464a-b59a-e4bf7e6817a9",
+  "artifact_type": "normative_assertions",
+  "created_at": "2026-06-03T18:33:29.589452Z",
+  "name": "normative_assertions",
+  "payload": [
+    {
+      "assertions": [
+        {
+          "action": {
+            "canonical": "issue_decision",
+            "confidence": 0.7999999999999999,
+            "metadata": {},
+            "raw": "odlucuje"
+          },
+          "actor": {
+            "canonical": "competent_authority",
+            "confidence": 0.86,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "nadlezni organ"
+          },
+          "assertion_id": "4d4ea005-3948-595b-953d-412ec6f2079a",
+          "assertion_type": "deadline",
+          "condition": null,
+          "confidence": 0.84,
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "deadline": {
+            "calendar_type": "calendar_day",
+            "confidence": 0.86,
+            "end_event": null,
+            "raw": "u roku od 30 dana",
+            "start_event": null,
+            "unit": "day",
+            "value": 30
+          },
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "054e5fde-5298-4ba6-b71c-1931be9dec69",
+          "metadata": {
+            "unit_type": "article"
+          },
+          "modality": null,
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.7999999999999999,
+            "actor": 0.86,
+            "deadline": 0.86
+          },
+          "source_path": "article:1",
+          "source_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/deadline_mismatch_001/corpus/zakon-rok.txt"
+        },
+        {
+          "action": {
+            "canonical": "issue_decision",
+            "confidence": 0.7999999999999999,
+            "metadata": {},
+            "raw": "odlucuje"
+          },
+          "actor": {
+            "canonical": "competent_authority",
+            "confidence": 0.86,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "nadlezni organ"
+          },
+          "assertion_id": "4075e954-39f3-5a9f-981d-942868ea9a68",
+          "assertion_type": "deadline",
+          "condition": null,
+          "confidence": 0.84,
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "deadline": {
+            "calendar_type": "calendar_day",
+            "confidence": 0.86,
+            "end_event": null,
+            "raw": "u roku od 30 dana",
+            "start_event": null,
+            "unit": "day",
+            "value": 30
+          },
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "f1ab2c4a-ddec-4bf7-ae85-ddcd95ad61e0",
+          "metadata": {
+            "unit_type": "paragraph"
+          },
+          "modality": null,
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.7999999999999999,
+            "actor": 0.86,
+            "deadline": 0.86
+          },
+          "source_path": "article:1/paragraph:1",
+          "source_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/deadline_mismatch_001/corpus/zakon-rok.txt"
+        }
+      ],
+      "filename": "zakon-rok.txt",
+      "metadata": {
+        "assertion_count": 2
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/deadline_mismatch_001/corpus/zakon-rok.txt"
+    }
+  ]
+}

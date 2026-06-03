@@ -1,0 +1,463 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa sirim krugom aktera.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://1d058735-492f-4f7b-863d-8e303d6bfda0",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+          "heading": "NACRT",
+          "legal_unit_id": "c5a692f8-83b5-4971-aee0-f4f7dfd05337",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+          "heading": null,
+          "legal_unit_id": "73a8f9b4-34a2-4201-9afe-a4bdb71905e4",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "c5a692f8-83b5-4971-aee0-f4f7dfd05337",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa sirim krugom aktera.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [
+    {
+      "candidate_id": "df1755f7-cb1d-5e9a-a07d-8d6d03a3bad5",
+      "corpus_assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+      "draft_assertion_id": "082c9f8a-0695-55d8-8057-cf86740fa34b",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "bd2a8c7c-7db2-5853-a91c-8e9490d910f4",
+      "corpus_assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+      "draft_assertion_id": "082c9f8a-0695-55d8-8057-cf86740fa34b",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "b17cff25-f6c9-5b33-bbf3-452846fcd716",
+      "corpus_assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+      "draft_assertion_id": "90535e2f-b386-53fa-84df-33c1015ad00a",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "61d5690b-0ce3-5a84-b6a5-33c61658c35c",
+      "corpus_assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+      "draft_assertion_id": "90535e2f-b386-53fa-84df-33c1015ad00a",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    }
+  ],
+  "conflict_trace": {
+    "candidate_count": 4,
+    "corpus_assertion_count": 2,
+    "draft_assertion_count": 2,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 8
+  },
+  "corpus_normative_assertions": [
+    {
+      "action": {
+        "canonical": "mark_tree",
+        "confidence": 0.9099999999999999,
+        "metadata": {},
+        "raw": "obelezavanje drveca"
+      },
+      "actor": {
+        "canonical": "authorized_entity",
+        "confidence": 0.9299999999999999,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "ovlasceno pravno lice"
+      },
+      "assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+      "deadline": null,
+      "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-sume.txt",
+      "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_authorized",
+      "object": {
+        "canonical": "tree",
+        "confidence": 0.78,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "drveca"
+      },
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.9099999999999999,
+        "actor": 0.9299999999999999,
+        "domain": 0.82,
+        "object": 0.78
+      },
+      "source_path": "article:1",
+      "source_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/authority_scope_001/corpus/zakon-sume.txt"
+    },
+    {
+      "action": {
+        "canonical": "mark_tree",
+        "confidence": 0.9099999999999999,
+        "metadata": {},
+        "raw": "obelezavanje drveca"
+      },
+      "actor": {
+        "canonical": "authorized_entity",
+        "confidence": 0.9299999999999999,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "ovlasceno pravno lice"
+      },
+      "assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+      "deadline": null,
+      "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-sume.txt",
+      "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_authorized",
+      "object": {
+        "canonical": "tree",
+        "confidence": 0.78,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "drveca"
+      },
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.9099999999999999,
+        "actor": 0.9299999999999999,
+        "domain": 0.82,
+        "object": 0.78
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/authority_scope_001/corpus/zakon-sume.txt"
+    }
+  ],
+  "normalized_text": "NACRT\n\nClan 1.\nObelezavanje drveca moze da vrsi svaki gradjanin.\n",
+  "normative_assertions": [
+    {
+      "action": {
+        "canonical": "mark_tree",
+        "confidence": 0.9099999999999999,
+        "metadata": {},
+        "raw": "obelezavanje drveca"
+      },
+      "actor": {
+        "canonical": "any_person",
+        "confidence": 0.87,
+        "metadata": {
+          "broader_than": [
+            "citizen",
+            "natural_person",
+            "authorized_entity"
+          ]
+        },
+        "raw": "svaki gradjanin"
+      },
+      "assertion_id": "082c9f8a-0695-55d8-8057-cf86740fa34b",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa sirim krugom aktera.txt",
+      "legal_unit_id": "c5a692f8-83b5-4971-aee0-f4f7dfd05337",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "may",
+      "object": {
+        "canonical": "tree",
+        "confidence": 0.78,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "drveca"
+      },
+      "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.9099999999999999,
+        "actor": 0.87,
+        "domain": 0.82,
+        "object": 0.78
+      },
+      "source_path": "article:1",
+      "source_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "source_uri": "draft-review://1d058735-492f-4f7b-863d-8e303d6bfda0"
+    },
+    {
+      "action": {
+        "canonical": "mark_tree",
+        "confidence": 0.9099999999999999,
+        "metadata": {},
+        "raw": "obelezavanje drveca"
+      },
+      "actor": {
+        "canonical": "any_person",
+        "confidence": 0.87,
+        "metadata": {
+          "broader_than": [
+            "citizen",
+            "natural_person",
+            "authorized_entity"
+          ]
+        },
+        "raw": "svaki gradjanin"
+      },
+      "assertion_id": "90535e2f-b386-53fa-84df-33c1015ad00a",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa sirim krugom aktera.txt",
+      "legal_unit_id": "73a8f9b4-34a2-4201-9afe-a4bdb71905e4",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "may",
+      "object": {
+        "canonical": "tree",
+        "confidence": 0.78,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "drveca"
+      },
+      "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.9099999999999999,
+        "actor": 0.87,
+        "domain": 0.82,
+        "object": 0.78
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "source_uri": "draft-review://1d058735-492f-4f7b-863d-8e303d6bfda0"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa sirim krugom aktera.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+        "heading": "NACRT",
+        "legal_unit_id": "c5a692f8-83b5-4971-aee0-f4f7dfd05337",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+        "heading": null,
+        "legal_unit_id": "73a8f9b4-34a2-4201-9afe-a4bdb71905e4",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "c5a692f8-83b5-4971-aee0-f4f7dfd05337",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": [
+    {
+      "content_text": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+      "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+      "document_type": "law",
+      "filename": "zakon-sume.txt",
+      "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+      "metadata": {
+        "lexical_score": 0.375,
+        "matched_terms": [
+          "drveca",
+          "obelezavanje",
+          "vrsi"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.3872983346207417
+      },
+      "path": "article:1",
+      "score": 0.3793044171172596,
+      "unit_type": "article"
+    },
+    {
+      "content_text": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+      "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+      "document_type": "law",
+      "filename": "zakon-sume.txt",
+      "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+      "metadata": {
+        "lexical_score": 0.375,
+        "matched_terms": [
+          "drveca",
+          "obelezavanje",
+          "vrsi"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.3872983346207417
+      },
+      "path": "article:1/paragraph:1",
+      "score": 0.3793044171172596,
+      "unit_type": "paragraph"
+    }
+  ]
+}

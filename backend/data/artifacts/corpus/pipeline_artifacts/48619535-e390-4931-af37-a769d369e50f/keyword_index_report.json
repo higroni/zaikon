@@ -1,0 +1,58 @@
+{
+  "artifact_id": "17a807d4-7664-4e5f-b4c0-599ebbe093c7",
+  "artifact_type": "keyword_index_report",
+  "created_at": "2026-06-03T18:33:29.118349Z",
+  "name": "keyword_index_report",
+  "payload": {
+    "index_name": "keyword",
+    "indexed_documents": 1,
+    "indexed_legal_units": 2,
+    "metadata": {
+      "backend": "postgres_fts",
+      "top_terms": [
+        {
+          "count": 2,
+          "term": "obelezavanje"
+        },
+        {
+          "count": 2,
+          "term": "drveca"
+        },
+        {
+          "count": 2,
+          "term": "secu"
+        },
+        {
+          "count": 2,
+          "term": "vrsi"
+        },
+        {
+          "count": 2,
+          "term": "ovlasceno"
+        },
+        {
+          "count": 2,
+          "term": "preduzece"
+        },
+        {
+          "count": 2,
+          "term": "skladu"
+        },
+        {
+          "count": 2,
+          "term": "zakonom"
+        },
+        {
+          "count": 2,
+          "term": "planom"
+        },
+        {
+          "count": 2,
+          "term": "gazdovanja"
+        }
+      ],
+      "unique_terms": 11
+    },
+    "status": "completed"
+  }
+}

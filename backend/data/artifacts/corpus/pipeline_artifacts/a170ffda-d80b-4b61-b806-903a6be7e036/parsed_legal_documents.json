@@ -1,0 +1,47 @@
+{
+  "artifact_id": "430e0973-f637-4cd1-ae8c-7b32256047b5",
+  "artifact_type": "parsed_legal_documents",
+  "created_at": "2026-06-03T18:33:28.573106Z",
+  "name": "parsed_legal_documents",
+  "payload": [
+    {
+      "document_type": "law",
+      "filename": "zakon-b.txt",
+      "language_code": "sr",
+      "legal_units": [
+        {
+          "content_text": "Drugi korpus.",
+          "heading": "Zakon B",
+          "legal_unit_id": "705cd612-f180-40b7-91f5-d07231828383",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Drugi korpus.",
+          "heading": null,
+          "legal_unit_id": "4e08b5e7-9ad2-4d45-adad-867afcca5186",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "705cd612-f180-40b7-91f5-d07231828383",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_document_catalog_can_be_f0/second/zakon-b.txt",
+      "title": "Zakon B"
+    }
+  ]
+}

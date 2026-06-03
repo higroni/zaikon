@@ -1,0 +1,137 @@
+{
+  "artifact_id": "46f0f3b3-5545-4e68-9fd5-2e89d9909bcf",
+  "artifact_type": "normative_assertions",
+  "created_at": "2026-06-03T19:42:04.544818Z",
+  "name": "normative_assertions",
+  "payload": [
+    {
+      "assertions": [
+        {
+          "action": {
+            "canonical": "mark_tree",
+            "confidence": 0.9099999999999999,
+            "metadata": {},
+            "raw": "obelezavanje drveca"
+          },
+          "actor": {
+            "canonical": "authorized_entity",
+            "confidence": 0.9299999999999999,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "ovlasceno pravno lice"
+          },
+          "assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+          "assertion_type": "permission",
+          "condition": null,
+          "confidence": 0.8799999999999999,
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "deadline": null,
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "domain": {
+            "canonical": "forestry",
+            "confidence": 0.82,
+            "metadata": {
+              "source": "object_domain"
+            },
+            "raw": "forestry"
+          },
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "metadata": {
+            "unit_type": "article"
+          },
+          "modality": "is_authorized",
+          "object": {
+            "canonical": "tree",
+            "confidence": 0.78,
+            "metadata": {
+              "domains": [
+                "forestry"
+              ]
+            },
+            "raw": "drveca"
+          },
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.9099999999999999,
+            "actor": 0.9299999999999999,
+            "domain": 0.82,
+            "object": 0.78
+          },
+          "source_path": "article:1",
+          "source_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/authority_scope_001/corpus/zakon-sume.txt"
+        },
+        {
+          "action": {
+            "canonical": "mark_tree",
+            "confidence": 0.9099999999999999,
+            "metadata": {},
+            "raw": "obelezavanje drveca"
+          },
+          "actor": {
+            "canonical": "authorized_entity",
+            "confidence": 0.9299999999999999,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "ovlasceno pravno lice"
+          },
+          "assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+          "assertion_type": "permission",
+          "condition": null,
+          "confidence": 0.8799999999999999,
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "deadline": null,
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "domain": {
+            "canonical": "forestry",
+            "confidence": 0.82,
+            "metadata": {
+              "source": "object_domain"
+            },
+            "raw": "forestry"
+          },
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "metadata": {
+            "unit_type": "paragraph"
+          },
+          "modality": "is_authorized",
+          "object": {
+            "canonical": "tree",
+            "confidence": 0.78,
+            "metadata": {
+              "domains": [
+                "forestry"
+              ]
+            },
+            "raw": "drveca"
+          },
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.9099999999999999,
+            "actor": 0.9299999999999999,
+            "domain": 0.82,
+            "object": 0.78
+          },
+          "source_path": "article:1/paragraph:1",
+          "source_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/authority_scope_001/corpus/zakon-sume.txt"
+        }
+      ],
+      "filename": "zakon-sume.txt",
+      "metadata": {
+        "assertion_count": 2
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/authority_scope_001/corpus/zakon-sume.txt"
+    }
+  ]
+}

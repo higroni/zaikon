@@ -1,0 +1,47 @@
+{
+  "artifact_id": "021bbed8-879d-4169-a05f-22fe829d293a",
+  "artifact_type": "parsed_legal_documents",
+  "created_at": "2026-06-03T18:33:28.554953Z",
+  "name": "parsed_legal_documents",
+  "payload": [
+    {
+      "document_type": "law",
+      "filename": "zakon-a.txt",
+      "language_code": "sr",
+      "legal_units": [
+        {
+          "content_text": "Prvi korpus.",
+          "heading": "Zakon A",
+          "legal_unit_id": "c8c4e81e-81a7-46ee-8bee-c719339824c3",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Prvi korpus.",
+          "heading": null,
+          "legal_unit_id": "c33ac40b-e193-4609-b240-074dd8d6d38c",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "c8c4e81e-81a7-46ee-8bee-c719339824c3",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_document_catalog_can_be_f0/first/zakon-a.txt",
+      "title": "Zakon A"
+    }
+  ]
+}

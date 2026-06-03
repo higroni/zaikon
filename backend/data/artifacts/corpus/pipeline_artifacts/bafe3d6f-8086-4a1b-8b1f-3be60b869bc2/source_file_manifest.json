@@ -1,0 +1,32 @@
+{
+  "artifact_id": "491ad44b-ab41-4cd5-8233-316b9505a87c",
+  "artifact_type": "source_file_manifest",
+  "created_at": "2026-06-03T18:33:28.354180Z",
+  "name": "source_file_manifest",
+  "payload": [
+    {
+      "filename": "notes.md",
+      "size_bytes": 83,
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/notes.md",
+      "suffix": ".md"
+    },
+    {
+      "filename": "pravilnik.docx",
+      "size_bytes": 36624,
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/pravilnik.docx",
+      "suffix": ".docx"
+    },
+    {
+      "filename": "uredba.pdf",
+      "size_bytes": 837,
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/uredba.pdf",
+      "suffix": ".pdf"
+    },
+    {
+      "filename": "zakon.txt",
+      "size_bytes": 270,
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt",
+      "suffix": ".txt"
+    }
+  ]
+}

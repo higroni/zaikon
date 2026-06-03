@@ -369,6 +369,60 @@ Draft reviews can also be created from supported local files (`txt`, `pdf`,
 metadata stores `input_type`, `source_uri`, `filename`, `file_type`, and
 extraction metadata when the draft originates from a file.
 
+### NormativeAssertion
+
+```json
+{
+  "assertion_id": "uuid",
+  "document_id": "uuid|null",
+  "pipeline_run_id": "uuid|null",
+  "corpus_id": "uuid|null",
+  "source_uri": "file:///...",
+  "filename": "Zakon.txt",
+  "legal_unit_id": "uuid",
+  "source_path": "article:1/paragraph:1",
+  "assertion_type": "competence | deadline | obligation | prohibition | permission | norm",
+  "modality": "must | must_not | may | is_authorized | is_competent|null",
+  "actor": {
+    "raw": "ministarstva nadleznog za gradjevinu",
+    "canonical": "construction_ministry",
+    "confidence": 0.86
+  },
+  "action": {
+    "raw": "kontrola",
+    "canonical": "inspect",
+    "confidence": 0.74
+  },
+  "object": {
+    "raw": "hrane",
+    "canonical": "food",
+    "confidence": 0.77
+  },
+  "domain": {
+    "raw": "food_safety",
+    "canonical": "food_safety",
+    "confidence": 0.82
+  },
+  "deadline": {
+    "raw": "u roku od 15 dana",
+    "value": 15,
+    "unit": "day",
+    "calendar_type": "calendar_day"
+  },
+  "source_quote": "Kontrolu hrane vrsi inspekcija...",
+  "confidence": 0.8,
+  "slot_confidence": {
+    "actor": 0.86,
+    "object": 0.77
+  },
+  "extraction_method": "rules"
+}
+```
+
+`normative_assertions` is produced during corpus import and draft review. It is
+the structured layer used by the comprehensive conflict engine; raw legal text
+is not sufficient for reliable conflict detection.
+
 ### Finding
 
 ```json

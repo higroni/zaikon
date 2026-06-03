@@ -1,0 +1,56 @@
+{
+  "artifact_id": "64b9b539-5c24-424c-b910-d1a24bec2f36",
+  "artifact_type": "stored_documents_report",
+  "created_at": "2026-06-03T18:33:28.307218Z",
+  "name": "stored_documents_report",
+  "payload": {
+    "metadata": {
+      "storage_backend": "in_memory_report",
+      "stored_documents": 3
+    },
+    "stored_documents": [
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "8d5e3329-bc15-423a-93cc-546f056f7ee9",
+        "document_id": "ed036bb8-53d6-575f-bd05-b3e90e365dfb",
+        "document_type": "rulebook",
+        "filename": "pravilnik.docx",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/pravilnik.docx",
+        "storage_status": "ready",
+        "title": "Pravilnik o primerima"
+      },
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "8d5e3329-bc15-423a-93cc-546f056f7ee9",
+        "document_id": "7fa920f3-36c1-5c29-811b-d0ad04958fed",
+        "document_type": "regulation",
+        "filename": "uredba.pdf",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/uredba.pdf",
+        "storage_status": "ready",
+        "title": "Uredba o primerima"
+      },
+      {
+        "canonical_unit_count": 4,
+        "corpus_id": "8d5e3329-bc15-423a-93cc-546f056f7ee9",
+        "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+        "document_type": "law",
+        "filename": "zakon.txt",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt",
+        "storage_status": "ready",
+        "title": "Zakon o primerima"
+      }
+    ]
+  }
+}

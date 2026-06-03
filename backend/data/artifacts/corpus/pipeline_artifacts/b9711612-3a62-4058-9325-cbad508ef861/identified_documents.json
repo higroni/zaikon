@@ -1,0 +1,75 @@
+{
+  "artifact_id": "79be0a02-7cc2-4bf4-8163-08baff4516ee",
+  "artifact_type": "identified_documents",
+  "created_at": "2026-06-03T18:33:28.886002Z",
+  "name": "identified_documents",
+  "payload": [
+    {
+      "content_text": "Pravilnik o primerima\nClan 3.\nDOCX tekst za regresioni test.",
+      "document_type": "rulebook",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "docx",
+      "filename": "pravilnik.docx",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 60,
+        "document_type": "rulebook",
+        "document_type_confidence": 0.95,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "paragraph_count": 3,
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        }
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/pravilnik.docx"
+    },
+    {
+      "content_text": "Uredba o primerima\nClan 2.\nPDF tekst za regresioni test.",
+      "document_type": "regulation",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "pdf",
+      "filename": "uredba.pdf",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 56,
+        "document_type": "regulation",
+        "document_type_confidence": 0.95,
+        "needs_ocr": false,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": 1,
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        }
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/uredba.pdf"
+    },
+    {
+      "content_text": "Zakon o primerima\n\nClan 1.\nOvim zakonom uredjuje se primer za regresioni test.\nMinistarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.\n\nČlan 4.\nLjudska prava i javni interes štite se zakonom.\n",
+      "document_type": "law",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 228,
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": true,
+        "page_count": null,
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        }
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt"
+    }
+  ]
+}

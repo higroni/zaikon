@@ -1,0 +1,28 @@
+{
+  "artifact_id": "56bbb671-c486-4f73-b864-cad78e2746d2",
+  "artifact_type": "stored_documents_report",
+  "created_at": "2026-06-03T18:33:29.822525Z",
+  "name": "stored_documents_report",
+  "payload": {
+    "metadata": {
+      "storage_backend": "in_memory_report",
+      "stored_documents": 1
+    },
+    "stored_documents": [
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "191e531d-44ce-4fea-a34c-9ce4dfbf15c1",
+        "document_id": "707bd0e9-c462-57d0-a661-b3a510d81516",
+        "document_type": "law",
+        "filename": "zakon-definicije.txt",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/definition_conflict_001/corpus/zakon-definicije.txt",
+        "storage_status": "ready",
+        "title": "Zakon"
+      }
+    ]
+  }
+}

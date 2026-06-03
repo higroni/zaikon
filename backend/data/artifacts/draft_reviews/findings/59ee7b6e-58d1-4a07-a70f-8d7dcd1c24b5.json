@@ -1,0 +1,23 @@
+[
+  {
+    "created_at": "2026-06-03T18:33:30.408117Z",
+    "evidence": {
+      "raw_text": "clan 99.",
+      "resolution_note": "Target path not found: article:99",
+      "target_article_number": "99",
+      "target_paragraph_number": null
+    },
+    "explanation": "The draft contains an internal article reference that does not resolve to an existing article or paragraph.",
+    "finding_id": "65248d2f-b274-47d8-a706-7ff5fb06f47a",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "59ee7b6e-58d1-4a07-a70f-8d7dcd1c24b5",
+    "recommendation": "Verify the cited article number and update the reference or add the missing target provision.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "d88a591a-def0-4ed3-95e4-eba09eb396c4",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Reference target was not found",
+    "updated_at": null
+  }
+]

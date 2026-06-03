@@ -1,0 +1,69 @@
+[
+  {
+    "created_at": "2026-06-03T18:33:30.639117Z",
+    "evidence": {
+      "raw_text": "clan 99.",
+      "related_legal_units": [
+        {
+          "corpus_id": "1aef238f-1f1f-4e4d-abb8-67f64e8e9235",
+          "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+          "document_type": "law",
+          "filename": "zakon.txt",
+          "legal_unit_id": "80c2da69-5658-4ad6-a4b8-8526df0b12e0",
+          "matched_terms": [
+            "evidenciju",
+            "ministarstvo",
+            "vodi"
+          ],
+          "path": "article:1",
+          "quote": "Ovim zakonom uredjuje se primer za regresioni test.\nMinistarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+          "score": 0.49477493752543306,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "1aef238f-1f1f-4e4d-abb8-67f64e8e9235",
+          "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+          "document_type": "law",
+          "filename": "zakon.txt",
+          "legal_unit_id": "6b77e605-5da4-4756-94fa-93f9d94330ce",
+          "matched_terms": [
+            "evidenciju",
+            "ministarstvo",
+            "vodi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Ovim zakonom uredjuje se primer za regresioni test. Ministarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+          "score": 0.49477493752543306,
+          "unit_type": "paragraph"
+        },
+        {
+          "corpus_id": "1aef238f-1f1f-4e4d-abb8-67f64e8e9235",
+          "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+          "document_type": "law",
+          "filename": "zakon.txt",
+          "legal_unit_id": "81864c33-5df4-4549-811a-969ad8964cc3",
+          "matched_terms": [],
+          "path": "article:4",
+          "quote": "Ljudska prava i javni interes štite se zakonom.",
+          "score": 0.04762896722078402,
+          "unit_type": "article"
+        }
+      ],
+      "resolution_note": "Target path not found: article:99",
+      "target_article_number": "99",
+      "target_paragraph_number": null
+    },
+    "explanation": "The draft contains an internal article reference that does not resolve to an existing article or paragraph.",
+    "finding_id": "489addf8-240e-4b96-a1fc-32da2dde7a1f",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "0282291b-b098-4baa-aea5-6463680b58b0",
+    "recommendation": "Verify the cited article number and update the reference or add the missing target provision.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "f8fb80ff-80f9-4e55-80f8-275913c984d8",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Reference target was not found",
+    "updated_at": null
+  }
+]

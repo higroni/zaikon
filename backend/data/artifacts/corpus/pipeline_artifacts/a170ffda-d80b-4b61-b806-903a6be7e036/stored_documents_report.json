@@ -1,0 +1,28 @@
+{
+  "artifact_id": "cf2e5fbb-8919-4ff6-89f1-4d3e34c91936",
+  "artifact_type": "stored_documents_report",
+  "created_at": "2026-06-03T18:33:28.577254Z",
+  "name": "stored_documents_report",
+  "payload": {
+    "metadata": {
+      "storage_backend": "in_memory_report",
+      "stored_documents": 1
+    },
+    "stored_documents": [
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "f149595a-086d-44cc-af67-23c2be34b22a",
+        "document_id": "79b0e6bd-4379-5846-8cd5-6752122ec10d",
+        "document_type": "law",
+        "filename": "zakon-b.txt",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_document_catalog_can_be_f0/second/zakon-b.txt",
+        "storage_status": "ready",
+        "title": "Zakon B"
+      }
+    ]
+  }
+}

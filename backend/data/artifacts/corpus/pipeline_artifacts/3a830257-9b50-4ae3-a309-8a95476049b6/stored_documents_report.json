@@ -1,0 +1,28 @@
+{
+  "artifact_id": "365473b2-059c-4f6b-b2d1-095ed3c4a1a8",
+  "artifact_type": "stored_documents_report",
+  "created_at": "2026-06-03T19:42:04.628836Z",
+  "name": "stored_documents_report",
+  "payload": {
+    "metadata": {
+      "storage_backend": "in_memory_report",
+      "stored_documents": 1
+    },
+    "stored_documents": [
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "5cc27b1c-1ff3-4bf3-8f6f-b1676c496407",
+        "document_id": "5f789401-c3c8-5dc5-984b-2f181a2f88cc",
+        "document_type": "law",
+        "filename": "zakon-zastita.txt",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/permission_vs_prohibition_001/corpus/zakon-zastita.txt",
+        "storage_status": "ready",
+        "title": "Zakon o zastiti"
+      }
+    ]
+  }
+}

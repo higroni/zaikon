@@ -1,0 +1,23 @@
+{
+  "artifact_id": "400ba479-d2b0-4308-bf7d-af922bdc402d",
+  "artifact_type": "normalized_documents",
+  "created_at": "2026-06-03T18:33:29.642335Z",
+  "name": "normalized_documents",
+  "payload": [
+    {
+      "content_text": "Zakon o hrani\n\nClan 1.\nKontrolu hrane vrsi sanitarna inspekcija.\n",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon-hrana.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 65,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/competence_conflict_001/corpus/zakon-hrana.txt"
+    }
+  ]
+}

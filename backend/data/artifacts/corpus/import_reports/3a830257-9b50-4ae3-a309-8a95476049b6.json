@@ -1,0 +1,152 @@
+{
+  "artifact_names": [
+    "canonical_documents",
+    "extracted_definitions",
+    "extracted_documents",
+    "extracted_references",
+    "identified_documents",
+    "import_report",
+    "keyword_index_report",
+    "normalized_documents",
+    "normative_assertions",
+    "parsed_legal_documents",
+    "reference_graph_report",
+    "resolved_references",
+    "source_file_manifest",
+    "stored_documents_report",
+    "structure_index_report",
+    "vector_index_report"
+  ],
+  "corpus_id": "5cc27b1c-1ff3-4bf3-8f6f-b1676c496407",
+  "import_job_id": "3a830257-9b50-4ae3-a309-8a95476049b6",
+  "index_reports": {
+    "keyword": {
+      "index_name": "keyword",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "backend": "postgres_fts",
+        "top_terms": [
+          {
+            "count": 2,
+            "term": "zabranjeno"
+          },
+          {
+            "count": 2,
+            "term": "secenje"
+          },
+          {
+            "count": 2,
+            "term": "drveta"
+          },
+          {
+            "count": 2,
+            "term": "bez"
+          },
+          {
+            "count": 2,
+            "term": "dozvole"
+          }
+        ],
+        "unique_terms": 5
+      },
+      "status": "completed"
+    },
+    "reference_graph": {
+      "index_name": "reference_graph",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "missing_references": 0,
+        "out_of_scope_references": 0,
+        "resolved_references": 0
+      },
+      "status": "completed"
+    },
+    "structure": {
+      "index_name": "structure",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "document_types": {
+          "law": 1
+        },
+        "unit_types": {
+          "article": 1,
+          "paragraph": 1
+        }
+      },
+      "status": "completed"
+    },
+    "vector": {
+      "index_name": "vector",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "backend": "qdrant",
+        "computed_vectors": 2,
+        "embedding_dimensions": 1024,
+        "embedding_model": "BAAI/bge-m3",
+        "fallback_embedding_dimensions": 64,
+        "status_note": "deterministic_fallback_embeddings_computed"
+      },
+      "status": "completed"
+    }
+  },
+  "pipeline_run_id": "3a830257-9b50-4ae3-a309-8a95476049b6",
+  "source_files": [
+    {
+      "content_hash": "9898f7ef5b8a5d58ac82626c6ec22706dc8c21c9ddeade02ccabdc4b626fff6d",
+      "corpus_id": "5cc27b1c-1ff3-4bf3-8f6f-b1676c496407",
+      "created_at": "2026-06-03T19:42:04.628836Z",
+      "document_type": "law",
+      "document_type_confidence": 0.95,
+      "error_message": null,
+      "file_type": "txt",
+      "filename": "zakon-zastita.txt",
+      "import_status": "completed",
+      "publication_metadata": {
+        "official_gazette_numbers": [],
+        "publication_dates": []
+      },
+      "size_bytes": 71,
+      "source_file_id": "bd8d7fce-85aa-4e0c-b5b3-f151c7fcf6c1",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/permission_vs_prohibition_001/corpus/zakon-zastita.txt"
+    }
+  ],
+  "status": "completed",
+  "storage_report": {
+    "metadata": {
+      "storage_backend": "in_memory_report",
+      "stored_documents": 1
+    },
+    "stored_documents": [
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "5cc27b1c-1ff3-4bf3-8f6f-b1676c496407",
+        "document_id": "5f789401-c3c8-5dc5-984b-2f181a2f88cc",
+        "document_type": "law",
+        "filename": "zakon-zastita.txt",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/permission_vs_prohibition_001/corpus/zakon-zastita.txt",
+        "storage_status": "ready",
+        "title": "Zakon o zastiti"
+      }
+    ]
+  },
+  "summary": {
+    "document_types": {
+      "law": 1
+    },
+    "extracted_documents": 1,
+    "failed_files": 0,
+    "stored_documents": 1,
+    "supported_files": 1,
+    "total_files": 1,
+    "unsupported_files": 0
+  },
+  "warnings": []
+}

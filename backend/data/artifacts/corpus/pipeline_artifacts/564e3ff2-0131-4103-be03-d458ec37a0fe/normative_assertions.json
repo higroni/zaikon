@@ -1,0 +1,101 @@
+{
+  "artifact_id": "31992310-4c20-488e-9d76-41f976c45a8b",
+  "artifact_type": "normative_assertions",
+  "created_at": "2026-06-03T18:33:30.712933Z",
+  "name": "normative_assertions",
+  "payload": [
+    {
+      "assertions": [],
+      "filename": "pravilnik.docx",
+      "metadata": {
+        "assertion_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/pravilnik.docx"
+    },
+    {
+      "assertions": [],
+      "filename": "uredba.pdf",
+      "metadata": {
+        "assertion_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/uredba.pdf"
+    },
+    {
+      "assertions": [
+        {
+          "action": {
+            "canonical": "keep_registry",
+            "confidence": 0.87,
+            "metadata": {},
+            "raw": "vodi evidenciju"
+          },
+          "actor": null,
+          "assertion_id": "0087a6ce-88f8-560d-be21-e9f3d3c16545",
+          "assertion_type": "competence",
+          "condition": null,
+          "confidence": 0.6599999999999999,
+          "corpus_id": "aa7a6a07-9b31-46bd-af78-89df717f7368",
+          "deadline": null,
+          "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon.txt",
+          "legal_unit_id": "86017376-f02b-4cd8-a465-d6734fd606f9",
+          "metadata": {
+            "unit_type": "article"
+          },
+          "modality": "is_competent",
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.87
+          },
+          "source_path": "article:1",
+          "source_quote": "Ministarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt"
+        },
+        {
+          "action": {
+            "canonical": "keep_registry",
+            "confidence": 0.87,
+            "metadata": {},
+            "raw": "vodi evidenciju"
+          },
+          "actor": null,
+          "assertion_id": "c705c526-3080-5081-89a3-c4ec0866d9a2",
+          "assertion_type": "competence",
+          "condition": null,
+          "confidence": 0.6599999999999999,
+          "corpus_id": "aa7a6a07-9b31-46bd-af78-89df717f7368",
+          "deadline": null,
+          "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon.txt",
+          "legal_unit_id": "c2671ed1-3047-4e3a-8607-fbe0ad0325e0",
+          "metadata": {
+            "unit_type": "paragraph"
+          },
+          "modality": "is_competent",
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.87
+          },
+          "source_path": "article:1/paragraph:1",
+          "source_quote": "Ministarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt"
+        }
+      ],
+      "filename": "zakon.txt",
+      "metadata": {
+        "assertion_count": 2
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt"
+    }
+  ]
+}

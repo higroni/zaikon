@@ -1,0 +1,30 @@
+{
+  "artifact_id": "d27ac0e3-75fa-4c94-bcb6-11c22d76d0a0",
+  "artifact_type": "identified_documents",
+  "created_at": "2026-06-03T19:42:04.863836Z",
+  "name": "identified_documents",
+  "payload": [
+    {
+      "content_text": "Zakon o sumama\n\nClan 1.\nKontrolu suma vrsi inspekcija.\n",
+      "document_type": "law",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon-o-sumama.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 55,
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null,
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        }
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/sanction_without_basis_001/corpus/zakon-o-sumama.txt"
+    }
+  ]
+}

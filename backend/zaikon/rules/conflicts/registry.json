@@ -1,0 +1,244 @@
+{
+  "version": "0.1.0",
+  "engine_scope": "comprehensive_taxonomy",
+  "default_evidence_required": ["draft_quote", "corpus_quote", "slot_diffs"],
+  "high_severity_types": [
+    "source_hierarchy_conflict",
+    "ultra_vires_conflict",
+    "reserved_matter_conflict",
+    "competence_conflict",
+    "wrong_inspection_authority",
+    "authority_scope_conflict",
+    "permission_vs_prohibition_conflict",
+    "right_removed_conflict",
+    "new_obligation_without_basis",
+    "deadline_mismatch",
+    "reference_stale",
+    "fee_without_legal_basis",
+    "sanction_without_basis",
+    "appeal_right_missing",
+    "personal_data_basis_missing",
+    "eu_alignment_table_missing",
+    "negative_opinion_unresolved"
+  ],
+  "active_warning_types": [
+    "authority_scope_conflict",
+    "deadline_mismatch",
+    "competence_conflict",
+    "permission_vs_prohibition_conflict",
+    "reference_missing",
+    "reference_stale",
+    "definition_conflict",
+    "terminology_inconsistent",
+    "drafting_style_warning"
+  ],
+  "categories": {
+    "hierarchy_and_legal_basis": {
+      "required_slots": ["source_rank", "document_type", "legal_basis"],
+      "finding_types": [
+        "source_hierarchy_conflict",
+        "ultra_vires_conflict",
+        "delegation_missing",
+        "delegation_exceeded",
+        "reserved_matter_conflict",
+        "lex_specialis_conflict",
+        "lex_posterior_conflict",
+        "constitutional_alignment_risk"
+      ]
+    },
+    "competence_and_institutions": {
+      "required_slots": ["actor", "competence", "action", "object"],
+      "finding_types": [
+        "competence_conflict",
+        "wrong_inspection_authority",
+        "missing_competent_authority",
+        "overlapping_competence_conflict",
+        "competence_transfer_conflict",
+        "local_vs_republic_competence_conflict",
+        "independent_body_competence_conflict",
+        "appeal_authority_conflict"
+      ]
+    },
+    "actors_and_personal_scope": {
+      "required_slots": ["actor", "action", "object"],
+      "finding_types": [
+        "authority_scope_conflict",
+        "obligation_bearer_changed",
+        "right_holder_changed",
+        "personal_scope_expanded",
+        "personal_scope_narrowed",
+        "protected_category_conflict",
+        "representative_authority_conflict"
+      ]
+    },
+    "modality_rights_obligations": {
+      "required_slots": ["modality", "action", "object"],
+      "finding_types": [
+        "permission_vs_prohibition_conflict",
+        "obligation_vs_discretion_conflict",
+        "discretion_vs_obligation_conflict",
+        "right_removed_conflict",
+        "prohibition_removed_conflict",
+        "new_obligation_without_basis",
+        "conflicting_obligations",
+        "impossible_obligation"
+      ]
+    },
+    "material_scope": {
+      "required_slots": ["action", "object", "material_scope"],
+      "finding_types": [
+        "action_scope_mismatch",
+        "object_scope_expanded",
+        "object_scope_narrowed",
+        "territorial_scope_conflict",
+        "domain_mismatch_conflict",
+        "threshold_mismatch",
+        "category_classification_conflict"
+      ]
+    },
+    "deadlines_time_validity": {
+      "required_slots": ["deadline", "deadline_start_event"],
+      "finding_types": [
+        "deadline_mismatch",
+        "deadline_start_event_mismatch",
+        "deadline_end_event_mismatch",
+        "calendar_type_mismatch",
+        "deadline_missing",
+        "deadline_added_without_basis",
+        "retroactivity_conflict",
+        "effective_date_conflict",
+        "validity_period_conflict",
+        "transitional_period_conflict"
+      ]
+    },
+    "conditions_exceptions": {
+      "required_slots": ["condition", "exception", "action"],
+      "finding_types": [
+        "condition_added_conflict",
+        "condition_removed_conflict",
+        "condition_mismatch",
+        "exception_added_conflict",
+        "exception_removed_conflict",
+        "cumulative_vs_alternative_conflict",
+        "threshold_condition_conflict"
+      ]
+    },
+    "definitions_terminology": {
+      "required_slots": ["term", "definition"],
+      "finding_types": [
+        "definition_conflict",
+        "undefined_term",
+        "reserved_term_misuse",
+        "terminology_inconsistent",
+        "translation_alignment_conflict",
+        "classification_definition_conflict",
+        "abbreviation_conflict"
+      ]
+    },
+    "references": {
+      "required_slots": ["reference_target"],
+      "finding_types": [
+        "reference_missing",
+        "reference_stale",
+        "reference_ambiguous",
+        "reference_wrong_target",
+        "reference_scope_mismatch",
+        "circular_reference",
+        "external_reference_unavailable",
+        "official_gazette_reference_mismatch"
+      ]
+    },
+    "finance_budget": {
+      "required_slots": ["amount", "budget_impact", "legal_basis"],
+      "finding_types": [
+        "budget_impact_missing",
+        "fee_without_legal_basis",
+        "fee_amount_mismatch",
+        "funding_source_missing",
+        "state_aid_risk",
+        "budget_classification_conflict"
+      ]
+    },
+    "sanctions_enforcement": {
+      "required_slots": ["sanction", "action", "legal_basis"],
+      "finding_types": [
+        "sanction_without_basis",
+        "sanction_amount_mismatch",
+        "sanction_type_mismatch",
+        "double_sanction_risk",
+        "missing_enforcement_measure",
+        "disproportionate_sanction_risk",
+        "inspection_measure_conflict"
+      ]
+    },
+    "procedure_rights_remedies": {
+      "required_slots": ["procedure_stage", "right", "remedy"],
+      "finding_types": [
+        "appeal_right_missing",
+        "appeal_deadline_mismatch",
+        "due_process_risk",
+        "burden_of_proof_conflict",
+        "silence_of_administration_conflict",
+        "service_delivery_conflict",
+        "administrative_fee_conflict"
+      ]
+    },
+    "data_registers_transparency": {
+      "required_slots": ["data_fields", "purpose", "legal_basis"],
+      "finding_types": [
+        "personal_data_basis_missing",
+        "data_minimization_risk",
+        "confidentiality_vs_publication_conflict",
+        "registry_competence_conflict",
+        "retention_period_conflict",
+        "access_to_information_conflict"
+      ]
+    },
+    "eu_alignment": {
+      "required_slots": ["eu_source", "alignment_status"],
+      "finding_types": [
+        "eu_alignment_statement_missing",
+        "eu_alignment_table_missing",
+        "eu_celex_missing",
+        "eu_row_unmapped",
+        "domestic_article_uncovered_by_alignment",
+        "partial_alignment_without_reason",
+        "non_alignment_without_plan",
+        "not_transposable_without_reason",
+        "eu_term_translation_conflict",
+        "eu_effective_sanction_missing",
+        "gold_plating_risk",
+        "alignment_stale_after_draft_change"
+      ]
+    },
+    "procedural_compliance": {
+      "required_slots": ["procedure_stage", "required_artifact"],
+      "finding_types": [
+        "ria_missing",
+        "ria_incomplete",
+        "public_consultation_missing",
+        "public_consultation_duration_short",
+        "public_consultation_report_missing",
+        "official_opinion_missing",
+        "negative_opinion_unresolved",
+        "conditional_opinion_unresolved",
+        "fiscal_assessment_missing",
+        "committee_gate_not_ready",
+        "parliamentary_material_incomplete"
+      ]
+    },
+    "internal_consistency": {
+      "required_slots": ["source_quote", "source_path"],
+      "finding_types": [
+        "internal_norm_conflict",
+        "internal_duplicate_provision",
+        "internal_definition_conflict",
+        "numbering_structure_error",
+        "transitional_final_clause_missing",
+        "repeal_clause_conflict",
+        "effective_clause_missing",
+        "drafting_style_warning"
+      ]
+    }
+  }
+}

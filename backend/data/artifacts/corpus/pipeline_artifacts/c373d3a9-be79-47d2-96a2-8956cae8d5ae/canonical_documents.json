@@ -1,0 +1,58 @@
+{
+  "artifact_id": "e20ec287-93de-4c34-a286-5f035db6507c",
+  "artifact_type": "canonical_documents",
+  "created_at": "2026-06-03T18:33:30.846521Z",
+  "name": "canonical_documents",
+  "payload": [
+    {
+      "canonical_json": {
+        "document": {
+          "document_type": "law",
+          "filename": "zakon-a.txt",
+          "language_code": "sr",
+          "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_search_can_be_limited_to_0/first/zakon-a.txt",
+          "title": "Zakon A"
+        },
+        "legal_units": [
+          {
+            "content_text": "Jedinstvenipojam pripada prvom korpusu.",
+            "heading": "Zakon A",
+            "legal_unit_id": "b902e60e-0108-4fb3-8bdf-3b3c8ff4d2a2",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": null,
+            "path": "article:1",
+            "unit_type": "article"
+          },
+          {
+            "content_text": "Jedinstvenipojam pripada prvom korpusu.",
+            "heading": null,
+            "legal_unit_id": "af55d06a-a879-4fca-a478-6a8597ed035d",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": "b902e60e-0108-4fb3-8bdf-3b3c8ff4d2a2",
+            "path": "article:1/paragraph:1",
+            "unit_type": "paragraph"
+          }
+        ],
+        "metadata": {
+          "alinea_count": 0,
+          "article_count": 1,
+          "canonical_unit_count": 2,
+          "item_count": 0,
+          "paragraph_count": 1,
+          "section_count": 0,
+          "subitem_count": 0
+        },
+        "schema_version": "0.1"
+      },
+      "document_type": "law",
+      "filename": "zakon-a.txt",
+      "language_code": "sr",
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_search_can_be_limited_to_0/first/zakon-a.txt",
+      "title": "Zakon A"
+    }
+  ]
+}

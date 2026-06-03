@@ -1,0 +1,30 @@
+{
+  "artifact_id": "46cbc552-84f7-48e4-91a9-1bcc660e53c1",
+  "artifact_type": "extracted_documents",
+  "created_at": "2026-06-03T18:33:29.198615Z",
+  "name": "extracted_documents",
+  "payload": [
+    {
+      "content_text": "Zakon o šumama\n\nČlan 2.\nŠume su dobro od opšteg interesa.",
+      "document_type": "law",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon-o-sumama.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 57,
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null,
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        }
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_resolves_cro0/cross/zakon-o-sumama.txt"
+    }
+  ]
+}

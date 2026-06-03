@@ -1,0 +1,58 @@
+{
+  "artifact_id": "15768adc-8a2c-4d09-9d9e-ba157316c266",
+  "artifact_type": "keyword_index_report",
+  "created_at": "2026-06-03T18:33:28.455516Z",
+  "name": "keyword_index_report",
+  "payload": {
+    "index_name": "keyword",
+    "indexed_documents": 3,
+    "indexed_legal_units": 8,
+    "metadata": {
+      "backend": "postgres_fts",
+      "top_terms": [
+        {
+          "count": 6,
+          "term": "regresioni"
+        },
+        {
+          "count": 6,
+          "term": "test"
+        },
+        {
+          "count": 4,
+          "term": "tekst"
+        },
+        {
+          "count": 4,
+          "term": "zakonom"
+        },
+        {
+          "count": 4,
+          "term": "ministarstvo"
+        },
+        {
+          "count": 2,
+          "term": "docx"
+        },
+        {
+          "count": 2,
+          "term": "pdf"
+        },
+        {
+          "count": 2,
+          "term": "ovim"
+        },
+        {
+          "count": 2,
+          "term": "uredjuje"
+        },
+        {
+          "count": 2,
+          "term": "primer"
+        }
+      ],
+      "unique_terms": 22
+    },
+    "status": "completed"
+  }
+}

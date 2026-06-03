@@ -1,0 +1,23 @@
+{
+  "artifact_id": "27c9ee0b-9a80-4a81-9038-778f12830cd5",
+  "artifact_type": "structure_index_report",
+  "created_at": "2026-06-03T18:33:30.725372Z",
+  "name": "structure_index_report",
+  "payload": {
+    "index_name": "structure",
+    "indexed_documents": 3,
+    "indexed_legal_units": 8,
+    "metadata": {
+      "document_types": {
+        "law": 1,
+        "regulation": 1,
+        "rulebook": 1
+      },
+      "unit_types": {
+        "article": 4,
+        "paragraph": 4
+      }
+    },
+    "status": "completed"
+  }
+}

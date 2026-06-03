@@ -1,0 +1,172 @@
+{
+  "artifact_names": [
+    "canonical_documents",
+    "extracted_definitions",
+    "extracted_documents",
+    "extracted_references",
+    "identified_documents",
+    "import_report",
+    "keyword_index_report",
+    "normalized_documents",
+    "normative_assertions",
+    "parsed_legal_documents",
+    "reference_graph_report",
+    "resolved_references",
+    "source_file_manifest",
+    "stored_documents_report",
+    "structure_index_report",
+    "vector_index_report"
+  ],
+  "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+  "import_job_id": "48619535-e390-4931-af37-a769d369e50f",
+  "index_reports": {
+    "keyword": {
+      "index_name": "keyword",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "backend": "postgres_fts",
+        "top_terms": [
+          {
+            "count": 2,
+            "term": "obelezavanje"
+          },
+          {
+            "count": 2,
+            "term": "drveca"
+          },
+          {
+            "count": 2,
+            "term": "secu"
+          },
+          {
+            "count": 2,
+            "term": "vrsi"
+          },
+          {
+            "count": 2,
+            "term": "ovlasceno"
+          },
+          {
+            "count": 2,
+            "term": "preduzece"
+          },
+          {
+            "count": 2,
+            "term": "skladu"
+          },
+          {
+            "count": 2,
+            "term": "zakonom"
+          },
+          {
+            "count": 2,
+            "term": "planom"
+          },
+          {
+            "count": 2,
+            "term": "gazdovanja"
+          }
+        ],
+        "unique_terms": 11
+      },
+      "status": "completed"
+    },
+    "reference_graph": {
+      "index_name": "reference_graph",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "missing_references": 0,
+        "out_of_scope_references": 0,
+        "resolved_references": 0
+      },
+      "status": "completed"
+    },
+    "structure": {
+      "index_name": "structure",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "document_types": {
+          "law": 1
+        },
+        "unit_types": {
+          "article": 1,
+          "paragraph": 1
+        }
+      },
+      "status": "completed"
+    },
+    "vector": {
+      "index_name": "vector",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "backend": "qdrant",
+        "computed_vectors": 2,
+        "embedding_dimensions": 1024,
+        "embedding_model": "BAAI/bge-m3",
+        "fallback_embedding_dimensions": 64,
+        "status_note": "deterministic_fallback_embeddings_computed"
+      },
+      "status": "completed"
+    }
+  },
+  "pipeline_run_id": "48619535-e390-4931-af37-a769d369e50f",
+  "source_files": [
+    {
+      "content_hash": "b0588adde8f5c531caac5a14655d8e6d40c4d36c37997485fcce8d2dfc87f50f",
+      "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+      "created_at": "2026-06-03T18:33:29.118349Z",
+      "document_type": "law",
+      "document_type_confidence": 0.95,
+      "error_message": null,
+      "file_type": "txt",
+      "filename": "zakon-o-sumama.txt",
+      "import_status": "completed",
+      "publication_metadata": {
+        "official_gazette_numbers": [],
+        "publication_dates": []
+      },
+      "size_bytes": 130,
+      "source_file_id": "2470804b-7e99-4287-81eb-846269d825b3",
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_flags_author0/authority/zakon-o-sumama.txt"
+    }
+  ],
+  "status": "completed",
+  "storage_report": {
+    "metadata": {
+      "storage_backend": "in_memory_report",
+      "stored_documents": 1
+    },
+    "stored_documents": [
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+        "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+        "document_type": "law",
+        "filename": "zakon-o-sumama.txt",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_flags_author0/authority/zakon-o-sumama.txt",
+        "storage_status": "ready",
+        "title": "Zakon o sumama"
+      }
+    ]
+  },
+  "summary": {
+    "document_types": {
+      "law": 1
+    },
+    "extracted_documents": 1,
+    "failed_files": 0,
+    "stored_documents": 1,
+    "supported_files": 1,
+    "total_files": 1,
+    "unsupported_files": 0
+  },
+  "warnings": []
+}

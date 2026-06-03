@@ -1,0 +1,16 @@
+{
+  "artifact_id": "4c5152fc-bfa4-4c99-b07d-4c2d6cc7d760",
+  "artifact_type": "extracted_definitions",
+  "created_at": "2026-06-03T18:33:27.471334Z",
+  "name": "extracted_definitions",
+  "payload": [
+    {
+      "definitions": [],
+      "filename": "zakon-rok.txt",
+      "metadata": {
+        "definition_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_deadlin0/deadline-corpus/zakon-rok.txt"
+    }
+  ]
+}

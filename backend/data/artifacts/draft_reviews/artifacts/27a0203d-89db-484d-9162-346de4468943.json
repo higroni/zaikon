@@ -1,0 +1,344 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "rulebook",
+        "filename": "Pravilnik sa novom obavezom.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://27a0203d-89db-484d-9162-346de4468943",
+        "title": "PRAVILNIK"
+      },
+      "legal_units": [
+        {
+          "content_text": "Vlasnik suma mora da podnese izvestaj o stanju suma.",
+          "heading": "PRAVILNIK",
+          "legal_unit_id": "e12a9bfb-b9ee-4b31-858b-37332ad1f751",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Vlasnik suma mora da podnese izvestaj o stanju suma.",
+          "heading": null,
+          "legal_unit_id": "7ee38e61-9ad7-4a51-9f79-9f014f3a0a53",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "e12a9bfb-b9ee-4b31-858b-37332ad1f751",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "rulebook",
+    "filename": "Pravilnik sa novom obavezom.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://27a0203d-89db-484d-9162-346de4468943",
+    "title": "PRAVILNIK"
+  },
+  "classification": {
+    "confidence": 0.95,
+    "document_type": "rulebook",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 2,
+    "draft_assertion_count": 2,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "597fc619-0692-5f32-b29d-d28de010836a",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.6399999999999999,
+      "corpus_id": "3ed8ae16-2e4c-4619-869b-3e21013b2369",
+      "deadline": null,
+      "document_id": "3a3ec26e-94f2-5faa-a2bb-01efb2168048",
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "e725f23c-f0d7-4b88-9483-1c513aafcfb9",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "may",
+      "object": {
+        "canonical": "forest",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "suma"
+      },
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1",
+      "source_quote": "Vlasnik suma ima pravo na zastitu.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/new_obligation_without_basis_001/corpus/zakon-o-sumama.txt"
+    },
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "e7021a76-7cf6-5797-b054-fc08526c0e9d",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.6399999999999999,
+      "corpus_id": "3ed8ae16-2e4c-4619-869b-3e21013b2369",
+      "deadline": null,
+      "document_id": "3a3ec26e-94f2-5faa-a2bb-01efb2168048",
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "f8b792b9-ed75-4258-a152-f12551b3272c",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "may",
+      "object": {
+        "canonical": "forest",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "suma"
+      },
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Vlasnik suma ima pravo na zastitu.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/new_obligation_without_basis_001/corpus/zakon-o-sumama.txt"
+    }
+  ],
+  "normalized_text": "PRAVILNIK\n\nClan 1.\nVlasnik suma mora da podnese izvestaj o stanju suma.\n",
+  "normative_assertions": [
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "4d4fe376-7f22-5b3c-bca2-78c3c7bcff21",
+      "assertion_type": "obligation",
+      "condition": null,
+      "confidence": 0.6399999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Pravilnik sa novom obavezom.txt",
+      "legal_unit_id": "e12a9bfb-b9ee-4b31-858b-37332ad1f751",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "must",
+      "object": {
+        "canonical": "forest",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "suma"
+      },
+      "pipeline_run_id": "27a0203d-89db-484d-9162-346de4468943",
+      "sanction": null,
+      "slot_confidence": {
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1",
+      "source_quote": "Vlasnik suma mora da podnese izvestaj o stanju suma.",
+      "source_uri": "draft-review://27a0203d-89db-484d-9162-346de4468943"
+    },
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "3485cf2c-3cb5-5854-8afd-d54dc51193b5",
+      "assertion_type": "obligation",
+      "condition": null,
+      "confidence": 0.6399999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Pravilnik sa novom obavezom.txt",
+      "legal_unit_id": "7ee38e61-9ad7-4a51-9f79-9f014f3a0a53",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "must",
+      "object": {
+        "canonical": "forest",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "suma"
+      },
+      "pipeline_run_id": "27a0203d-89db-484d-9162-346de4468943",
+      "sanction": null,
+      "slot_confidence": {
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Vlasnik suma mora da podnese izvestaj o stanju suma.",
+      "source_uri": "draft-review://27a0203d-89db-484d-9162-346de4468943"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "rulebook",
+    "filename": "Pravilnik sa novom obavezom.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Vlasnik suma mora da podnese izvestaj o stanju suma.",
+        "heading": "PRAVILNIK",
+        "legal_unit_id": "e12a9bfb-b9ee-4b31-858b-37332ad1f751",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Vlasnik suma mora da podnese izvestaj o stanju suma.",
+        "heading": null,
+        "legal_unit_id": "7ee38e61-9ad7-4a51-9f79-9f014f3a0a53",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "e12a9bfb-b9ee-4b31-858b-37332ad1f751",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://27a0203d-89db-484d-9162-346de4468943",
+    "title": "PRAVILNIK"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": [
+    {
+      "content_text": "Vlasnik suma ima pravo na zastitu.",
+      "corpus_id": "3ed8ae16-2e4c-4619-869b-3e21013b2369",
+      "document_id": "3a3ec26e-94f2-5faa-a2bb-01efb2168048",
+      "document_type": "law",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "e725f23c-f0d7-4b88-9483-1c513aafcfb9",
+      "metadata": {
+        "lexical_score": 0.25,
+        "matched_terms": [
+          "suma",
+          "vlasnik"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.40451991747794525
+      },
+      "path": "article:1",
+      "score": 0.30408197111728086,
+      "unit_type": "article"
+    },
+    {
+      "content_text": "Vlasnik suma ima pravo na zastitu.",
+      "corpus_id": "3ed8ae16-2e4c-4619-869b-3e21013b2369",
+      "document_id": "3a3ec26e-94f2-5faa-a2bb-01efb2168048",
+      "document_type": "law",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "f8b792b9-ed75-4258-a152-f12551b3272c",
+      "metadata": {
+        "lexical_score": 0.25,
+        "matched_terms": [
+          "suma",
+          "vlasnik"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.40451991747794525
+      },
+      "path": "article:1/paragraph:1",
+      "score": 0.30408197111728086,
+      "unit_type": "paragraph"
+    }
+  ]
+}

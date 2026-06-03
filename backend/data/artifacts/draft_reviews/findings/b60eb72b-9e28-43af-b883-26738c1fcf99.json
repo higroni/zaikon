@@ -1,0 +1,338 @@
+[
+  {
+    "created_at": "2026-06-03T19:42:04.921377Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "1c67ea59-2e80-5297-b8e0-8d7e998626ae",
+        "corpus_assertion_id": "cb6189f0-2247-53a9-86b0-c094b3d20d84",
+        "draft_assertion_id": "6ce987f9-2490-5f3b-b361-dac987ccf31e",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "cb6189f0-2247-53a9-86b0-c094b3d20d84",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Kontrolu suma vrsi inspekcija.",
+      "draft_assertion_id": "6ce987f9-2490-5f3b-b361-dac987ccf31e",
+      "draft_filename": "Pravilnik sa sankcijom.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Kontrolu suma vrsi inspekcija.",
+      "related_legal_units": [
+        {
+          "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+          "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "f9df66ae-36d0-47a4-915c-97d2a1f447fc",
+          "matched_terms": [
+            "inspekcija",
+            "kontrolu",
+            "suma",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu suma vrsi inspekcija.",
+          "score": 0.4541450686788302,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+          "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "24cc3e84-776d-4d45-8b36-b5bb83cdef3e",
+          "matched_terms": [
+            "inspekcija",
+            "kontrolu",
+            "suma",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu suma vrsi inspekcija.",
+          "score": 0.4541450686788302,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "d7470af7-e474-4172-8a18-573c0cd0e8ce",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "b60eb72b-9e28-43af-b883-26738c1fcf99",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "7c77316d-5e7e-4c80-976a-94ee47bd82fe",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.921377Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "4c95d1f2-dd95-5b05-bd45-a68f06447e4e",
+        "corpus_assertion_id": "ee0b97fd-7727-5661-9e82-e270c71c1e08",
+        "draft_assertion_id": "6ce987f9-2490-5f3b-b361-dac987ccf31e",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "ee0b97fd-7727-5661-9e82-e270c71c1e08",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Kontrolu suma vrsi inspekcija.",
+      "draft_assertion_id": "6ce987f9-2490-5f3b-b361-dac987ccf31e",
+      "draft_filename": "Pravilnik sa sankcijom.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Kontrolu suma vrsi inspekcija.",
+      "related_legal_units": [
+        {
+          "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+          "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "f9df66ae-36d0-47a4-915c-97d2a1f447fc",
+          "matched_terms": [
+            "inspekcija",
+            "kontrolu",
+            "suma",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu suma vrsi inspekcija.",
+          "score": 0.4541450686788302,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+          "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "24cc3e84-776d-4d45-8b36-b5bb83cdef3e",
+          "matched_terms": [
+            "inspekcija",
+            "kontrolu",
+            "suma",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu suma vrsi inspekcija.",
+          "score": 0.4541450686788302,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1/paragraph:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "f6e69ff1-deeb-43f3-8d27-1a0a7592c5f4",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "b60eb72b-9e28-43af-b883-26738c1fcf99",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "7c77316d-5e7e-4c80-976a-94ee47bd82fe",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.921377Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "a1568f1d-d4ba-5c7e-98fe-89e741d0dbd9",
+        "corpus_assertion_id": "cb6189f0-2247-53a9-86b0-c094b3d20d84",
+        "draft_assertion_id": "48b69d35-c2c9-55c0-a39a-d7af305cfd0a",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "cb6189f0-2247-53a9-86b0-c094b3d20d84",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Kontrolu suma vrsi inspekcija.",
+      "draft_assertion_id": "48b69d35-c2c9-55c0-a39a-d7af305cfd0a",
+      "draft_filename": "Pravilnik sa sankcijom.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Kontrolu suma vrsi inspekcija.",
+      "related_legal_units": [
+        {
+          "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+          "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "f9df66ae-36d0-47a4-915c-97d2a1f447fc",
+          "matched_terms": [
+            "inspekcija",
+            "kontrolu",
+            "suma",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu suma vrsi inspekcija.",
+          "score": 0.4541450686788302,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+          "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "24cc3e84-776d-4d45-8b36-b5bb83cdef3e",
+          "matched_terms": [
+            "inspekcija",
+            "kontrolu",
+            "suma",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu suma vrsi inspekcija.",
+          "score": 0.4541450686788302,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "6a8912dd-f53d-4b2b-9634-fd89fd729c89",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "b60eb72b-9e28-43af-b883-26738c1fcf99",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "87209811-9fa0-43e6-96c6-2323270477d1",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.921377Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "039e92c0-5f76-5547-be71-d543a7d40cfa",
+        "corpus_assertion_id": "ee0b97fd-7727-5661-9e82-e270c71c1e08",
+        "draft_assertion_id": "48b69d35-c2c9-55c0-a39a-d7af305cfd0a",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "ee0b97fd-7727-5661-9e82-e270c71c1e08",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Kontrolu suma vrsi inspekcija.",
+      "draft_assertion_id": "48b69d35-c2c9-55c0-a39a-d7af305cfd0a",
+      "draft_filename": "Pravilnik sa sankcijom.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Kontrolu suma vrsi inspekcija.",
+      "related_legal_units": [
+        {
+          "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+          "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "f9df66ae-36d0-47a4-915c-97d2a1f447fc",
+          "matched_terms": [
+            "inspekcija",
+            "kontrolu",
+            "suma",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu suma vrsi inspekcija.",
+          "score": 0.4541450686788302,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+          "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "24cc3e84-776d-4d45-8b36-b5bb83cdef3e",
+          "matched_terms": [
+            "inspekcija",
+            "kontrolu",
+            "suma",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu suma vrsi inspekcija.",
+          "score": 0.4541450686788302,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1/paragraph:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "5a2098cd-d8b5-44f1-86b8-a60c8ec76608",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "b60eb72b-9e28-43af-b883-26738c1fcf99",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "87209811-9fa0-43e6-96c6-2323270477d1",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  }
+]

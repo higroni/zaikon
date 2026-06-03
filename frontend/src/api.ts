@@ -1,12 +1,20 @@
 import type {
   AssistantMessage,
+  ConflictRule,
   CorpusRecord,
   DocumentRecord,
   DraftReviewRecord,
+  EmbeddingConfig,
+  EvaluationRunResponse,
   FindingRecord,
+  GoldCase,
   ImportJobRecord,
   JsonValue,
+  LLMConfig,
   LocalFilesystemBrowseResponse,
+  OllamaModel,
+  RAGConfig,
+  RerankerConfig,
   ReportRecord,
   SearchResult
 } from "./types";
@@ -181,5 +189,45 @@ export const Api = {
     );
   },
   backupAdminData: (base: string) => fetch(buildUrl(base, "api/v1/admin/data/backup")),
-  backupUrl: (base: string) => buildUrl(base, "api/v1/admin/data/backup")
+  backupUrl: (base: string) => buildUrl(base, "api/v1/admin/data/backup"),
+  listGoldCases: (base: string) => apiRequest<GoldCase[]>(base, "api/v1/evaluation/gold-cases"),
+  runEvaluation: (base: string) =>
+    apiRequest<EvaluationRunResponse>(base, "api/v1/evaluation/run", { method: "POST" }),
+  listConflictRules: (base: string) =>
+    apiRequest<ConflictRule[]>(base, "api/v1/conflicts/rules"),
+  updateConflictRule: (base: string, ruleId: string, body: object) =>
+    apiRequest<ConflictRule>(base, `api/v1/conflicts/rules/${ruleId}`, {
+      method: "PATCH",
+      body: JSON.stringify(body)
+    }),
+  getLLMConfig: (base: string) =>
+    apiRequest<LLMConfig>(base, "api/v1/llm/config"),
+  updateLLMConfig: (base: string, body: LLMConfig) =>
+    apiRequest<LLMConfig>(base, "api/v1/llm/config", {
+      method: "PUT",
+      body: JSON.stringify(body)
+    }),
+  getOllamaModels: (base: string, ollamaUrl: string) =>
+    apiRequest<OllamaModel[]>(base, "api/v1/llm/ollama/models", {}, { ollama_url: ollamaUrl }),
+  getEmbeddingConfig: (base: string) =>
+    apiRequest<EmbeddingConfig>(base, "api/v1/llm/embedding/config"),
+  updateEmbeddingConfig: (base: string, body: EmbeddingConfig) =>
+    apiRequest<EmbeddingConfig>(base, "api/v1/llm/embedding/config", {
+      method: "PUT",
+      body: JSON.stringify(body)
+    }),
+  getRerankerConfig: (base: string) =>
+    apiRequest<RerankerConfig>(base, "api/v1/llm/reranker/config"),
+  updateRerankerConfig: (base: string, body: RerankerConfig) =>
+    apiRequest<RerankerConfig>(base, "api/v1/llm/reranker/config", {
+      method: "PUT",
+      body: JSON.stringify(body)
+    }),
+  getRAGConfig: (base: string) =>
+    apiRequest<RAGConfig>(base, "api/v1/llm/rag/config"),
+  updateRAGConfig: (base: string, body: RAGConfig) =>
+    apiRequest<RAGConfig>(base, "api/v1/llm/rag/config", {
+      method: "PUT",
+      body: JSON.stringify(body)
+    })
 };

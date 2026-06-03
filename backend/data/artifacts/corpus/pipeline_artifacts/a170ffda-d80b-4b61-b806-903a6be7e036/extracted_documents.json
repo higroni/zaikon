@@ -1,0 +1,30 @@
+{
+  "artifact_id": "85dbb798-fd98-41ff-bf4f-6a27d3e0be6a",
+  "artifact_type": "extracted_documents",
+  "created_at": "2026-06-03T18:33:28.573106Z",
+  "name": "extracted_documents",
+  "payload": [
+    {
+      "content_text": "Zakon B\n\nClan 1.\nDrugi korpus.",
+      "document_type": "law",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon-b.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 30,
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null,
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        }
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_document_catalog_can_be_f0/second/zakon-b.txt"
+    }
+  ]
+}

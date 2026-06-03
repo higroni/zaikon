@@ -1,0 +1,180 @@
+{
+  "artifact_id": "f9b51cb6-b035-4e70-be53-887f8497f851",
+  "artifact_type": "canonical_documents",
+  "created_at": "2026-06-03T18:33:28.887003Z",
+  "name": "canonical_documents",
+  "payload": [
+    {
+      "canonical_json": {
+        "document": {
+          "document_type": "rulebook",
+          "filename": "pravilnik.docx",
+          "language_code": "sr",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/pravilnik.docx",
+          "title": "Pravilnik o primerima"
+        },
+        "legal_units": [
+          {
+            "content_text": "DOCX tekst za regresioni test.",
+            "heading": "Pravilnik o primerima",
+            "legal_unit_id": "3586e807-d5a1-470b-86f7-2149819ccb2b",
+            "metadata": {},
+            "number": "3",
+            "ordinal": 1,
+            "parent_legal_unit_id": null,
+            "path": "article:3",
+            "unit_type": "article"
+          },
+          {
+            "content_text": "DOCX tekst za regresioni test.",
+            "heading": null,
+            "legal_unit_id": "12a4d625-ec8d-499c-87fb-3e4a7b36f500",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": "3586e807-d5a1-470b-86f7-2149819ccb2b",
+            "path": "article:3/paragraph:1",
+            "unit_type": "paragraph"
+          }
+        ],
+        "metadata": {
+          "alinea_count": 0,
+          "article_count": 1,
+          "canonical_unit_count": 2,
+          "item_count": 0,
+          "paragraph_count": 1,
+          "section_count": 0,
+          "subitem_count": 0
+        },
+        "schema_version": "0.1"
+      },
+      "document_type": "rulebook",
+      "filename": "pravilnik.docx",
+      "language_code": "sr",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/pravilnik.docx",
+      "title": "Pravilnik o primerima"
+    },
+    {
+      "canonical_json": {
+        "document": {
+          "document_type": "regulation",
+          "filename": "uredba.pdf",
+          "language_code": "sr",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/uredba.pdf",
+          "title": "Uredba o primerima"
+        },
+        "legal_units": [
+          {
+            "content_text": "PDF tekst za regresioni test.",
+            "heading": "Uredba o primerima",
+            "legal_unit_id": "4bb5bf2f-3985-4470-9a00-6c59536241f5",
+            "metadata": {},
+            "number": "2",
+            "ordinal": 1,
+            "parent_legal_unit_id": null,
+            "path": "article:2",
+            "unit_type": "article"
+          },
+          {
+            "content_text": "PDF tekst za regresioni test.",
+            "heading": null,
+            "legal_unit_id": "b8c16c8e-3350-4fbf-83f5-ae6bc47343f5",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": "4bb5bf2f-3985-4470-9a00-6c59536241f5",
+            "path": "article:2/paragraph:1",
+            "unit_type": "paragraph"
+          }
+        ],
+        "metadata": {
+          "alinea_count": 0,
+          "article_count": 1,
+          "canonical_unit_count": 2,
+          "item_count": 0,
+          "paragraph_count": 1,
+          "section_count": 0,
+          "subitem_count": 0
+        },
+        "schema_version": "0.1"
+      },
+      "document_type": "regulation",
+      "filename": "uredba.pdf",
+      "language_code": "sr",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/uredba.pdf",
+      "title": "Uredba o primerima"
+    },
+    {
+      "canonical_json": {
+        "document": {
+          "document_type": "law",
+          "filename": "zakon.txt",
+          "language_code": "sr",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt",
+          "title": "Zakon o primerima"
+        },
+        "legal_units": [
+          {
+            "content_text": "Ovim zakonom uredjuje se primer za regresioni test.\nMinistarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+            "heading": "Zakon o primerima",
+            "legal_unit_id": "a0190101-2d2e-4f02-a6af-f6d25e3110f1",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": null,
+            "path": "article:1",
+            "unit_type": "article"
+          },
+          {
+            "content_text": "Ovim zakonom uredjuje se primer za regresioni test. Ministarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+            "heading": null,
+            "legal_unit_id": "9ff0cf2a-46b4-4a7d-ab17-5d1962d38736",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": "a0190101-2d2e-4f02-a6af-f6d25e3110f1",
+            "path": "article:1/paragraph:1",
+            "unit_type": "paragraph"
+          },
+          {
+            "content_text": "Ljudska prava i javni interes štite se zakonom.",
+            "heading": "Ministarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+            "legal_unit_id": "8f2032b7-0a3b-4cdc-b6e9-6342c164687f",
+            "metadata": {},
+            "number": "4",
+            "ordinal": 2,
+            "parent_legal_unit_id": null,
+            "path": "article:4",
+            "unit_type": "article"
+          },
+          {
+            "content_text": "Ljudska prava i javni interes štite se zakonom.",
+            "heading": null,
+            "legal_unit_id": "ef75c65e-f378-4210-a3ee-80ada30065ae",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": "8f2032b7-0a3b-4cdc-b6e9-6342c164687f",
+            "path": "article:4/paragraph:1",
+            "unit_type": "paragraph"
+          }
+        ],
+        "metadata": {
+          "alinea_count": 0,
+          "article_count": 2,
+          "canonical_unit_count": 4,
+          "item_count": 0,
+          "paragraph_count": 2,
+          "section_count": 0,
+          "subitem_count": 0
+        },
+        "schema_version": "0.1"
+      },
+      "document_type": "law",
+      "filename": "zakon.txt",
+      "language_code": "sr",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt",
+      "title": "Zakon o primerima"
+    }
+  ]
+}

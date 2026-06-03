@@ -1,0 +1,89 @@
+{
+  "artifact_id": "6c60fe6e-feec-47ac-966d-767e0ab1e839",
+  "artifact_type": "normative_assertions",
+  "created_at": "2026-06-03T18:33:29.818035Z",
+  "name": "normative_assertions",
+  "payload": [
+    {
+      "assertions": [
+        {
+          "action": null,
+          "actor": {
+            "canonical": "authorized_entity",
+            "confidence": 0.86,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "ovlasceno lice"
+          },
+          "assertion_id": "17525bc4-4a60-5e0f-bcd2-e41b5c60182d",
+          "assertion_type": "permission",
+          "condition": null,
+          "confidence": 0.6599999999999999,
+          "corpus_id": "191e531d-44ce-4fea-a34c-9ce4dfbf15c1",
+          "deadline": null,
+          "document_id": "707bd0e9-c462-57d0-a661-b3a510d81516",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-definicije.txt",
+          "legal_unit_id": "3df8a5ff-2be0-4e56-91ac-cec9045c3747",
+          "metadata": {
+            "unit_type": "article"
+          },
+          "modality": "is_authorized",
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "actor": 0.86
+          },
+          "source_path": "article:1",
+          "source_quote": "Ovlasceno lice je pravno lice registrovano za ovu delatnost.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/definition_conflict_001/corpus/zakon-definicije.txt"
+        },
+        {
+          "action": null,
+          "actor": {
+            "canonical": "authorized_entity",
+            "confidence": 0.86,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "ovlasceno lice"
+          },
+          "assertion_id": "60e7e1ab-660a-5aa2-b833-93437480c86d",
+          "assertion_type": "permission",
+          "condition": null,
+          "confidence": 0.6599999999999999,
+          "corpus_id": "191e531d-44ce-4fea-a34c-9ce4dfbf15c1",
+          "deadline": null,
+          "document_id": "707bd0e9-c462-57d0-a661-b3a510d81516",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-definicije.txt",
+          "legal_unit_id": "df5671f0-a8ab-4f8c-98f4-6797c92be4c8",
+          "metadata": {
+            "unit_type": "paragraph"
+          },
+          "modality": "is_authorized",
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "actor": 0.86
+          },
+          "source_path": "article:1/paragraph:1",
+          "source_quote": "Ovlasceno lice je pravno lice registrovano za ovu delatnost.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/definition_conflict_001/corpus/zakon-definicije.txt"
+        }
+      ],
+      "filename": "zakon-definicije.txt",
+      "metadata": {
+        "assertion_count": 2
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/definition_conflict_001/corpus/zakon-definicije.txt"
+    }
+  ]
+}

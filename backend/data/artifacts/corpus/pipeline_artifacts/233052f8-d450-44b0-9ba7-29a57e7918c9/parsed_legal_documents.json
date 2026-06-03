@@ -1,0 +1,47 @@
+{
+  "artifact_id": "ac68ffaa-5a05-4fe7-9d46-5f3f9dbb64ff",
+  "artifact_type": "parsed_legal_documents",
+  "created_at": "2026-06-03T18:33:29.198615Z",
+  "name": "parsed_legal_documents",
+  "payload": [
+    {
+      "document_type": "law",
+      "filename": "zakon-o-sumama.txt",
+      "language_code": "sr",
+      "legal_units": [
+        {
+          "content_text": "Šume su dobro od opšteg interesa.",
+          "heading": "Zakon o šumama",
+          "legal_unit_id": "e32a17e7-6a61-429f-9172-0a513456d9ad",
+          "metadata": {},
+          "number": "2",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:2",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Šume su dobro od opšteg interesa.",
+          "heading": null,
+          "legal_unit_id": "f19dcd91-592c-498f-9209-3c82e53601c3",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "e32a17e7-6a61-429f-9172-0a513456d9ad",
+          "path": "article:2/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_resolves_cro0/cross/zakon-o-sumama.txt",
+      "title": "Zakon o šumama"
+    }
+  ]
+}

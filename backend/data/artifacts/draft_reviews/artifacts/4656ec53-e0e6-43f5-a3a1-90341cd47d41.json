@@ -1,0 +1,492 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa prosirenim ovlascenjem.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Postupak se sprovodi u skladu sa clanom 2. Zakona o sumama. Obelezavanje drveca moze da radi svaki gradjanin.",
+          "heading": "NACRT",
+          "legal_unit_id": "3f5a0037-5d19-4487-8c59-d9ca64688c27",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Postupak se sprovodi u skladu sa clanom 2. Zakona o sumama. Obelezavanje drveca moze da radi svaki gradjanin.",
+          "heading": null,
+          "legal_unit_id": "de6f9495-35a4-4af3-85e5-a84964da3f8d",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "3f5a0037-5d19-4487-8c59-d9ca64688c27",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa prosirenim ovlascenjem.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [
+    {
+      "candidate_id": "862b3be1-b8fc-5d22-b403-630b0aaafaf3",
+      "corpus_assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+      "draft_assertion_id": "f64a1017-81cf-5021-8f2f-e0293a3a4c37",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "a772b1ff-9013-5aaf-a53d-d6da422c2a25",
+      "corpus_assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+      "draft_assertion_id": "f64a1017-81cf-5021-8f2f-e0293a3a4c37",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "56a015f4-a65f-5cac-9c34-12cfd5d11da8",
+      "corpus_assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+      "draft_assertion_id": "7cd6b180-f227-50d0-9fc7-a005547ce469",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "2d6e864a-6ce2-5b93-a12f-768d699ab4ba",
+      "corpus_assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+      "draft_assertion_id": "7cd6b180-f227-50d0-9fc7-a005547ce469",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    }
+  ],
+  "conflict_trace": {
+    "candidate_count": 4,
+    "corpus_assertion_count": 2,
+    "draft_assertion_count": 2,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 8
+  },
+  "corpus_normative_assertions": [
+    {
+      "action": {
+        "canonical": "mark_tree",
+        "confidence": 0.9099999999999999,
+        "metadata": {},
+        "raw": "obelezavanje drveca"
+      },
+      "actor": {
+        "canonical": "authorized_entity",
+        "confidence": 0.9099999999999999,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "ovlasceno preduzece"
+      },
+      "assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+      "deadline": null,
+      "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_authorized",
+      "object": {
+        "canonical": "tree",
+        "confidence": 0.78,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "drveca"
+      },
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.9099999999999999,
+        "actor": 0.9099999999999999,
+        "domain": 0.82,
+        "object": 0.78
+      },
+      "source_path": "article:45",
+      "source_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_flags_author0/authority/zakon-o-sumama.txt"
+    },
+    {
+      "action": {
+        "canonical": "mark_tree",
+        "confidence": 0.9099999999999999,
+        "metadata": {},
+        "raw": "obelezavanje drveca"
+      },
+      "actor": {
+        "canonical": "authorized_entity",
+        "confidence": 0.9099999999999999,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "ovlasceno preduzece"
+      },
+      "assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+      "deadline": null,
+      "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_authorized",
+      "object": {
+        "canonical": "tree",
+        "confidence": 0.78,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "drveca"
+      },
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.9099999999999999,
+        "actor": 0.9099999999999999,
+        "domain": 0.82,
+        "object": 0.78
+      },
+      "source_path": "article:45/paragraph:1",
+      "source_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_flags_author0/authority/zakon-o-sumama.txt"
+    }
+  ],
+  "normalized_text": "NACRT\n\nClan 1.\nPostupak se sprovodi u skladu sa clanom 2. Zakona o sumama. Obelezavanje drveca moze da radi svaki gradjanin.\n",
+  "normative_assertions": [
+    {
+      "action": {
+        "canonical": "mark_tree",
+        "confidence": 0.9099999999999999,
+        "metadata": {},
+        "raw": "obelezavanje drveca"
+      },
+      "actor": {
+        "canonical": "any_person",
+        "confidence": 0.87,
+        "metadata": {
+          "broader_than": [
+            "citizen",
+            "natural_person",
+            "authorized_entity"
+          ]
+        },
+        "raw": "svaki gradjanin"
+      },
+      "assertion_id": "f64a1017-81cf-5021-8f2f-e0293a3a4c37",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa prosirenim ovlascenjem.txt",
+      "legal_unit_id": "3f5a0037-5d19-4487-8c59-d9ca64688c27",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "may",
+      "object": {
+        "canonical": "tree",
+        "confidence": 0.78,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "drveca"
+      },
+      "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.9099999999999999,
+        "actor": 0.87,
+        "domain": 0.82,
+        "object": 0.78
+      },
+      "source_path": "article:1",
+      "source_quote": "Obelezavanje drveca moze da radi svaki gradjanin.",
+      "source_uri": "draft-review://4656ec53-e0e6-43f5-a3a1-90341cd47d41"
+    },
+    {
+      "action": {
+        "canonical": "mark_tree",
+        "confidence": 0.9099999999999999,
+        "metadata": {},
+        "raw": "obelezavanje drveca"
+      },
+      "actor": {
+        "canonical": "any_person",
+        "confidence": 0.87,
+        "metadata": {
+          "broader_than": [
+            "citizen",
+            "natural_person",
+            "authorized_entity"
+          ]
+        },
+        "raw": "svaki gradjanin"
+      },
+      "assertion_id": "7cd6b180-f227-50d0-9fc7-a005547ce469",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa prosirenim ovlascenjem.txt",
+      "legal_unit_id": "de6f9495-35a4-4af3-85e5-a84964da3f8d",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "may",
+      "object": {
+        "canonical": "tree",
+        "confidence": 0.78,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "drveca"
+      },
+      "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.9099999999999999,
+        "actor": 0.87,
+        "domain": 0.82,
+        "object": 0.78
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Obelezavanje drveca moze da radi svaki gradjanin.",
+      "source_uri": "draft-review://4656ec53-e0e6-43f5-a3a1-90341cd47d41"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa prosirenim ovlascenjem.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Postupak se sprovodi u skladu sa clanom 2. Zakona o sumama. Obelezavanje drveca moze da radi svaki gradjanin.",
+        "heading": "NACRT",
+        "legal_unit_id": "3f5a0037-5d19-4487-8c59-d9ca64688c27",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Postupak se sprovodi u skladu sa clanom 2. Zakona o sumama. Obelezavanje drveca moze da radi svaki gradjanin.",
+        "heading": null,
+        "legal_unit_id": "de6f9495-35a4-4af3-85e5-a84964da3f8d",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "3f5a0037-5d19-4487-8c59-d9ca64688c27",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": [
+      {
+        "confidence": 0.82,
+        "raw_text": "clanom 2. Zakona o sumama",
+        "reference_id": "5c70d11d-2392-4a2b-a1f6-29eba4209674",
+        "reference_type": "article_reference",
+        "source_legal_unit_id": "de6f9495-35a4-4af3-85e5-a84964da3f8d",
+        "source_path": "article:1/paragraph:1",
+        "target_article_number": "2",
+        "target_document_title": "Zakon o sumama",
+        "target_item_number": null,
+        "target_paragraph_number": null
+      }
+    ]
+  },
+  "resolved_references": {
+    "resolved_references": [
+      {
+        "reference_id": "5c70d11d-2392-4a2b-a1f6-29eba4209674",
+        "resolution_note": "Target path not found: article:2",
+        "resolution_status": "missing",
+        "resolved_reference_id": "efd7b230-4cb9-4889-a2a7-edafcf998335",
+        "target_legal_unit_id": null
+      }
+    ]
+  },
+  "retrieval_results": [
+    {
+      "content_text": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+      "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+      "document_type": "law",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+      "metadata": {
+        "lexical_score": 0.4117647058823529,
+        "matched_terms": [
+          "drveca",
+          "obelezavanje",
+          "skladu",
+          "suma",
+          "sumama",
+          "sumarstvo",
+          "sume"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.6751356017927664
+      },
+      "path": "article:45",
+      "score": 0.5039445194509976,
+      "unit_type": "article"
+    },
+    {
+      "content_text": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+      "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+      "document_type": "law",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+      "metadata": {
+        "lexical_score": 0.4117647058823529,
+        "matched_terms": [
+          "drveca",
+          "obelezavanje",
+          "skladu",
+          "suma",
+          "sumama",
+          "sumarstvo",
+          "sume"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.6751356017927664
+      },
+      "path": "article:45/paragraph:1",
+      "score": 0.5039445194509976,
+      "unit_type": "paragraph"
+    }
+  ]
+}

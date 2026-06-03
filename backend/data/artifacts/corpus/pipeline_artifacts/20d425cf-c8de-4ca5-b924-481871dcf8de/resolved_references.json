@@ -1,0 +1,18 @@
+{
+  "artifact_id": "ac95ba31-80fd-4c48-99a7-4122e412446e",
+  "artifact_type": "resolved_references",
+  "created_at": "2026-06-03T18:33:29.764320Z",
+  "name": "resolved_references",
+  "payload": [
+    {
+      "filename": "zakon-zastita.txt",
+      "metadata": {
+        "missing_count": 0,
+        "out_of_scope_count": 0,
+        "resolved_count": 0
+      },
+      "resolved_references": [],
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/permission_vs_prohibition_001/corpus/zakon-zastita.txt"
+    }
+  ]
+}

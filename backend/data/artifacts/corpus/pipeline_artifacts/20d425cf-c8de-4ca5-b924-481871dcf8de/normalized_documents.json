@@ -1,0 +1,23 @@
+{
+  "artifact_id": "0655cbec-f53b-4270-8368-ab4f374cd945",
+  "artifact_type": "normalized_documents",
+  "created_at": "2026-06-03T18:33:29.763320Z",
+  "name": "normalized_documents",
+  "payload": [
+    {
+      "content_text": "Zakon o zastiti\n\nClan 1.\nZabranjeno je secenje drveta bez dozvole.\n",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon-zastita.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 67,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/permission_vs_prohibition_001/corpus/zakon-zastita.txt"
+    }
+  ]
+}

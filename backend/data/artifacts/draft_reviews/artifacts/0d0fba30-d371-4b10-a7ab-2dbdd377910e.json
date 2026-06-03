@@ -1,0 +1,138 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "law",
+        "filename": "Nacrt zakona o testu.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://0d0fba30-d371-4b10-a7ab-2dbdd377910e",
+        "title": "NACRT ZAKONA O TESTU"
+      },
+      "legal_units": [
+        {
+          "content_text": "Ovim zakonom upucuje se na clan 99.",
+          "heading": "NACRT ZAKONA O TESTU",
+          "legal_unit_id": "6e346c67-1d3b-445d-947b-4eba44694541",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Ovim zakonom upucuje se na clan 99.",
+          "heading": null,
+          "legal_unit_id": "e9e1e384-c29d-4226-88b8-9c27bb408c1d",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "6e346c67-1d3b-445d-947b-4eba44694541",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "law",
+    "filename": "Nacrt zakona o testu.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://0d0fba30-d371-4b10-a7ab-2dbdd377910e",
+    "title": "NACRT ZAKONA O TESTU"
+  },
+  "classification": {
+    "confidence": 0.65,
+    "document_type": "law",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 0,
+    "draft_assertion_count": 0,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [],
+  "normalized_text": "NACRT ZAKONA O TESTU\n\nClan 1.\nOvim zakonom upucuje se na clan 99.\n",
+  "normative_assertions": [],
+  "parsed_document": {
+    "document_type": "law",
+    "filename": "Nacrt zakona o testu.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Ovim zakonom upucuje se na clan 99.",
+        "heading": "NACRT ZAKONA O TESTU",
+        "legal_unit_id": "6e346c67-1d3b-445d-947b-4eba44694541",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Ovim zakonom upucuje se na clan 99.",
+        "heading": null,
+        "legal_unit_id": "e9e1e384-c29d-4226-88b8-9c27bb408c1d",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "6e346c67-1d3b-445d-947b-4eba44694541",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://0d0fba30-d371-4b10-a7ab-2dbdd377910e",
+    "title": "NACRT ZAKONA O TESTU"
+  },
+  "references": {
+    "references": [
+      {
+        "confidence": 0.82,
+        "raw_text": "clan 99.",
+        "reference_id": "11336ff4-1f93-4c29-9273-5a44ab1738ef",
+        "reference_type": "article_reference",
+        "source_legal_unit_id": "e9e1e384-c29d-4226-88b8-9c27bb408c1d",
+        "source_path": "article:1/paragraph:1",
+        "target_article_number": "99",
+        "target_document_title": null,
+        "target_item_number": null,
+        "target_paragraph_number": null
+      }
+    ]
+  },
+  "resolved_references": {
+    "resolved_references": [
+      {
+        "reference_id": "11336ff4-1f93-4c29-9273-5a44ab1738ef",
+        "resolution_note": "Target path not found: article:99",
+        "resolution_status": "missing",
+        "resolved_reference_id": "f9f8f542-babd-4639-b98a-03b260e7d6d2",
+        "target_legal_unit_id": null
+      }
+    ]
+  },
+  "retrieval_results": []
+}

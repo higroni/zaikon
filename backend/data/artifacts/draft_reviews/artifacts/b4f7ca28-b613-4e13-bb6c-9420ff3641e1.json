@@ -1,0 +1,304 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa drugom definicijom.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://b4f7ca28-b613-4e13-bb6c-9420ff3641e1",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Ovlasceno lice je fizicko lice sa licencom.",
+          "heading": "NACRT",
+          "legal_unit_id": "426a5c85-2256-4c6a-9a45-ce579619f34b",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Ovlasceno lice je fizicko lice sa licencom.",
+          "heading": null,
+          "legal_unit_id": "b998a33b-ec5d-406c-abbd-5f24235d1ce7",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "426a5c85-2256-4c6a-9a45-ce579619f34b",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa drugom definicijom.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://b4f7ca28-b613-4e13-bb6c-9420ff3641e1",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 2,
+    "draft_assertion_count": 2,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [
+    {
+      "action": null,
+      "actor": {
+        "canonical": "authorized_entity",
+        "confidence": 0.86,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "ovlasceno lice"
+      },
+      "assertion_id": "7ed991b5-ab54-5868-85c0-9c54f91def1a",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.6599999999999999,
+      "corpus_id": "aad345e6-5cf6-4c4e-8162-8593ab322589",
+      "deadline": null,
+      "document_id": "0e9fb785-9ca4-5357-8487-0b055169da24",
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-definicije.txt",
+      "legal_unit_id": "df71c628-14af-40ae-aed0-6294b185c6fb",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_authorized",
+      "object": null,
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "actor": 0.86
+      },
+      "source_path": "article:1",
+      "source_quote": "Ovlasceno lice je pravno lice registrovano za ovu delatnost.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/definition_conflict_001/corpus/zakon-definicije.txt"
+    },
+    {
+      "action": null,
+      "actor": {
+        "canonical": "authorized_entity",
+        "confidence": 0.86,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "ovlasceno lice"
+      },
+      "assertion_id": "38b66a5c-c8fc-5e9f-a3e0-0344970a0901",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.6599999999999999,
+      "corpus_id": "aad345e6-5cf6-4c4e-8162-8593ab322589",
+      "deadline": null,
+      "document_id": "0e9fb785-9ca4-5357-8487-0b055169da24",
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-definicije.txt",
+      "legal_unit_id": "33c83881-84cb-40bd-a9df-b68ed232907e",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_authorized",
+      "object": null,
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "actor": 0.86
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Ovlasceno lice je pravno lice registrovano za ovu delatnost.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/definition_conflict_001/corpus/zakon-definicije.txt"
+    }
+  ],
+  "normalized_text": "NACRT\n\nClan 1.\nOvlasceno lice je fizicko lice sa licencom.\n",
+  "normative_assertions": [
+    {
+      "action": null,
+      "actor": {
+        "canonical": "authorized_entity",
+        "confidence": 0.86,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "ovlasceno lice"
+      },
+      "assertion_id": "4ec4a63a-2e61-5e9d-9e18-261b08caeca5",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.6599999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa drugom definicijom.txt",
+      "legal_unit_id": "426a5c85-2256-4c6a-9a45-ce579619f34b",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_authorized",
+      "object": null,
+      "pipeline_run_id": "b4f7ca28-b613-4e13-bb6c-9420ff3641e1",
+      "sanction": null,
+      "slot_confidence": {
+        "actor": 0.86
+      },
+      "source_path": "article:1",
+      "source_quote": "Ovlasceno lice je fizicko lice sa licencom.",
+      "source_uri": "draft-review://b4f7ca28-b613-4e13-bb6c-9420ff3641e1"
+    },
+    {
+      "action": null,
+      "actor": {
+        "canonical": "authorized_entity",
+        "confidence": 0.86,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "ovlasceno lice"
+      },
+      "assertion_id": "9b510120-995e-5338-8a2e-5c1683f0ad23",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.6599999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa drugom definicijom.txt",
+      "legal_unit_id": "b998a33b-ec5d-406c-abbd-5f24235d1ce7",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_authorized",
+      "object": null,
+      "pipeline_run_id": "b4f7ca28-b613-4e13-bb6c-9420ff3641e1",
+      "sanction": null,
+      "slot_confidence": {
+        "actor": 0.86
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Ovlasceno lice je fizicko lice sa licencom.",
+      "source_uri": "draft-review://b4f7ca28-b613-4e13-bb6c-9420ff3641e1"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa drugom definicijom.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Ovlasceno lice je fizicko lice sa licencom.",
+        "heading": "NACRT",
+        "legal_unit_id": "426a5c85-2256-4c6a-9a45-ce579619f34b",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Ovlasceno lice je fizicko lice sa licencom.",
+        "heading": null,
+        "legal_unit_id": "b998a33b-ec5d-406c-abbd-5f24235d1ce7",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "426a5c85-2256-4c6a-9a45-ce579619f34b",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://b4f7ca28-b613-4e13-bb6c-9420ff3641e1",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": [
+    {
+      "content_text": "Ovlasceno lice je pravno lice registrovano za ovu delatnost.",
+      "corpus_id": "aad345e6-5cf6-4c4e-8162-8593ab322589",
+      "document_id": "0e9fb785-9ca4-5357-8487-0b055169da24",
+      "document_type": "law",
+      "filename": "zakon-definicije.txt",
+      "legal_unit_id": "df71c628-14af-40ae-aed0-6294b185c6fb",
+      "metadata": {
+        "lexical_score": 0.3333333333333333,
+        "matched_terms": [
+          "lice",
+          "ovlasceno"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.6030226891555273
+      },
+      "path": "article:1",
+      "score": 0.4277246078711012,
+      "unit_type": "article"
+    },
+    {
+      "content_text": "Ovlasceno lice je pravno lice registrovano za ovu delatnost.",
+      "corpus_id": "aad345e6-5cf6-4c4e-8162-8593ab322589",
+      "document_id": "0e9fb785-9ca4-5357-8487-0b055169da24",
+      "document_type": "law",
+      "filename": "zakon-definicije.txt",
+      "legal_unit_id": "33c83881-84cb-40bd-a9df-b68ed232907e",
+      "metadata": {
+        "lexical_score": 0.3333333333333333,
+        "matched_terms": [
+          "lice",
+          "ovlasceno"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.6030226891555273
+      },
+      "path": "article:1/paragraph:1",
+      "score": 0.4277246078711012,
+      "unit_type": "paragraph"
+    }
+  ]
+}

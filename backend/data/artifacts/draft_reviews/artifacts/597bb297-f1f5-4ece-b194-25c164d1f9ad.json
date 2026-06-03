@@ -1,0 +1,419 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa kracim rokom.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://597bb297-f1f5-4ece-b194-25c164d1f9ad",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Nadlezni organ odlucuje u roku od 15 dana.",
+          "heading": "NACRT",
+          "legal_unit_id": "b0386ac9-c87e-4753-be12-5465082b2fb8",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Nadlezni organ odlucuje u roku od 15 dana.",
+          "heading": null,
+          "legal_unit_id": "3145dc20-bbd3-4df6-8fa8-58b0929bc987",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "b0386ac9-c87e-4753-be12-5465082b2fb8",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa kracim rokom.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://597bb297-f1f5-4ece-b194-25c164d1f9ad",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [
+    {
+      "candidate_id": "654a81d8-c68c-5033-a25d-14b33e59acea",
+      "corpus_assertion_id": "4d4ea005-3948-595b-953d-412ec6f2079a",
+      "draft_assertion_id": "782114b6-f3f5-584f-818c-27cb3e4f33d0",
+      "match_reasons": [
+        "same_action",
+        "both_have_deadline"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.4
+    },
+    {
+      "candidate_id": "c6f34eac-a79e-57f7-b5bd-b69ee9c65bb1",
+      "corpus_assertion_id": "4075e954-39f3-5a9f-981d-942868ea9a68",
+      "draft_assertion_id": "782114b6-f3f5-584f-818c-27cb3e4f33d0",
+      "match_reasons": [
+        "same_action",
+        "both_have_deadline"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.4
+    },
+    {
+      "candidate_id": "d7fb3d6f-3e68-5ef2-86e7-5b25d8f39a7c",
+      "corpus_assertion_id": "4d4ea005-3948-595b-953d-412ec6f2079a",
+      "draft_assertion_id": "f74ff1fd-a852-567f-ba02-37179a6fb0d4",
+      "match_reasons": [
+        "same_action",
+        "both_have_deadline"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.4
+    },
+    {
+      "candidate_id": "7ac74c38-8d81-5d00-a088-66ca019cf675",
+      "corpus_assertion_id": "4075e954-39f3-5a9f-981d-942868ea9a68",
+      "draft_assertion_id": "f74ff1fd-a852-567f-ba02-37179a6fb0d4",
+      "match_reasons": [
+        "same_action",
+        "both_have_deadline"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.4
+    }
+  ],
+  "conflict_trace": {
+    "candidate_count": 4,
+    "corpus_assertion_count": 2,
+    "draft_assertion_count": 2,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 4
+  },
+  "corpus_normative_assertions": [
+    {
+      "action": {
+        "canonical": "issue_decision",
+        "confidence": 0.7999999999999999,
+        "metadata": {},
+        "raw": "odlucuje"
+      },
+      "actor": {
+        "canonical": "competent_authority",
+        "confidence": 0.86,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "nadlezni organ"
+      },
+      "assertion_id": "4d4ea005-3948-595b-953d-412ec6f2079a",
+      "assertion_type": "deadline",
+      "condition": null,
+      "confidence": 0.84,
+      "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+      "deadline": {
+        "calendar_type": "calendar_day",
+        "confidence": 0.86,
+        "end_event": null,
+        "raw": "u roku od 30 dana",
+        "start_event": null,
+        "unit": "day",
+        "value": 30
+      },
+      "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-rok.txt",
+      "legal_unit_id": "054e5fde-5298-4ba6-b71c-1931be9dec69",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.7999999999999999,
+        "actor": 0.86,
+        "deadline": 0.86
+      },
+      "source_path": "article:1",
+      "source_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/deadline_mismatch_001/corpus/zakon-rok.txt"
+    },
+    {
+      "action": {
+        "canonical": "issue_decision",
+        "confidence": 0.7999999999999999,
+        "metadata": {},
+        "raw": "odlucuje"
+      },
+      "actor": {
+        "canonical": "competent_authority",
+        "confidence": 0.86,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "nadlezni organ"
+      },
+      "assertion_id": "4075e954-39f3-5a9f-981d-942868ea9a68",
+      "assertion_type": "deadline",
+      "condition": null,
+      "confidence": 0.84,
+      "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+      "deadline": {
+        "calendar_type": "calendar_day",
+        "confidence": 0.86,
+        "end_event": null,
+        "raw": "u roku od 30 dana",
+        "start_event": null,
+        "unit": "day",
+        "value": 30
+      },
+      "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-rok.txt",
+      "legal_unit_id": "f1ab2c4a-ddec-4bf7-ae85-ddcd95ad61e0",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.7999999999999999,
+        "actor": 0.86,
+        "deadline": 0.86
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/deadline_mismatch_001/corpus/zakon-rok.txt"
+    }
+  ],
+  "normalized_text": "NACRT\n\nClan 1.\nNadlezni organ odlucuje u roku od 15 dana.\n",
+  "normative_assertions": [
+    {
+      "action": {
+        "canonical": "issue_decision",
+        "confidence": 0.7999999999999999,
+        "metadata": {},
+        "raw": "odlucuje"
+      },
+      "actor": {
+        "canonical": "competent_authority",
+        "confidence": 0.86,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "nadlezni organ"
+      },
+      "assertion_id": "782114b6-f3f5-584f-818c-27cb3e4f33d0",
+      "assertion_type": "deadline",
+      "condition": null,
+      "confidence": 0.84,
+      "corpus_id": null,
+      "deadline": {
+        "calendar_type": "calendar_day",
+        "confidence": 0.86,
+        "end_event": null,
+        "raw": "u roku od 15 dana",
+        "start_event": null,
+        "unit": "day",
+        "value": 15
+      },
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa kracim rokom.txt",
+      "legal_unit_id": "b0386ac9-c87e-4753-be12-5465082b2fb8",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "597bb297-f1f5-4ece-b194-25c164d1f9ad",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.7999999999999999,
+        "actor": 0.86,
+        "deadline": 0.86
+      },
+      "source_path": "article:1",
+      "source_quote": "Nadlezni organ odlucuje u roku od 15 dana.",
+      "source_uri": "draft-review://597bb297-f1f5-4ece-b194-25c164d1f9ad"
+    },
+    {
+      "action": {
+        "canonical": "issue_decision",
+        "confidence": 0.7999999999999999,
+        "metadata": {},
+        "raw": "odlucuje"
+      },
+      "actor": {
+        "canonical": "competent_authority",
+        "confidence": 0.86,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "nadlezni organ"
+      },
+      "assertion_id": "f74ff1fd-a852-567f-ba02-37179a6fb0d4",
+      "assertion_type": "deadline",
+      "condition": null,
+      "confidence": 0.84,
+      "corpus_id": null,
+      "deadline": {
+        "calendar_type": "calendar_day",
+        "confidence": 0.86,
+        "end_event": null,
+        "raw": "u roku od 15 dana",
+        "start_event": null,
+        "unit": "day",
+        "value": 15
+      },
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa kracim rokom.txt",
+      "legal_unit_id": "3145dc20-bbd3-4df6-8fa8-58b0929bc987",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "597bb297-f1f5-4ece-b194-25c164d1f9ad",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.7999999999999999,
+        "actor": 0.86,
+        "deadline": 0.86
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Nadlezni organ odlucuje u roku od 15 dana.",
+      "source_uri": "draft-review://597bb297-f1f5-4ece-b194-25c164d1f9ad"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa kracim rokom.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Nadlezni organ odlucuje u roku od 15 dana.",
+        "heading": "NACRT",
+        "legal_unit_id": "b0386ac9-c87e-4753-be12-5465082b2fb8",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Nadlezni organ odlucuje u roku od 15 dana.",
+        "heading": null,
+        "legal_unit_id": "3145dc20-bbd3-4df6-8fa8-58b0929bc987",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "b0386ac9-c87e-4753-be12-5465082b2fb8",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://597bb297-f1f5-4ece-b194-25c164d1f9ad",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": [
+    {
+      "content_text": "Nadlezni organ odlucuje u roku od 30 dana.",
+      "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+      "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+      "document_type": "law",
+      "filename": "zakon-rok.txt",
+      "legal_unit_id": "054e5fde-5298-4ba6-b71c-1931be9dec69",
+      "metadata": {
+        "lexical_score": 0.7142857142857143,
+        "matched_terms": [
+          "dana",
+          "nadlezni",
+          "odlucuje",
+          "organ",
+          "roku"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.8451542547285165
+      },
+      "path": "article:1",
+      "score": 0.760089703440695,
+      "unit_type": "article"
+    },
+    {
+      "content_text": "Nadlezni organ odlucuje u roku od 30 dana.",
+      "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+      "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+      "document_type": "law",
+      "filename": "zakon-rok.txt",
+      "legal_unit_id": "f1ab2c4a-ddec-4bf7-ae85-ddcd95ad61e0",
+      "metadata": {
+        "lexical_score": 0.7142857142857143,
+        "matched_terms": [
+          "dana",
+          "nadlezni",
+          "odlucuje",
+          "organ",
+          "roku"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.8451542547285165
+      },
+      "path": "article:1/paragraph:1",
+      "score": 0.760089703440695,
+      "unit_type": "paragraph"
+    }
+  ]
+}

@@ -3,11 +3,13 @@
 import json
 from datetime import timezone
 from pathlib import Path
-from uuid import UUID
+from uuid import NAMESPACE_URL, UUID, uuid5
 
 from zaikon.core.config import settings
 from zaikon.core.schemas import FindingStatus, JobStatus
 from zaikon.core.time import utc_now
+from zaikon.modules.assertions.schemas import NormativeAssertion
+from zaikon.modules.assertions.service import get_assertion_extraction_service
 from zaikon.modules.canonical.schemas import CanonicalDocument
 from zaikon.modules.canonical.schemas import CanonicalizeRequest
 from zaikon.modules.canonical.schemas import ExportAkomaNtosoRequest
@@ -21,6 +23,7 @@ from zaikon.modules.checkers.service import get_reference_checker
 from zaikon.modules.checkers.service import get_stale_reference_checker
 from zaikon.modules.checkers.service import get_temporal_validity_checker
 from zaikon.modules.checkers.service import get_terminology_consistency_checker
+from zaikon.modules.conflicts.service import get_conflict_registry_service
 from zaikon.modules.documents.schemas import ClassifyDocumentRequest
 from zaikon.modules.documents.schemas import ExtractTextRequest
 from zaikon.modules.documents.catalog import DocumentCatalogService
@@ -167,6 +170,12 @@ class DraftReviewService:
         artifacts = self._load_artifacts(pipeline_run_id)
         return artifacts.get(artifact_name)
 
+    def list_assertions(self, pipeline_run_id: UUID) -> list[NormativeAssertion] | None:
+        if pipeline_run_id not in self._records:
+            return None
+        payload = self._load_artifacts(pipeline_run_id).get("normative_assertions", [])
+        return [NormativeAssertion.model_validate(item) for item in payload]
+
     def list_findings(self, pipeline_run_id: UUID) -> list[FindingRecord]:
         path = self.finding_dir / f"{pipeline_run_id}.json"
         payload = self._read_json(path, [])
@@ -259,10 +268,23 @@ class DraftReviewService:
             canonical = get_canonical_service().to_canonical_json(
                 CanonicalizeRequest(document=parsed.document)
             )
+            assertion_response = get_assertion_extraction_service().extract_from_document(
+                document=canonical.document,
+                pipeline_run_id=pipeline_run_id,
+            )
             references = get_reference_service().extract_references(
                 ExtractReferencesRequest(document=canonical.document)
             )
             corpus_documents = self._load_corpus_documents(record)
+            corpus_assertions = self._extract_corpus_assertions(
+                corpus_documents=corpus_documents,
+                corpus_id=record.selected_corpus_id,
+            )
+            conflict_evaluation = get_conflict_registry_service().evaluate_assertion_conflicts(
+                pipeline_run_id=pipeline_run_id,
+                draft_assertions=assertion_response,
+                corpus_assertions=corpus_assertions,
+            )
             resolved = get_reference_service().resolve_references(
                 ResolveReferencesRequest(
                     references=references.references,
@@ -318,6 +340,7 @@ class DraftReviewService:
                     document=canonical.document,
                 )
             )
+            findings.extend(conflict_evaluation.findings)
             retrieval_results = self._retrieve_related_corpus_units(
                 record=record,
                 query=normalized_text,
@@ -335,6 +358,19 @@ class DraftReviewService:
                     "classification": document_type.model_dump(mode="json"),
                     "parsed_document": parsed.document.model_dump(mode="json"),
                     "canonical_document": canonical.document.model_dump(mode="json"),
+                    "normative_assertions": [
+                        assertion.model_dump(mode="json")
+                        for assertion in assertion_response
+                    ],
+                    "corpus_normative_assertions": [
+                        assertion.model_dump(mode="json")
+                        for assertion in corpus_assertions
+                    ],
+                    "conflict_candidates": [
+                        candidate.model_dump(mode="json")
+                        for candidate in conflict_evaluation.candidates
+                    ],
+                    "conflict_trace": conflict_evaluation.trace,
                     "references": references.model_dump(mode="json"),
                     "resolved_references": resolved.model_dump(mode="json"),
                     "retrieval_results": retrieval_results,
@@ -419,6 +455,26 @@ class DraftReviewService:
                 )
             )
         return documents
+
+    def _extract_corpus_assertions(
+        self,
+        *,
+        corpus_documents: list[CanonicalDocument],
+        corpus_id: UUID | None,
+    ) -> list[NormativeAssertion]:
+        if corpus_id is None:
+            return []
+        assertion_service = get_assertion_extraction_service()
+        assertions: list[NormativeAssertion] = []
+        for document in corpus_documents:
+            assertions.extend(
+                assertion_service.extract_from_document(
+                    document=document,
+                    corpus_id=corpus_id,
+                    document_id=str(uuid5(NAMESPACE_URL, document.source_uri)),
+                )
+            )
+        return assertions
 
     def _attach_retrieval_evidence(
         self,

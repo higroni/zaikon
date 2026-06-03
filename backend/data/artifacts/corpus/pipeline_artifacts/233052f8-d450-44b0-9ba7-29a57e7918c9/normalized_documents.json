@@ -1,0 +1,23 @@
+{
+  "artifact_id": "0139c838-455a-4ab1-a968-09b01b0bb5ac",
+  "artifact_type": "normalized_documents",
+  "created_at": "2026-06-03T18:33:29.197615Z",
+  "name": "normalized_documents",
+  "payload": [
+    {
+      "content_text": "Zakon o šumama\n\nČlan 2.\nŠume su dobro od opšteg interesa.",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon-o-sumama.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 57,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_resolves_cro0/cross/zakon-o-sumama.txt"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "artifact_id": "2d311c23-9817-4461-afe9-0587a4e5a349",
+  "artifact_type": "normative_assertions",
+  "created_at": "2026-06-03T18:33:29.643335Z",
+  "name": "normative_assertions",
+  "payload": [
+    {
+      "assertions": [
+        {
+          "action": {
+            "canonical": "inspect",
+            "confidence": 0.74,
+            "metadata": {},
+            "raw": "kontrola"
+          },
+          "actor": {
+            "canonical": "health_ministry",
+            "confidence": 0.9199999999999999,
+            "metadata": {
+              "domains": [
+                "food_safety",
+                "health"
+              ]
+            },
+            "raw": "sanitarna inspekcija"
+          },
+          "assertion_id": "806515c6-303b-5f86-aa90-556bad86af10",
+          "assertion_type": "competence",
+          "condition": null,
+          "confidence": 0.8799999999999999,
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "deadline": null,
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "domain": {
+            "canonical": "food_safety",
+            "confidence": 0.82,
+            "metadata": {
+              "source": "object_domain"
+            },
+            "raw": "food_safety"
+          },
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "370935ab-60e8-49b5-b20a-0c107e191f27",
+          "metadata": {
+            "unit_type": "article"
+          },
+          "modality": "is_competent",
+          "object": {
+            "canonical": "food",
+            "confidence": 0.77,
+            "metadata": {
+              "domains": [
+                "food_safety"
+              ]
+            },
+            "raw": "hrane"
+          },
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.74,
+            "actor": 0.9199999999999999,
+            "domain": 0.82,
+            "object": 0.77
+          },
+          "source_path": "article:1",
+          "source_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/competence_conflict_001/corpus/zakon-hrana.txt"
+        },
+        {
+          "action": {
+            "canonical": "inspect",
+            "confidence": 0.74,
+            "metadata": {},
+            "raw": "kontrola"
+          },
+          "actor": {
+            "canonical": "health_ministry",
+            "confidence": 0.9199999999999999,
+            "metadata": {
+              "domains": [
+                "food_safety",
+                "health"
+              ]
+            },
+            "raw": "sanitarna inspekcija"
+          },
+          "assertion_id": "df3e0cdc-18f6-5e9f-8d8c-2ed26a460163",
+          "assertion_type": "competence",
+          "condition": null,
+          "confidence": 0.8799999999999999,
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "deadline": null,
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "domain": {
+            "canonical": "food_safety",
+            "confidence": 0.82,
+            "metadata": {
+              "source": "object_domain"
+            },
+            "raw": "food_safety"
+          },
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "77b93ec8-d378-4668-a9e9-10826f08bf7d",
+          "metadata": {
+            "unit_type": "paragraph"
+          },
+          "modality": "is_competent",
+          "object": {
+            "canonical": "food",
+            "confidence": 0.77,
+            "metadata": {
+              "domains": [
+                "food_safety"
+              ]
+            },
+            "raw": "hrane"
+          },
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.74,
+            "actor": 0.9199999999999999,
+            "domain": 0.82,
+            "object": 0.77
+          },
+          "source_path": "article:1/paragraph:1",
+          "source_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/competence_conflict_001/corpus/zakon-hrana.txt"
+        }
+      ],
+      "filename": "zakon-hrana.txt",
+      "metadata": {
+        "assertion_count": 2
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/competence_conflict_001/corpus/zakon-hrana.txt"
+    }
+  ]
+}

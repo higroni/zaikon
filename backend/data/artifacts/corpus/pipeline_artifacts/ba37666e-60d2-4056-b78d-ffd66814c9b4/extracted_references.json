@@ -1,0 +1,16 @@
+{
+  "artifact_id": "a9fbedc8-e233-4e1c-9135-49b3d3d2c487",
+  "artifact_type": "extracted_references",
+  "created_at": "2026-06-03T18:33:28.554953Z",
+  "name": "extracted_references",
+  "payload": [
+    {
+      "filename": "zakon-a.txt",
+      "metadata": {
+        "reference_count": 0
+      },
+      "references": [],
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_document_catalog_can_be_f0/first/zakon-a.txt"
+    }
+  ]
+}

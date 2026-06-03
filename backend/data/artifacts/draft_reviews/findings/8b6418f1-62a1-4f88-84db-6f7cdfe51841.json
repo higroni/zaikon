@@ -1,0 +1,82 @@
+[
+  {
+    "created_at": "2026-06-03T18:33:29.361678Z",
+    "evidence": {
+      "matched_terms": [
+        "nadlezni organ"
+      ]
+    },
+    "explanation": "The draft uses a broad institutional term that may be ambiguous without a definition or a precise authority.",
+    "finding_id": "92172b62-d3cd-44fd-a71d-176750301222",
+    "finding_type": "terminology_inconsistent",
+    "pipeline_run_id": "8b6418f1-62a1-4f88-84db-6f7cdfe51841",
+    "recommendation": "Define the term or replace it with the exact institution responsible for the obligation.",
+    "review_note": null,
+    "risk_level": "low",
+    "source_legal_unit_id": "8ba83365-df8d-4ce6-a8cd-8dfd3a0bc1ac",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Vague institutional term should be defined",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.361678Z",
+    "evidence": {
+      "matched_terms": [
+        "nadlezni organ"
+      ]
+    },
+    "explanation": "The draft uses a broad institutional term that may be ambiguous without a definition or a precise authority.",
+    "finding_id": "60654fcd-6076-485f-8b38-a8bf38df74d9",
+    "finding_type": "terminology_inconsistent",
+    "pipeline_run_id": "8b6418f1-62a1-4f88-84db-6f7cdfe51841",
+    "recommendation": "Define the term or replace it with the exact institution responsible for the obligation.",
+    "review_note": null,
+    "risk_level": "low",
+    "source_legal_unit_id": "16a92aad-ad4d-443e-8424-630ef1c7cdf6",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Vague institutional term should be defined",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.361678Z",
+    "evidence": {
+      "invalid_dates": [
+        "31. februar 2026"
+      ]
+    },
+    "explanation": "The draft contains a calendar date that does not exist, which can make the temporal rule unenforceable.",
+    "finding_id": "317a26aa-6c64-44b7-8fa2-9b574d1ad8ff",
+    "finding_type": "temporal_validity_issue",
+    "pipeline_run_id": "8b6418f1-62a1-4f88-84db-6f7cdfe51841",
+    "recommendation": "Correct the date before publishing the draft.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "8ba83365-df8d-4ce6-a8cd-8dfd3a0bc1ac",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Invalid effective date",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.361678Z",
+    "evidence": {
+      "invalid_dates": [
+        "31. februar 2026"
+      ]
+    },
+    "explanation": "The draft contains a calendar date that does not exist, which can make the temporal rule unenforceable.",
+    "finding_id": "041ab222-e8b6-44e5-acea-9a2fb755defe",
+    "finding_type": "temporal_validity_issue",
+    "pipeline_run_id": "8b6418f1-62a1-4f88-84db-6f7cdfe51841",
+    "recommendation": "Correct the date before publishing the draft.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "16a92aad-ad4d-443e-8424-630ef1c7cdf6",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Invalid effective date",
+    "updated_at": null
+  }
+]

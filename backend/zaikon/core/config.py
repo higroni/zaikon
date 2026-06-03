@@ -40,16 +40,42 @@ class Settings(BaseSettings):
     vector_backend: str = "qdrant"
     qdrant_url: str = "http://localhost:6333"
     qdrant_path: Path | None = Path("./data/qdrant_storage")
+    
+    # Embedding Model Settings
     embedding_model: str = "BAAI/bge-m3"
     embedding_dimensions: int = 1024
+    embedding_batch_size: int = 128
+    embedding_device: str = "cuda"
+    embedding_precision: str = "fp16"
+    
     keyword_backend: str = "postgres_fts"
 
+    # LLM Settings
     llm_provider: str = "ollama"
     llm_use_provider: bool = False
     llm_base_url: str = "http://localhost:11434"
     llm_model: str = "mistral:latest"
     llm_temperature: float = 0.1
+    llm_top_p: float = 0.9
     llm_max_tokens: int = 2048
+    llm_context_window: int = 32768
+    llm_system_prompt: str | None = None
+    
+    # Reranker Settings
+    reranker_model: str = "BAAI/bge-reranker-v2-m3"
+    reranker_batch_size: int = 32
+    reranker_device: str = "cuda"
+    
+    # RAG Chunking Settings
+    chunking_strategy: str = "semantic"
+    chunk_size: int = 500
+    chunk_overlap: int = 50
+    
+    # RAG Search Settings
+    search_type: str = "hybrid"
+    search_semantic_weight: float = 0.7
+    search_bm25_weight: float = 0.3
+    search_top_k: int = 10
 
     cors_origins: list[str] = [
         "http://localhost:5173",

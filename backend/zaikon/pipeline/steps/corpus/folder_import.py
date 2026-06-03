@@ -7,6 +7,8 @@ from urllib.parse import unquote, urlparse
 from uuid import NAMESPACE_URL, uuid4, uuid5
 
 from zaikon.core.config import settings
+from zaikon.modules.assertions.schemas import NormativeAssertion
+from zaikon.modules.assertions.service import get_assertion_extraction_service
 from zaikon.modules.canonical.schemas import CanonicalizeRequest
 from zaikon.modules.canonical.schemas import CanonicalDocument
 from zaikon.modules.canonical.service import get_canonical_service
@@ -576,6 +578,49 @@ class ExtractReferencesStep(PipelineStep):
         return context
 
 
+class ExtractNormativeAssertionsStep(PipelineStep):
+    step_name = "extract_normative_assertions"
+    requires = ("canonical_documents",)
+    produces = ("normative_assertions",)
+
+    def run(self, context: PipelineContext) -> PipelineContext:
+        assertion_service = get_assertion_extraction_service()
+        corpus_id = context.inputs.get("corpus_id")
+        extracted_documents = []
+
+        for document in context.get_artifact("canonical_documents").payload:
+            canonical_document = CanonicalDocument.model_validate(document)
+            assertions = assertion_service.extract_from_document(
+                document=canonical_document,
+                corpus_id=corpus_id,
+                document_id=str(uuid5(NAMESPACE_URL, canonical_document.source_uri)),
+            )
+            extracted_documents.append(
+                {
+                    "source_uri": canonical_document.source_uri,
+                    "filename": canonical_document.filename,
+                    "assertions": [
+                        assertion.model_dump(mode="json") for assertion in assertions
+                    ],
+                    "metadata": {"assertion_count": len(assertions)},
+                }
+            )
+
+        context.add_artifact(
+            self.artifact(
+                name="normative_assertions",
+                artifact_type="normative_assertions",
+                payload=extracted_documents,
+            )
+        )
+        context.log(
+            "INFO",
+            f"Extracted normative assertions from {len(extracted_documents)} documents",
+            self.step_name,
+        )
+        return context
+
+
 class ResolveReferencesStep(PipelineStep):
     step_name = "resolve_references"
     requires = ("canonical_documents", "extracted_references")
@@ -914,6 +959,7 @@ class CorpusFolderImportChain(PipelineChain):
                 IdentifyLegalDocumentsStep(),
                 ParseLegalStructureStep(),
                 ConvertToCanonicalJsonStep(),
+                ExtractNormativeAssertionsStep(),
                 ExtractReferencesStep(),
                 ResolveReferencesStep(),
                 ExtractDefinitionsStep(),

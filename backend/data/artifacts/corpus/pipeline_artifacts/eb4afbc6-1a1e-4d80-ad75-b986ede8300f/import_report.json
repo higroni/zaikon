@@ -1,0 +1,138 @@
+{
+  "artifact_id": "771ac5db-a4bd-4164-ae23-fcd6f8788a8d",
+  "artifact_type": "import_report",
+  "created_at": "2026-06-03T19:42:04.549818Z",
+  "name": "import_report",
+  "payload": {
+    "index_reports": {
+      "keyword": {
+        "index_name": "keyword",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "backend": "postgres_fts",
+          "top_terms": [
+            {
+              "count": 2,
+              "term": "obelezavanje"
+            },
+            {
+              "count": 2,
+              "term": "drveca"
+            },
+            {
+              "count": 2,
+              "term": "vrsi"
+            },
+            {
+              "count": 2,
+              "term": "ovlasceno"
+            },
+            {
+              "count": 2,
+              "term": "pravno"
+            },
+            {
+              "count": 2,
+              "term": "lice"
+            }
+          ],
+          "unique_terms": 6
+        },
+        "status": "completed"
+      },
+      "reference_graph": {
+        "index_name": "reference_graph",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "missing_references": 0,
+          "out_of_scope_references": 0,
+          "resolved_references": 0
+        },
+        "status": "completed"
+      },
+      "structure": {
+        "index_name": "structure",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "document_types": {
+            "law": 1
+          },
+          "unit_types": {
+            "article": 1,
+            "paragraph": 1
+          }
+        },
+        "status": "completed"
+      },
+      "vector": {
+        "index_name": "vector",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "backend": "qdrant",
+          "computed_vectors": 2,
+          "embedding_dimensions": 1024,
+          "embedding_model": "BAAI/bge-m3",
+          "fallback_embedding_dimensions": 64,
+          "status_note": "deterministic_fallback_embeddings_computed"
+        },
+        "status": "completed"
+      }
+    },
+    "pipeline_run_id": "eb4afbc6-1a1e-4d80-ad75-b986ede8300f",
+    "source_files": [
+      {
+        "content_hash": "1fb9c8c228053983fccf09333b980c9a4cf30ea2222a356e2e0ce571abd370f3",
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "error_message": null,
+        "file_type": "txt",
+        "filename": "zakon-sume.txt",
+        "import_status": "completed",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "size_bytes": 76,
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/authority_scope_001/corpus/zakon-sume.txt"
+      }
+    ],
+    "storage_report": {
+      "metadata": {
+        "storage_backend": "in_memory_report",
+        "stored_documents": 1
+      },
+      "stored_documents": [
+        {
+          "canonical_unit_count": 2,
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "publication_metadata": {
+            "official_gazette_numbers": [],
+            "publication_dates": []
+          },
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/authority_scope_001/corpus/zakon-sume.txt",
+          "storage_status": "ready",
+          "title": "Zakon o sumama"
+        }
+      ]
+    },
+    "summary": {
+      "document_types": {
+        "law": 1
+      },
+      "extracted_documents": 1,
+      "failed_files": 0,
+      "stored_documents": 1,
+      "supported_files": 1,
+      "total_files": 1,
+      "unsupported_files": 0
+    },
+    "warnings": []
+  }
+}

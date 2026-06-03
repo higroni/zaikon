@@ -1,0 +1,328 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt nadleznost i rok.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://128e0d3b-9ef7-410e-86c5-2eaaede59c67",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu. Organ odlucuje u roku od 15 dana.",
+          "heading": "NACRT",
+          "legal_unit_id": "88e90600-a8f5-4775-bb11-75fd69f34d45",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu. Organ odlucuje u roku od 15 dana.",
+          "heading": null,
+          "legal_unit_id": "b8360162-eac3-4480-b5d5-b1e278e91f32",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "88e90600-a8f5-4775-bb11-75fd69f34d45",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt nadleznost i rok.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://128e0d3b-9ef7-410e-86c5-2eaaede59c67",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 0,
+    "draft_assertion_count": 4,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [],
+  "normalized_text": "NACRT\n\nClan 1.\nKontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu. Organ odlucuje u roku od 15 dana.\n",
+  "normative_assertions": [
+    {
+      "action": {
+        "canonical": "inspect",
+        "confidence": 0.74,
+        "metadata": {},
+        "raw": "kontrola"
+      },
+      "actor": {
+        "canonical": "construction_ministry",
+        "confidence": 0.99,
+        "metadata": {
+          "domains": [
+            "construction"
+          ]
+        },
+        "raw": "ministarstva nadleznog za gradjevinu"
+      },
+      "assertion_id": "3aad098c-6e2f-5ff9-8c40-95951b3d0401",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "food_safety",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "food_safety"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt nadleznost i rok.txt",
+      "legal_unit_id": "88e90600-a8f5-4775-bb11-75fd69f34d45",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "food",
+        "confidence": 0.77,
+        "metadata": {
+          "domains": [
+            "food_safety"
+          ]
+        },
+        "raw": "hrane"
+      },
+      "pipeline_run_id": "128e0d3b-9ef7-410e-86c5-2eaaede59c67",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.74,
+        "actor": 0.99,
+        "domain": 0.82,
+        "object": 0.77
+      },
+      "source_path": "article:1",
+      "source_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "source_uri": "draft-review://128e0d3b-9ef7-410e-86c5-2eaaede59c67"
+    },
+    {
+      "action": {
+        "canonical": "issue_decision",
+        "confidence": 0.7999999999999999,
+        "metadata": {},
+        "raw": "odlucuje"
+      },
+      "actor": null,
+      "assertion_id": "2a9be97f-402e-5db4-a287-77176b78211b",
+      "assertion_type": "deadline",
+      "condition": null,
+      "confidence": 0.72,
+      "corpus_id": null,
+      "deadline": {
+        "calendar_type": "calendar_day",
+        "confidence": 0.86,
+        "end_event": null,
+        "raw": "u roku od 15 dana",
+        "start_event": null,
+        "unit": "day",
+        "value": 15
+      },
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt nadleznost i rok.txt",
+      "legal_unit_id": "88e90600-a8f5-4775-bb11-75fd69f34d45",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "128e0d3b-9ef7-410e-86c5-2eaaede59c67",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.7999999999999999,
+        "deadline": 0.86
+      },
+      "source_path": "article:1",
+      "source_quote": "Organ odlucuje u roku od 15 dana.",
+      "source_uri": "draft-review://128e0d3b-9ef7-410e-86c5-2eaaede59c67"
+    },
+    {
+      "action": {
+        "canonical": "inspect",
+        "confidence": 0.74,
+        "metadata": {},
+        "raw": "kontrola"
+      },
+      "actor": {
+        "canonical": "construction_ministry",
+        "confidence": 0.99,
+        "metadata": {
+          "domains": [
+            "construction"
+          ]
+        },
+        "raw": "ministarstva nadleznog za gradjevinu"
+      },
+      "assertion_id": "44e2e509-428e-53ef-9405-dff3dcbbbbf5",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "food_safety",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "food_safety"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt nadleznost i rok.txt",
+      "legal_unit_id": "b8360162-eac3-4480-b5d5-b1e278e91f32",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "food",
+        "confidence": 0.77,
+        "metadata": {
+          "domains": [
+            "food_safety"
+          ]
+        },
+        "raw": "hrane"
+      },
+      "pipeline_run_id": "128e0d3b-9ef7-410e-86c5-2eaaede59c67",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.74,
+        "actor": 0.99,
+        "domain": 0.82,
+        "object": 0.77
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "source_uri": "draft-review://128e0d3b-9ef7-410e-86c5-2eaaede59c67"
+    },
+    {
+      "action": {
+        "canonical": "issue_decision",
+        "confidence": 0.7999999999999999,
+        "metadata": {},
+        "raw": "odlucuje"
+      },
+      "actor": null,
+      "assertion_id": "f70b2b79-c9c6-5542-8c3c-7972f6509ae6",
+      "assertion_type": "deadline",
+      "condition": null,
+      "confidence": 0.72,
+      "corpus_id": null,
+      "deadline": {
+        "calendar_type": "calendar_day",
+        "confidence": 0.86,
+        "end_event": null,
+        "raw": "u roku od 15 dana",
+        "start_event": null,
+        "unit": "day",
+        "value": 15
+      },
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt nadleznost i rok.txt",
+      "legal_unit_id": "b8360162-eac3-4480-b5d5-b1e278e91f32",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "128e0d3b-9ef7-410e-86c5-2eaaede59c67",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.7999999999999999,
+        "deadline": 0.86
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Organ odlucuje u roku od 15 dana.",
+      "source_uri": "draft-review://128e0d3b-9ef7-410e-86c5-2eaaede59c67"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt nadleznost i rok.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu. Organ odlucuje u roku od 15 dana.",
+        "heading": "NACRT",
+        "legal_unit_id": "88e90600-a8f5-4775-bb11-75fd69f34d45",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu. Organ odlucuje u roku od 15 dana.",
+        "heading": null,
+        "legal_unit_id": "b8360162-eac3-4480-b5d5-b1e278e91f32",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "88e90600-a8f5-4775-bb11-75fd69f34d45",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://128e0d3b-9ef7-410e-86c5-2eaaede59c67",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": []
+}

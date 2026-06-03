@@ -1,0 +1,17 @@
+{
+  "artifact_id": "0d3c5c21-472a-4eb9-8a52-69ed47ce4330",
+  "artifact_type": "reference_graph_report",
+  "created_at": "2026-06-03T19:42:04.398792Z",
+  "name": "reference_graph_report",
+  "payload": {
+    "index_name": "reference_graph",
+    "indexed_documents": 1,
+    "indexed_legal_units": 2,
+    "metadata": {
+      "missing_references": 0,
+      "out_of_scope_references": 0,
+      "resolved_references": 0
+    },
+    "status": "completed"
+  }
+}

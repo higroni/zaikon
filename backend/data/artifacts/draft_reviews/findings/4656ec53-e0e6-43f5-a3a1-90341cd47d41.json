@@ -1,0 +1,943 @@
+[
+  {
+    "created_at": "2026-06-03T18:33:29.158746Z",
+    "evidence": {
+      "raw_text": "clanom 2. Zakona o sumama",
+      "related_legal_units": [
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "paragraph"
+        }
+      ],
+      "resolution_note": "Target path not found: article:2",
+      "target_article_number": "2",
+      "target_paragraph_number": null
+    },
+    "explanation": "The draft contains an internal article reference that does not resolve to an existing article or paragraph.",
+    "finding_id": "c540b17e-62f9-42bf-bacc-165e95e5b3b5",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "recommendation": "Verify the cited article number and update the reference or add the missing target provision.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "de6f9495-35a4-4af3-85e5-a84964da3f8d",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Reference target was not found",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.158746Z",
+    "evidence": {
+      "corpus_conflicts": [
+        {
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "title": "Zakon o sumama"
+        },
+        {
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "title": "Zakon o sumama"
+        }
+      ],
+      "draft_quote": "Postupak se sprovodi u skladu sa clanom 2. Zakona o sumama. Obelezavanje drveca moze da radi svaki gradjanin.",
+      "matched_rule": "tree_marking_authorized_actor",
+      "related_legal_units": [
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    "explanation": "Nacrt dozvoljava da obeležavanje drveća vrši širok krug lica, dok relevantna odredba iz korpusa vezuje tu radnju za ovlašćeno preduzeće ili drugo ovlašćeno lice.",
+    "finding_id": "8b031878-ef88-41e9-b32d-2885b8e20bd7",
+    "finding_type": "corpus_authority_conflict",
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "recommendation": "Uskladiti nacrt sa odredbom iz korpusa: zameniti široku formulaciju preciznim ovlašćenim subjektom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "3f5a0037-5d19-4487-8c59-d9ca64688c27",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt širi ovlašćenje suprotno korpusu",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.158746Z",
+    "evidence": {
+      "corpus_conflicts": [
+        {
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "title": "Zakon o sumama"
+        },
+        {
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "title": "Zakon o sumama"
+        }
+      ],
+      "draft_quote": "Postupak se sprovodi u skladu sa clanom 2. Zakona o sumama. Obelezavanje drveca moze da radi svaki gradjanin.",
+      "matched_rule": "tree_marking_authorized_actor",
+      "related_legal_units": [
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    "explanation": "Nacrt dozvoljava da obeležavanje drveća vrši širok krug lica, dok relevantna odredba iz korpusa vezuje tu radnju za ovlašćeno preduzeće ili drugo ovlašćeno lice.",
+    "finding_id": "e5c03dbc-4a0d-4e69-96d6-120273066ec2",
+    "finding_type": "corpus_authority_conflict",
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "recommendation": "Uskladiti nacrt sa odredbom iz korpusa: zameniti široku formulaciju preciznim ovlašćenim subjektom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "de6f9495-35a4-4af3-85e5-a84964da3f8d",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt širi ovlašćenje suprotno korpusu",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.158746Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "862b3be1-b8fc-5d22-b403-630b0aaafaf3",
+        "corpus_assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+        "draft_assertion_id": "f64a1017-81cf-5021-8f2f-e0293a3a4c37",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:45",
+      "corpus_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "draft_assertion_id": "f64a1017-81cf-5021-8f2f-e0293a3a4c37",
+      "draft_filename": "Nacrt sa prosirenim ovlascenjem.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Obelezavanje drveca moze da radi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "authority_scope_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "authorized_entity",
+          "draft_value": "any_person",
+          "relation": "broader_than_allowed",
+          "slot": "actor"
+        }
+      ]
+    },
+    "explanation": "Nacrt koristi sireg aktera od relevantne odredbe iz korpusa za istu ili uporedivu radnju.",
+    "finding_id": "574c6f97-b088-4bf4-b7ab-56a9a1fcc25c",
+    "finding_type": "authority_scope_conflict",
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "recommendation": "Uskladiti aktera sa korpusom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "3f5a0037-5d19-4487-8c59-d9ca64688c27",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt siri krug ovlascenih lica",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.158746Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "862b3be1-b8fc-5d22-b403-630b0aaafaf3",
+        "corpus_assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+        "draft_assertion_id": "f64a1017-81cf-5021-8f2f-e0293a3a4c37",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:45",
+      "corpus_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "draft_assertion_id": "f64a1017-81cf-5021-8f2f-e0293a3a4c37",
+      "draft_filename": "Nacrt sa prosirenim ovlascenjem.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Obelezavanje drveca moze da radi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:45",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "be2b25e3-28ba-40df-95bc-e90731934e73",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "3f5a0037-5d19-4487-8c59-d9ca64688c27",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.158746Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "a772b1ff-9013-5aaf-a53d-d6da422c2a25",
+        "corpus_assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+        "draft_assertion_id": "f64a1017-81cf-5021-8f2f-e0293a3a4c37",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:45/paragraph:1",
+      "corpus_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "draft_assertion_id": "f64a1017-81cf-5021-8f2f-e0293a3a4c37",
+      "draft_filename": "Nacrt sa prosirenim ovlascenjem.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Obelezavanje drveca moze da radi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "authority_scope_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "authorized_entity",
+          "draft_value": "any_person",
+          "relation": "broader_than_allowed",
+          "slot": "actor"
+        }
+      ]
+    },
+    "explanation": "Nacrt koristi sireg aktera od relevantne odredbe iz korpusa za istu ili uporedivu radnju.",
+    "finding_id": "e8760b05-c8c6-4ddb-80dd-241b75d76d48",
+    "finding_type": "authority_scope_conflict",
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "recommendation": "Uskladiti aktera sa korpusom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "3f5a0037-5d19-4487-8c59-d9ca64688c27",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt siri krug ovlascenih lica",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.158746Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "a772b1ff-9013-5aaf-a53d-d6da422c2a25",
+        "corpus_assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+        "draft_assertion_id": "f64a1017-81cf-5021-8f2f-e0293a3a4c37",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:45/paragraph:1",
+      "corpus_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "draft_assertion_id": "f64a1017-81cf-5021-8f2f-e0293a3a4c37",
+      "draft_filename": "Nacrt sa prosirenim ovlascenjem.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Obelezavanje drveca moze da radi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:45/paragraph:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "ce03dcdb-6f74-4b8c-a2dd-a39fb86ca938",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "3f5a0037-5d19-4487-8c59-d9ca64688c27",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.158746Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "56a015f4-a65f-5cac-9c34-12cfd5d11da8",
+        "corpus_assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+        "draft_assertion_id": "7cd6b180-f227-50d0-9fc7-a005547ce469",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:45",
+      "corpus_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "draft_assertion_id": "7cd6b180-f227-50d0-9fc7-a005547ce469",
+      "draft_filename": "Nacrt sa prosirenim ovlascenjem.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Obelezavanje drveca moze da radi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "authority_scope_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "authorized_entity",
+          "draft_value": "any_person",
+          "relation": "broader_than_allowed",
+          "slot": "actor"
+        }
+      ]
+    },
+    "explanation": "Nacrt koristi sireg aktera od relevantne odredbe iz korpusa za istu ili uporedivu radnju.",
+    "finding_id": "f547de2b-7229-4681-99c7-7efb722ccdc3",
+    "finding_type": "authority_scope_conflict",
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "recommendation": "Uskladiti aktera sa korpusom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "de6f9495-35a4-4af3-85e5-a84964da3f8d",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt siri krug ovlascenih lica",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.158746Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "56a015f4-a65f-5cac-9c34-12cfd5d11da8",
+        "corpus_assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+        "draft_assertion_id": "7cd6b180-f227-50d0-9fc7-a005547ce469",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:45",
+      "corpus_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "draft_assertion_id": "7cd6b180-f227-50d0-9fc7-a005547ce469",
+      "draft_filename": "Nacrt sa prosirenim ovlascenjem.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Obelezavanje drveca moze da radi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:45",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "66b22d63-b4e5-4e34-a253-2d61ca1b9be3",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "de6f9495-35a4-4af3-85e5-a84964da3f8d",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.158746Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "2d6e864a-6ce2-5b93-a12f-768d699ab4ba",
+        "corpus_assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+        "draft_assertion_id": "7cd6b180-f227-50d0-9fc7-a005547ce469",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:45/paragraph:1",
+      "corpus_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "draft_assertion_id": "7cd6b180-f227-50d0-9fc7-a005547ce469",
+      "draft_filename": "Nacrt sa prosirenim ovlascenjem.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Obelezavanje drveca moze da radi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "authority_scope_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "authorized_entity",
+          "draft_value": "any_person",
+          "relation": "broader_than_allowed",
+          "slot": "actor"
+        }
+      ]
+    },
+    "explanation": "Nacrt koristi sireg aktera od relevantne odredbe iz korpusa za istu ili uporedivu radnju.",
+    "finding_id": "4f11deba-0972-48db-be16-290b357b98d8",
+    "finding_type": "authority_scope_conflict",
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "recommendation": "Uskladiti aktera sa korpusom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "de6f9495-35a4-4af3-85e5-a84964da3f8d",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt siri krug ovlascenih lica",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.158746Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "2d6e864a-6ce2-5b93-a12f-768d699ab4ba",
+        "corpus_assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+        "draft_assertion_id": "7cd6b180-f227-50d0-9fc7-a005547ce469",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+      "corpus_filename": "zakon-o-sumama.txt",
+      "corpus_path": "article:45/paragraph:1",
+      "corpus_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+      "draft_assertion_id": "7cd6b180-f227-50d0-9fc7-a005547ce469",
+      "draft_filename": "Nacrt sa prosirenim ovlascenjem.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Obelezavanje drveca moze da radi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "skladu",
+            "suma",
+            "sumama",
+            "sumarstvo",
+            "sume"
+          ],
+          "path": "article:45/paragraph:1",
+          "quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "score": 0.5039445194509976,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:45/paragraph:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "754dce22-1a51-4caa-995e-50d8b2ae2a7b",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "de6f9495-35a4-4af3-85e5-a84964da3f8d",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  }
+]

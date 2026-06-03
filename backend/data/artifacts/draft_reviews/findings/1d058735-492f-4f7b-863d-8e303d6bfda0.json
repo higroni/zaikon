@@ -1,0 +1,800 @@
+[
+  {
+    "created_at": "2026-06-03T19:42:04.603442Z",
+    "evidence": {
+      "corpus_conflicts": [
+        {
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "title": "Zakon o sumama"
+        },
+        {
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "title": "Zakon o sumama"
+        }
+      ],
+      "draft_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "matched_rule": "tree_marking_authorized_actor",
+      "related_legal_units": [
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    "explanation": "Nacrt dozvoljava da obeležavanje drveća vrši širok krug lica, dok relevantna odredba iz korpusa vezuje tu radnju za ovlašćeno preduzeće ili drugo ovlašćeno lice.",
+    "finding_id": "4274d09f-be7e-4ee3-96e5-adecc4ff7bbd",
+    "finding_type": "corpus_authority_conflict",
+    "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "recommendation": "Uskladiti nacrt sa odredbom iz korpusa: zameniti široku formulaciju preciznim ovlašćenim subjektom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "c5a692f8-83b5-4971-aee0-f4f7dfd05337",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt širi ovlašćenje suprotno korpusu",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.603442Z",
+    "evidence": {
+      "corpus_conflicts": [
+        {
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "title": "Zakon o sumama"
+        },
+        {
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "title": "Zakon o sumama"
+        }
+      ],
+      "draft_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "matched_rule": "tree_marking_authorized_actor",
+      "related_legal_units": [
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    "explanation": "Nacrt dozvoljava da obeležavanje drveća vrši širok krug lica, dok relevantna odredba iz korpusa vezuje tu radnju za ovlašćeno preduzeće ili drugo ovlašćeno lice.",
+    "finding_id": "c121b7b1-276f-45e6-8c8e-31c95ba8254a",
+    "finding_type": "corpus_authority_conflict",
+    "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "recommendation": "Uskladiti nacrt sa odredbom iz korpusa: zameniti široku formulaciju preciznim ovlašćenim subjektom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "73a8f9b4-34a2-4201-9afe-a4bdb71905e4",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt širi ovlašćenje suprotno korpusu",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.603442Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "df1755f7-cb1d-5e9a-a07d-8d6d03a3bad5",
+        "corpus_assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+        "draft_assertion_id": "082c9f8a-0695-55d8-8057-cf86740fa34b",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+      "corpus_filename": "zakon-sume.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "draft_assertion_id": "082c9f8a-0695-55d8-8057-cf86740fa34b",
+      "draft_filename": "Nacrt sa sirim krugom aktera.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "authority_scope_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "authorized_entity",
+          "draft_value": "any_person",
+          "relation": "broader_than_allowed",
+          "slot": "actor"
+        }
+      ]
+    },
+    "explanation": "Nacrt koristi sireg aktera od relevantne odredbe iz korpusa za istu ili uporedivu radnju.",
+    "finding_id": "f1505f79-0127-49d4-874b-dc0e28770921",
+    "finding_type": "authority_scope_conflict",
+    "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "recommendation": "Uskladiti aktera sa korpusom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "c5a692f8-83b5-4971-aee0-f4f7dfd05337",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt siri krug ovlascenih lica",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.603442Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "df1755f7-cb1d-5e9a-a07d-8d6d03a3bad5",
+        "corpus_assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+        "draft_assertion_id": "082c9f8a-0695-55d8-8057-cf86740fa34b",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+      "corpus_filename": "zakon-sume.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "draft_assertion_id": "082c9f8a-0695-55d8-8057-cf86740fa34b",
+      "draft_filename": "Nacrt sa sirim krugom aktera.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "a9208896-f4fa-4a6a-8d9a-b3645d7a1635",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "c5a692f8-83b5-4971-aee0-f4f7dfd05337",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.603442Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "bd2a8c7c-7db2-5853-a91c-8e9490d910f4",
+        "corpus_assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+        "draft_assertion_id": "082c9f8a-0695-55d8-8057-cf86740fa34b",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+      "corpus_filename": "zakon-sume.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "draft_assertion_id": "082c9f8a-0695-55d8-8057-cf86740fa34b",
+      "draft_filename": "Nacrt sa sirim krugom aktera.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "authority_scope_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "authorized_entity",
+          "draft_value": "any_person",
+          "relation": "broader_than_allowed",
+          "slot": "actor"
+        }
+      ]
+    },
+    "explanation": "Nacrt koristi sireg aktera od relevantne odredbe iz korpusa za istu ili uporedivu radnju.",
+    "finding_id": "3ea66550-2584-407d-b57b-54d77cfc019c",
+    "finding_type": "authority_scope_conflict",
+    "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "recommendation": "Uskladiti aktera sa korpusom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "c5a692f8-83b5-4971-aee0-f4f7dfd05337",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt siri krug ovlascenih lica",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.603442Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "bd2a8c7c-7db2-5853-a91c-8e9490d910f4",
+        "corpus_assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+        "draft_assertion_id": "082c9f8a-0695-55d8-8057-cf86740fa34b",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+      "corpus_filename": "zakon-sume.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "draft_assertion_id": "082c9f8a-0695-55d8-8057-cf86740fa34b",
+      "draft_filename": "Nacrt sa sirim krugom aktera.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1/paragraph:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "a54bb760-7885-4db6-ac84-580acf9a361a",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "c5a692f8-83b5-4971-aee0-f4f7dfd05337",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.603442Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "b17cff25-f6c9-5b33-bbf3-452846fcd716",
+        "corpus_assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+        "draft_assertion_id": "90535e2f-b386-53fa-84df-33c1015ad00a",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+      "corpus_filename": "zakon-sume.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "draft_assertion_id": "90535e2f-b386-53fa-84df-33c1015ad00a",
+      "draft_filename": "Nacrt sa sirim krugom aktera.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "authority_scope_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "authorized_entity",
+          "draft_value": "any_person",
+          "relation": "broader_than_allowed",
+          "slot": "actor"
+        }
+      ]
+    },
+    "explanation": "Nacrt koristi sireg aktera od relevantne odredbe iz korpusa za istu ili uporedivu radnju.",
+    "finding_id": "6c6384d4-5947-483d-b210-80842531fccd",
+    "finding_type": "authority_scope_conflict",
+    "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "recommendation": "Uskladiti aktera sa korpusom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "73a8f9b4-34a2-4201-9afe-a4bdb71905e4",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt siri krug ovlascenih lica",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.603442Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "b17cff25-f6c9-5b33-bbf3-452846fcd716",
+        "corpus_assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+        "draft_assertion_id": "90535e2f-b386-53fa-84df-33c1015ad00a",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "b4e855e6-ca41-5f93-a3b1-9639333268de",
+      "corpus_filename": "zakon-sume.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "draft_assertion_id": "90535e2f-b386-53fa-84df-33c1015ad00a",
+      "draft_filename": "Nacrt sa sirim krugom aktera.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "55f51629-a969-4874-a8f6-e98e432ddaec",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "73a8f9b4-34a2-4201-9afe-a4bdb71905e4",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.603442Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "61d5690b-0ce3-5a84-b6a5-33c61658c35c",
+        "corpus_assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+        "draft_assertion_id": "90535e2f-b386-53fa-84df-33c1015ad00a",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+      "corpus_filename": "zakon-sume.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "draft_assertion_id": "90535e2f-b386-53fa-84df-33c1015ad00a",
+      "draft_filename": "Nacrt sa sirim krugom aktera.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "authority_scope_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "authorized_entity",
+          "draft_value": "any_person",
+          "relation": "broader_than_allowed",
+          "slot": "actor"
+        }
+      ]
+    },
+    "explanation": "Nacrt koristi sireg aktera od relevantne odredbe iz korpusa za istu ili uporedivu radnju.",
+    "finding_id": "741d7344-9f2a-401c-81f6-aee6ecae1169",
+    "finding_type": "authority_scope_conflict",
+    "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "recommendation": "Uskladiti aktera sa korpusom ili dodati izuzetak sa jasnim pravnim osnovom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "73a8f9b4-34a2-4201-9afe-a4bdb71905e4",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt siri krug ovlascenih lica",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.603442Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "61d5690b-0ce3-5a84-b6a5-33c61658c35c",
+        "corpus_assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+        "draft_assertion_id": "90535e2f-b386-53fa-84df-33c1015ad00a",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "656472e7-6d9b-5736-b31d-f2b346f9f2cf",
+      "corpus_filename": "zakon-sume.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+      "draft_assertion_id": "90535e2f-b386-53fa-84df-33c1015ad00a",
+      "draft_filename": "Nacrt sa sirim krugom aktera.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Obelezavanje drveca moze da vrsi svaki gradjanin.",
+      "related_legal_units": [
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "8f2e137e-0ec8-4fc7-ba14-42d024b6edcc",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+          "document_id": "78a3657b-52a6-52c9-ab4c-e8a7046c21b6",
+          "document_type": "law",
+          "filename": "zakon-sume.txt",
+          "legal_unit_id": "94046521-9bfe-424e-a435-ac0627413bc3",
+          "matched_terms": [
+            "drveca",
+            "obelezavanje",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Obelezavanje drveca vrsi ovlasceno pravno lice.",
+          "score": 0.3793044171172596,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1/paragraph:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "3dc1eee7-506c-438f-83c4-e9bd1fd18614",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "73a8f9b4-34a2-4201-9afe-a4bdb71905e4",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  }
+]

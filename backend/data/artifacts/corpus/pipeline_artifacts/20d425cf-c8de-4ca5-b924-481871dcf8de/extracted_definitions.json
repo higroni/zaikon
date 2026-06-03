@@ -1,0 +1,16 @@
+{
+  "artifact_id": "0631149b-fc1e-4e7a-98fd-7aa513558de1",
+  "artifact_type": "extracted_definitions",
+  "created_at": "2026-06-03T18:33:29.764320Z",
+  "name": "extracted_definitions",
+  "payload": [
+    {
+      "definitions": [],
+      "filename": "zakon-zastita.txt",
+      "metadata": {
+        "definition_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/permission_vs_prohibition_001/corpus/zakon-zastita.txt"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "artifact_id": "32f3f61b-e4f8-46cd-b2fe-e71e3bb4c00c",
+  "artifact_type": "source_file_manifest",
+  "created_at": "2026-06-03T18:33:27.583710Z",
+  "name": "source_file_manifest",
+  "payload": [
+    {
+      "filename": "zakon-hrana.txt",
+      "size_bytes": 69,
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_wrong_c0/food-competence-corpus/zakon-hrana.txt",
+      "suffix": ".txt"
+    }
+  ]
+}

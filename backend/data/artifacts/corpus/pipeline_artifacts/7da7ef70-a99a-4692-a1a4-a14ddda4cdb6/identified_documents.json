@@ -1,0 +1,30 @@
+{
+  "artifact_id": "3dc9eaba-bd8e-4fa4-87a7-3bba60587aef",
+  "artifact_type": "identified_documents",
+  "created_at": "2026-06-03T18:33:31.062555Z",
+  "name": "identified_documents",
+  "payload": [
+    {
+      "content_text": "Zakon o šumama\n\nClan 1.\nŠume su dobro od opšteg interesa.",
+      "document_type": "law",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon-sume.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 57,
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null,
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        }
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_search_matches_serbian_la0/diacritics/zakon-sume.txt"
+    }
+  ]
+}

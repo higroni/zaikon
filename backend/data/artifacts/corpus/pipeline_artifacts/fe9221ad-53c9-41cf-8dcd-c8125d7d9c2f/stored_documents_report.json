@@ -1,0 +1,28 @@
+{
+  "artifact_id": "d3fd100f-027a-410b-96aa-fc5e612a3577",
+  "artifact_type": "stored_documents_report",
+  "created_at": "2026-06-03T18:33:31.137941Z",
+  "name": "stored_documents_report",
+  "payload": {
+    "metadata": {
+      "storage_backend": "in_memory_report",
+      "stored_documents": 1
+    },
+    "stored_documents": [
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "a71cad7c-0bbd-47ab-85fc-0a6eb5676f14",
+        "document_id": "9f698a11-c948-5d3c-84d1-71cfcd7426fa",
+        "document_type": "rulebook",
+        "filename": "pravilnik.txt",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_search_uses_semantic_fall0/semantic/pravilnik.txt",
+        "storage_status": "ready",
+        "title": "Pravilnik o gazdovanju"
+      }
+    ]
+  }
+}

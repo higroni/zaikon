@@ -1,0 +1,16 @@
+{
+  "artifact_id": "5609fab8-ad55-469a-830c-f5f243c8080b",
+  "artifact_type": "extracted_references",
+  "created_at": "2026-06-03T18:33:29.948840Z",
+  "name": "extracted_references",
+  "payload": [
+    {
+      "filename": "zakon-o-sumama.txt",
+      "metadata": {
+        "reference_count": 0
+      },
+      "references": [],
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/sanction_without_basis_001/corpus/zakon-o-sumama.txt"
+    }
+  ]
+}

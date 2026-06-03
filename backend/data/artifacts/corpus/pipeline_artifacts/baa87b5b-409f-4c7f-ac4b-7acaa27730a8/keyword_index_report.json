@@ -1,0 +1,42 @@
+{
+  "artifact_id": "4e75957f-b02d-4067-bcba-8190f18e1388",
+  "artifact_type": "keyword_index_report",
+  "created_at": "2026-06-03T19:42:04.712525Z",
+  "name": "keyword_index_report",
+  "payload": {
+    "index_name": "keyword",
+    "indexed_documents": 1,
+    "indexed_legal_units": 2,
+    "metadata": {
+      "backend": "postgres_fts",
+      "top_terms": [
+        {
+          "count": 4,
+          "term": "lice"
+        },
+        {
+          "count": 2,
+          "term": "ovlasceno"
+        },
+        {
+          "count": 2,
+          "term": "pravno"
+        },
+        {
+          "count": 2,
+          "term": "registrovano"
+        },
+        {
+          "count": 2,
+          "term": "ovu"
+        },
+        {
+          "count": 2,
+          "term": "delatnost"
+        }
+      ],
+      "unique_terms": 6
+    },
+    "status": "completed"
+  }
+}

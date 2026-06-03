@@ -1,0 +1,26 @@
+{
+  "artifact_id": "d1f965f2-a034-4bd5-a6d8-22656c1bb373",
+  "artifact_type": "keyword_index_report",
+  "created_at": "2026-06-03T18:33:28.577254Z",
+  "name": "keyword_index_report",
+  "payload": {
+    "index_name": "keyword",
+    "indexed_documents": 1,
+    "indexed_legal_units": 2,
+    "metadata": {
+      "backend": "postgres_fts",
+      "top_terms": [
+        {
+          "count": 2,
+          "term": "drugi"
+        },
+        {
+          "count": 2,
+          "term": "korpus"
+        }
+      ],
+      "unique_terms": 2
+    },
+    "status": "completed"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "artifact_id": "2bfd657b-2f51-4f95-b5fc-4c2e04ff53c0",
+  "artifact_type": "identified_documents",
+  "created_at": "2026-06-03T19:42:04.544818Z",
+  "name": "identified_documents",
+  "payload": [
+    {
+      "content_text": "Zakon o sumama\n\nClan 1.\nObelezavanje drveca vrsi ovlasceno pravno lice.\n",
+      "document_type": "law",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon-sume.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 72,
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null,
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        }
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/authority_scope_001/corpus/zakon-sume.txt"
+    }
+  ]
+}

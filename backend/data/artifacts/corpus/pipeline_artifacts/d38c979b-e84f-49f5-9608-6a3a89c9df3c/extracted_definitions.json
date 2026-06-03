@@ -1,0 +1,16 @@
+{
+  "artifact_id": "9edee4ef-84ea-4f00-8548-c69670edfa9c",
+  "artifact_type": "extracted_definitions",
+  "created_at": "2026-06-03T18:33:27.831288Z",
+  "name": "extracted_definitions",
+  "payload": [
+    {
+      "definitions": [],
+      "filename": "rok.txt",
+      "metadata": {
+        "definition_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_corpus_import_writes_norm0/corpus/rok.txt"
+    }
+  ]
+}

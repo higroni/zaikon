@@ -1,0 +1,58 @@
+{
+  "artifact_id": "3b181a33-e502-4cb6-974f-0b37f15e0ee4",
+  "artifact_type": "canonical_documents",
+  "created_at": "2026-06-03T18:33:29.948840Z",
+  "name": "canonical_documents",
+  "payload": [
+    {
+      "canonical_json": {
+        "document": {
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "language_code": "sr",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/sanction_without_basis_001/corpus/zakon-o-sumama.txt",
+          "title": "Zakon o sumama"
+        },
+        "legal_units": [
+          {
+            "content_text": "Kontrolu suma vrsi inspekcija.",
+            "heading": "Zakon o sumama",
+            "legal_unit_id": "f0d28c6b-a30c-402a-8a39-8b69f44b57b0",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": null,
+            "path": "article:1",
+            "unit_type": "article"
+          },
+          {
+            "content_text": "Kontrolu suma vrsi inspekcija.",
+            "heading": null,
+            "legal_unit_id": "26840fd5-8369-4849-be2d-d6c9dea6bc05",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": "f0d28c6b-a30c-402a-8a39-8b69f44b57b0",
+            "path": "article:1/paragraph:1",
+            "unit_type": "paragraph"
+          }
+        ],
+        "metadata": {
+          "alinea_count": 0,
+          "article_count": 1,
+          "canonical_unit_count": 2,
+          "item_count": 0,
+          "paragraph_count": 1,
+          "section_count": 0,
+          "subitem_count": 0
+        },
+        "schema_version": "0.1"
+      },
+      "document_type": "law",
+      "filename": "zakon-o-sumama.txt",
+      "language_code": "sr",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/sanction_without_basis_001/corpus/zakon-o-sumama.txt",
+      "title": "Zakon o sumama"
+    }
+  ]
+}

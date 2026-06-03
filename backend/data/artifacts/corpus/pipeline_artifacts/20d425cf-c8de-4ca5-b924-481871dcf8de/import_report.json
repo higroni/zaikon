@@ -1,0 +1,134 @@
+{
+  "artifact_id": "87912b2f-db53-4b77-a56c-bb9f44092ca7",
+  "artifact_type": "import_report",
+  "created_at": "2026-06-03T18:33:29.768116Z",
+  "name": "import_report",
+  "payload": {
+    "index_reports": {
+      "keyword": {
+        "index_name": "keyword",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "backend": "postgres_fts",
+          "top_terms": [
+            {
+              "count": 2,
+              "term": "zabranjeno"
+            },
+            {
+              "count": 2,
+              "term": "secenje"
+            },
+            {
+              "count": 2,
+              "term": "drveta"
+            },
+            {
+              "count": 2,
+              "term": "bez"
+            },
+            {
+              "count": 2,
+              "term": "dozvole"
+            }
+          ],
+          "unique_terms": 5
+        },
+        "status": "completed"
+      },
+      "reference_graph": {
+        "index_name": "reference_graph",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "missing_references": 0,
+          "out_of_scope_references": 0,
+          "resolved_references": 0
+        },
+        "status": "completed"
+      },
+      "structure": {
+        "index_name": "structure",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "document_types": {
+            "law": 1
+          },
+          "unit_types": {
+            "article": 1,
+            "paragraph": 1
+          }
+        },
+        "status": "completed"
+      },
+      "vector": {
+        "index_name": "vector",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "backend": "qdrant",
+          "computed_vectors": 2,
+          "embedding_dimensions": 1024,
+          "embedding_model": "BAAI/bge-m3",
+          "fallback_embedding_dimensions": 64,
+          "status_note": "deterministic_fallback_embeddings_computed"
+        },
+        "status": "completed"
+      }
+    },
+    "pipeline_run_id": "20d425cf-c8de-4ca5-b924-481871dcf8de",
+    "source_files": [
+      {
+        "content_hash": "9898f7ef5b8a5d58ac82626c6ec22706dc8c21c9ddeade02ccabdc4b626fff6d",
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "error_message": null,
+        "file_type": "txt",
+        "filename": "zakon-zastita.txt",
+        "import_status": "completed",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "size_bytes": 71,
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/permission_vs_prohibition_001/corpus/zakon-zastita.txt"
+      }
+    ],
+    "storage_report": {
+      "metadata": {
+        "storage_backend": "in_memory_report",
+        "stored_documents": 1
+      },
+      "stored_documents": [
+        {
+          "canonical_unit_count": 2,
+          "corpus_id": "8c109a83-fe02-4b10-8a8c-327722f629b6",
+          "document_id": "1c1f9b4b-10b4-5ab8-bc59-847668d7872a",
+          "document_type": "law",
+          "filename": "zakon-zastita.txt",
+          "publication_metadata": {
+            "official_gazette_numbers": [],
+            "publication_dates": []
+          },
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/1966c474-9fbb-4151-a92d-9264b081e1de/permission_vs_prohibition_001/corpus/zakon-zastita.txt",
+          "storage_status": "ready",
+          "title": "Zakon o zastiti"
+        }
+      ]
+    },
+    "summary": {
+      "document_types": {
+        "law": 1
+      },
+      "extracted_documents": 1,
+      "failed_files": 0,
+      "stored_documents": 1,
+      "supported_files": 1,
+      "total_files": 1,
+      "unsupported_files": 0
+    },
+    "warnings": []
+  }
+}

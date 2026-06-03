@@ -1,0 +1,152 @@
+{
+  "artifact_names": [
+    "canonical_documents",
+    "extracted_definitions",
+    "extracted_documents",
+    "extracted_references",
+    "identified_documents",
+    "import_report",
+    "keyword_index_report",
+    "normalized_documents",
+    "normative_assertions",
+    "parsed_legal_documents",
+    "reference_graph_report",
+    "resolved_references",
+    "source_file_manifest",
+    "stored_documents_report",
+    "structure_index_report",
+    "vector_index_report"
+  ],
+  "corpus_id": "66949ec9-16f1-4cd5-a17f-aab115711d48",
+  "import_job_id": "41486f82-5bb5-4d39-84fc-a85fbb0cd8e3",
+  "index_reports": {
+    "keyword": {
+      "index_name": "keyword",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "backend": "postgres_fts",
+        "top_terms": [
+          {
+            "count": 2,
+            "term": "vlasnik"
+          },
+          {
+            "count": 2,
+            "term": "suma"
+          },
+          {
+            "count": 2,
+            "term": "ima"
+          },
+          {
+            "count": 2,
+            "term": "pravo"
+          },
+          {
+            "count": 2,
+            "term": "zastitu"
+          }
+        ],
+        "unique_terms": 5
+      },
+      "status": "completed"
+    },
+    "reference_graph": {
+      "index_name": "reference_graph",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "missing_references": 0,
+        "out_of_scope_references": 0,
+        "resolved_references": 0
+      },
+      "status": "completed"
+    },
+    "structure": {
+      "index_name": "structure",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "document_types": {
+          "law": 1
+        },
+        "unit_types": {
+          "article": 1,
+          "paragraph": 1
+        }
+      },
+      "status": "completed"
+    },
+    "vector": {
+      "index_name": "vector",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "backend": "qdrant",
+        "computed_vectors": 2,
+        "embedding_dimensions": 1024,
+        "embedding_model": "BAAI/bge-m3",
+        "fallback_embedding_dimensions": 64,
+        "status_note": "deterministic_fallback_embeddings_computed"
+      },
+      "status": "completed"
+    }
+  },
+  "pipeline_run_id": "41486f82-5bb5-4d39-84fc-a85fbb0cd8e3",
+  "source_files": [
+    {
+      "content_hash": "2bd30edf6c1784ef2e1adb88b0e393ffc1e99dfbae0cf1cdd497b0802e04ce67",
+      "corpus_id": "66949ec9-16f1-4cd5-a17f-aab115711d48",
+      "created_at": "2026-06-03T19:42:04.794946Z",
+      "document_type": "law",
+      "document_type_confidence": 0.95,
+      "error_message": null,
+      "file_type": "txt",
+      "filename": "zakon-o-sumama.txt",
+      "import_status": "completed",
+      "publication_metadata": {
+        "official_gazette_numbers": [],
+        "publication_dates": []
+      },
+      "size_bytes": 63,
+      "source_file_id": "cccdea79-0db2-43c3-8d3b-a76d1f89eeb2",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/new_obligation_without_basis_001/corpus/zakon-o-sumama.txt"
+    }
+  ],
+  "status": "completed",
+  "storage_report": {
+    "metadata": {
+      "storage_backend": "in_memory_report",
+      "stored_documents": 1
+    },
+    "stored_documents": [
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "66949ec9-16f1-4cd5-a17f-aab115711d48",
+        "document_id": "76389d59-3fd4-50dc-b709-1c80e0a2ac6d",
+        "document_type": "law",
+        "filename": "zakon-o-sumama.txt",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/new_obligation_without_basis_001/corpus/zakon-o-sumama.txt",
+        "storage_status": "ready",
+        "title": "Zakon o sumama"
+      }
+    ]
+  },
+  "summary": {
+    "document_types": {
+      "law": 1
+    },
+    "extracted_documents": 1,
+    "failed_files": 0,
+    "stored_documents": 1,
+    "supported_files": 1,
+    "total_files": 1,
+    "unsupported_files": 0
+  },
+  "warnings": []
+}

@@ -1,0 +1,147 @@
+{
+  "artifact_id": "f0311022-a4ba-4032-89d4-b1011c21d431",
+  "artifact_type": "parsed_legal_documents",
+  "created_at": "2026-06-03T18:33:28.361180Z",
+  "name": "parsed_legal_documents",
+  "payload": [
+    {
+      "document_type": "rulebook",
+      "filename": "pravilnik.docx",
+      "language_code": "sr",
+      "legal_units": [
+        {
+          "content_text": "DOCX tekst za regresioni test.",
+          "heading": "Pravilnik o primerima",
+          "legal_unit_id": "144e5ce3-713a-4e67-8e6c-c0dab4cb097a",
+          "metadata": {},
+          "number": "3",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:3",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "DOCX tekst za regresioni test.",
+          "heading": null,
+          "legal_unit_id": "56d6c12a-733b-479d-a719-6bfe36c68302",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "144e5ce3-713a-4e67-8e6c-c0dab4cb097a",
+          "path": "article:3/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/pravilnik.docx",
+      "title": "Pravilnik o primerima"
+    },
+    {
+      "document_type": "regulation",
+      "filename": "uredba.pdf",
+      "language_code": "sr",
+      "legal_units": [
+        {
+          "content_text": "PDF tekst za regresioni test.",
+          "heading": "Uredba o primerima",
+          "legal_unit_id": "499c9d33-54f8-4354-a1d3-d5efa3ef92f9",
+          "metadata": {},
+          "number": "2",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:2",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "PDF tekst za regresioni test.",
+          "heading": null,
+          "legal_unit_id": "61448caa-e65f-4199-b2b4-fcd10cb0ea35",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "499c9d33-54f8-4354-a1d3-d5efa3ef92f9",
+          "path": "article:2/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/uredba.pdf",
+      "title": "Uredba o primerima"
+    },
+    {
+      "document_type": "law",
+      "filename": "zakon.txt",
+      "language_code": "sr",
+      "legal_units": [
+        {
+          "content_text": "Ovim zakonom uredjuje se primer za regresioni test.\nMinistarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+          "heading": "Zakon o primerima",
+          "legal_unit_id": "02a1cfb3-a9be-4e53-8267-401e5b4c96ad",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Ovim zakonom uredjuje se primer za regresioni test. Ministarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+          "heading": null,
+          "legal_unit_id": "a85bc677-33de-474b-aeef-dec6940e49de",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "02a1cfb3-a9be-4e53-8267-401e5b4c96ad",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        },
+        {
+          "content_text": "Ljudska prava i javni interes štite se zakonom.",
+          "heading": "Ministarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+          "legal_unit_id": "a83d475c-1277-4efc-ad5c-64341f1f2645",
+          "metadata": {},
+          "number": "4",
+          "ordinal": 2,
+          "parent_legal_unit_id": null,
+          "path": "article:4",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Ljudska prava i javni interes štite se zakonom.",
+          "heading": null,
+          "legal_unit_id": "03f0899c-32c9-44c7-8ffc-b518f9f50d7a",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "a83d475c-1277-4efc-ad5c-64341f1f2645",
+          "path": "article:4/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 2,
+        "item_count": 0,
+        "paragraph_count": 2,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt",
+      "title": "Zakon o primerima"
+    }
+  ]
+}

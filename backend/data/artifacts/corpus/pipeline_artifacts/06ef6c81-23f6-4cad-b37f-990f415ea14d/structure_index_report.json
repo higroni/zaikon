@@ -1,0 +1,21 @@
+{
+  "artifact_id": "c4c51bb8-b635-461e-b697-ef2ea50dd690",
+  "artifact_type": "structure_index_report",
+  "created_at": "2026-06-03T18:33:27.589774Z",
+  "name": "structure_index_report",
+  "payload": {
+    "index_name": "structure",
+    "indexed_documents": 1,
+    "indexed_legal_units": 2,
+    "metadata": {
+      "document_types": {
+        "law": 1
+      },
+      "unit_types": {
+        "article": 1,
+        "paragraph": 1
+      }
+    },
+    "status": "completed"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "artifact_id": "4f71aea4-3e5f-4f9d-8bae-f00ca8b72d2c",
+  "artifact_type": "normative_assertions",
+  "created_at": "2026-06-03T19:42:04.864840Z",
+  "name": "normative_assertions",
+  "payload": [
+    {
+      "assertions": [
+        {
+          "action": {
+            "canonical": "inspect",
+            "confidence": 0.74,
+            "metadata": {},
+            "raw": "kontrola"
+          },
+          "actor": null,
+          "assertion_id": "cb6189f0-2247-53a9-86b0-c094b3d20d84",
+          "assertion_type": "competence",
+          "condition": null,
+          "confidence": 0.76,
+          "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+          "deadline": null,
+          "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+          "domain": {
+            "canonical": "forestry",
+            "confidence": 0.82,
+            "metadata": {
+              "source": "object_domain"
+            },
+            "raw": "forestry"
+          },
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "f9df66ae-36d0-47a4-915c-97d2a1f447fc",
+          "metadata": {
+            "unit_type": "article"
+          },
+          "modality": "is_competent",
+          "object": {
+            "canonical": "forest",
+            "confidence": 0.76,
+            "metadata": {
+              "domains": [
+                "forestry"
+              ]
+            },
+            "raw": "suma"
+          },
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.74,
+            "domain": 0.82,
+            "object": 0.76
+          },
+          "source_path": "article:1",
+          "source_quote": "Kontrolu suma vrsi inspekcija.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/sanction_without_basis_001/corpus/zakon-o-sumama.txt"
+        },
+        {
+          "action": {
+            "canonical": "inspect",
+            "confidence": 0.74,
+            "metadata": {},
+            "raw": "kontrola"
+          },
+          "actor": null,
+          "assertion_id": "ee0b97fd-7727-5661-9e82-e270c71c1e08",
+          "assertion_type": "competence",
+          "condition": null,
+          "confidence": 0.76,
+          "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+          "deadline": null,
+          "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+          "domain": {
+            "canonical": "forestry",
+            "confidence": 0.82,
+            "metadata": {
+              "source": "object_domain"
+            },
+            "raw": "forestry"
+          },
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "24cc3e84-776d-4d45-8b36-b5bb83cdef3e",
+          "metadata": {
+            "unit_type": "paragraph"
+          },
+          "modality": "is_competent",
+          "object": {
+            "canonical": "forest",
+            "confidence": 0.76,
+            "metadata": {
+              "domains": [
+                "forestry"
+              ]
+            },
+            "raw": "suma"
+          },
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.74,
+            "domain": 0.82,
+            "object": 0.76
+          },
+          "source_path": "article:1/paragraph:1",
+          "source_quote": "Kontrolu suma vrsi inspekcija.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/sanction_without_basis_001/corpus/zakon-o-sumama.txt"
+        }
+      ],
+      "filename": "zakon-o-sumama.txt",
+      "metadata": {
+        "assertion_count": 2
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/sanction_without_basis_001/corpus/zakon-o-sumama.txt"
+    }
+  ]
+}

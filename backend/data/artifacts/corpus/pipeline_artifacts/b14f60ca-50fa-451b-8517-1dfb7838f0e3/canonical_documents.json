@@ -1,0 +1,58 @@
+{
+  "artifact_id": "fdeb3d2d-8fca-4aa0-aba0-8278ab78a8fb",
+  "artifact_type": "canonical_documents",
+  "created_at": "2026-06-03T18:33:27.470336Z",
+  "name": "canonical_documents",
+  "payload": [
+    {
+      "canonical_json": {
+        "document": {
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "language_code": "sr",
+          "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_deadlin0/deadline-corpus/zakon-rok.txt",
+          "title": "Zakon o roku"
+        },
+        "legal_units": [
+          {
+            "content_text": "Nadlezni organ odlucuje u roku od 30 dana.",
+            "heading": "Zakon o roku",
+            "legal_unit_id": "e8662b26-627b-46fd-8654-0d71f9afae35",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": null,
+            "path": "article:1",
+            "unit_type": "article"
+          },
+          {
+            "content_text": "Nadlezni organ odlucuje u roku od 30 dana.",
+            "heading": null,
+            "legal_unit_id": "bb1f2657-9ede-45ca-8eba-014f85cc38f1",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": "e8662b26-627b-46fd-8654-0d71f9afae35",
+            "path": "article:1/paragraph:1",
+            "unit_type": "paragraph"
+          }
+        ],
+        "metadata": {
+          "alinea_count": 0,
+          "article_count": 1,
+          "canonical_unit_count": 2,
+          "item_count": 0,
+          "paragraph_count": 1,
+          "section_count": 0,
+          "subitem_count": 0
+        },
+        "schema_version": "0.1"
+      },
+      "document_type": "law",
+      "filename": "zakon-rok.txt",
+      "language_code": "sr",
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_deadlin0/deadline-corpus/zakon-rok.txt",
+      "title": "Zakon o roku"
+    }
+  ]
+}

@@ -1,0 +1,674 @@
+[
+  {
+    "created_at": "2026-06-03T18:33:29.687983Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "3e781de5-256c-5a63-8d9e-abb83070c00a",
+        "corpus_assertion_id": "806515c6-303b-5f86-aa90-556bad86af10",
+        "draft_assertion_id": "519ae9e2-ef97-5ce3-b158-9abf06773e3d",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "806515c6-303b-5f86-aa90-556bad86af10",
+      "corpus_filename": "zakon-hrana.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "draft_assertion_id": "519ae9e2-ef97-5ce3-b158-9abf06773e3d",
+      "draft_filename": "Nacrt sa pogresnom nadleznoscu.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "370935ab-60e8-49b5-b20a-0c107e191f27",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "77b93ec8-d378-4668-a9e9-10826f08bf7d",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "competence_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "health_ministry",
+          "draft_value": "construction_ministry",
+          "relation": "wrong_domain_for_object",
+          "slot": "actor_domain"
+        }
+      ]
+    },
+    "explanation": "Nacrt vezuje nadzor ili kontrolu za aktera ciji domen ne odgovara predmetu regulisanja, dok korpus ukazuje na drugi nadlezni domen.",
+    "finding_id": "eccd185f-68ef-4602-a1e5-a1e29957a9ba",
+    "finding_type": "competence_conflict",
+    "pipeline_run_id": "5328f060-4930-42d4-8239-7caff8c1c89d",
+    "recommendation": "Proveriti nadlezni organ u vazecem propisu i zameniti pogresno ministarstvo ili inspekciju.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "2ec50532-6be5-4596-83ea-3617fc9b178e",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt daje nadleznost organu iz pogresne oblasti",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.687983Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "3e781de5-256c-5a63-8d9e-abb83070c00a",
+        "corpus_assertion_id": "806515c6-303b-5f86-aa90-556bad86af10",
+        "draft_assertion_id": "519ae9e2-ef97-5ce3-b158-9abf06773e3d",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "806515c6-303b-5f86-aa90-556bad86af10",
+      "corpus_filename": "zakon-hrana.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "draft_assertion_id": "519ae9e2-ef97-5ce3-b158-9abf06773e3d",
+      "draft_filename": "Nacrt sa pogresnom nadleznoscu.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "370935ab-60e8-49b5-b20a-0c107e191f27",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "77b93ec8-d378-4668-a9e9-10826f08bf7d",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "0234920e-7c9a-4b4f-b5a9-3dda49a9fcfe",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "5328f060-4930-42d4-8239-7caff8c1c89d",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "2ec50532-6be5-4596-83ea-3617fc9b178e",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.687983Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "34919250-8c01-5c7f-95ed-571308fac96a",
+        "corpus_assertion_id": "df3e0cdc-18f6-5e9f-8d8c-2ed26a460163",
+        "draft_assertion_id": "519ae9e2-ef97-5ce3-b158-9abf06773e3d",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "df3e0cdc-18f6-5e9f-8d8c-2ed26a460163",
+      "corpus_filename": "zakon-hrana.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "draft_assertion_id": "519ae9e2-ef97-5ce3-b158-9abf06773e3d",
+      "draft_filename": "Nacrt sa pogresnom nadleznoscu.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "370935ab-60e8-49b5-b20a-0c107e191f27",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "77b93ec8-d378-4668-a9e9-10826f08bf7d",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "competence_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "health_ministry",
+          "draft_value": "construction_ministry",
+          "relation": "wrong_domain_for_object",
+          "slot": "actor_domain"
+        }
+      ]
+    },
+    "explanation": "Nacrt vezuje nadzor ili kontrolu za aktera ciji domen ne odgovara predmetu regulisanja, dok korpus ukazuje na drugi nadlezni domen.",
+    "finding_id": "24fb0121-9e85-4735-a628-cdccd12db71b",
+    "finding_type": "competence_conflict",
+    "pipeline_run_id": "5328f060-4930-42d4-8239-7caff8c1c89d",
+    "recommendation": "Proveriti nadlezni organ u vazecem propisu i zameniti pogresno ministarstvo ili inspekciju.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "2ec50532-6be5-4596-83ea-3617fc9b178e",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt daje nadleznost organu iz pogresne oblasti",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.687983Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "34919250-8c01-5c7f-95ed-571308fac96a",
+        "corpus_assertion_id": "df3e0cdc-18f6-5e9f-8d8c-2ed26a460163",
+        "draft_assertion_id": "519ae9e2-ef97-5ce3-b158-9abf06773e3d",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "df3e0cdc-18f6-5e9f-8d8c-2ed26a460163",
+      "corpus_filename": "zakon-hrana.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "draft_assertion_id": "519ae9e2-ef97-5ce3-b158-9abf06773e3d",
+      "draft_filename": "Nacrt sa pogresnom nadleznoscu.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "370935ab-60e8-49b5-b20a-0c107e191f27",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "77b93ec8-d378-4668-a9e9-10826f08bf7d",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1/paragraph:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "0d5e5d10-d88f-4e9a-8011-83c1df34c310",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "5328f060-4930-42d4-8239-7caff8c1c89d",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "2ec50532-6be5-4596-83ea-3617fc9b178e",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.687983Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "3b10fc15-1509-5b69-82b6-ad6127b1073e",
+        "corpus_assertion_id": "806515c6-303b-5f86-aa90-556bad86af10",
+        "draft_assertion_id": "f6a3784e-92ff-54f5-9fa6-a8c78516c5ba",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "806515c6-303b-5f86-aa90-556bad86af10",
+      "corpus_filename": "zakon-hrana.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "draft_assertion_id": "f6a3784e-92ff-54f5-9fa6-a8c78516c5ba",
+      "draft_filename": "Nacrt sa pogresnom nadleznoscu.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "370935ab-60e8-49b5-b20a-0c107e191f27",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "77b93ec8-d378-4668-a9e9-10826f08bf7d",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "competence_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "health_ministry",
+          "draft_value": "construction_ministry",
+          "relation": "wrong_domain_for_object",
+          "slot": "actor_domain"
+        }
+      ]
+    },
+    "explanation": "Nacrt vezuje nadzor ili kontrolu za aktera ciji domen ne odgovara predmetu regulisanja, dok korpus ukazuje na drugi nadlezni domen.",
+    "finding_id": "ebc49767-1be4-4561-9868-8c9d1895695c",
+    "finding_type": "competence_conflict",
+    "pipeline_run_id": "5328f060-4930-42d4-8239-7caff8c1c89d",
+    "recommendation": "Proveriti nadlezni organ u vazecem propisu i zameniti pogresno ministarstvo ili inspekciju.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "004634d6-8656-40d1-bbe8-ef687751067b",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt daje nadleznost organu iz pogresne oblasti",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.687983Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "3b10fc15-1509-5b69-82b6-ad6127b1073e",
+        "corpus_assertion_id": "806515c6-303b-5f86-aa90-556bad86af10",
+        "draft_assertion_id": "f6a3784e-92ff-54f5-9fa6-a8c78516c5ba",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "806515c6-303b-5f86-aa90-556bad86af10",
+      "corpus_filename": "zakon-hrana.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "draft_assertion_id": "f6a3784e-92ff-54f5-9fa6-a8c78516c5ba",
+      "draft_filename": "Nacrt sa pogresnom nadleznoscu.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "370935ab-60e8-49b5-b20a-0c107e191f27",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "77b93ec8-d378-4668-a9e9-10826f08bf7d",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "90f258fd-8117-4ca2-bffe-cf002ee93fd6",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "5328f060-4930-42d4-8239-7caff8c1c89d",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "004634d6-8656-40d1-bbe8-ef687751067b",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.687983Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "8d4808d2-97ed-5325-86a6-0949a82dee8d",
+        "corpus_assertion_id": "df3e0cdc-18f6-5e9f-8d8c-2ed26a460163",
+        "draft_assertion_id": "f6a3784e-92ff-54f5-9fa6-a8c78516c5ba",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "df3e0cdc-18f6-5e9f-8d8c-2ed26a460163",
+      "corpus_filename": "zakon-hrana.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "draft_assertion_id": "f6a3784e-92ff-54f5-9fa6-a8c78516c5ba",
+      "draft_filename": "Nacrt sa pogresnom nadleznoscu.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "370935ab-60e8-49b5-b20a-0c107e191f27",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "77b93ec8-d378-4668-a9e9-10826f08bf7d",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "competence_conflict.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "health_ministry",
+          "draft_value": "construction_ministry",
+          "relation": "wrong_domain_for_object",
+          "slot": "actor_domain"
+        }
+      ]
+    },
+    "explanation": "Nacrt vezuje nadzor ili kontrolu za aktera ciji domen ne odgovara predmetu regulisanja, dok korpus ukazuje na drugi nadlezni domen.",
+    "finding_id": "0a992086-86ee-4d99-a3f0-37049c418093",
+    "finding_type": "competence_conflict",
+    "pipeline_run_id": "5328f060-4930-42d4-8239-7caff8c1c89d",
+    "recommendation": "Proveriti nadlezni organ u vazecem propisu i zameniti pogresno ministarstvo ili inspekciju.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "004634d6-8656-40d1-bbe8-ef687751067b",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt daje nadleznost organu iz pogresne oblasti",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.687983Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "8d4808d2-97ed-5325-86a6-0949a82dee8d",
+        "corpus_assertion_id": "df3e0cdc-18f6-5e9f-8d8c-2ed26a460163",
+        "draft_assertion_id": "f6a3784e-92ff-54f5-9fa6-a8c78516c5ba",
+        "match_reasons": [
+          "same_action",
+          "same_object",
+          "same_domain"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.75
+      },
+      "corpus_assertion_id": "df3e0cdc-18f6-5e9f-8d8c-2ed26a460163",
+      "corpus_filename": "zakon-hrana.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "draft_assertion_id": "f6a3784e-92ff-54f5-9fa6-a8c78516c5ba",
+      "draft_filename": "Nacrt sa pogresnom nadleznoscu.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "370935ab-60e8-49b5-b20a-0c107e191f27",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+          "document_id": "b710657c-d592-58c1-a1a8-8b8c0ccd0a9d",
+          "document_type": "law",
+          "filename": "zakon-hrana.txt",
+          "legal_unit_id": "77b93ec8-d378-4668-a9e9-10826f08bf7d",
+          "matched_terms": [
+            "hrane",
+            "inspekcija",
+            "kontrolu",
+            "vrsi"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+          "score": 0.4975885667888692,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "reference_missing.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "article:1/paragraph:1",
+          "draft_value": "missing",
+          "relation": "no_reference",
+          "slot": "reference"
+        }
+      ]
+    },
+    "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+    "finding_id": "8d28fd6a-95ae-497b-a7a3-454e13442a6d",
+    "finding_type": "reference_missing",
+    "pipeline_run_id": "5328f060-4930-42d4-8239-7caff8c1c89d",
+    "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "004634d6-8656-40d1-bbe8-ef687751067b",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+    "updated_at": null
+  }
+]

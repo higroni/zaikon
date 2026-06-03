@@ -1,0 +1,117 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa artefaktima.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://67f44ffd-c37e-4854-82e0-5aeb1e3237f0",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Ovim nacrtom uredjuje se primer.",
+          "heading": "NACRT",
+          "legal_unit_id": "9b9b1732-f4b9-4d74-a661-cafd23758005",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Ovim nacrtom uredjuje se primer.",
+          "heading": null,
+          "legal_unit_id": "e5e30392-3f37-4e4c-9386-c1a6c54b8258",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "9b9b1732-f4b9-4d74-a661-cafd23758005",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa artefaktima.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://67f44ffd-c37e-4854-82e0-5aeb1e3237f0",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 0,
+    "draft_assertion_count": 0,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [],
+  "normalized_text": "NACRT\n\nClan 1.\nOvim nacrtom uredjuje se primer.",
+  "normative_assertions": [],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa artefaktima.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Ovim nacrtom uredjuje se primer.",
+        "heading": "NACRT",
+        "legal_unit_id": "9b9b1732-f4b9-4d74-a661-cafd23758005",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Ovim nacrtom uredjuje se primer.",
+        "heading": null,
+        "legal_unit_id": "e5e30392-3f37-4e4c-9386-c1a6c54b8258",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "9b9b1732-f4b9-4d74-a661-cafd23758005",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://67f44ffd-c37e-4854-82e0-5aeb1e3237f0",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": []
+}

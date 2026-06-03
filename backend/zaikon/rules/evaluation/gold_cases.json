@@ -1,0 +1,166 @@
+{
+  "version": "0.2.0",
+  "cases": [
+    {
+      "case_id": "deadline_mismatch_001",
+      "title": "Rok 15 dana u nacrtu protiv roka 30 dana u korpusu",
+      "domain": "general",
+      "draft": {
+        "title": "Nacrt sa kracim rokom",
+        "text": "NACRT\n\nClan 1.\nNadlezni organ odlucuje u roku od 15 dana.\n"
+      },
+      "corpus_documents": [
+        {
+          "filename": "zakon-rok.txt",
+          "text": "Zakon o roku\n\nClan 1.\nNadlezni organ odlucuje u roku od 30 dana.\n"
+        }
+      ],
+      "expected_findings": [
+        {
+          "finding_type": "deadline_mismatch",
+          "risk_level": "high",
+          "required_draft_terms": ["15 dana"],
+          "required_corpus_terms": ["30 dana"]
+        }
+      ]
+    },
+    {
+      "case_id": "competence_conflict_001",
+      "title": "Kontrola hrane data pogresnoj inspekciji",
+      "domain": "food_safety",
+      "draft": {
+        "title": "Nacrt sa pogresnom nadleznoscu",
+        "text": "NACRT\n\nClan 1.\nKontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.\n"
+      },
+      "corpus_documents": [
+        {
+          "filename": "zakon-hrana.txt",
+          "text": "Zakon o hrani\n\nClan 1.\nKontrolu hrane vrsi sanitarna inspekcija.\n"
+        }
+      ],
+      "expected_findings": [
+        {
+          "finding_type": "competence_conflict",
+          "risk_level": "high",
+          "required_draft_terms": ["gradjevinu"],
+          "required_corpus_terms": ["sanitarna inspekcija"]
+        }
+      ]
+    },
+    {
+      "case_id": "authority_scope_001",
+      "title": "Nacrt dozvoljava svakom gradjaninu umesto ovlascenom licu",
+      "domain": "forestry",
+      "draft": {
+        "title": "Nacrt sa sirim krugom aktera",
+        "text": "NACRT\n\nClan 1.\nObelezavanje drveca moze da vrsi svaki gradjanin.\n"
+      },
+      "corpus_documents": [
+        {
+          "filename": "zakon-sume.txt",
+          "text": "Zakon o sumama\n\nClan 1.\nObelezavanje drveca vrsi ovlasceno pravno lice.\n"
+        }
+      ],
+      "expected_findings": [
+        {
+          "finding_type": "authority_scope_conflict",
+          "risk_level": "high",
+          "required_draft_terms": ["gradjanin"],
+          "required_corpus_terms": ["ovlasceno"]
+        }
+      ]
+    },
+    {
+      "case_id": "permission_vs_prohibition_001",
+      "title": "Nacrt dozvoljava ono sto korpus zabranjuje",
+      "domain": "forestry",
+      "draft": {
+        "title": "Nacrt sa dozvolom",
+        "text": "NACRT\n\nClan 1.\nGradjanin moze da sece drvo u svom dvoristu.\n"
+      },
+      "corpus_documents": [
+        {
+          "filename": "zakon-zastita.txt",
+          "text": "Zakon o zastiti\n\nClan 1.\nZabranjeno je secenje drveta bez dozvole.\n"
+        }
+      ],
+      "expected_findings": [
+        {
+          "finding_type": "permission_vs_prohibition_conflict",
+          "risk_level": "high",
+          "required_draft_terms": ["moze"],
+          "required_corpus_terms": ["zabranjeno"]
+        }
+      ]
+    },
+    {
+      "case_id": "definition_conflict_001",
+      "title": "Nacrt i korpus definisu isti termin razlicito",
+      "domain": "general",
+      "draft": {
+        "title": "Nacrt sa drugom definicijom",
+        "text": "NACRT\n\nClan 1.\nOvlasceno lice je fizicko lice sa licencom.\n"
+      },
+      "corpus_documents": [
+        {
+          "filename": "zakon-definicije.txt",
+          "text": "Zakon\n\nClan 1.\nOvlasceno lice je pravno lice registrovano za ovu delatnost.\n"
+        }
+      ],
+      "expected_findings": [
+        {
+          "finding_type": "definition_conflict",
+          "risk_level": "medium",
+          "required_draft_terms": ["fizicko lice"],
+          "required_corpus_terms": ["pravno lice"]
+        }
+      ]
+    },
+    {
+      "case_id": "new_obligation_without_basis_001",
+      "title": "Pravilnik uvodi novu obavezu bez osnova u zakonu",
+      "domain": "forestry",
+      "draft": {
+        "title": "Pravilnik sa novom obavezom",
+        "text": "PRAVILNIK\n\nClan 1.\nVlasnik suma mora da podnese izvestaj o stanju suma.\n"
+      },
+      "corpus_documents": [
+        {
+          "filename": "zakon-o-sumama.txt",
+          "text": "Zakon o sumama\n\nClan 1.\nVlasnik suma ima pravo na zastitu.\n"
+        }
+      ],
+      "expected_findings": [
+        {
+          "finding_type": "new_obligation_without_basis",
+          "risk_level": "high",
+          "required_draft_terms": ["mora"],
+          "required_corpus_terms": []
+        }
+      ]
+    },
+    {
+      "case_id": "sanction_without_basis_001",
+      "title": "Pravilnik propisuje sankciju bez osnova u zakonu",
+      "domain": "forestry",
+      "draft": {
+        "title": "Pravilnik sa sankcijom",
+        "text": "PRAVILNIK\n\nClan 1.\nKontrolu suma vrsi inspekcija.\n\nClan 2.\nKazna za povredu je 50000 dinara.\n"
+      },
+      "corpus_documents": [
+        {
+          "filename": "zakon-o-sumama.txt",
+          "text": "Zakon o sumama\n\nClan 1.\nKontrolu suma vrsi inspekcija.\n"
+        }
+      ],
+      "expected_findings": [
+        {
+          "finding_type": "sanction_without_basis",
+          "risk_level": "high",
+          "required_draft_terms": ["kazna"],
+          "required_corpus_terms": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "regulation",
+        "filename": "uredba.pdf",
+        "language_code": "sr",
+        "source_uri": "draft-review://82d641a5-127a-41d7-98fe-caf617f9be51",
+        "title": "Uredba o primerima"
+      },
+      "legal_units": [
+        {
+          "content_text": "PDF tekst za regresioni test.",
+          "heading": "Uredba o primerima",
+          "legal_unit_id": "07b2321f-4a38-4e25-b808-21b1c9a35e88",
+          "metadata": {},
+          "number": "2",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:2",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "PDF tekst za regresioni test.",
+          "heading": null,
+          "legal_unit_id": "379cce6a-9f60-4c55-970b-fc68cdd57a11",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "07b2321f-4a38-4e25-b808-21b1c9a35e88",
+          "path": "article:2/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "regulation",
+    "filename": "uredba.pdf",
+    "language_code": "sr",
+    "source_uri": "draft-review://82d641a5-127a-41d7-98fe-caf617f9be51",
+    "title": "Uredba o primerima"
+  },
+  "classification": {
+    "confidence": 0.95,
+    "document_type": "regulation",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 0,
+    "draft_assertion_count": 0,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [],
+  "normalized_text": "Uredba o primerima\nClan 2.\nPDF tekst za regresioni test.",
+  "normative_assertions": [],
+  "parsed_document": {
+    "document_type": "regulation",
+    "filename": "uredba.pdf",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "PDF tekst za regresioni test.",
+        "heading": "Uredba o primerima",
+        "legal_unit_id": "07b2321f-4a38-4e25-b808-21b1c9a35e88",
+        "metadata": {},
+        "number": "2",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:2",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "PDF tekst za regresioni test.",
+        "heading": null,
+        "legal_unit_id": "379cce6a-9f60-4c55-970b-fc68cdd57a11",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "07b2321f-4a38-4e25-b808-21b1c9a35e88",
+        "path": "article:2/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://82d641a5-127a-41d7-98fe-caf617f9be51",
+    "title": "Uredba o primerima"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": []
+}

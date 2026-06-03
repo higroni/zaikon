@@ -1,0 +1,16 @@
+{
+  "artifact_id": "4ae806e3-482b-4cea-963c-2e46fc86ae10",
+  "artifact_type": "extracted_definitions",
+  "created_at": "2026-06-03T18:33:30.865333Z",
+  "name": "extracted_definitions",
+  "payload": [
+    {
+      "definitions": [],
+      "filename": "zakon-b.txt",
+      "metadata": {
+        "definition_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_search_can_be_limited_to_0/second/zakon-b.txt"
+    }
+  ]
+}

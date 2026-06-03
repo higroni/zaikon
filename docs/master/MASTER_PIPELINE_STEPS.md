@@ -31,15 +31,16 @@ Each step:
 5. `identify_legal_documents`
 6. `parse_legal_structure`
 7. `convert_to_canonical_json`
-8. `extract_references`
-9. `resolve_references`
-10. `extract_definitions`
-11. `store_documents`
-12. `build_keyword_index`
-13. `build_vector_index`
-14. `build_structure_index`
-15. `build_reference_graph`
-16. `generate_import_report`
+8. `extract_normative_assertions`
+9. `extract_references`
+10. `resolve_references`
+11. `extract_definitions`
+12. `store_documents`
+13. `build_keyword_index`
+14. `build_vector_index`
+15. `build_structure_index`
+16. `build_reference_graph`
+17. `generate_import_report`
 
 `detect_file_types` validates allowed extensions and, when
 `import_skip_duplicates` is enabled, skips duplicate supported files by content
@@ -52,15 +53,16 @@ hash within the same import job.
 3. `normalize_text`
 4. `parse_legal_structure`
 5. `convert_to_canonical_json`
-6. `extract_references`
-7. `resolve_references`
-8. `retrieve_relevant_law`
-9. `run_reference_checker`
-10. `run_definition_checker`
-11. `run_terminology_checker`
-12. `run_temporal_validity_checker`
-13. `generate_findings`
-14. `generate_review_report`
+6. `extract_normative_assertions`
+7. `extract_references`
+8. `resolve_references`
+9. `retrieve_relevant_law`
+10. `run_reference_checker`
+11. `run_definition_checker`
+12. `run_terminology_checker`
+13. `run_temporal_validity_checker`
+14. `generate_findings`
+15. `generate_review_report`
 
 Current draft review MVP runs retrieval against `selected_corpus_id` when one is
 provided and stores the results in `retrieval_results`.
@@ -87,6 +89,7 @@ Use these exact names:
 - `identified_documents`
 - `parsed_legal_documents`
 - `canonical_documents`
+- `normative_assertions`
 - `extracted_references`
 - `resolved_references`
 - `extracted_definitions`

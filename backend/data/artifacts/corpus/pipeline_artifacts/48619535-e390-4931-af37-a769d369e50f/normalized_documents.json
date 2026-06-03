@@ -1,0 +1,23 @@
+{
+  "artifact_id": "7d87d7b0-2835-4c40-8335-9fdc96e58b7a",
+  "artifact_type": "normalized_documents",
+  "created_at": "2026-06-03T18:33:29.113180Z",
+  "name": "normalized_documents",
+  "payload": [
+    {
+      "content_text": "Zakon o sumama\n\nClan 45.\nObelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.\n",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon-o-sumama.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 126,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_flags_author0/authority/zakon-o-sumama.txt"
+    }
+  ]
+}

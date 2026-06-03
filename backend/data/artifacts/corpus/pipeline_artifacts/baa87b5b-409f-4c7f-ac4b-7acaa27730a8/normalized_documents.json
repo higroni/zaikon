@@ -1,0 +1,23 @@
+{
+  "artifact_id": "494d01bb-441c-4ba6-94d6-6b4dcaa8fa9f",
+  "artifact_type": "normalized_documents",
+  "created_at": "2026-06-03T19:42:04.706022Z",
+  "name": "normalized_documents",
+  "payload": [
+    {
+      "content_text": "Zakon\n\nClan 1.\nOvlasceno lice je pravno lice registrovano za ovu delatnost.\n",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon-definicije.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 76,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/definition_conflict_001/corpus/zakon-definicije.txt"
+    }
+  ]
+}

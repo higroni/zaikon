@@ -1,0 +1,18 @@
+{
+  "artifact_id": "be3b598a-3e07-469c-8dce-9053af656fe3",
+  "artifact_type": "resolved_references",
+  "created_at": "2026-06-03T18:33:29.198615Z",
+  "name": "resolved_references",
+  "payload": [
+    {
+      "filename": "zakon-o-sumama.txt",
+      "metadata": {
+        "missing_count": 0,
+        "out_of_scope_count": 0,
+        "resolved_count": 0
+      },
+      "resolved_references": [],
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_resolves_cro0/cross/zakon-o-sumama.txt"
+    }
+  ]
+}

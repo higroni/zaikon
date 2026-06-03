@@ -1,0 +1,18 @@
+{
+  "artifact_id": "4afabeae-fdcf-4733-aebf-332674097b95",
+  "artifact_type": "resolved_references",
+  "created_at": "2026-06-03T18:33:27.471334Z",
+  "name": "resolved_references",
+  "payload": [
+    {
+      "filename": "zakon-rok.txt",
+      "metadata": {
+        "missing_count": 0,
+        "out_of_scope_count": 0,
+        "resolved_count": 0
+      },
+      "resolved_references": [],
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_deadlin0/deadline-corpus/zakon-rok.txt"
+    }
+  ]
+}

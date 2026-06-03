@@ -1,0 +1,467 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa pogresnom nadleznoscu.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://7d0b70a7-4905-48fc-a0c4-32249ed0bf31",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+          "heading": "NACRT",
+          "legal_unit_id": "8e1c035d-c893-4e24-a620-07bc67be2754",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+          "heading": null,
+          "legal_unit_id": "1dbfd06d-5aa3-4403-9bad-1783ad825bcc",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "8e1c035d-c893-4e24-a620-07bc67be2754",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa pogresnom nadleznoscu.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://7d0b70a7-4905-48fc-a0c4-32249ed0bf31",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [
+    {
+      "candidate_id": "d23def2c-9705-5b42-8c41-aedbe75150ed",
+      "corpus_assertion_id": "2da07ba8-a14b-517a-9902-d76f718164c3",
+      "draft_assertion_id": "c1d7b102-0349-5327-923d-098fac624f1e",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "792ccd11-5ee8-5f13-8496-cdef96a6afaa",
+      "corpus_assertion_id": "4ab3bf3a-a762-5e40-94df-6be2f76466d6",
+      "draft_assertion_id": "c1d7b102-0349-5327-923d-098fac624f1e",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "ffeb50a4-1c3d-58ec-a1f2-9c6a6846fa6d",
+      "corpus_assertion_id": "2da07ba8-a14b-517a-9902-d76f718164c3",
+      "draft_assertion_id": "9a5b0f2c-9379-52b4-b279-13273001d6a9",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "10d66acd-5d3d-528f-bfe6-68f8c6df4b49",
+      "corpus_assertion_id": "4ab3bf3a-a762-5e40-94df-6be2f76466d6",
+      "draft_assertion_id": "9a5b0f2c-9379-52b4-b279-13273001d6a9",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    }
+  ],
+  "conflict_trace": {
+    "candidate_count": 4,
+    "corpus_assertion_count": 2,
+    "draft_assertion_count": 2,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 8
+  },
+  "corpus_normative_assertions": [
+    {
+      "action": {
+        "canonical": "inspect",
+        "confidence": 0.74,
+        "metadata": {},
+        "raw": "kontrola"
+      },
+      "actor": {
+        "canonical": "health_ministry",
+        "confidence": 0.9199999999999999,
+        "metadata": {
+          "domains": [
+            "food_safety",
+            "health"
+          ]
+        },
+        "raw": "sanitarna inspekcija"
+      },
+      "assertion_id": "2da07ba8-a14b-517a-9902-d76f718164c3",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": "f8e64a5a-59cc-4289-9d43-9bdafd1b9b64",
+      "deadline": null,
+      "document_id": "0a50dfc0-ba5c-5d37-bf6f-91391d24a738",
+      "domain": {
+        "canonical": "food_safety",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "food_safety"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-hrana.txt",
+      "legal_unit_id": "3e8296ee-76af-4833-8b0a-b12d51936a2c",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "food",
+        "confidence": 0.77,
+        "metadata": {
+          "domains": [
+            "food_safety"
+          ]
+        },
+        "raw": "hrane"
+      },
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.74,
+        "actor": 0.9199999999999999,
+        "domain": 0.82,
+        "object": 0.77
+      },
+      "source_path": "article:1",
+      "source_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_wrong_c0/food-competence-corpus/zakon-hrana.txt"
+    },
+    {
+      "action": {
+        "canonical": "inspect",
+        "confidence": 0.74,
+        "metadata": {},
+        "raw": "kontrola"
+      },
+      "actor": {
+        "canonical": "health_ministry",
+        "confidence": 0.9199999999999999,
+        "metadata": {
+          "domains": [
+            "food_safety",
+            "health"
+          ]
+        },
+        "raw": "sanitarna inspekcija"
+      },
+      "assertion_id": "4ab3bf3a-a762-5e40-94df-6be2f76466d6",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": "f8e64a5a-59cc-4289-9d43-9bdafd1b9b64",
+      "deadline": null,
+      "document_id": "0a50dfc0-ba5c-5d37-bf6f-91391d24a738",
+      "domain": {
+        "canonical": "food_safety",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "food_safety"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-hrana.txt",
+      "legal_unit_id": "64409adc-ec3a-47c7-94c8-d34851f440c1",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "food",
+        "confidence": 0.77,
+        "metadata": {
+          "domains": [
+            "food_safety"
+          ]
+        },
+        "raw": "hrane"
+      },
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.74,
+        "actor": 0.9199999999999999,
+        "domain": 0.82,
+        "object": 0.77
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_wrong_c0/food-competence-corpus/zakon-hrana.txt"
+    }
+  ],
+  "normalized_text": "NACRT\n\nClan 1.\nKontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.\n",
+  "normative_assertions": [
+    {
+      "action": {
+        "canonical": "inspect",
+        "confidence": 0.74,
+        "metadata": {},
+        "raw": "kontrola"
+      },
+      "actor": {
+        "canonical": "construction_ministry",
+        "confidence": 0.99,
+        "metadata": {
+          "domains": [
+            "construction"
+          ]
+        },
+        "raw": "ministarstva nadleznog za gradjevinu"
+      },
+      "assertion_id": "c1d7b102-0349-5327-923d-098fac624f1e",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "food_safety",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "food_safety"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa pogresnom nadleznoscu.txt",
+      "legal_unit_id": "8e1c035d-c893-4e24-a620-07bc67be2754",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "food",
+        "confidence": 0.77,
+        "metadata": {
+          "domains": [
+            "food_safety"
+          ]
+        },
+        "raw": "hrane"
+      },
+      "pipeline_run_id": "7d0b70a7-4905-48fc-a0c4-32249ed0bf31",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.74,
+        "actor": 0.99,
+        "domain": 0.82,
+        "object": 0.77
+      },
+      "source_path": "article:1",
+      "source_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "source_uri": "draft-review://7d0b70a7-4905-48fc-a0c4-32249ed0bf31"
+    },
+    {
+      "action": {
+        "canonical": "inspect",
+        "confidence": 0.74,
+        "metadata": {},
+        "raw": "kontrola"
+      },
+      "actor": {
+        "canonical": "construction_ministry",
+        "confidence": 0.99,
+        "metadata": {
+          "domains": [
+            "construction"
+          ]
+        },
+        "raw": "ministarstva nadleznog za gradjevinu"
+      },
+      "assertion_id": "9a5b0f2c-9379-52b4-b279-13273001d6a9",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.8799999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "food_safety",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "food_safety"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa pogresnom nadleznoscu.txt",
+      "legal_unit_id": "1dbfd06d-5aa3-4403-9bad-1783ad825bcc",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "food",
+        "confidence": 0.77,
+        "metadata": {
+          "domains": [
+            "food_safety"
+          ]
+        },
+        "raw": "hrane"
+      },
+      "pipeline_run_id": "7d0b70a7-4905-48fc-a0c4-32249ed0bf31",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.74,
+        "actor": 0.99,
+        "domain": 0.82,
+        "object": 0.77
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+      "source_uri": "draft-review://7d0b70a7-4905-48fc-a0c4-32249ed0bf31"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa pogresnom nadleznoscu.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+        "heading": "NACRT",
+        "legal_unit_id": "8e1c035d-c893-4e24-a620-07bc67be2754",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Kontrolu hrane vrsi inspekcija ministarstva nadleznog za gradjevinu.",
+        "heading": null,
+        "legal_unit_id": "1dbfd06d-5aa3-4403-9bad-1783ad825bcc",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "8e1c035d-c893-4e24-a620-07bc67be2754",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://7d0b70a7-4905-48fc-a0c4-32249ed0bf31",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": [
+    {
+      "content_text": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "corpus_id": "f8e64a5a-59cc-4289-9d43-9bdafd1b9b64",
+      "document_id": "0a50dfc0-ba5c-5d37-bf6f-91391d24a738",
+      "document_type": "law",
+      "filename": "zakon-hrana.txt",
+      "legal_unit_id": "3e8296ee-76af-4833-8b0a-b12d51936a2c",
+      "metadata": {
+        "lexical_score": 0.4444444444444444,
+        "matched_terms": [
+          "hrane",
+          "inspekcija",
+          "kontrolu",
+          "vrsi"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.5962847939999438
+      },
+      "path": "article:1",
+      "score": 0.4975885667888692,
+      "unit_type": "article"
+    },
+    {
+      "content_text": "Kontrolu hrane vrsi sanitarna inspekcija.",
+      "corpus_id": "f8e64a5a-59cc-4289-9d43-9bdafd1b9b64",
+      "document_id": "0a50dfc0-ba5c-5d37-bf6f-91391d24a738",
+      "document_type": "law",
+      "filename": "zakon-hrana.txt",
+      "legal_unit_id": "64409adc-ec3a-47c7-94c8-d34851f440c1",
+      "metadata": {
+        "lexical_score": 0.4444444444444444,
+        "matched_terms": [
+          "hrane",
+          "inspekcija",
+          "kontrolu",
+          "vrsi"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.5962847939999438
+      },
+      "path": "article:1/paragraph:1",
+      "score": 0.4975885667888692,
+      "unit_type": "paragraph"
+    }
+  ]
+}

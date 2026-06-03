@@ -1,0 +1,469 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "rulebook",
+        "filename": "Pravilnik sa sankcijom.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://b60eb72b-9e28-43af-b883-26738c1fcf99",
+        "title": "PRAVILNIK"
+      },
+      "legal_units": [
+        {
+          "content_text": "Kontrolu suma vrsi inspekcija.",
+          "heading": "PRAVILNIK",
+          "legal_unit_id": "7c77316d-5e7e-4c80-976a-94ee47bd82fe",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Kontrolu suma vrsi inspekcija.",
+          "heading": null,
+          "legal_unit_id": "87209811-9fa0-43e6-96c6-2323270477d1",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "7c77316d-5e7e-4c80-976a-94ee47bd82fe",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        },
+        {
+          "content_text": "Kazna za povredu je 50000 dinara.",
+          "heading": "Kontrolu suma vrsi inspekcija.",
+          "legal_unit_id": "096140f1-c5ad-4863-b963-09d0bc1d291f",
+          "metadata": {},
+          "number": "2",
+          "ordinal": 2,
+          "parent_legal_unit_id": null,
+          "path": "article:2",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Kazna za povredu je 50000 dinara.",
+          "heading": null,
+          "legal_unit_id": "cd91fd2d-e75a-45c2-836b-daa340a1d876",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "096140f1-c5ad-4863-b963-09d0bc1d291f",
+          "path": "article:2/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 2,
+        "canonical_unit_count": 4,
+        "item_count": 0,
+        "paragraph_count": 2,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "rulebook",
+    "filename": "Pravilnik sa sankcijom.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://b60eb72b-9e28-43af-b883-26738c1fcf99",
+    "title": "PRAVILNIK"
+  },
+  "classification": {
+    "confidence": 0.95,
+    "document_type": "rulebook",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [
+    {
+      "candidate_id": "1c67ea59-2e80-5297-b8e0-8d7e998626ae",
+      "corpus_assertion_id": "cb6189f0-2247-53a9-86b0-c094b3d20d84",
+      "draft_assertion_id": "6ce987f9-2490-5f3b-b361-dac987ccf31e",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "4c95d1f2-dd95-5b05-bd45-a68f06447e4e",
+      "corpus_assertion_id": "ee0b97fd-7727-5661-9e82-e270c71c1e08",
+      "draft_assertion_id": "6ce987f9-2490-5f3b-b361-dac987ccf31e",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "a1568f1d-d4ba-5c7e-98fe-89e741d0dbd9",
+      "corpus_assertion_id": "cb6189f0-2247-53a9-86b0-c094b3d20d84",
+      "draft_assertion_id": "48b69d35-c2c9-55c0-a39a-d7af305cfd0a",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    },
+    {
+      "candidate_id": "039e92c0-5f76-5547-be71-d543a7d40cfa",
+      "corpus_assertion_id": "ee0b97fd-7727-5661-9e82-e270c71c1e08",
+      "draft_assertion_id": "48b69d35-c2c9-55c0-a39a-d7af305cfd0a",
+      "match_reasons": [
+        "same_action",
+        "same_object",
+        "same_domain"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.75
+    }
+  ],
+  "conflict_trace": {
+    "candidate_count": 4,
+    "corpus_assertion_count": 2,
+    "draft_assertion_count": 2,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 4
+  },
+  "corpus_normative_assertions": [
+    {
+      "action": {
+        "canonical": "inspect",
+        "confidence": 0.74,
+        "metadata": {},
+        "raw": "kontrola"
+      },
+      "actor": null,
+      "assertion_id": "cb6189f0-2247-53a9-86b0-c094b3d20d84",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.76,
+      "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+      "deadline": null,
+      "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "f9df66ae-36d0-47a4-915c-97d2a1f447fc",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "forest",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "suma"
+      },
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.74,
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1",
+      "source_quote": "Kontrolu suma vrsi inspekcija.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/sanction_without_basis_001/corpus/zakon-o-sumama.txt"
+    },
+    {
+      "action": {
+        "canonical": "inspect",
+        "confidence": 0.74,
+        "metadata": {},
+        "raw": "kontrola"
+      },
+      "actor": null,
+      "assertion_id": "ee0b97fd-7727-5661-9e82-e270c71c1e08",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.76,
+      "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+      "deadline": null,
+      "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "24cc3e84-776d-4d45-8b36-b5bb83cdef3e",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "forest",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "suma"
+      },
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.74,
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Kontrolu suma vrsi inspekcija.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/sanction_without_basis_001/corpus/zakon-o-sumama.txt"
+    }
+  ],
+  "normalized_text": "PRAVILNIK\n\nClan 1.\nKontrolu suma vrsi inspekcija.\n\nClan 2.\nKazna za povredu je 50000 dinara.\n",
+  "normative_assertions": [
+    {
+      "action": {
+        "canonical": "inspect",
+        "confidence": 0.74,
+        "metadata": {},
+        "raw": "kontrola"
+      },
+      "actor": null,
+      "assertion_id": "6ce987f9-2490-5f3b-b361-dac987ccf31e",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.76,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Pravilnik sa sankcijom.txt",
+      "legal_unit_id": "7c77316d-5e7e-4c80-976a-94ee47bd82fe",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "forest",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "suma"
+      },
+      "pipeline_run_id": "b60eb72b-9e28-43af-b883-26738c1fcf99",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.74,
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1",
+      "source_quote": "Kontrolu suma vrsi inspekcija.",
+      "source_uri": "draft-review://b60eb72b-9e28-43af-b883-26738c1fcf99"
+    },
+    {
+      "action": {
+        "canonical": "inspect",
+        "confidence": 0.74,
+        "metadata": {},
+        "raw": "kontrola"
+      },
+      "actor": null,
+      "assertion_id": "48b69d35-c2c9-55c0-a39a-d7af305cfd0a",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.76,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Pravilnik sa sankcijom.txt",
+      "legal_unit_id": "87209811-9fa0-43e6-96c6-2323270477d1",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "forest",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "suma"
+      },
+      "pipeline_run_id": "b60eb72b-9e28-43af-b883-26738c1fcf99",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.74,
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Kontrolu suma vrsi inspekcija.",
+      "source_uri": "draft-review://b60eb72b-9e28-43af-b883-26738c1fcf99"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "rulebook",
+    "filename": "Pravilnik sa sankcijom.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Kontrolu suma vrsi inspekcija.",
+        "heading": "PRAVILNIK",
+        "legal_unit_id": "7c77316d-5e7e-4c80-976a-94ee47bd82fe",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Kontrolu suma vrsi inspekcija.",
+        "heading": null,
+        "legal_unit_id": "87209811-9fa0-43e6-96c6-2323270477d1",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "7c77316d-5e7e-4c80-976a-94ee47bd82fe",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      },
+      {
+        "content_text": "Kazna za povredu je 50000 dinara.",
+        "heading": "Kontrolu suma vrsi inspekcija.",
+        "legal_unit_id": "096140f1-c5ad-4863-b963-09d0bc1d291f",
+        "metadata": {},
+        "number": "2",
+        "ordinal": 2,
+        "parent_legal_unit_id": null,
+        "path": "article:2",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Kazna za povredu je 50000 dinara.",
+        "heading": null,
+        "legal_unit_id": "cd91fd2d-e75a-45c2-836b-daa340a1d876",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "096140f1-c5ad-4863-b963-09d0bc1d291f",
+        "path": "article:2/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 2,
+      "item_count": 0,
+      "paragraph_count": 2,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://b60eb72b-9e28-43af-b883-26738c1fcf99",
+    "title": "PRAVILNIK"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": [
+    {
+      "content_text": "Kontrolu suma vrsi inspekcija.",
+      "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+      "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+      "document_type": "law",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "f9df66ae-36d0-47a4-915c-97d2a1f447fc",
+      "metadata": {
+        "lexical_score": 0.4,
+        "matched_terms": [
+          "inspekcija",
+          "kontrolu",
+          "suma",
+          "vrsi"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.5547001962252291
+      },
+      "path": "article:1",
+      "score": 0.4541450686788302,
+      "unit_type": "article"
+    },
+    {
+      "content_text": "Kontrolu suma vrsi inspekcija.",
+      "corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+      "document_id": "3c597820-aa94-54bd-a776-e257bf01b7aa",
+      "document_type": "law",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "24cc3e84-776d-4d45-8b36-b5bb83cdef3e",
+      "metadata": {
+        "lexical_score": 0.4,
+        "matched_terms": [
+          "inspekcija",
+          "kontrolu",
+          "suma",
+          "vrsi"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.5547001962252291
+      },
+      "path": "article:1/paragraph:1",
+      "score": 0.4541450686788302,
+      "unit_type": "paragraph"
+    }
+  ]
+}

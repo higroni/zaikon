@@ -1,0 +1,398 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa retrieval kontekstom.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://32df08c9-a1a1-413e-a336-e8ef8dafb5f9",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Ministarstvo vodi evidenciju i upucuje na clan 99.",
+          "heading": "NACRT",
+          "legal_unit_id": "14a719a4-1b2c-4d9c-b1ae-31145c68b215",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Ministarstvo vodi evidenciju i upucuje na clan 99.",
+          "heading": null,
+          "legal_unit_id": "652333a6-6eb4-4603-aff3-6215a07535e6",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "14a719a4-1b2c-4d9c-b1ae-31145c68b215",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa retrieval kontekstom.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://32df08c9-a1a1-413e-a336-e8ef8dafb5f9",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [
+    {
+      "candidate_id": "d9f4527c-f769-5efb-9186-0cf4595f835a",
+      "corpus_assertion_id": "fe5bbdac-be59-5167-80a7-562d32cb9004",
+      "draft_assertion_id": "2b9c0cc1-6cf5-5e92-9fac-9f7dd2a2e551",
+      "match_reasons": [
+        "same_action"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.3
+    },
+    {
+      "candidate_id": "764fde5d-501e-5917-8fc2-e807431af2a6",
+      "corpus_assertion_id": "b45ab450-3a02-5988-b18b-baafdd413ccc",
+      "draft_assertion_id": "2b9c0cc1-6cf5-5e92-9fac-9f7dd2a2e551",
+      "match_reasons": [
+        "same_action"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.3
+    },
+    {
+      "candidate_id": "0b45bcce-7304-5b41-ac3a-31f279524023",
+      "corpus_assertion_id": "fe5bbdac-be59-5167-80a7-562d32cb9004",
+      "draft_assertion_id": "426b7bb4-81a2-5ec2-80e3-4022b57d2050",
+      "match_reasons": [
+        "same_action"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.3
+    },
+    {
+      "candidate_id": "b3291735-eaf7-5a1a-a37d-3cba06a009b5",
+      "corpus_assertion_id": "b45ab450-3a02-5988-b18b-baafdd413ccc",
+      "draft_assertion_id": "426b7bb4-81a2-5ec2-80e3-4022b57d2050",
+      "match_reasons": [
+        "same_action"
+      ],
+      "reject_reasons": [],
+      "retrieval_method": "assertion_slot_match",
+      "score": 0.3
+    }
+  ],
+  "conflict_trace": {
+    "candidate_count": 4,
+    "corpus_assertion_count": 2,
+    "draft_assertion_count": 2,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [
+    {
+      "action": {
+        "canonical": "keep_registry",
+        "confidence": 0.87,
+        "metadata": {},
+        "raw": "vodi evidenciju"
+      },
+      "actor": null,
+      "assertion_id": "fe5bbdac-be59-5167-80a7-562d32cb9004",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.6599999999999999,
+      "corpus_id": "c4646b8f-b276-478c-8e2b-41ff7a77ba67",
+      "deadline": null,
+      "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon.txt",
+      "legal_unit_id": "80c2da69-5658-4ad6-a4b8-8526df0b12e0",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_competent",
+      "object": null,
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.87
+      },
+      "source_path": "article:1",
+      "source_quote": "Ministarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt"
+    },
+    {
+      "action": {
+        "canonical": "keep_registry",
+        "confidence": 0.87,
+        "metadata": {},
+        "raw": "vodi evidenciju"
+      },
+      "actor": null,
+      "assertion_id": "b45ab450-3a02-5988-b18b-baafdd413ccc",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.6599999999999999,
+      "corpus_id": "c4646b8f-b276-478c-8e2b-41ff7a77ba67",
+      "deadline": null,
+      "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon.txt",
+      "legal_unit_id": "6b77e605-5da4-4756-94fa-93f9d94330ce",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_competent",
+      "object": null,
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.87
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Ministarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt"
+    }
+  ],
+  "normalized_text": "NACRT\n\nClan 1.\nMinistarstvo vodi evidenciju i upucuje na clan 99.\n",
+  "normative_assertions": [
+    {
+      "action": {
+        "canonical": "keep_registry",
+        "confidence": 0.87,
+        "metadata": {},
+        "raw": "vodi evidenciju"
+      },
+      "actor": null,
+      "assertion_id": "2b9c0cc1-6cf5-5e92-9fac-9f7dd2a2e551",
+      "assertion_type": "norm",
+      "condition": null,
+      "confidence": 0.6,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa retrieval kontekstom.txt",
+      "legal_unit_id": "14a719a4-1b2c-4d9c-b1ae-31145c68b215",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "32df08c9-a1a1-413e-a336-e8ef8dafb5f9",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.87
+      },
+      "source_path": "article:1",
+      "source_quote": "Ministarstvo vodi evidenciju i upucuje na clan 99.",
+      "source_uri": "draft-review://32df08c9-a1a1-413e-a336-e8ef8dafb5f9"
+    },
+    {
+      "action": {
+        "canonical": "keep_registry",
+        "confidence": 0.87,
+        "metadata": {},
+        "raw": "vodi evidenciju"
+      },
+      "actor": null,
+      "assertion_id": "426b7bb4-81a2-5ec2-80e3-4022b57d2050",
+      "assertion_type": "norm",
+      "condition": null,
+      "confidence": 0.6,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa retrieval kontekstom.txt",
+      "legal_unit_id": "652333a6-6eb4-4603-aff3-6215a07535e6",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "32df08c9-a1a1-413e-a336-e8ef8dafb5f9",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.87
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Ministarstvo vodi evidenciju i upucuje na clan 99.",
+      "source_uri": "draft-review://32df08c9-a1a1-413e-a336-e8ef8dafb5f9"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa retrieval kontekstom.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Ministarstvo vodi evidenciju i upucuje na clan 99.",
+        "heading": "NACRT",
+        "legal_unit_id": "14a719a4-1b2c-4d9c-b1ae-31145c68b215",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Ministarstvo vodi evidenciju i upucuje na clan 99.",
+        "heading": null,
+        "legal_unit_id": "652333a6-6eb4-4603-aff3-6215a07535e6",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "14a719a4-1b2c-4d9c-b1ae-31145c68b215",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://32df08c9-a1a1-413e-a336-e8ef8dafb5f9",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": [
+      {
+        "confidence": 0.82,
+        "raw_text": "clan 99.",
+        "reference_id": "27fd4ecc-d1c1-475f-bbb8-d63fc2c725cd",
+        "reference_type": "article_reference",
+        "source_legal_unit_id": "652333a6-6eb4-4603-aff3-6215a07535e6",
+        "source_path": "article:1/paragraph:1",
+        "target_article_number": "99",
+        "target_document_title": null,
+        "target_item_number": null,
+        "target_paragraph_number": null
+      }
+    ]
+  },
+  "resolved_references": {
+    "resolved_references": [
+      {
+        "reference_id": "27fd4ecc-d1c1-475f-bbb8-d63fc2c725cd",
+        "resolution_note": "Target path not found: article:99",
+        "resolution_status": "missing",
+        "resolved_reference_id": "4e7e9773-fdcc-4de8-be0d-cd4a8d5fbbc1",
+        "target_legal_unit_id": null
+      }
+    ]
+  },
+  "retrieval_results": [
+    {
+      "content_text": "Ovim zakonom uredjuje se primer za regresioni test.\nMinistarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+      "corpus_id": "c4646b8f-b276-478c-8e2b-41ff7a77ba67",
+      "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+      "document_type": "law",
+      "filename": "zakon.txt",
+      "legal_unit_id": "80c2da69-5658-4ad6-a4b8-8526df0b12e0",
+      "metadata": {
+        "lexical_score": 0.5,
+        "matched_terms": [
+          "evidenciju",
+          "ministarstvo",
+          "vodi"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.4850712500726659
+      },
+      "path": "article:1",
+      "score": 0.49477493752543306,
+      "unit_type": "article"
+    },
+    {
+      "content_text": "Ovim zakonom uredjuje se primer za regresioni test. Ministarstvo nadlezno za poslove testiranja (u daljem tekstu: Ministarstvo) vodi evidenciju.",
+      "corpus_id": "c4646b8f-b276-478c-8e2b-41ff7a77ba67",
+      "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+      "document_type": "law",
+      "filename": "zakon.txt",
+      "legal_unit_id": "6b77e605-5da4-4756-94fa-93f9d94330ce",
+      "metadata": {
+        "lexical_score": 0.5,
+        "matched_terms": [
+          "evidenciju",
+          "ministarstvo",
+          "vodi"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.4850712500726659
+      },
+      "path": "article:1/paragraph:1",
+      "score": 0.49477493752543306,
+      "unit_type": "paragraph"
+    },
+    {
+      "content_text": "Ljudska prava i javni interes štite se zakonom.",
+      "corpus_id": "c4646b8f-b276-478c-8e2b-41ff7a77ba67",
+      "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+      "document_type": "law",
+      "filename": "zakon.txt",
+      "legal_unit_id": "81864c33-5df4-4549-811a-969ad8964cc3",
+      "metadata": {
+        "lexical_score": 0.0,
+        "matched_terms": [],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.13608276348795434
+      },
+      "path": "article:4",
+      "score": 0.04762896722078402,
+      "unit_type": "article"
+    },
+    {
+      "content_text": "Ljudska prava i javni interes štite se zakonom.",
+      "corpus_id": "c4646b8f-b276-478c-8e2b-41ff7a77ba67",
+      "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+      "document_type": "law",
+      "filename": "zakon.txt",
+      "legal_unit_id": "f405583a-cfa1-4b1d-a77b-5281d80d2879",
+      "metadata": {
+        "lexical_score": 0.0,
+        "matched_terms": [],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.13608276348795434
+      },
+      "path": "article:4/paragraph:1",
+      "score": 0.04762896722078402,
+      "unit_type": "paragraph"
+    }
+  ]
+}

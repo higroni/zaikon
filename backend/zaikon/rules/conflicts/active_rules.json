@@ -1,0 +1,85 @@
+{
+  "version": "0.2.0",
+  "rules": [
+    {
+      "rule_id": "deadline_mismatch.default",
+      "finding_type": "deadline_mismatch",
+      "risk_level": "high",
+      "title": "Rok u nacrtu nije usaglasen sa korpusom",
+      "explanation": "Nacrt i relevantna odredba iz korpusa propisuju razlicite rokove za uporedivu radnju.",
+      "recommendation": "Proveriti da li nacrt ima poseban pravni osnov za drugi rok; ako nema, uskladiti rok sa vazecim propisom.",
+      "operators": ["same_action", "deadline_not_equal"],
+      "required_slots": ["action", "deadline"]
+    },
+    {
+      "rule_id": "authority_scope_conflict.default",
+      "finding_type": "authority_scope_conflict",
+      "risk_level": "high",
+      "title": "Nacrt siri krug ovlascenih lica",
+      "explanation": "Nacrt koristi sireg aktera od relevantne odredbe iz korpusa za istu ili uporedivu radnju.",
+      "recommendation": "Uskladiti aktera sa korpusom ili dodati izuzetak sa jasnim pravnim osnovom.",
+      "operators": ["same_action", "same_object", "draft_actor_broader_than_corpus_actor"],
+      "required_slots": ["actor", "action", "object"]
+    },
+    {
+      "rule_id": "competence_conflict.default",
+      "finding_type": "competence_conflict",
+      "risk_level": "high",
+      "title": "Nacrt daje nadleznost organu iz pogresne oblasti",
+      "explanation": "Nacrt vezuje nadzor ili kontrolu za aktera ciji domen ne odgovara predmetu regulisanja, dok korpus ukazuje na drugi nadlezni domen.",
+      "recommendation": "Proveriti nadlezni organ u vazecem propisu i zameniti pogresno ministarstvo ili inspekciju.",
+      "operators": ["same_action", "same_object", "wrong_domain_for_object"],
+      "required_slots": ["actor", "action", "object", "domain"]
+    },
+    {
+      "rule_id": "permission_vs_prohibition_conflict.default",
+      "finding_type": "permission_vs_prohibition_conflict",
+      "risk_level": "high",
+      "title": "Nacrt dozvoljava ono sto korpus zabranjuje",
+      "explanation": "Nacrt propisuje dozvolu ili pravo za radnju koju relevantna odredba iz korpusa zabranjuje.",
+      "recommendation": "Proveriti pravni osnov za izmenu zabrane; ako nema osnova, uskladiti modalitet sa korpusom.",
+      "operators": ["same_action", "same_object", "modality_opposes"],
+      "required_slots": ["modality", "action", "object"]
+    },
+    {
+      "rule_id": "definition_conflict.default",
+      "finding_type": "definition_conflict",
+      "risk_level": "medium",
+      "title": "Nacrt defini��e termin drugacije nego korpus",
+      "explanation": "Nacrt i korpus daju razlicite definicije istog pravnog termina.",
+      "recommendation": "Uskladiti definiciju sa korpusom ili eksplicitno navesti da nacrt uvodi posebnu definiciju za potrebe ovog propisa.",
+      "operators": ["same_term", "definition_differs"],
+      "required_slots": ["term", "definition"]
+    },
+    {
+      "rule_id": "reference_missing.default",
+      "finding_type": "reference_missing",
+      "risk_level": "medium",
+      "title": "Nacrt ne upucuje na relevantnu odredbu korpusa",
+      "explanation": "Nacrt regulise materiju koja je vec uredjena u korpusu, ali ne sadrzi upucivanje na relevantnu odredbu.",
+      "recommendation": "Dodati upucivanje na relevantnu odredbu iz korpusa ili eksplicitno navesti razlog za samostalnu regulaciju.",
+      "operators": ["same_subject_matter", "no_reference"],
+      "required_slots": ["action", "object"]
+    },
+    {
+      "rule_id": "new_obligation_without_basis.default",
+      "finding_type": "new_obligation_without_basis",
+      "risk_level": "high",
+      "title": "Nacrt uvodi novu obavezu bez zakonskog osnova",
+      "explanation": "Podzakonski akt propisuje novu obavezu koja nije predvidjena u osnovnom zakonu.",
+      "recommendation": "Proveriti da li osnovni zakon daje ovlascenje za propisivanje ove obaveze; ako ne, ukloniti odredbu ili izmeniti osnovni zakon.",
+      "operators": ["is_subordinate_act", "new_obligation", "no_delegation"],
+      "required_slots": ["modality", "action", "legal_basis"]
+    },
+    {
+      "rule_id": "sanction_without_basis.default",
+      "finding_type": "sanction_without_basis",
+      "risk_level": "high",
+      "title": "Nacrt propisuje sankciju bez zakonskog osnova",
+      "explanation": "Podzakonski akt propisuje sankciju ili kaznu, sto je rezervisano za zakon.",
+      "recommendation": "Ukloniti odredbu o sankciji iz podzakonskog akta ili predvideti je u osnovnom zakonu.",
+      "operators": ["is_subordinate_act", "contains_sanction", "no_law_basis"],
+      "required_slots": ["sanction", "legal_basis"]
+    }
+  ]
+}

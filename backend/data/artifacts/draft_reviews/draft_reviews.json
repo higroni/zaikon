@@ -1,0 +1,624 @@
+[
+  {
+    "created_at": "2026-06-03T18:33:27.496132Z",
+    "finding_count": 6,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "4533209b-eb43-41a5-a3f8-8abc59385e40",
+    "selected_corpus_id": "3efc214d-26b6-437d-8880-38c2ba7fd1e0",
+    "status": "completed",
+    "title": "Nacrt sa kracim rokom",
+    "updated_at": "2026-06-03T18:33:27.527661Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:27.601924Z",
+    "finding_count": 8,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "7d0b70a7-4905-48fc-a0c4-32249ed0bf31",
+    "selected_corpus_id": "f8e64a5a-59cc-4289-9d43-9bdafd1b9b64",
+    "status": "completed",
+    "title": "Nacrt sa pogresnom nadleznoscu",
+    "updated_at": "2026-06-03T18:33:27.626525Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:27.761746Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "128e0d3b-9ef7-410e-86c5-2eaaede59c67",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Nacrt nadleznost i rok",
+    "updated_at": "2026-06-03T18:33:27.779773Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:28.646427Z",
+    "finding_count": 1,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.65,
+      "document_type": "law",
+      "input_type": "text",
+      "reference_count": 1,
+      "resolved_reference_count": 1,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "0d0fba30-d371-4b10-a7ab-2dbdd377910e",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Nacrt zakona o testu",
+    "updated_at": "2026-06-03T18:33:28.661598Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:28.710246Z",
+    "finding_count": 1,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 1,
+      "resolved_reference_count": 1,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "ba87aab4-680f-4931-8baf-6d5031cb7f8e",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Нацрт",
+    "updated_at": "2026-06-03T18:33:28.722119Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:28.761969Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "extraction": {
+        "character_count": 60,
+        "paragraph_count": 3
+      },
+      "file_type": "docx",
+      "filename": "pravilnik.docx",
+      "input_type": "file",
+      "source_uri": "C:\\Users\\brank\\.codex\\worktrees\\498b\\ZAIKON\\backend\\tests\\regression\\fixtures\\corpus_folder_import\\small_txt_corpus\\pravilnik.docx"
+    },
+    "pipeline_run_id": "a21de9b0-5eb1-4c80-82ae-31e36ac20338",
+    "selected_corpus_id": null,
+    "status": "pending",
+    "title": "pravilnik",
+    "updated_at": "2026-06-03T18:33:28.761969Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:28.835649Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.95,
+      "document_type": "regulation",
+      "extraction": {
+        "character_count": 56,
+        "needs_ocr": false,
+        "page_count": 1
+      },
+      "file_type": "pdf",
+      "filename": "uredba.pdf",
+      "input_type": "file",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 0,
+      "source_uri": "C:\\Users\\brank\\.codex\\worktrees\\498b\\ZAIKON\\backend\\tests\\regression\\fixtures\\corpus_folder_import\\small_txt_corpus\\uredba.pdf"
+    },
+    "pipeline_run_id": "82d641a5-127a-41d7-98fe-caf617f9be51",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "uredba",
+    "updated_at": "2026-06-03T18:33:28.847753Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:28.925401Z",
+    "finding_count": 1,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 1,
+      "resolved_reference_count": 1,
+      "retrieval_result_count": 4
+    },
+    "pipeline_run_id": "32df08c9-a1a1-413e-a336-e8ef8dafb5f9",
+    "selected_corpus_id": "c4646b8f-b276-478c-8e2b-41ff7a77ba67",
+    "status": "completed",
+    "title": "Nacrt sa retrieval kontekstom",
+    "updated_at": "2026-06-03T18:33:29.059661Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.130193Z",
+    "finding_count": 11,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 1,
+      "resolved_reference_count": 1,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "4656ec53-e0e6-43f5-a3a1-90341cd47d41",
+    "selected_corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+    "status": "completed",
+    "title": "Nacrt sa prosirenim ovlascenjem",
+    "updated_at": "2026-06-03T18:33:29.164828Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.220005Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 1,
+      "resolved_reference_count": 1,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "fd82013a-8278-4ef1-88bb-6da6258e0f38",
+    "selected_corpus_id": "bf31e33d-5680-4920-9a9d-4120a181104b",
+    "status": "completed",
+    "title": "Nacrt sa eksternom referencom",
+    "updated_at": "2026-06-03T18:33:29.250758Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.294172Z",
+    "finding_count": 1,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "2971b88b-c895-4189-b9b1-62190ceab5d5",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Nacrt sa definicijama",
+    "updated_at": "2026-06-03T18:33:29.309274Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.346095Z",
+    "finding_count": 4,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "8b6418f1-62a1-4f88-84db-6f7cdfe51841",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Nacrt sa dodatnim proverama",
+    "updated_at": "2026-06-03T18:33:29.363759Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.399980Z",
+    "finding_count": 5,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Nacrt sa naprednim proverama",
+    "updated_at": "2026-06-03T18:33:29.416644Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.451386Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "2df53439-f645-4c0f-b6c8-1c9d0f74c845",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Nacrt za Akoma",
+    "updated_at": "2026-06-03T18:33:29.463656Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.502949Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "67f44ffd-c37e-4854-82e0-5aeb1e3237f0",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Nacrt sa artefaktima",
+    "updated_at": "2026-06-03T18:33:29.515983Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.606055Z",
+    "finding_count": 6,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "597bb297-f1f5-4ece-b194-25c164d1f9ad",
+    "selected_corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+    "status": "completed",
+    "title": "Nacrt sa kracim rokom",
+    "updated_at": "2026-06-03T18:33:29.639258Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.662502Z",
+    "finding_count": 8,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "5328f060-4930-42d4-8239-7caff8c1c89d",
+    "selected_corpus_id": "d27fc372-9057-4581-bf13-b0c204939af7",
+    "status": "completed",
+    "title": "Nacrt sa pogresnom nadleznoscu",
+    "updated_at": "2026-06-03T18:33:29.695054Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.723484Z",
+    "finding_count": 10,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "07db3b49-c4d6-435f-bda8-bffb500cdc1c",
+    "selected_corpus_id": "c4e267b8-1149-4c14-a75e-2ba90e470df5",
+    "status": "completed",
+    "title": "Nacrt sa sirim krugom aktera",
+    "updated_at": "2026-06-03T18:33:29.759265Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.783280Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "cc9bb528-23d5-4b0a-8229-d51a1d071775",
+    "selected_corpus_id": "8c109a83-fe02-4b10-8a8c-327722f629b6",
+    "status": "completed",
+    "title": "Nacrt sa dozvolom",
+    "updated_at": "2026-06-03T18:33:29.814525Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.839302Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "9d2228c8-65ba-4483-b4ae-4850b195c980",
+    "selected_corpus_id": "191e531d-44ce-4fea-a34c-9ce4dfbf15c1",
+    "status": "completed",
+    "title": "Nacrt sa drugom definicijom",
+    "updated_at": "2026-06-03T18:33:29.877635Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.901440Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.95,
+      "document_type": "rulebook",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "27a0203d-89db-484d-9162-346de4468943",
+    "selected_corpus_id": "3ed8ae16-2e4c-4619-869b-3e21013b2369",
+    "status": "completed",
+    "title": "Pravilnik sa novom obavezom",
+    "updated_at": "2026-06-03T18:33:29.944840Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.970126Z",
+    "finding_count": 4,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.95,
+      "document_type": "rulebook",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "2ebae0d3-a7c7-423b-bdc7-14c753da5b3c",
+    "selected_corpus_id": "42a80bfa-ed50-4038-9cf3-57d243c8d2f2",
+    "status": "completed",
+    "title": "Pravilnik sa sankcijom",
+    "updated_at": "2026-06-03T18:33:30.006419Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:30.146402Z",
+    "finding_count": 1,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 1,
+      "resolved_reference_count": 1,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "3ac09d77-7701-46ee-8522-1738cd07adc7",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Nacrt zakona o nalazima",
+    "updated_at": "2026-06-03T18:33:30.161617Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:30.318271Z",
+    "finding_count": 1,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 1,
+      "resolved_reference_count": 1,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "d4d1afbb-bc6f-4ba2-9867-29a1244c9565",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Nacrt za izvestaj",
+    "updated_at": "2026-06-03T18:33:30.334489Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:30.393045Z",
+    "finding_count": 1,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 1,
+      "resolved_reference_count": 1,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "59ee7b6e-58d1-4a07-a70f-8d7dcd1c24b5",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Nacrt za Word izvestaj",
+    "updated_at": "2026-06-03T18:33:30.409116Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:30.487383Z",
+    "finding_count": 1,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 1,
+      "resolved_reference_count": 1,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "68cece91-4090-46d1-b1c9-8b0883f61b85",
+    "selected_corpus_id": null,
+    "status": "completed",
+    "title": "Nacrt za PDF izvestaj",
+    "updated_at": "2026-06-03T18:33:30.504619Z"
+  },
+  {
+    "created_at": "2026-06-03T18:33:30.605854Z",
+    "finding_count": 1,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 1,
+      "resolved_reference_count": 1,
+      "retrieval_result_count": 4
+    },
+    "pipeline_run_id": "0282291b-b098-4baa-aea5-6463680b58b0",
+    "selected_corpus_id": "1aef238f-1f1f-4e4d-abb8-67f64e8e9235",
+    "status": "completed",
+    "title": "Nacrt sa dokazima",
+    "updated_at": "2026-06-03T18:33:30.650247Z"
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.410792Z",
+    "finding_count": 6,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "1373d1da-f1eb-45a8-9447-1d39d161ab83",
+    "selected_corpus_id": "181197ee-649d-44a2-a035-a9611e5c9c06",
+    "status": "completed",
+    "title": "Nacrt sa kracim rokom",
+    "updated_at": "2026-06-03T19:42:04.457764Z"
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.484767Z",
+    "finding_count": 8,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "ee6a6a9c-6c65-4e5d-b8e8-552c9f047356",
+    "selected_corpus_id": "d7b8d417-825f-46a3-8fba-7ae504e31ca3",
+    "status": "completed",
+    "title": "Nacrt sa pogresnom nadleznoscu",
+    "updated_at": "2026-06-03T19:42:04.536304Z"
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.567817Z",
+    "finding_count": 10,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "1d058735-492f-4f7b-863d-8e303d6bfda0",
+    "selected_corpus_id": "fdc5485d-70d9-41b0-a451-4c4892158fe8",
+    "status": "completed",
+    "title": "Nacrt sa sirim krugom aktera",
+    "updated_at": "2026-06-03T19:42:04.618585Z"
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.646273Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 0
+    },
+    "pipeline_run_id": "6bdce720-6aec-479a-b793-1d41d04ba62b",
+    "selected_corpus_id": "5cc27b1c-1ff3-4bf3-8f6f-b1676c496407",
+    "status": "completed",
+    "title": "Nacrt sa dozvolom",
+    "updated_at": "2026-06-03T19:42:04.697016Z"
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.729613Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.4,
+      "document_type": "unknown",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "b4f7ca28-b613-4e13-bb6c-9420ff3641e1",
+    "selected_corpus_id": "aad345e6-5cf6-4c4e-8162-8593ab322589",
+    "status": "completed",
+    "title": "Nacrt sa drugom definicijom",
+    "updated_at": "2026-06-03T19:42:04.784839Z"
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.813662Z",
+    "finding_count": 0,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.95,
+      "document_type": "rulebook",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "41fd410e-8dfc-47d3-93f6-87700bb91cda",
+    "selected_corpus_id": "66949ec9-16f1-4cd5-a17f-aab115711d48",
+    "status": "completed",
+    "title": "Pravilnik sa novom obavezom",
+    "updated_at": "2026-06-03T19:42:04.859333Z"
+  },
+  {
+    "created_at": "2026-06-03T19:42:04.885460Z",
+    "finding_count": 4,
+    "language_code": "sr",
+    "metadata": {
+      "classification_confidence": 0.95,
+      "document_type": "rulebook",
+      "input_type": "text",
+      "reference_count": 0,
+      "resolved_reference_count": 0,
+      "retrieval_result_count": 2
+    },
+    "pipeline_run_id": "b60eb72b-9e28-43af-b883-26738c1fcf99",
+    "selected_corpus_id": "e1c65a95-d9b0-47a9-b432-e0c30d52a5f2",
+    "status": "completed",
+    "title": "Pravilnik sa sankcijom",
+    "updated_at": "2026-06-03T19:42:04.935381Z"
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "version": "0.1.0",
+  "language": "sr",
+  "actors": {
+    "any_person": {
+      "labels": ["svako lice", "bilo koje lice", "svaki gradjanin", "gradjanin", "fizicko lice"],
+      "broader_than": ["citizen", "natural_person", "authorized_entity"]
+    },
+    "citizen": {
+      "labels": ["gradjanin", "fizicko lice"],
+      "broader_than": []
+    },
+    "authorized_entity": {
+      "labels": ["ovlasceno lice", "ovlasceno pravno lice", "ovlasceno preduzece", "strucna sluzba"],
+      "broader_than": []
+    },
+    "competent_authority": {
+      "labels": ["nadlezni organ", "nadlezno ministarstvo", "nadlezna inspekcija"],
+      "broader_than": []
+    },
+    "construction_ministry": {
+      "labels": ["ministarstvo gradjevine", "ministarstva gradjevine", "ministarstvo nadlezno za gradjevinu", "ministarstva nadleznog za gradjevinu", "inspekcija ministarstva nadleznog za gradjevinu", "gradjevinska inspekcija"],
+      "domains": ["construction"]
+    },
+    "agriculture_ministry": {
+      "labels": ["ministarstvo poljoprivrede", "ministarstva poljoprivrede", "ministarstvo nadlezno za poljoprivredu", "ministarstva nadleznog za poljoprivredu", "veterinarska inspekcija", "poljoprivredna inspekcija"],
+      "domains": ["food_safety", "agriculture", "forestry"]
+    },
+    "health_ministry": {
+      "labels": ["ministarstvo zdravlja", "ministarstva zdravlja", "ministarstvo nadlezno za zdravlje", "ministarstva nadleznog za zdravlje", "sanitarna inspekcija"],
+      "domains": ["food_safety", "health"]
+    }
+  },
+  "actions": {
+    "inspect": {
+      "labels": ["kontrolise", "vrsi kontrolu", "obavlja kontrolu", "vrsi nadzor", "inspekcijski nadzor", "obavlja nadzor"]
+    },
+    "mark_tree": {
+      "labels": ["obelezavanje drveca", "obelezavanje stabala", "obelezavanje sumskih stabala"]
+    },
+    "issue_decision": {
+      "labels": ["donosi resenje", "izdaje resenje", "odlucuje", "izdaje dozvolu"]
+    },
+    "submit_request": {
+      "labels": ["podnosi zahtev", "dostavlja zahtev"]
+    },
+    "keep_registry": {
+      "labels": ["vodi evidenciju", "vodi registar"]
+    }
+  },
+  "objects": {
+    "food": {
+      "labels": ["hrana", "hrane", "hranom", "namirnice", "namirnica", "prehrambeni proizvodi"],
+      "domains": ["food_safety"]
+    },
+    "tree": {
+      "labels": ["drvo", "drvece", "drveca", "stablo", "stabla", "sumska stabla", "sumskih stabala"],
+      "domains": ["forestry"]
+    },
+    "forest": {
+      "labels": ["suma", "sume", "sumsko zemljiste"],
+      "domains": ["forestry"]
+    },
+    "request": {
+      "labels": ["zahtev", "podnesak"]
+    },
+    "decision": {
+      "labels": ["resenje", "odluka"]
+    },
+    "registry": {
+      "labels": ["evidencija", "registar"]
+    }
+  },
+  "domains": {
+    "food_safety": {
+      "labels": ["hrana", "bezbednost hrane", "sanitarni", "veterinarski", "prehrambeni"]
+    },
+    "construction": {
+      "labels": ["gradjevina", "gradjevinski", "urbanizam", "izgradnja"]
+    },
+    "forestry": {
+      "labels": ["suma", "sumarstvo", "drvece", "stabla", "sumski"]
+    },
+    "agriculture": {
+      "labels": ["poljoprivreda", "poljoprivredni"]
+    },
+    "health": {
+      "labels": ["zdravlje", "sanitarni"]
+    }
+  }
+}

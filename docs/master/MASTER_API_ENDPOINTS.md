@@ -42,6 +42,29 @@ Base path: `/api/v1`
 - `GET /api/v1/draft-reviews/{pipeline_run_id}/artifacts/{artifact_name}`
 - `POST /api/v1/draft-reviews/{pipeline_run_id}/run`
 - `GET /api/v1/draft-reviews/{pipeline_run_id}/findings`
+- `GET /api/v1/draft-reviews/{pipeline_run_id}/assertions`
+- `GET /api/v1/draft-reviews/{pipeline_run_id}/conflict-candidates`
+- `GET /api/v1/draft-reviews/{pipeline_run_id}/conflict-trace`
+
+## Assertions
+
+- `GET /api/v1/assertions/draft-reviews/{pipeline_run_id}`
+
+## Ontology
+
+- `GET /api/v1/ontology`
+- `POST /api/v1/ontology/reload`
+
+## Conflicts
+
+- `GET /api/v1/conflicts/types`
+- `GET /api/v1/conflicts/types/{finding_type}`
+- `POST /api/v1/conflicts/reload`
+
+## Evaluation
+
+- `GET /api/v1/evaluation/cases`
+- `POST /api/v1/evaluation/run`
 
 ## Findings
 

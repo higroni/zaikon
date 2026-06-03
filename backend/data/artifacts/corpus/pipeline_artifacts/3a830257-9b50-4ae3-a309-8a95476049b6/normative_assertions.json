@@ -1,0 +1,71 @@
+{
+  "artifact_id": "8110a4cd-af78-4f99-b873-980f8d063e2f",
+  "artifact_type": "normative_assertions",
+  "created_at": "2026-06-03T19:42:04.624273Z",
+  "name": "normative_assertions",
+  "payload": [
+    {
+      "assertions": [
+        {
+          "action": null,
+          "actor": null,
+          "assertion_id": "5a1baaef-c567-5a23-bb65-55774538562e",
+          "assertion_type": "prohibition",
+          "condition": null,
+          "confidence": 0.54,
+          "corpus_id": "5cc27b1c-1ff3-4bf3-8f6f-b1676c496407",
+          "deadline": null,
+          "document_id": "5f789401-c3c8-5dc5-984b-2f181a2f88cc",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-zastita.txt",
+          "legal_unit_id": "4213a69f-116c-4ee2-ac66-6fba3f51c549",
+          "metadata": {
+            "unit_type": "article"
+          },
+          "modality": "must_not",
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {},
+          "source_path": "article:1",
+          "source_quote": "Zabranjeno je secenje drveta bez dozvole.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/permission_vs_prohibition_001/corpus/zakon-zastita.txt"
+        },
+        {
+          "action": null,
+          "actor": null,
+          "assertion_id": "62e262cf-03db-5fd7-89b8-d41cc45a70da",
+          "assertion_type": "prohibition",
+          "condition": null,
+          "confidence": 0.54,
+          "corpus_id": "5cc27b1c-1ff3-4bf3-8f6f-b1676c496407",
+          "deadline": null,
+          "document_id": "5f789401-c3c8-5dc5-984b-2f181a2f88cc",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-zastita.txt",
+          "legal_unit_id": "9a5d0969-e648-49a9-ad73-76607ee76123",
+          "metadata": {
+            "unit_type": "paragraph"
+          },
+          "modality": "must_not",
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {},
+          "source_path": "article:1/paragraph:1",
+          "source_quote": "Zabranjeno je secenje drveta bez dozvole.",
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/permission_vs_prohibition_001/corpus/zakon-zastita.txt"
+        }
+      ],
+      "filename": "zakon-zastita.txt",
+      "metadata": {
+        "assertion_count": 2
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/permission_vs_prohibition_001/corpus/zakon-zastita.txt"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "artifact_id": "a24b9e0b-36b0-4e67-9043-da03eb13f01d",
+  "artifact_type": "vector_index_report",
+  "created_at": "2026-06-03T19:42:04.467763Z",
+  "name": "vector_index_report",
+  "payload": {
+    "index_name": "vector",
+    "indexed_documents": 1,
+    "indexed_legal_units": 2,
+    "metadata": {
+      "backend": "qdrant",
+      "computed_vectors": 2,
+      "embedding_dimensions": 1024,
+      "embedding_model": "BAAI/bge-m3",
+      "fallback_embedding_dimensions": 64,
+      "status_note": "deterministic_fallback_embeddings_computed"
+    },
+    "status": "completed"
+  }
+}

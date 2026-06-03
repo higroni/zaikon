@@ -1,0 +1,138 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt za izvestaj.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://d4d1afbb-bc6f-4ba2-9867-29a1244c9565",
+        "title": "NACRT ZAKONA O IZVESTAJU"
+      },
+      "legal_units": [
+        {
+          "content_text": "Ovaj nacrt upucuje na clan 99.",
+          "heading": "NACRT ZAKONA O IZVESTAJU",
+          "legal_unit_id": "6557145a-572f-44f3-9cab-ae129ce13096",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Ovaj nacrt upucuje na clan 99.",
+          "heading": null,
+          "legal_unit_id": "33370f92-574f-4805-a51b-c18e9cce179d",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "6557145a-572f-44f3-9cab-ae129ce13096",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt za izvestaj.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://d4d1afbb-bc6f-4ba2-9867-29a1244c9565",
+    "title": "NACRT ZAKONA O IZVESTAJU"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 0,
+    "draft_assertion_count": 0,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [],
+  "normalized_text": "NACRT ZAKONA O IZVESTAJU\n\nClan 1.\nOvaj nacrt upucuje na clan 99.\n",
+  "normative_assertions": [],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt za izvestaj.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Ovaj nacrt upucuje na clan 99.",
+        "heading": "NACRT ZAKONA O IZVESTAJU",
+        "legal_unit_id": "6557145a-572f-44f3-9cab-ae129ce13096",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Ovaj nacrt upucuje na clan 99.",
+        "heading": null,
+        "legal_unit_id": "33370f92-574f-4805-a51b-c18e9cce179d",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "6557145a-572f-44f3-9cab-ae129ce13096",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://d4d1afbb-bc6f-4ba2-9867-29a1244c9565",
+    "title": "NACRT ZAKONA O IZVESTAJU"
+  },
+  "references": {
+    "references": [
+      {
+        "confidence": 0.82,
+        "raw_text": "clan 99.",
+        "reference_id": "83fcbd67-1709-4c32-a9e9-6986ca35e9b0",
+        "reference_type": "article_reference",
+        "source_legal_unit_id": "33370f92-574f-4805-a51b-c18e9cce179d",
+        "source_path": "article:1/paragraph:1",
+        "target_article_number": "99",
+        "target_document_title": null,
+        "target_item_number": null,
+        "target_paragraph_number": null
+      }
+    ]
+  },
+  "resolved_references": {
+    "resolved_references": [
+      {
+        "reference_id": "83fcbd67-1709-4c32-a9e9-6986ca35e9b0",
+        "resolution_note": "Target path not found: article:99",
+        "resolution_status": "missing",
+        "resolved_reference_id": "f7deeaff-ea6c-4ec5-ae82-349c69bc2021",
+        "target_legal_unit_id": null
+      }
+    ]
+  },
+  "retrieval_results": []
+}

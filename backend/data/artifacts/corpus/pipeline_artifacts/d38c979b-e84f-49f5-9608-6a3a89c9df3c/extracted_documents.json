@@ -1,0 +1,30 @@
+{
+  "artifact_id": "d45c0737-6772-4313-ab6d-79414fd0635f",
+  "artifact_type": "extracted_documents",
+  "created_at": "2026-06-03T18:33:27.830289Z",
+  "name": "extracted_documents",
+  "payload": [
+    {
+      "content_text": "Zakon o roku\n\nClan 1.\nNadlezni organ odlucuje u roku od 30 dana.\n",
+      "document_type": "law",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "rok.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 65,
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null,
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        }
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_corpus_import_writes_norm0/corpus/rok.txt"
+    }
+  ]
+}

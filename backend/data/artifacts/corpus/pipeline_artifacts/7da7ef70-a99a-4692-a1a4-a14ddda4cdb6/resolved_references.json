@@ -1,0 +1,18 @@
+{
+  "artifact_id": "bf405050-72a1-4793-b529-422f09eb3074",
+  "artifact_type": "resolved_references",
+  "created_at": "2026-06-03T18:33:31.062555Z",
+  "name": "resolved_references",
+  "payload": [
+    {
+      "filename": "zakon-sume.txt",
+      "metadata": {
+        "missing_count": 0,
+        "out_of_scope_count": 0,
+        "resolved_count": 0
+      },
+      "resolved_references": [],
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_search_matches_serbian_la0/diacritics/zakon-sume.txt"
+    }
+  ]
+}

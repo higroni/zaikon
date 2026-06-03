@@ -1,0 +1,137 @@
+{
+  "artifact_id": "8d87ea19-0f13-4df9-880d-1e7c8d414cfe",
+  "artifact_type": "normative_assertions",
+  "created_at": "2026-06-03T18:33:29.114181Z",
+  "name": "normative_assertions",
+  "payload": [
+    {
+      "assertions": [
+        {
+          "action": {
+            "canonical": "mark_tree",
+            "confidence": 0.9099999999999999,
+            "metadata": {},
+            "raw": "obelezavanje drveca"
+          },
+          "actor": {
+            "canonical": "authorized_entity",
+            "confidence": 0.9099999999999999,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "ovlasceno preduzece"
+          },
+          "assertion_id": "ba523d1d-6510-5ee6-8427-d291f0132cf6",
+          "assertion_type": "permission",
+          "condition": null,
+          "confidence": 0.8799999999999999,
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "deadline": null,
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "domain": {
+            "canonical": "forestry",
+            "confidence": 0.82,
+            "metadata": {
+              "source": "object_domain"
+            },
+            "raw": "forestry"
+          },
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+          "metadata": {
+            "unit_type": "article"
+          },
+          "modality": "is_authorized",
+          "object": {
+            "canonical": "tree",
+            "confidence": 0.78,
+            "metadata": {
+              "domains": [
+                "forestry"
+              ]
+            },
+            "raw": "drveca"
+          },
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.9099999999999999,
+            "actor": 0.9099999999999999,
+            "domain": 0.82,
+            "object": 0.78
+          },
+          "source_path": "article:45",
+          "source_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_flags_author0/authority/zakon-o-sumama.txt"
+        },
+        {
+          "action": {
+            "canonical": "mark_tree",
+            "confidence": 0.9099999999999999,
+            "metadata": {},
+            "raw": "obelezavanje drveca"
+          },
+          "actor": {
+            "canonical": "authorized_entity",
+            "confidence": 0.9099999999999999,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "ovlasceno preduzece"
+          },
+          "assertion_id": "40147ff9-d888-5c10-8212-1071228329f9",
+          "assertion_type": "permission",
+          "condition": null,
+          "confidence": 0.8799999999999999,
+          "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+          "deadline": null,
+          "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+          "domain": {
+            "canonical": "forestry",
+            "confidence": 0.82,
+            "metadata": {
+              "source": "object_domain"
+            },
+            "raw": "forestry"
+          },
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-o-sumama.txt",
+          "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+          "metadata": {
+            "unit_type": "paragraph"
+          },
+          "modality": "is_authorized",
+          "object": {
+            "canonical": "tree",
+            "confidence": 0.78,
+            "metadata": {
+              "domains": [
+                "forestry"
+              ]
+            },
+            "raw": "drveca"
+          },
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.9099999999999999,
+            "actor": 0.9099999999999999,
+            "domain": 0.82,
+            "object": 0.78
+          },
+          "source_path": "article:45/paragraph:1",
+          "source_quote": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+          "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_flags_author0/authority/zakon-o-sumama.txt"
+        }
+      ],
+      "filename": "zakon-o-sumama.txt",
+      "metadata": {
+        "assertion_count": 2
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_flags_author0/authority/zakon-o-sumama.txt"
+    }
+  ]
+}

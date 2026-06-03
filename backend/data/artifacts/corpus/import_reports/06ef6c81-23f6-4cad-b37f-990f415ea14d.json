@@ -1,0 +1,152 @@
+{
+  "artifact_names": [
+    "canonical_documents",
+    "extracted_definitions",
+    "extracted_documents",
+    "extracted_references",
+    "identified_documents",
+    "import_report",
+    "keyword_index_report",
+    "normalized_documents",
+    "normative_assertions",
+    "parsed_legal_documents",
+    "reference_graph_report",
+    "resolved_references",
+    "source_file_manifest",
+    "stored_documents_report",
+    "structure_index_report",
+    "vector_index_report"
+  ],
+  "corpus_id": "f8e64a5a-59cc-4289-9d43-9bdafd1b9b64",
+  "import_job_id": "06ef6c81-23f6-4cad-b37f-990f415ea14d",
+  "index_reports": {
+    "keyword": {
+      "index_name": "keyword",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "backend": "postgres_fts",
+        "top_terms": [
+          {
+            "count": 2,
+            "term": "kontrolu"
+          },
+          {
+            "count": 2,
+            "term": "hrane"
+          },
+          {
+            "count": 2,
+            "term": "vrsi"
+          },
+          {
+            "count": 2,
+            "term": "sanitarna"
+          },
+          {
+            "count": 2,
+            "term": "inspekcija"
+          }
+        ],
+        "unique_terms": 5
+      },
+      "status": "completed"
+    },
+    "reference_graph": {
+      "index_name": "reference_graph",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "missing_references": 0,
+        "out_of_scope_references": 0,
+        "resolved_references": 0
+      },
+      "status": "completed"
+    },
+    "structure": {
+      "index_name": "structure",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "document_types": {
+          "law": 1
+        },
+        "unit_types": {
+          "article": 1,
+          "paragraph": 1
+        }
+      },
+      "status": "completed"
+    },
+    "vector": {
+      "index_name": "vector",
+      "indexed_documents": 1,
+      "indexed_legal_units": 2,
+      "metadata": {
+        "backend": "qdrant",
+        "computed_vectors": 2,
+        "embedding_dimensions": 1024,
+        "embedding_model": "BAAI/bge-m3",
+        "fallback_embedding_dimensions": 64,
+        "status_note": "deterministic_fallback_embeddings_computed"
+      },
+      "status": "completed"
+    }
+  },
+  "pipeline_run_id": "06ef6c81-23f6-4cad-b37f-990f415ea14d",
+  "source_files": [
+    {
+      "content_hash": "a8e706636a1386f84e86870372f0396762dfecf7f40ccd6947fc5340de8d80da",
+      "corpus_id": "f8e64a5a-59cc-4289-9d43-9bdafd1b9b64",
+      "created_at": "2026-06-03T18:33:27.589774Z",
+      "document_type": "law",
+      "document_type_confidence": 0.95,
+      "error_message": null,
+      "file_type": "txt",
+      "filename": "zakon-hrana.txt",
+      "import_status": "completed",
+      "publication_metadata": {
+        "official_gazette_numbers": [],
+        "publication_dates": []
+      },
+      "size_bytes": 69,
+      "source_file_id": "73368f4e-a8bc-4a25-8543-84ba65e65fae",
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_wrong_c0/food-competence-corpus/zakon-hrana.txt"
+    }
+  ],
+  "status": "completed",
+  "storage_report": {
+    "metadata": {
+      "storage_backend": "in_memory_report",
+      "stored_documents": 1
+    },
+    "stored_documents": [
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "f8e64a5a-59cc-4289-9d43-9bdafd1b9b64",
+        "document_id": "0a50dfc0-ba5c-5d37-bf6f-91391d24a738",
+        "document_type": "law",
+        "filename": "zakon-hrana.txt",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_wrong_c0/food-competence-corpus/zakon-hrana.txt",
+        "storage_status": "ready",
+        "title": "Zakon o hrani"
+      }
+    ]
+  },
+  "summary": {
+    "document_types": {
+      "law": 1
+    },
+    "extracted_documents": 1,
+    "failed_files": 0,
+    "stored_documents": 1,
+    "supported_files": 1,
+    "total_files": 1,
+    "unsupported_files": 0
+  },
+  "warnings": []
+}

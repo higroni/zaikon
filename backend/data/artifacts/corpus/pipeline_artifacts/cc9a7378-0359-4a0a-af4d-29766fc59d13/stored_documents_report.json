@@ -1,0 +1,28 @@
+{
+  "artifact_id": "d73f4deb-f5ef-46de-b2d6-34ebb36a69df",
+  "artifact_type": "stored_documents_report",
+  "created_at": "2026-06-03T19:42:04.467763Z",
+  "name": "stored_documents_report",
+  "payload": {
+    "metadata": {
+      "storage_backend": "in_memory_report",
+      "stored_documents": 1
+    },
+    "stored_documents": [
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "d7b8d417-825f-46a3-8fba-7ae504e31ca3",
+        "document_id": "fa9d4751-d792-50d2-af45-562bec5d48eb",
+        "document_type": "law",
+        "filename": "zakon-hrana.txt",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/competence_conflict_001/corpus/zakon-hrana.txt",
+        "storage_status": "ready",
+        "title": "Zakon o hrani"
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa eksternom referencom.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://fd82013a-8278-4ef1-88bb-6da6258e0f38",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Postupak se sprovodi u skladu sa članom 2. Zakona o šumama.",
+          "heading": "NACRT",
+          "legal_unit_id": "afafb646-87a4-458e-aed3-aa7a899ac788",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Postupak se sprovodi u skladu sa članom 2. Zakona o šumama.",
+          "heading": null,
+          "legal_unit_id": "9e49fb59-4584-448c-a9b7-1353e67d305d",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "afafb646-87a4-458e-aed3-aa7a899ac788",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa eksternom referencom.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://fd82013a-8278-4ef1-88bb-6da6258e0f38",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 0,
+    "draft_assertion_count": 0,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [],
+  "normalized_text": "NACRT\n\nČlan 1.\nPostupak se sprovodi u skladu sa članom 2. Zakona o šumama.",
+  "normative_assertions": [],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa eksternom referencom.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Postupak se sprovodi u skladu sa članom 2. Zakona o šumama.",
+        "heading": "NACRT",
+        "legal_unit_id": "afafb646-87a4-458e-aed3-aa7a899ac788",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Postupak se sprovodi u skladu sa članom 2. Zakona o šumama.",
+        "heading": null,
+        "legal_unit_id": "9e49fb59-4584-448c-a9b7-1353e67d305d",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "afafb646-87a4-458e-aed3-aa7a899ac788",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://fd82013a-8278-4ef1-88bb-6da6258e0f38",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": [
+      {
+        "confidence": 0.82,
+        "raw_text": "članom 2. Zakona o šumama",
+        "reference_id": "b8883519-f59c-41c2-8e01-9d0d945206c5",
+        "reference_type": "article_reference",
+        "source_legal_unit_id": "9e49fb59-4584-448c-a9b7-1353e67d305d",
+        "source_path": "article:1/paragraph:1",
+        "target_article_number": "2",
+        "target_document_title": "Zakon o šumama",
+        "target_item_number": null,
+        "target_paragraph_number": null
+      }
+    ]
+  },
+  "resolved_references": {
+    "resolved_references": [
+      {
+        "reference_id": "b8883519-f59c-41c2-8e01-9d0d945206c5",
+        "resolution_note": "Zakon o šumama: article:2",
+        "resolution_status": "resolved",
+        "resolved_reference_id": "7cadecad-459f-4074-8ecc-8545307f5eec",
+        "target_legal_unit_id": "e32a17e7-6a61-429f-9172-0a513456d9ad"
+      }
+    ]
+  },
+  "retrieval_results": [
+    {
+      "content_text": "Šume su dobro od opšteg interesa.",
+      "corpus_id": "bf31e33d-5680-4920-9a9d-4120a181104b",
+      "document_id": "08bed7d2-17ef-5432-bb64-21878ed83407",
+      "document_type": "law",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "e32a17e7-6a61-429f-9172-0a513456d9ad",
+      "metadata": {
+        "lexical_score": 0.36363636363636365,
+        "matched_terms": [
+          "suma",
+          "sumama",
+          "sumarstvo",
+          "sume"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.659828879073858
+      },
+      "path": "article:2",
+      "score": 0.4673037440394867,
+      "unit_type": "article"
+    },
+    {
+      "content_text": "Šume su dobro od opšteg interesa.",
+      "corpus_id": "bf31e33d-5680-4920-9a9d-4120a181104b",
+      "document_id": "08bed7d2-17ef-5432-bb64-21878ed83407",
+      "document_type": "law",
+      "filename": "zakon-o-sumama.txt",
+      "legal_unit_id": "f19dcd91-592c-498f-9209-3c82e53601c3",
+      "metadata": {
+        "lexical_score": 0.36363636363636365,
+        "matched_terms": [
+          "suma",
+          "sumama",
+          "sumarstvo",
+          "sume"
+        ],
+        "retrieval_mode": "hybrid_deterministic",
+        "semantic_score": 0.659828879073858
+      },
+      "path": "article:2/paragraph:1",
+      "score": 0.4673037440394867,
+      "unit_type": "paragraph"
+    }
+  ]
+}

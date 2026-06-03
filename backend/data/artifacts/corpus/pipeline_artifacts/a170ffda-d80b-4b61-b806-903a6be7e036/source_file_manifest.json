@@ -1,0 +1,14 @@
+{
+  "artifact_id": "9260ca01-f5c3-4d16-91b6-5cf12108d30b",
+  "artifact_type": "source_file_manifest",
+  "created_at": "2026-06-03T18:33:28.572104Z",
+  "name": "source_file_manifest",
+  "payload": [
+    {
+      "filename": "zakon-b.txt",
+      "size_bytes": 33,
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_document_catalog_can_be_f0/second/zakon-b.txt",
+      "suffix": ".txt"
+    }
+  ]
+}

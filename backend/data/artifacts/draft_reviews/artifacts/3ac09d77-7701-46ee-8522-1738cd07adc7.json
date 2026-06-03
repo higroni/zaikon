@@ -1,0 +1,138 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt zakona o nalazima.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://3ac09d77-7701-46ee-8522-1738cd07adc7",
+        "title": "NACRT ZAKONA O NALAZIMA"
+      },
+      "legal_units": [
+        {
+          "content_text": "Ovaj nacrt upucuje na clan 99.",
+          "heading": "NACRT ZAKONA O NALAZIMA",
+          "legal_unit_id": "e0eb1eed-7d59-48a7-90b2-7c2c5220c45f",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Ovaj nacrt upucuje na clan 99.",
+          "heading": null,
+          "legal_unit_id": "c123f35a-c20c-4c52-939e-cc06ac2d3846",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "e0eb1eed-7d59-48a7-90b2-7c2c5220c45f",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt zakona o nalazima.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://3ac09d77-7701-46ee-8522-1738cd07adc7",
+    "title": "NACRT ZAKONA O NALAZIMA"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 0,
+    "draft_assertion_count": 0,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [],
+  "normalized_text": "NACRT ZAKONA O NALAZIMA\n\nClan 1.\nOvaj nacrt upucuje na clan 99.\n",
+  "normative_assertions": [],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt zakona o nalazima.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Ovaj nacrt upucuje na clan 99.",
+        "heading": "NACRT ZAKONA O NALAZIMA",
+        "legal_unit_id": "e0eb1eed-7d59-48a7-90b2-7c2c5220c45f",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Ovaj nacrt upucuje na clan 99.",
+        "heading": null,
+        "legal_unit_id": "c123f35a-c20c-4c52-939e-cc06ac2d3846",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "e0eb1eed-7d59-48a7-90b2-7c2c5220c45f",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://3ac09d77-7701-46ee-8522-1738cd07adc7",
+    "title": "NACRT ZAKONA O NALAZIMA"
+  },
+  "references": {
+    "references": [
+      {
+        "confidence": 0.82,
+        "raw_text": "clan 99.",
+        "reference_id": "6102eb4e-a181-47d8-8416-92ef8519cfcf",
+        "reference_type": "article_reference",
+        "source_legal_unit_id": "c123f35a-c20c-4c52-939e-cc06ac2d3846",
+        "source_path": "article:1/paragraph:1",
+        "target_article_number": "99",
+        "target_document_title": null,
+        "target_item_number": null,
+        "target_paragraph_number": null
+      }
+    ]
+  },
+  "resolved_references": {
+    "resolved_references": [
+      {
+        "reference_id": "6102eb4e-a181-47d8-8416-92ef8519cfcf",
+        "resolution_note": "Target path not found: article:99",
+        "resolution_status": "missing",
+        "resolved_reference_id": "908d7432-373e-4e27-bf96-1dfce026a2a8",
+        "target_legal_unit_id": null
+      }
+    ]
+  },
+  "retrieval_results": []
+}

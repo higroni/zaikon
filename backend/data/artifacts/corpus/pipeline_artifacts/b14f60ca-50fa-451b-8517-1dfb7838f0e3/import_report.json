@@ -1,0 +1,134 @@
+{
+  "artifact_id": "4ef7d98c-b5f2-4dcd-acb5-3b3b48d02ffe",
+  "artifact_type": "import_report",
+  "created_at": "2026-06-03T18:33:27.483051Z",
+  "name": "import_report",
+  "payload": {
+    "index_reports": {
+      "keyword": {
+        "index_name": "keyword",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "backend": "postgres_fts",
+          "top_terms": [
+            {
+              "count": 2,
+              "term": "nadlezni"
+            },
+            {
+              "count": 2,
+              "term": "organ"
+            },
+            {
+              "count": 2,
+              "term": "odlucuje"
+            },
+            {
+              "count": 2,
+              "term": "roku"
+            },
+            {
+              "count": 2,
+              "term": "dana"
+            }
+          ],
+          "unique_terms": 5
+        },
+        "status": "completed"
+      },
+      "reference_graph": {
+        "index_name": "reference_graph",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "missing_references": 0,
+          "out_of_scope_references": 0,
+          "resolved_references": 0
+        },
+        "status": "completed"
+      },
+      "structure": {
+        "index_name": "structure",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "document_types": {
+            "law": 1
+          },
+          "unit_types": {
+            "article": 1,
+            "paragraph": 1
+          }
+        },
+        "status": "completed"
+      },
+      "vector": {
+        "index_name": "vector",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "backend": "qdrant",
+          "computed_vectors": 2,
+          "embedding_dimensions": 1024,
+          "embedding_model": "BAAI/bge-m3",
+          "fallback_embedding_dimensions": 64,
+          "status_note": "deterministic_fallback_embeddings_computed"
+        },
+        "status": "completed"
+      }
+    },
+    "pipeline_run_id": "b14f60ca-50fa-451b-8517-1dfb7838f0e3",
+    "source_files": [
+      {
+        "content_hash": "20b6e7f72da164e234a26921ed848a9e96390c1c5192aebd61375f3a0cec78dc",
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "error_message": null,
+        "file_type": "txt",
+        "filename": "zakon-rok.txt",
+        "import_status": "completed",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "size_bytes": 69,
+        "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_deadlin0/deadline-corpus/zakon-rok.txt"
+      }
+    ],
+    "storage_report": {
+      "metadata": {
+        "storage_backend": "in_memory_report",
+        "stored_documents": 1
+      },
+      "stored_documents": [
+        {
+          "canonical_unit_count": 2,
+          "corpus_id": "3efc214d-26b6-437d-8880-38c2ba7fd1e0",
+          "document_id": "df92caae-e7fb-5d4a-a9a1-12c2fd0d8ace",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "publication_metadata": {
+            "official_gazette_numbers": [],
+            "publication_dates": []
+          },
+          "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_deadlin0/deadline-corpus/zakon-rok.txt",
+          "storage_status": "ready",
+          "title": "Zakon o roku"
+        }
+      ]
+    },
+    "summary": {
+      "document_types": {
+        "law": 1
+      },
+      "extracted_documents": 1,
+      "failed_files": 0,
+      "stored_documents": 1,
+      "supported_files": 1,
+      "total_files": 1,
+      "unsupported_files": 0
+    },
+    "warnings": []
+  }
+}

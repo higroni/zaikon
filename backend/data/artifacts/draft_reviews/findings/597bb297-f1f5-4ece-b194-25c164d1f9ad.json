@@ -1,0 +1,458 @@
+[
+  {
+    "created_at": "2026-06-03T18:33:29.631796Z",
+    "evidence": {
+      "matched_terms": [
+        "nadlezni organ"
+      ],
+      "related_legal_units": [
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "054e5fde-5298-4ba6-b71c-1931be9dec69",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "f1ab2c4a-ddec-4bf7-ae85-ddcd95ad61e0",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    "explanation": "The draft uses a broad institutional term that may be ambiguous without a definition or a precise authority.",
+    "finding_id": "909215f7-938b-4d3c-8db8-385258108de2",
+    "finding_type": "terminology_inconsistent",
+    "pipeline_run_id": "597bb297-f1f5-4ece-b194-25c164d1f9ad",
+    "recommendation": "Define the term or replace it with the exact institution responsible for the obligation.",
+    "review_note": null,
+    "risk_level": "low",
+    "source_legal_unit_id": "b0386ac9-c87e-4753-be12-5465082b2fb8",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Vague institutional term should be defined",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.631796Z",
+    "evidence": {
+      "matched_terms": [
+        "nadlezni organ"
+      ],
+      "related_legal_units": [
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "054e5fde-5298-4ba6-b71c-1931be9dec69",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "f1ab2c4a-ddec-4bf7-ae85-ddcd95ad61e0",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    "explanation": "The draft uses a broad institutional term that may be ambiguous without a definition or a precise authority.",
+    "finding_id": "8cf649c6-b155-4671-be76-bbe97a03e034",
+    "finding_type": "terminology_inconsistent",
+    "pipeline_run_id": "597bb297-f1f5-4ece-b194-25c164d1f9ad",
+    "recommendation": "Define the term or replace it with the exact institution responsible for the obligation.",
+    "review_note": null,
+    "risk_level": "low",
+    "source_legal_unit_id": "3145dc20-bbd3-4df6-8fa8-58b0929bc987",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Vague institutional term should be defined",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.631796Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "654a81d8-c68c-5033-a25d-14b33e59acea",
+        "corpus_assertion_id": "4d4ea005-3948-595b-953d-412ec6f2079a",
+        "draft_assertion_id": "782114b6-f3f5-584f-818c-27cb3e4f33d0",
+        "match_reasons": [
+          "same_action",
+          "both_have_deadline"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.4
+      },
+      "corpus_assertion_id": "4d4ea005-3948-595b-953d-412ec6f2079a",
+      "corpus_filename": "zakon-rok.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+      "draft_assertion_id": "782114b6-f3f5-584f-818c-27cb3e4f33d0",
+      "draft_filename": "Nacrt sa kracim rokom.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Nadlezni organ odlucuje u roku od 15 dana.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "054e5fde-5298-4ba6-b71c-1931be9dec69",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "f1ab2c4a-ddec-4bf7-ae85-ddcd95ad61e0",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "deadline_mismatch.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "30 day",
+          "draft_value": "15 day",
+          "relation": "not_equal",
+          "slot": "deadline"
+        }
+      ]
+    },
+    "explanation": "Nacrt i relevantna odredba iz korpusa propisuju razlicite rokove za uporedivu radnju.",
+    "finding_id": "e6408ac7-a8c3-4bc2-b156-1897d26a53d5",
+    "finding_type": "deadline_mismatch",
+    "pipeline_run_id": "597bb297-f1f5-4ece-b194-25c164d1f9ad",
+    "recommendation": "Proveriti da li nacrt ima poseban pravni osnov za drugi rok; ako nema, uskladiti rok sa vazecim propisom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "b0386ac9-c87e-4753-be12-5465082b2fb8",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Rok u nacrtu nije usaglasen sa korpusom",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.631796Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "c6f34eac-a79e-57f7-b5bd-b69ee9c65bb1",
+        "corpus_assertion_id": "4075e954-39f3-5a9f-981d-942868ea9a68",
+        "draft_assertion_id": "782114b6-f3f5-584f-818c-27cb3e4f33d0",
+        "match_reasons": [
+          "same_action",
+          "both_have_deadline"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.4
+      },
+      "corpus_assertion_id": "4075e954-39f3-5a9f-981d-942868ea9a68",
+      "corpus_filename": "zakon-rok.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+      "draft_assertion_id": "782114b6-f3f5-584f-818c-27cb3e4f33d0",
+      "draft_filename": "Nacrt sa kracim rokom.txt",
+      "draft_path": "article:1",
+      "draft_quote": "Nadlezni organ odlucuje u roku od 15 dana.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "054e5fde-5298-4ba6-b71c-1931be9dec69",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "f1ab2c4a-ddec-4bf7-ae85-ddcd95ad61e0",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "deadline_mismatch.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "30 day",
+          "draft_value": "15 day",
+          "relation": "not_equal",
+          "slot": "deadline"
+        }
+      ]
+    },
+    "explanation": "Nacrt i relevantna odredba iz korpusa propisuju razlicite rokove za uporedivu radnju.",
+    "finding_id": "0f879b08-19d8-4bb3-bb13-8a46df3caabd",
+    "finding_type": "deadline_mismatch",
+    "pipeline_run_id": "597bb297-f1f5-4ece-b194-25c164d1f9ad",
+    "recommendation": "Proveriti da li nacrt ima poseban pravni osnov za drugi rok; ako nema, uskladiti rok sa vazecim propisom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "b0386ac9-c87e-4753-be12-5465082b2fb8",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Rok u nacrtu nije usaglasen sa korpusom",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.631796Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "d7fb3d6f-3e68-5ef2-86e7-5b25d8f39a7c",
+        "corpus_assertion_id": "4d4ea005-3948-595b-953d-412ec6f2079a",
+        "draft_assertion_id": "f74ff1fd-a852-567f-ba02-37179a6fb0d4",
+        "match_reasons": [
+          "same_action",
+          "both_have_deadline"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.4
+      },
+      "corpus_assertion_id": "4d4ea005-3948-595b-953d-412ec6f2079a",
+      "corpus_filename": "zakon-rok.txt",
+      "corpus_path": "article:1",
+      "corpus_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+      "draft_assertion_id": "f74ff1fd-a852-567f-ba02-37179a6fb0d4",
+      "draft_filename": "Nacrt sa kracim rokom.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Nadlezni organ odlucuje u roku od 15 dana.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "054e5fde-5298-4ba6-b71c-1931be9dec69",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "f1ab2c4a-ddec-4bf7-ae85-ddcd95ad61e0",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "deadline_mismatch.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "30 day",
+          "draft_value": "15 day",
+          "relation": "not_equal",
+          "slot": "deadline"
+        }
+      ]
+    },
+    "explanation": "Nacrt i relevantna odredba iz korpusa propisuju razlicite rokove za uporedivu radnju.",
+    "finding_id": "e0f908e6-200f-494d-80d0-0d995303ec72",
+    "finding_type": "deadline_mismatch",
+    "pipeline_run_id": "597bb297-f1f5-4ece-b194-25c164d1f9ad",
+    "recommendation": "Proveriti da li nacrt ima poseban pravni osnov za drugi rok; ako nema, uskladiti rok sa vazecim propisom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "3145dc20-bbd3-4df6-8fa8-58b0929bc987",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Rok u nacrtu nije usaglasen sa korpusom",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.631796Z",
+    "evidence": {
+      "candidate": {
+        "candidate_id": "7ac74c38-8d81-5d00-a088-66ca019cf675",
+        "corpus_assertion_id": "4075e954-39f3-5a9f-981d-942868ea9a68",
+        "draft_assertion_id": "f74ff1fd-a852-567f-ba02-37179a6fb0d4",
+        "match_reasons": [
+          "same_action",
+          "both_have_deadline"
+        ],
+        "reject_reasons": [],
+        "retrieval_method": "assertion_slot_match",
+        "score": 0.4
+      },
+      "corpus_assertion_id": "4075e954-39f3-5a9f-981d-942868ea9a68",
+      "corpus_filename": "zakon-rok.txt",
+      "corpus_path": "article:1/paragraph:1",
+      "corpus_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+      "draft_assertion_id": "f74ff1fd-a852-567f-ba02-37179a6fb0d4",
+      "draft_filename": "Nacrt sa kracim rokom.txt",
+      "draft_path": "article:1/paragraph:1",
+      "draft_quote": "Nadlezni organ odlucuje u roku od 15 dana.",
+      "related_legal_units": [
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "054e5fde-5298-4ba6-b71c-1931be9dec69",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "article"
+        },
+        {
+          "corpus_id": "d28ee607-6dc5-4156-a7ed-15d1a946ef3e",
+          "document_id": "6e4c0d8f-9ec5-5269-8d4c-830c9077ac1c",
+          "document_type": "law",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "f1ab2c4a-ddec-4bf7-ae85-ddcd95ad61e0",
+          "matched_terms": [
+            "dana",
+            "nadlezni",
+            "odlucuje",
+            "organ",
+            "roku"
+          ],
+          "path": "article:1/paragraph:1",
+          "quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "score": 0.760089703440695,
+          "unit_type": "paragraph"
+        }
+      ],
+      "rule_id": "deadline_mismatch.default",
+      "rule_version": "0.1.0",
+      "slot_diffs": [
+        {
+          "corpus_value": "30 day",
+          "draft_value": "15 day",
+          "relation": "not_equal",
+          "slot": "deadline"
+        }
+      ]
+    },
+    "explanation": "Nacrt i relevantna odredba iz korpusa propisuju razlicite rokove za uporedivu radnju.",
+    "finding_id": "80f0778c-f0b0-4412-b05d-ef3295b2236a",
+    "finding_type": "deadline_mismatch",
+    "pipeline_run_id": "597bb297-f1f5-4ece-b194-25c164d1f9ad",
+    "recommendation": "Proveriti da li nacrt ima poseban pravni osnov za drugi rok; ako nema, uskladiti rok sa vazecim propisom.",
+    "review_note": null,
+    "risk_level": "high",
+    "source_legal_unit_id": "3145dc20-bbd3-4df6-8fa8-58b0929bc987",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Rok u nacrtu nije usaglasen sa korpusom",
+    "updated_at": null
+  }
+]

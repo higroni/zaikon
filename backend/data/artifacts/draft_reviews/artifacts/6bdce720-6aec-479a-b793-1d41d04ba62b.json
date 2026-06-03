@@ -1,0 +1,289 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa dozvolom.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://6bdce720-6aec-479a-b793-1d41d04ba62b",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Gradjanin moze da sece drvo u svom dvoristu.",
+          "heading": "NACRT",
+          "legal_unit_id": "35a756ab-d834-40d8-8db0-9e9af1a5a292",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Gradjanin moze da sece drvo u svom dvoristu.",
+          "heading": null,
+          "legal_unit_id": "e3c666e5-9755-49fc-b0bb-dd59eff47e49",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "35a756ab-d834-40d8-8db0-9e9af1a5a292",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa dozvolom.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://6bdce720-6aec-479a-b793-1d41d04ba62b",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 2,
+    "draft_assertion_count": 2,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "5a1baaef-c567-5a23-bb65-55774538562e",
+      "assertion_type": "prohibition",
+      "condition": null,
+      "confidence": 0.54,
+      "corpus_id": "5cc27b1c-1ff3-4bf3-8f6f-b1676c496407",
+      "deadline": null,
+      "document_id": "5f789401-c3c8-5dc5-984b-2f181a2f88cc",
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-zastita.txt",
+      "legal_unit_id": "4213a69f-116c-4ee2-ac66-6fba3f51c549",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "must_not",
+      "object": null,
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {},
+      "source_path": "article:1",
+      "source_quote": "Zabranjeno je secenje drveta bez dozvole.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/permission_vs_prohibition_001/corpus/zakon-zastita.txt"
+    },
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "62e262cf-03db-5fd7-89b8-d41cc45a70da",
+      "assertion_type": "prohibition",
+      "condition": null,
+      "confidence": 0.54,
+      "corpus_id": "5cc27b1c-1ff3-4bf3-8f6f-b1676c496407",
+      "deadline": null,
+      "document_id": "5f789401-c3c8-5dc5-984b-2f181a2f88cc",
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "zakon-zastita.txt",
+      "legal_unit_id": "9a5d0969-e648-49a9-ad73-76607ee76123",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "must_not",
+      "object": null,
+      "pipeline_run_id": null,
+      "sanction": null,
+      "slot_confidence": {},
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Zabranjeno je secenje drveta bez dozvole.",
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/data/artifacts/evaluation/169622a6-b85f-4daa-9712-013ca95604a2/permission_vs_prohibition_001/corpus/zakon-zastita.txt"
+    }
+  ],
+  "normalized_text": "NACRT\n\nClan 1.\nGradjanin moze da sece drvo u svom dvoristu.\n",
+  "normative_assertions": [
+    {
+      "action": null,
+      "actor": {
+        "canonical": "any_person",
+        "confidence": 0.8099999999999999,
+        "metadata": {
+          "broader_than": [
+            "citizen",
+            "natural_person",
+            "authorized_entity"
+          ]
+        },
+        "raw": "gradjanin"
+      },
+      "assertion_id": "bf2f5cdc-8c42-50f8-8634-879429e5138a",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.76,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa dozvolom.txt",
+      "legal_unit_id": "35a756ab-d834-40d8-8db0-9e9af1a5a292",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "may",
+      "object": {
+        "canonical": "tree",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "drvo"
+      },
+      "pipeline_run_id": "6bdce720-6aec-479a-b793-1d41d04ba62b",
+      "sanction": null,
+      "slot_confidence": {
+        "actor": 0.8099999999999999,
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1",
+      "source_quote": "Gradjanin moze da sece drvo u svom dvoristu.",
+      "source_uri": "draft-review://6bdce720-6aec-479a-b793-1d41d04ba62b"
+    },
+    {
+      "action": null,
+      "actor": {
+        "canonical": "any_person",
+        "confidence": 0.8099999999999999,
+        "metadata": {
+          "broader_than": [
+            "citizen",
+            "natural_person",
+            "authorized_entity"
+          ]
+        },
+        "raw": "gradjanin"
+      },
+      "assertion_id": "76ecea68-5fd2-5c11-a1b9-7f9874cc9fc2",
+      "assertion_type": "permission",
+      "condition": null,
+      "confidence": 0.76,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa dozvolom.txt",
+      "legal_unit_id": "e3c666e5-9755-49fc-b0bb-dd59eff47e49",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "may",
+      "object": {
+        "canonical": "tree",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "drvo"
+      },
+      "pipeline_run_id": "6bdce720-6aec-479a-b793-1d41d04ba62b",
+      "sanction": null,
+      "slot_confidence": {
+        "actor": 0.8099999999999999,
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Gradjanin moze da sece drvo u svom dvoristu.",
+      "source_uri": "draft-review://6bdce720-6aec-479a-b793-1d41d04ba62b"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa dozvolom.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Gradjanin moze da sece drvo u svom dvoristu.",
+        "heading": "NACRT",
+        "legal_unit_id": "35a756ab-d834-40d8-8db0-9e9af1a5a292",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Gradjanin moze da sece drvo u svom dvoristu.",
+        "heading": null,
+        "legal_unit_id": "e3c666e5-9755-49fc-b0bb-dd59eff47e49",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "35a756ab-d834-40d8-8db0-9e9af1a5a292",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://6bdce720-6aec-479a-b793-1d41d04ba62b",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": []
+}

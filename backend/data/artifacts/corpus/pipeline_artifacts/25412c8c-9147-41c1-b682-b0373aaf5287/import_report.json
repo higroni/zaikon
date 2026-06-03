@@ -1,0 +1,130 @@
+{
+  "artifact_id": "09dd2aff-81cf-4d2b-9487-1d66e0008376",
+  "artifact_type": "import_report",
+  "created_at": "2026-06-03T18:33:30.869702Z",
+  "name": "import_report",
+  "payload": {
+    "index_reports": {
+      "keyword": {
+        "index_name": "keyword",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "backend": "postgres_fts",
+          "top_terms": [
+            {
+              "count": 2,
+              "term": "drugipojam"
+            },
+            {
+              "count": 2,
+              "term": "pripada"
+            },
+            {
+              "count": 2,
+              "term": "drugom"
+            },
+            {
+              "count": 2,
+              "term": "korpusu"
+            }
+          ],
+          "unique_terms": 4
+        },
+        "status": "completed"
+      },
+      "reference_graph": {
+        "index_name": "reference_graph",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "missing_references": 0,
+          "out_of_scope_references": 0,
+          "resolved_references": 0
+        },
+        "status": "completed"
+      },
+      "structure": {
+        "index_name": "structure",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "document_types": {
+            "law": 1
+          },
+          "unit_types": {
+            "article": 1,
+            "paragraph": 1
+          }
+        },
+        "status": "completed"
+      },
+      "vector": {
+        "index_name": "vector",
+        "indexed_documents": 1,
+        "indexed_legal_units": 2,
+        "metadata": {
+          "backend": "qdrant",
+          "computed_vectors": 2,
+          "embedding_dimensions": 1024,
+          "embedding_model": "BAAI/bge-m3",
+          "fallback_embedding_dimensions": 64,
+          "status_note": "deterministic_fallback_embeddings_computed"
+        },
+        "status": "completed"
+      }
+    },
+    "pipeline_run_id": "25412c8c-9147-41c1-b682-b0373aaf5287",
+    "source_files": [
+      {
+        "content_hash": "4e8c610417cfa00ff343cba56d41c3db5e91d0095f1a8895fc3a2d9940b67d75",
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "error_message": null,
+        "file_type": "txt",
+        "filename": "zakon-b.txt",
+        "import_status": "completed",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "size_bytes": 54,
+        "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_search_can_be_limited_to_0/second/zakon-b.txt"
+      }
+    ],
+    "storage_report": {
+      "metadata": {
+        "storage_backend": "in_memory_report",
+        "stored_documents": 1
+      },
+      "stored_documents": [
+        {
+          "canonical_unit_count": 2,
+          "corpus_id": "5b06cb34-a1e7-4d3d-b9c1-c155a2d213b4",
+          "document_id": "b5d483c9-9e38-5548-88b5-63867ff4d1b5",
+          "document_type": "law",
+          "filename": "zakon-b.txt",
+          "publication_metadata": {
+            "official_gazette_numbers": [],
+            "publication_dates": []
+          },
+          "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_search_can_be_limited_to_0/second/zakon-b.txt",
+          "storage_status": "ready",
+          "title": "Zakon B"
+        }
+      ]
+    },
+    "summary": {
+      "document_types": {
+        "law": 1
+      },
+      "extracted_documents": 1,
+      "failed_files": 0,
+      "stored_documents": 1,
+      "supported_files": 1,
+      "total_files": 1,
+      "unsupported_files": 0
+    },
+    "warnings": []
+  }
+}

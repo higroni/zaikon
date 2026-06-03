@@ -1,0 +1,16 @@
+{
+  "artifact_id": "11407dc7-7343-435f-86aa-ab4aa721c15b",
+  "artifact_type": "normative_assertions",
+  "created_at": "2026-06-03T18:33:31.062555Z",
+  "name": "normative_assertions",
+  "payload": [
+    {
+      "assertions": [],
+      "filename": "zakon-sume.txt",
+      "metadata": {
+        "assertion_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_search_matches_serbian_la0/diacritics/zakon-sume.txt"
+    }
+  ]
+}

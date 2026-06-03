@@ -1,0 +1,30 @@
+{
+  "artifact_id": "2ae3e491-4741-494a-bf87-eb9e48fffe17",
+  "artifact_type": "identified_documents",
+  "created_at": "2026-06-03T18:33:30.845520Z",
+  "name": "identified_documents",
+  "payload": [
+    {
+      "content_text": "Zakon A\n\nClan 1.\nJedinstvenipojam pripada prvom korpusu.",
+      "document_type": "law",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "zakon-a.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 56,
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null,
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        }
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_search_can_be_limited_to_0/first/zakon-a.txt"
+    }
+  ]
+}

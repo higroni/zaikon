@@ -1,0 +1,308 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa definicijama.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://2971b88b-c895-4189-b9b1-62190ceab5d5",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Ministarstvo nadlezno za sume (u daljem tekstu: Ministarstvo).",
+          "heading": "NACRT",
+          "legal_unit_id": "510d36ba-dc43-4969-a1e9-e108a72ba7cb",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Ministarstvo nadlezno za sume (u daljem tekstu: Ministarstvo).",
+          "heading": null,
+          "legal_unit_id": "8cba69fd-55c9-40bd-af39-8ee4c5423bad",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "510d36ba-dc43-4969-a1e9-e108a72ba7cb",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        },
+        {
+          "content_text": "Ministarstvo nadlezno za finansije (u daljem tekstu: Ministarstvo).",
+          "heading": "Ministarstvo nadlezno za sume (u daljem tekstu: Ministarstvo).",
+          "legal_unit_id": "89dfe284-146f-49bb-af27-85e9ee0c3c9c",
+          "metadata": {},
+          "number": "2",
+          "ordinal": 2,
+          "parent_legal_unit_id": null,
+          "path": "article:2",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Ministarstvo nadlezno za finansije (u daljem tekstu: Ministarstvo).",
+          "heading": null,
+          "legal_unit_id": "8aa2d937-9c83-4864-8523-761ad7dba98c",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "89dfe284-146f-49bb-af27-85e9ee0c3c9c",
+          "path": "article:2/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 2,
+        "canonical_unit_count": 4,
+        "item_count": 0,
+        "paragraph_count": 2,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa definicijama.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://2971b88b-c895-4189-b9b1-62190ceab5d5",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 0,
+    "draft_assertion_count": 4,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [],
+  "normalized_text": "NACRT\n\nClan 1.\nMinistarstvo nadlezno za sume (u daljem tekstu: Ministarstvo).\n\nClan 2.\nMinistarstvo nadlezno za finansije (u daljem tekstu: Ministarstvo).\n",
+  "normative_assertions": [
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "65bb804a-2714-56e0-9e2e-159c1a23cb29",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.6399999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa definicijama.txt",
+      "legal_unit_id": "510d36ba-dc43-4969-a1e9-e108a72ba7cb",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "forest",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "sume"
+      },
+      "pipeline_run_id": "2971b88b-c895-4189-b9b1-62190ceab5d5",
+      "sanction": null,
+      "slot_confidence": {
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1",
+      "source_quote": "Ministarstvo nadlezno za sume (u daljem tekstu: Ministarstvo).",
+      "source_uri": "draft-review://2971b88b-c895-4189-b9b1-62190ceab5d5"
+    },
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "fafc68de-0f0b-5658-bac2-2eda9820dcd2",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.6399999999999999,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": {
+        "canonical": "forestry",
+        "confidence": 0.82,
+        "metadata": {
+          "source": "object_domain"
+        },
+        "raw": "forestry"
+      },
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa definicijama.txt",
+      "legal_unit_id": "8cba69fd-55c9-40bd-af39-8ee4c5423bad",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_competent",
+      "object": {
+        "canonical": "forest",
+        "confidence": 0.76,
+        "metadata": {
+          "domains": [
+            "forestry"
+          ]
+        },
+        "raw": "sume"
+      },
+      "pipeline_run_id": "2971b88b-c895-4189-b9b1-62190ceab5d5",
+      "sanction": null,
+      "slot_confidence": {
+        "domain": 0.82,
+        "object": 0.76
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Ministarstvo nadlezno za sume (u daljem tekstu: Ministarstvo).",
+      "source_uri": "draft-review://2971b88b-c895-4189-b9b1-62190ceab5d5"
+    },
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "b19330e1-1d1e-507f-863f-1345ae5c14fe",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.54,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa definicijama.txt",
+      "legal_unit_id": "89dfe284-146f-49bb-af27-85e9ee0c3c9c",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "is_competent",
+      "object": null,
+      "pipeline_run_id": "2971b88b-c895-4189-b9b1-62190ceab5d5",
+      "sanction": null,
+      "slot_confidence": {},
+      "source_path": "article:2",
+      "source_quote": "Ministarstvo nadlezno za finansije (u daljem tekstu: Ministarstvo).",
+      "source_uri": "draft-review://2971b88b-c895-4189-b9b1-62190ceab5d5"
+    },
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "135a4a21-2c3a-59bc-94d9-1e6717b89dd7",
+      "assertion_type": "competence",
+      "condition": null,
+      "confidence": 0.54,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa definicijama.txt",
+      "legal_unit_id": "8aa2d937-9c83-4864-8523-761ad7dba98c",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "is_competent",
+      "object": null,
+      "pipeline_run_id": "2971b88b-c895-4189-b9b1-62190ceab5d5",
+      "sanction": null,
+      "slot_confidence": {},
+      "source_path": "article:2/paragraph:1",
+      "source_quote": "Ministarstvo nadlezno za finansije (u daljem tekstu: Ministarstvo).",
+      "source_uri": "draft-review://2971b88b-c895-4189-b9b1-62190ceab5d5"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa definicijama.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Ministarstvo nadlezno za sume (u daljem tekstu: Ministarstvo).",
+        "heading": "NACRT",
+        "legal_unit_id": "510d36ba-dc43-4969-a1e9-e108a72ba7cb",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Ministarstvo nadlezno za sume (u daljem tekstu: Ministarstvo).",
+        "heading": null,
+        "legal_unit_id": "8cba69fd-55c9-40bd-af39-8ee4c5423bad",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "510d36ba-dc43-4969-a1e9-e108a72ba7cb",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      },
+      {
+        "content_text": "Ministarstvo nadlezno za finansije (u daljem tekstu: Ministarstvo).",
+        "heading": "Ministarstvo nadlezno za sume (u daljem tekstu: Ministarstvo).",
+        "legal_unit_id": "89dfe284-146f-49bb-af27-85e9ee0c3c9c",
+        "metadata": {},
+        "number": "2",
+        "ordinal": 2,
+        "parent_legal_unit_id": null,
+        "path": "article:2",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Ministarstvo nadlezno za finansije (u daljem tekstu: Ministarstvo).",
+        "heading": null,
+        "legal_unit_id": "8aa2d937-9c83-4864-8523-761ad7dba98c",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "89dfe284-146f-49bb-af27-85e9ee0c3c9c",
+        "path": "article:2/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 2,
+      "item_count": 0,
+      "paragraph_count": 2,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://2971b88b-c895-4189-b9b1-62190ceab5d5",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": []
+}

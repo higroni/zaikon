@@ -1,0 +1,231 @@
+{
+  "artifact_id": "8543c44d-a540-465d-b649-e5626a3596f0",
+  "artifact_type": "import_report",
+  "created_at": "2026-06-03T18:33:27.913313Z",
+  "name": "import_report",
+  "payload": {
+    "index_reports": {
+      "keyword": {
+        "index_name": "keyword",
+        "indexed_documents": 3,
+        "indexed_legal_units": 8,
+        "metadata": {
+          "backend": "postgres_fts",
+          "top_terms": [
+            {
+              "count": 6,
+              "term": "regresioni"
+            },
+            {
+              "count": 6,
+              "term": "test"
+            },
+            {
+              "count": 4,
+              "term": "tekst"
+            },
+            {
+              "count": 4,
+              "term": "zakonom"
+            },
+            {
+              "count": 4,
+              "term": "ministarstvo"
+            },
+            {
+              "count": 2,
+              "term": "docx"
+            },
+            {
+              "count": 2,
+              "term": "pdf"
+            },
+            {
+              "count": 2,
+              "term": "ovim"
+            },
+            {
+              "count": 2,
+              "term": "uredjuje"
+            },
+            {
+              "count": 2,
+              "term": "primer"
+            }
+          ],
+          "unique_terms": 22
+        },
+        "status": "completed"
+      },
+      "reference_graph": {
+        "index_name": "reference_graph",
+        "indexed_documents": 3,
+        "indexed_legal_units": 8,
+        "metadata": {
+          "missing_references": 0,
+          "out_of_scope_references": 0,
+          "resolved_references": 0
+        },
+        "status": "completed"
+      },
+      "structure": {
+        "index_name": "structure",
+        "indexed_documents": 3,
+        "indexed_legal_units": 8,
+        "metadata": {
+          "document_types": {
+            "law": 1,
+            "regulation": 1,
+            "rulebook": 1
+          },
+          "unit_types": {
+            "article": 4,
+            "paragraph": 4
+          }
+        },
+        "status": "completed"
+      },
+      "vector": {
+        "index_name": "vector",
+        "indexed_documents": 3,
+        "indexed_legal_units": 8,
+        "metadata": {
+          "backend": "qdrant",
+          "computed_vectors": 8,
+          "embedding_dimensions": 1024,
+          "embedding_model": "BAAI/bge-m3",
+          "fallback_embedding_dimensions": 64,
+          "status_note": "deterministic_fallback_embeddings_computed"
+        },
+        "status": "completed"
+      }
+    },
+    "pipeline_run_id": "6777bd36-de66-49ca-bd7a-2c4b757dc7a3",
+    "source_files": [
+      {
+        "content_hash": "3183f7364dcc8a01f5352188165d9ece50691142a59a9965a76b88805005211f",
+        "error_message": "unsupported_file_type",
+        "file_type": "md",
+        "filename": "notes.md",
+        "import_status": "skipped",
+        "size_bytes": 83,
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/notes.md"
+      },
+      {
+        "content_hash": "59c0aef9c0deea4e6337c256ce59c931086dfe831dc0e48c6f7da2620c4c262e",
+        "document_type": "rulebook",
+        "document_type_confidence": 0.95,
+        "error_message": null,
+        "file_type": "docx",
+        "filename": "pravilnik.docx",
+        "import_status": "completed",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "size_bytes": 36624,
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/pravilnik.docx"
+      },
+      {
+        "content_hash": "93135b73657c7ba2fd8c273dceb689c413b841160d3da3e423c3d21ac3ef8452",
+        "document_type": "regulation",
+        "document_type_confidence": 0.95,
+        "error_message": null,
+        "file_type": "pdf",
+        "filename": "uredba.pdf",
+        "import_status": "completed",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "size_bytes": 837,
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/uredba.pdf"
+      },
+      {
+        "content_hash": "16af6c22efac19f4795a3f708c7bed70e1da230360a5b7fe09a23abd26a0eab3",
+        "document_type": "law",
+        "document_type_confidence": 0.95,
+        "error_message": null,
+        "file_type": "txt",
+        "filename": "zakon.txt",
+        "import_status": "completed",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "size_bytes": 270,
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt"
+      }
+    ],
+    "storage_report": {
+      "metadata": {
+        "storage_backend": "in_memory_report",
+        "stored_documents": 3
+      },
+      "stored_documents": [
+        {
+          "canonical_unit_count": 2,
+          "corpus_id": "7c00f0ed-3b94-4e05-828f-91ddac7d9edb",
+          "document_id": "ed036bb8-53d6-575f-bd05-b3e90e365dfb",
+          "document_type": "rulebook",
+          "filename": "pravilnik.docx",
+          "publication_metadata": {
+            "official_gazette_numbers": [],
+            "publication_dates": []
+          },
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/pravilnik.docx",
+          "storage_status": "ready",
+          "title": "Pravilnik o primerima"
+        },
+        {
+          "canonical_unit_count": 2,
+          "corpus_id": "7c00f0ed-3b94-4e05-828f-91ddac7d9edb",
+          "document_id": "7fa920f3-36c1-5c29-811b-d0ad04958fed",
+          "document_type": "regulation",
+          "filename": "uredba.pdf",
+          "publication_metadata": {
+            "official_gazette_numbers": [],
+            "publication_dates": []
+          },
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/uredba.pdf",
+          "storage_status": "ready",
+          "title": "Uredba o primerima"
+        },
+        {
+          "canonical_unit_count": 4,
+          "corpus_id": "7c00f0ed-3b94-4e05-828f-91ddac7d9edb",
+          "document_id": "cdc5cfee-014d-5572-9a4b-da926bea4622",
+          "document_type": "law",
+          "filename": "zakon.txt",
+          "publication_metadata": {
+            "official_gazette_numbers": [],
+            "publication_dates": []
+          },
+          "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt",
+          "storage_status": "ready",
+          "title": "Zakon o primerima"
+        }
+      ]
+    },
+    "summary": {
+      "document_types": {
+        "law": 1,
+        "regulation": 1,
+        "rulebook": 1
+      },
+      "extracted_documents": 3,
+      "failed_files": 0,
+      "stored_documents": 3,
+      "supported_files": 3,
+      "total_files": 4,
+      "unsupported_files": 1
+    },
+    "warnings": [
+      {
+        "code": "unsupported_file_type",
+        "message": "Unsupported file type: notes.md",
+        "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/notes.md"
+      }
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 import { FormEvent, ReactNode, useCallback, useEffect, useMemo, useState } from "react";
 import {
   Activity,
+  BarChart3,
   Bot,
   Check,
   ClipboardCheck,
@@ -24,6 +25,9 @@ import {
   X
 } from "lucide-react";
 import { Api, ApiError, DEFAULT_API_BASE } from "./api";
+import { EvaluationDashboard } from "./components/EvaluationDashboard";
+import { ConflictRulesTuning } from "./components/ConflictRulesTuning";
+import { LLMSettings } from "./components/LLMSettings";
 import type {
   AssistantMessage,
   CorpusRecord,
@@ -41,7 +45,7 @@ import type {
   TraceStage
 } from "./types";
 
-type RouteId = "corpora" | "documents" | "search" | "draft-reviews" | "findings" | "reports" | "assistant" | "settings";
+type RouteId = "corpora" | "documents" | "search" | "draft-reviews" | "findings" | "reports" | "assistant" | "evaluation" | "settings";
 
 const routes: Array<{ id: RouteId; label: string; icon: ReactNode }> = [
   { id: "corpora", label: "Korpusi", icon: <Database size={18} /> },
@@ -51,6 +55,7 @@ const routes: Array<{ id: RouteId; label: string; icon: ReactNode }> = [
   { id: "findings", label: "Nalazi", icon: <ListChecks size={18} /> },
   { id: "reports", label: "Izveštaji", icon: <FileDown size={18} /> },
   { id: "assistant", label: "Asistent", icon: <MessageSquare size={18} /> },
+  { id: "evaluation", label: "Evaluacija", icon: <BarChart3 size={18} /> },
   { id: "settings", label: "Podešavanja", icon: <Settings size={18} /> }
 ];
 
@@ -62,6 +67,7 @@ const routePaths: Record<RouteId, string> = {
   findings: "/findings",
   reports: "/reports",
   assistant: "/assistant",
+  evaluation: "/evaluation",
   settings: "/settings"
 };
 
@@ -2027,15 +2033,74 @@ function SettingsPage({
   apiBase: string;
   setApiBase: (value: string) => void;
 }) {
+  const [activeTab, setActiveTab] = useState<"general" | "llm" | "rules">("general");
+
   return (
     <>
       <PageHeader title="Podešavanja" subtitle="Lokalna konfiguracija GUI aplikacije i veza sa backend API-jem." icon={<Settings size={24} />} />
-      <div className="content-grid two">
-        <section className="panel">
-          <ApiStatus apiBase={apiBase} setApiBase={setApiBase} />
-        </section>
-        <AdminDataPanel apiBase={apiBase} />
+      
+      {/* Tabs */}
+      <div style={{ display: "flex", gap: "8px", marginBottom: "24px", borderBottom: "2px solid #e5e7eb" }}>
+        <button
+          onClick={() => setActiveTab("general")}
+          style={{
+            padding: "12px 24px",
+            background: activeTab === "general" ? "#3b82f6" : "transparent",
+            color: activeTab === "general" ? "white" : "#6b7280",
+            border: "none",
+            borderBottom: activeTab === "general" ? "2px solid #3b82f6" : "none",
+            cursor: "pointer",
+            fontWeight: activeTab === "general" ? "600" : "normal",
+            transition: "all 0.2s"
+          }}
+        >
+          Opšta Podešavanja
+        </button>
+        <button
+          onClick={() => setActiveTab("llm")}
+          style={{
+            padding: "12px 24px",
+            background: activeTab === "llm" ? "#3b82f6" : "transparent",
+            color: activeTab === "llm" ? "white" : "#6b7280",
+            border: "none",
+            borderBottom: activeTab === "llm" ? "2px solid #3b82f6" : "none",
+            cursor: "pointer",
+            fontWeight: activeTab === "llm" ? "600" : "normal",
+            transition: "all 0.2s"
+          }}
+        >
+          LLM Podešavanja
+        </button>
+        <button
+          onClick={() => setActiveTab("rules")}
+          style={{
+            padding: "12px 24px",
+            background: activeTab === "rules" ? "#3b82f6" : "transparent",
+            color: activeTab === "rules" ? "white" : "#6b7280",
+            border: "none",
+            borderBottom: activeTab === "rules" ? "2px solid #3b82f6" : "none",
+            cursor: "pointer",
+            fontWeight: activeTab === "rules" ? "600" : "normal",
+            transition: "all 0.2s"
+          }}
+        >
+          Pravila Konflikata
+        </button>
       </div>
+
+      {/* Tab Content */}
+      {activeTab === "general" ? (
+        <div className="content-grid two">
+          <section className="panel">
+            <ApiStatus apiBase={apiBase} setApiBase={setApiBase} />
+          </section>
+          <AdminDataPanel apiBase={apiBase} />
+        </div>
+      ) : activeTab === "llm" ? (
+        <LLMSettings />
+      ) : (
+        <ConflictRulesTuning />
+      )}
     </>
   );
 }
@@ -2356,6 +2421,7 @@ export function App() {
       {route === "findings" ? <FindingsPage apiBase={apiBase} /> : null}
       {route === "reports" ? <ReportsPage apiBase={apiBase} /> : null}
       {route === "assistant" ? <AssistantPage apiBase={apiBase} /> : null}
+      {route === "evaluation" ? <EvaluationDashboard /> : null}
       {route === "settings" ? <SettingsPage apiBase={apiBase} setApiBase={setApiBase} /> : null}
     </AppShell>
   );

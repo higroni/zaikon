@@ -150,3 +150,117 @@ export interface LocalFilesystemBrowseResponse {
   parent_path?: string | null;
   entries: LocalFilesystemEntry[];
 }
+
+export interface GoldCase {
+  case_id?: string;
+  title?: string;
+  description?: string;
+  draft_text?: string;
+  corpus_documents?: string[];
+  expected_conflicts?: Array<{
+    conflict_type?: string;
+    severity?: string;
+    [key: string]: unknown;
+  }>;
+  [key: string]: unknown;
+}
+
+export interface EvaluationMetrics {
+  precision?: number;
+  recall?: number;
+  f1_score?: number;
+  true_positives?: number;
+  false_positives?: number;
+  false_negatives?: number;
+  per_type_metrics?: Record<string, {
+    precision?: number;
+    recall?: number;
+    f1_score?: number;
+  }>;
+  confusion_matrix?: Array<{
+    expected?: string;
+    detected?: string;
+    count?: number;
+  }>;
+  [key: string]: unknown;
+}
+
+export interface EvaluationResult {
+  case_id?: string;
+  title?: string;
+  status?: string;
+  detected_conflicts?: FindingRecord[];
+  expected_conflicts?: Array<{
+    conflict_type?: string;
+    severity?: string;
+    [key: string]: unknown;
+  }>;
+  metrics?: EvaluationMetrics;
+  [key: string]: unknown;
+}
+
+export interface EvaluationRunResponse {
+  results?: EvaluationResult[];
+  overall_metrics?: EvaluationMetrics;
+  timestamp?: string;
+  [key: string]: unknown;
+}
+
+export interface ConflictRule {
+  rule_id?: string;
+  conflict_type?: string;
+  category?: string;
+  severity?: string;
+  description?: string;
+  enabled?: boolean;
+  operators?: string[];
+  [key: string]: unknown;
+}
+
+export interface LLMConfig {
+  llm_use_provider: boolean;
+  llm_base_url: string;
+  llm_model: string;
+  llm_temperature: number;
+  llm_top_p?: number;
+  llm_max_tokens: number;
+  llm_context_window?: number;
+  llm_system_prompt?: string;
+  [key: string]: unknown;
+}
+
+export interface OllamaModel {
+  name: string;
+  size: number;
+  modified_at: string;
+  [key: string]: unknown;
+}
+
+export interface EmbeddingConfig {
+  embedding_model: string;
+  embedding_dimensions: number;
+  embedding_batch_size: number;
+  embedding_device: string;
+  embedding_precision: string;
+  [key: string]: unknown;
+}
+
+export interface RerankerConfig {
+  reranker_model: string;
+  reranker_batch_size: number;
+  reranker_device: string;
+  reranking_enabled: boolean;
+  reranking_top_n: number;
+  [key: string]: unknown;
+}
+
+export interface RAGConfig {
+  chunking_strategy: string;
+  chunk_size: number;
+  chunk_overlap: number;
+  search_type: string;
+  search_semantic_weight: number;
+  search_bm25_weight: number;
+  search_top_k: number;
+  [key: string]: unknown;
+}

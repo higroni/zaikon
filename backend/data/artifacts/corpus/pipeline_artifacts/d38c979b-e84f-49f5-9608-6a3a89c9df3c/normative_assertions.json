@@ -1,0 +1,119 @@
+{
+  "artifact_id": "069e66ee-d236-463f-99b9-6de9ac3ec4ef",
+  "artifact_type": "normative_assertions",
+  "created_at": "2026-06-03T18:33:27.831288Z",
+  "name": "normative_assertions",
+  "payload": [
+    {
+      "assertions": [
+        {
+          "action": {
+            "canonical": "issue_decision",
+            "confidence": 0.7999999999999999,
+            "metadata": {},
+            "raw": "odlucuje"
+          },
+          "actor": {
+            "canonical": "competent_authority",
+            "confidence": 0.86,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "nadlezni organ"
+          },
+          "assertion_id": "324bb351-8d36-5e9a-90cf-b855c966e547",
+          "assertion_type": "deadline",
+          "condition": null,
+          "confidence": 0.84,
+          "corpus_id": "2376373e-7f41-4d3f-a2ac-3bccf5110a64",
+          "deadline": {
+            "calendar_type": "calendar_day",
+            "confidence": 0.86,
+            "end_event": null,
+            "raw": "u roku od 30 dana",
+            "start_event": null,
+            "unit": "day",
+            "value": 30
+          },
+          "document_id": "1d2e1d77-2f50-5f35-83ae-b02a4fba7291",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "rok.txt",
+          "legal_unit_id": "bf404f27-cf24-4aad-bf53-59e1da56d9ae",
+          "metadata": {
+            "unit_type": "article"
+          },
+          "modality": null,
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.7999999999999999,
+            "actor": 0.86,
+            "deadline": 0.86
+          },
+          "source_path": "article:1",
+          "source_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_corpus_import_writes_norm0/corpus/rok.txt"
+        },
+        {
+          "action": {
+            "canonical": "issue_decision",
+            "confidence": 0.7999999999999999,
+            "metadata": {},
+            "raw": "odlucuje"
+          },
+          "actor": {
+            "canonical": "competent_authority",
+            "confidence": 0.86,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "nadlezni organ"
+          },
+          "assertion_id": "90e1c3af-59dc-59c0-8f7e-3bc135809f6f",
+          "assertion_type": "deadline",
+          "condition": null,
+          "confidence": 0.84,
+          "corpus_id": "2376373e-7f41-4d3f-a2ac-3bccf5110a64",
+          "deadline": {
+            "calendar_type": "calendar_day",
+            "confidence": 0.86,
+            "end_event": null,
+            "raw": "u roku od 30 dana",
+            "start_event": null,
+            "unit": "day",
+            "value": 30
+          },
+          "document_id": "1d2e1d77-2f50-5f35-83ae-b02a4fba7291",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "rok.txt",
+          "legal_unit_id": "ff4eef4e-f138-4141-a08c-ddebb91f9778",
+          "metadata": {
+            "unit_type": "paragraph"
+          },
+          "modality": null,
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.7999999999999999,
+            "actor": 0.86,
+            "deadline": 0.86
+          },
+          "source_path": "article:1/paragraph:1",
+          "source_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_corpus_import_writes_norm0/corpus/rok.txt"
+        }
+      ],
+      "filename": "rok.txt",
+      "metadata": {
+        "assertion_count": 2
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_corpus_import_writes_norm0/corpus/rok.txt"
+    }
+  ]
+}

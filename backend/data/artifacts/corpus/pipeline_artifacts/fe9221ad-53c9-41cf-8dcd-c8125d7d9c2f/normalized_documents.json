@@ -1,0 +1,23 @@
+{
+  "artifact_id": "0270a376-9f40-4c1f-8c0c-47e364643515",
+  "artifact_type": "normalized_documents",
+  "created_at": "2026-06-03T18:33:31.133548Z",
+  "name": "normalized_documents",
+  "payload": [
+    {
+      "content_text": "Pravilnik o gazdovanju\n\nClan 1.\nUpravljanje sumama vrsi se planski.",
+      "error_message": null,
+      "extraction_status": "completed",
+      "file_type": "txt",
+      "filename": "pravilnik.txt",
+      "language_code": "sr",
+      "metadata": {
+        "character_count": 67,
+        "normalization": "sr_cyrillic_to_latin",
+        "normalization_applied": false,
+        "page_count": null
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_search_uses_semantic_fall0/semantic/pravilnik.txt"
+    }
+  ]
+}

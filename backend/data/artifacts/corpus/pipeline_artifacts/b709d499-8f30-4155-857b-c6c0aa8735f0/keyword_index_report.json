@@ -1,0 +1,42 @@
+{
+  "artifact_id": "2b080d4e-9805-4d0d-982f-d1fdd3bd4d88",
+  "artifact_type": "keyword_index_report",
+  "created_at": "2026-06-03T18:33:29.708009Z",
+  "name": "keyword_index_report",
+  "payload": {
+    "index_name": "keyword",
+    "indexed_documents": 1,
+    "indexed_legal_units": 2,
+    "metadata": {
+      "backend": "postgres_fts",
+      "top_terms": [
+        {
+          "count": 2,
+          "term": "obelezavanje"
+        },
+        {
+          "count": 2,
+          "term": "drveca"
+        },
+        {
+          "count": 2,
+          "term": "vrsi"
+        },
+        {
+          "count": 2,
+          "term": "ovlasceno"
+        },
+        {
+          "count": 2,
+          "term": "pravno"
+        },
+        {
+          "count": 2,
+          "term": "lice"
+        }
+      ],
+      "unique_terms": 6
+    },
+    "status": "completed"
+  }
+}

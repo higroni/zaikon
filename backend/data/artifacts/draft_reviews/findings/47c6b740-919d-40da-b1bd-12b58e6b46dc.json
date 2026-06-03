@@ -1,0 +1,94 @@
+[
+  {
+    "created_at": "2026-06-03T18:33:29.415644Z",
+    "evidence": {
+      "content_text": "Organ mora da postupi, ali ne sme da izda odobrenje.\n\nOrgan vodi evidenciju o korisnicima sredstava i merama zastite."
+    },
+    "explanation": "The same provision appears to combine mandatory and prohibitive language, which may require legal review.",
+    "finding_id": "beb5d4b4-5f5f-4be8-a934-a86f7a496bf1",
+    "finding_type": "possible_norm_conflict",
+    "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+    "recommendation": "Separate the obligation and prohibition or clarify the conditions under which each rule applies.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "19d4c949-033a-4477-a1bf-9d537a837e77",
+    "source_path": "article:1",
+    "status": "open",
+    "title": "Possible conflict between obligation and prohibition",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.415644Z",
+    "evidence": {
+      "content_text": "Organ mora da postupi, ali ne sme da izda odobrenje."
+    },
+    "explanation": "The same provision appears to combine mandatory and prohibitive language, which may require legal review.",
+    "finding_id": "641c79cb-c359-492f-a131-e20754aeeeee",
+    "finding_type": "possible_norm_conflict",
+    "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+    "recommendation": "Separate the obligation and prohibition or clarify the conditions under which each rule applies.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "63e4f821-2d1a-40e8-b41a-989315343504",
+    "source_path": "article:1/paragraph:1",
+    "status": "open",
+    "title": "Possible conflict between obligation and prohibition",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.415644Z",
+    "evidence": {
+      "content_text": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.",
+      "duplicate_of_legal_unit_id": "6c39c27c-b9a3-4be5-aaea-7daba6f8b8c4",
+      "duplicate_of_path": "article:1/paragraph:2"
+    },
+    "explanation": "Two provisions in the draft have the same or nearly same wording and may overlap.",
+    "finding_id": "33a4452e-3866-44d6-b20a-c85f80dbe844",
+    "finding_type": "possible_overlap",
+    "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+    "recommendation": "Merge the provisions or make the scope of each provision distinct.",
+    "review_note": null,
+    "risk_level": "low",
+    "source_legal_unit_id": "76c24e22-e815-49d2-abf3-078b24a5e9f5",
+    "source_path": "article:2/paragraph:1",
+    "status": "open",
+    "title": "Possible duplicated provision",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.415644Z",
+    "evidence": {
+      "content_text": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.\n\nDanom stupanja na snagu ovog zakona prestaje da vazi raniji pravilnik."
+    },
+    "explanation": "The reference text contains a signal that the cited provision or act ceases to apply.",
+    "finding_id": "bbe8ea32-23d0-4c02-841c-b922defbcfcc",
+    "finding_type": "reference_stale",
+    "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+    "recommendation": "Verify whether the referenced act or provision is still valid before relying on it.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "8da49ddf-4030-4b08-bd6f-eb199aec2bb2",
+    "source_path": "article:2",
+    "status": "open",
+    "title": "Reference may point to repealed provisions",
+    "updated_at": null
+  },
+  {
+    "created_at": "2026-06-03T18:33:29.415644Z",
+    "evidence": {
+      "content_text": "Danom stupanja na snagu ovog zakona prestaje da vazi raniji pravilnik."
+    },
+    "explanation": "The reference text contains a signal that the cited provision or act ceases to apply.",
+    "finding_id": "78291869-9f66-4de6-931b-3de71fe78e80",
+    "finding_type": "reference_stale",
+    "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+    "recommendation": "Verify whether the referenced act or provision is still valid before relying on it.",
+    "review_note": null,
+    "risk_level": "medium",
+    "source_legal_unit_id": "399910ba-effa-4640-825d-b17e9803113b",
+    "source_path": "article:2/paragraph:2",
+    "status": "open",
+    "title": "Reference may point to repealed provisions",
+    "updated_at": null
+  }
+]

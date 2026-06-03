@@ -1,0 +1,49 @@
+{
+  "artifact_id": "3bfa36c3-f879-447e-87d8-c7ecdf550ffc",
+  "artifact_type": "extracted_definitions",
+  "created_at": "2026-06-03T18:33:28.135723Z",
+  "name": "extracted_definitions",
+  "payload": [
+    {
+      "definitions": [],
+      "filename": "pravilnik.docx",
+      "metadata": {
+        "definition_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/pravilnik.docx"
+    },
+    {
+      "definitions": [],
+      "filename": "uredba.pdf",
+      "metadata": {
+        "definition_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/uredba.pdf"
+    },
+    {
+      "definitions": [
+        {
+          "confidence": 0.78,
+          "definition_id": "fb975f9b-da03-47a0-97d7-53fd1da790f7",
+          "definition_text": "\nMinistarstvo nadlezno za poslove testiranja",
+          "source_legal_unit_id": "e1a5613f-6450-4363-a646-536f2de938fa",
+          "source_path": "article:1",
+          "term": "Ministarstvo"
+        },
+        {
+          "confidence": 0.78,
+          "definition_id": "2eb59a13-c22e-4c19-a5c0-4406f56e5c0c",
+          "definition_text": "Ministarstvo nadlezno za poslove testiranja",
+          "source_legal_unit_id": "093a8c1f-c311-4279-a3be-aeba3786c3e6",
+          "source_path": "article:1/paragraph:1",
+          "term": "Ministarstvo"
+        }
+      ],
+      "filename": "zakon.txt",
+      "metadata": {
+        "definition_count": 2
+      },
+      "source_uri": "file:///C:/Users/brank/.codex/worktrees/498b/ZAIKON/backend/tests/regression/fixtures/corpus_folder_import/small_txt_corpus/zakon.txt"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ from fastapi import APIRouter, HTTPException
 from fastapi.responses import Response
 from typing import Any
 
+from zaikon.modules.assertions.schemas import NormativeAssertion
 from zaikon.modules.checkers.schemas import FindingRecord
 from zaikon.modules.draft_reviews.schemas import (
     CreateDraftReviewFromFileRequest,
@@ -99,3 +100,33 @@ def list_findings(pipeline_run_id: UUID) -> list[FindingRecord]:
     if detail is None:
         raise HTTPException(status_code=404, detail="Draft review not found")
     return detail.findings
+
+
+@router.get("/{pipeline_run_id}/assertions", response_model=list[NormativeAssertion])
+def list_assertions(pipeline_run_id: UUID) -> list[NormativeAssertion]:
+    assertions = get_draft_review_service().list_assertions(pipeline_run_id)
+    if assertions is None:
+        raise HTTPException(status_code=404, detail="Draft review not found")
+    return assertions
+
+
+@router.get("/{pipeline_run_id}/conflict-candidates")
+def list_conflict_candidates(pipeline_run_id: UUID) -> list[Any]:
+    candidates = get_draft_review_service().get_artifact(
+        pipeline_run_id=pipeline_run_id,
+        artifact_name="conflict_candidates",
+    )
+    if candidates is None:
+        raise HTTPException(status_code=404, detail="Conflict candidates not found")
+    return candidates
+
+
+@router.get("/{pipeline_run_id}/conflict-trace")
+def get_conflict_trace(pipeline_run_id: UUID) -> dict[str, Any]:
+    trace = get_draft_review_service().get_artifact(
+        pipeline_run_id=pipeline_run_id,
+        artifact_name="conflict_trace",
+    )
+    if trace is None:
+        raise HTTPException(status_code=404, detail="Conflict trace not found")
+    return trace

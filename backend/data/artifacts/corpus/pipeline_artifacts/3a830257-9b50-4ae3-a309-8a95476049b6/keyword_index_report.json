@@ -1,0 +1,38 @@
+{
+  "artifact_id": "4bec1bc8-2b1b-4b27-bf38-fb102e12cead",
+  "artifact_type": "keyword_index_report",
+  "created_at": "2026-06-03T19:42:04.628836Z",
+  "name": "keyword_index_report",
+  "payload": {
+    "index_name": "keyword",
+    "indexed_documents": 1,
+    "indexed_legal_units": 2,
+    "metadata": {
+      "backend": "postgres_fts",
+      "top_terms": [
+        {
+          "count": 2,
+          "term": "zabranjeno"
+        },
+        {
+          "count": 2,
+          "term": "secenje"
+        },
+        {
+          "count": 2,
+          "term": "drveta"
+        },
+        {
+          "count": 2,
+          "term": "bez"
+        },
+        {
+          "count": 2,
+          "term": "dozvole"
+        }
+      ],
+      "unique_terms": 5
+    },
+    "status": "completed"
+  }
+}

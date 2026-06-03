@@ -1,0 +1,28 @@
+{
+  "artifact_id": "ceef061f-10c4-49a6-880b-84bc284ac59d",
+  "artifact_type": "stored_documents_report",
+  "created_at": "2026-06-03T18:33:29.118349Z",
+  "name": "stored_documents_report",
+  "payload": {
+    "metadata": {
+      "storage_backend": "in_memory_report",
+      "stored_documents": 1
+    },
+    "stored_documents": [
+      {
+        "canonical_unit_count": 2,
+        "corpus_id": "48f80921-2826-4541-9279-0e88365ebb96",
+        "document_id": "230c1b01-605d-5888-8f26-57c5fae900f8",
+        "document_type": "law",
+        "filename": "zakon-o-sumama.txt",
+        "publication_metadata": {
+          "official_gazette_numbers": [],
+          "publication_dates": []
+        },
+        "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_flags_author0/authority/zakon-o-sumama.txt",
+        "storage_status": "ready",
+        "title": "Zakon o sumama"
+      }
+    ]
+  }
+}

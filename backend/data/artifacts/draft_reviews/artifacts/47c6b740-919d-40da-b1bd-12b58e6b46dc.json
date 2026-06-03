@@ -1,0 +1,396 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa naprednim proverama.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://47c6b740-919d-40da-b1bd-12b58e6b46dc",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Organ mora da postupi, ali ne sme da izda odobrenje.\n\nOrgan vodi evidenciju o korisnicima sredstava i merama zastite.",
+          "heading": "NACRT",
+          "legal_unit_id": "19d4c949-033a-4477-a1bf-9d537a837e77",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Organ mora da postupi, ali ne sme da izda odobrenje.",
+          "heading": null,
+          "legal_unit_id": "63e4f821-2d1a-40e8-b41a-989315343504",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "19d4c949-033a-4477-a1bf-9d537a837e77",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        },
+        {
+          "content_text": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.",
+          "heading": null,
+          "legal_unit_id": "6c39c27c-b9a3-4be5-aaea-7daba6f8b8c4",
+          "metadata": {},
+          "number": "2",
+          "ordinal": 2,
+          "parent_legal_unit_id": "19d4c949-033a-4477-a1bf-9d537a837e77",
+          "path": "article:1/paragraph:2",
+          "unit_type": "paragraph"
+        },
+        {
+          "content_text": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.\n\nDanom stupanja na snagu ovog zakona prestaje da vazi raniji pravilnik.",
+          "heading": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.",
+          "legal_unit_id": "8da49ddf-4030-4b08-bd6f-eb199aec2bb2",
+          "metadata": {},
+          "number": "2",
+          "ordinal": 2,
+          "parent_legal_unit_id": null,
+          "path": "article:2",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.",
+          "heading": null,
+          "legal_unit_id": "76c24e22-e815-49d2-abf3-078b24a5e9f5",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "8da49ddf-4030-4b08-bd6f-eb199aec2bb2",
+          "path": "article:2/paragraph:1",
+          "unit_type": "paragraph"
+        },
+        {
+          "content_text": "Danom stupanja na snagu ovog zakona prestaje da vazi raniji pravilnik.",
+          "heading": null,
+          "legal_unit_id": "399910ba-effa-4640-825d-b17e9803113b",
+          "metadata": {},
+          "number": "2",
+          "ordinal": 2,
+          "parent_legal_unit_id": "8da49ddf-4030-4b08-bd6f-eb199aec2bb2",
+          "path": "article:2/paragraph:2",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 2,
+        "canonical_unit_count": 6,
+        "item_count": 0,
+        "paragraph_count": 4,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa naprednim proverama.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://47c6b740-919d-40da-b1bd-12b58e6b46dc",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 0,
+    "draft_assertion_count": 6,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [],
+  "normalized_text": "NACRT\n\nClan 1.\nOrgan mora da postupi, ali ne sme da izda odobrenje.\n\nOrgan vodi evidenciju o korisnicima sredstava i merama zastite.\n\nClan 2.\nOrgan vodi evidenciju o korisnicima sredstava i merama zastite.\n\nDanom stupanja na snagu ovog zakona prestaje da vazi raniji pravilnik.",
+  "normative_assertions": [
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "d40d1eab-4c52-5143-84bd-6321548c0d9c",
+      "assertion_type": "prohibition",
+      "condition": null,
+      "confidence": 0.54,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa naprednim proverama.txt",
+      "legal_unit_id": "19d4c949-033a-4477-a1bf-9d537a837e77",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": "must_not",
+      "object": null,
+      "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+      "sanction": null,
+      "slot_confidence": {},
+      "source_path": "article:1",
+      "source_quote": "Organ mora da postupi, ali ne sme da izda odobrenje.",
+      "source_uri": "draft-review://47c6b740-919d-40da-b1bd-12b58e6b46dc"
+    },
+    {
+      "action": {
+        "canonical": "keep_registry",
+        "confidence": 0.87,
+        "metadata": {},
+        "raw": "vodi evidenciju"
+      },
+      "actor": null,
+      "assertion_id": "3a54a004-1026-5e29-bab1-d16826e85182",
+      "assertion_type": "norm",
+      "condition": null,
+      "confidence": 0.6,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa naprednim proverama.txt",
+      "legal_unit_id": "19d4c949-033a-4477-a1bf-9d537a837e77",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.87
+      },
+      "source_path": "article:1",
+      "source_quote": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.",
+      "source_uri": "draft-review://47c6b740-919d-40da-b1bd-12b58e6b46dc"
+    },
+    {
+      "action": null,
+      "actor": null,
+      "assertion_id": "576f3e32-f666-5515-b7c7-ec10b5e2f734",
+      "assertion_type": "prohibition",
+      "condition": null,
+      "confidence": 0.54,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa naprednim proverama.txt",
+      "legal_unit_id": "63e4f821-2d1a-40e8-b41a-989315343504",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": "must_not",
+      "object": null,
+      "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+      "sanction": null,
+      "slot_confidence": {},
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Organ mora da postupi, ali ne sme da izda odobrenje.",
+      "source_uri": "draft-review://47c6b740-919d-40da-b1bd-12b58e6b46dc"
+    },
+    {
+      "action": {
+        "canonical": "keep_registry",
+        "confidence": 0.87,
+        "metadata": {},
+        "raw": "vodi evidenciju"
+      },
+      "actor": null,
+      "assertion_id": "d1ca40d8-dac9-55c0-b86c-6d35d014d836",
+      "assertion_type": "norm",
+      "condition": null,
+      "confidence": 0.6,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa naprednim proverama.txt",
+      "legal_unit_id": "6c39c27c-b9a3-4be5-aaea-7daba6f8b8c4",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.87
+      },
+      "source_path": "article:1/paragraph:2",
+      "source_quote": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.",
+      "source_uri": "draft-review://47c6b740-919d-40da-b1bd-12b58e6b46dc"
+    },
+    {
+      "action": {
+        "canonical": "keep_registry",
+        "confidence": 0.87,
+        "metadata": {},
+        "raw": "vodi evidenciju"
+      },
+      "actor": null,
+      "assertion_id": "fbd9ed07-df4a-51f3-8ad4-0b0f06c9f16d",
+      "assertion_type": "norm",
+      "condition": null,
+      "confidence": 0.6,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa naprednim proverama.txt",
+      "legal_unit_id": "8da49ddf-4030-4b08-bd6f-eb199aec2bb2",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.87
+      },
+      "source_path": "article:2",
+      "source_quote": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.",
+      "source_uri": "draft-review://47c6b740-919d-40da-b1bd-12b58e6b46dc"
+    },
+    {
+      "action": {
+        "canonical": "keep_registry",
+        "confidence": 0.87,
+        "metadata": {},
+        "raw": "vodi evidenciju"
+      },
+      "actor": null,
+      "assertion_id": "68f356aa-eeb1-5933-a859-05f49bf7ca56",
+      "assertion_type": "norm",
+      "condition": null,
+      "confidence": 0.6,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa naprednim proverama.txt",
+      "legal_unit_id": "76c24e22-e815-49d2-abf3-078b24a5e9f5",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "47c6b740-919d-40da-b1bd-12b58e6b46dc",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.87
+      },
+      "source_path": "article:2/paragraph:1",
+      "source_quote": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.",
+      "source_uri": "draft-review://47c6b740-919d-40da-b1bd-12b58e6b46dc"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa naprednim proverama.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Organ mora da postupi, ali ne sme da izda odobrenje.\n\nOrgan vodi evidenciju o korisnicima sredstava i merama zastite.",
+        "heading": "NACRT",
+        "legal_unit_id": "19d4c949-033a-4477-a1bf-9d537a837e77",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Organ mora da postupi, ali ne sme da izda odobrenje.",
+        "heading": null,
+        "legal_unit_id": "63e4f821-2d1a-40e8-b41a-989315343504",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "19d4c949-033a-4477-a1bf-9d537a837e77",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      },
+      {
+        "content_text": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.",
+        "heading": null,
+        "legal_unit_id": "6c39c27c-b9a3-4be5-aaea-7daba6f8b8c4",
+        "metadata": {},
+        "number": "2",
+        "ordinal": 2,
+        "parent_legal_unit_id": "19d4c949-033a-4477-a1bf-9d537a837e77",
+        "path": "article:1/paragraph:2",
+        "unit_type": "paragraph"
+      },
+      {
+        "content_text": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.\n\nDanom stupanja na snagu ovog zakona prestaje da vazi raniji pravilnik.",
+        "heading": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.",
+        "legal_unit_id": "8da49ddf-4030-4b08-bd6f-eb199aec2bb2",
+        "metadata": {},
+        "number": "2",
+        "ordinal": 2,
+        "parent_legal_unit_id": null,
+        "path": "article:2",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Organ vodi evidenciju o korisnicima sredstava i merama zastite.",
+        "heading": null,
+        "legal_unit_id": "76c24e22-e815-49d2-abf3-078b24a5e9f5",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "8da49ddf-4030-4b08-bd6f-eb199aec2bb2",
+        "path": "article:2/paragraph:1",
+        "unit_type": "paragraph"
+      },
+      {
+        "content_text": "Danom stupanja na snagu ovog zakona prestaje da vazi raniji pravilnik.",
+        "heading": null,
+        "legal_unit_id": "399910ba-effa-4640-825d-b17e9803113b",
+        "metadata": {},
+        "number": "2",
+        "ordinal": 2,
+        "parent_legal_unit_id": "8da49ddf-4030-4b08-bd6f-eb199aec2bb2",
+        "path": "article:2/paragraph:2",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 2,
+      "item_count": 0,
+      "paragraph_count": 4,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://47c6b740-919d-40da-b1bd-12b58e6b46dc",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": []
+}

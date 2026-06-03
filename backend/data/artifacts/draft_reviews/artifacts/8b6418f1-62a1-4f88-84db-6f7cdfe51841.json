@@ -1,0 +1,202 @@
+{
+  "canonical_document": {
+    "canonical_json": {
+      "document": {
+        "document_type": "unknown",
+        "filename": "Nacrt sa dodatnim proverama.txt",
+        "language_code": "sr",
+        "source_uri": "draft-review://8b6418f1-62a1-4f88-84db-6f7cdfe51841",
+        "title": "NACRT"
+      },
+      "legal_units": [
+        {
+          "content_text": "Nadlezni organ vodi evidenciju od 31. februar 2026.",
+          "heading": "NACRT",
+          "legal_unit_id": "8ba83365-df8d-4ce6-a8cd-8dfd3a0bc1ac",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Nadlezni organ vodi evidenciju od 31. februar 2026.",
+          "heading": null,
+          "legal_unit_id": "16a92aad-ad4d-443e-8424-630ef1c7cdf6",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "8ba83365-df8d-4ce6-a8cd-8dfd3a0bc1ac",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "canonical_unit_count": 2,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "schema_version": "0.1"
+    },
+    "document_type": "unknown",
+    "filename": "Nacrt sa dodatnim proverama.txt",
+    "language_code": "sr",
+    "source_uri": "draft-review://8b6418f1-62a1-4f88-84db-6f7cdfe51841",
+    "title": "NACRT"
+  },
+  "classification": {
+    "confidence": 0.4,
+    "document_type": "unknown",
+    "metadata": {
+      "official_gazette_numbers": [],
+      "publication_dates": []
+    }
+  },
+  "conflict_candidates": [],
+  "conflict_trace": {
+    "candidate_count": 0,
+    "corpus_assertion_count": 0,
+    "draft_assertion_count": 2,
+    "engine_scope": "registered_taxonomy_with_slot_based_active_rules",
+    "finding_count": 0
+  },
+  "corpus_normative_assertions": [],
+  "normalized_text": "NACRT\n\nClan 1.\nNadlezni organ vodi evidenciju od 31. februar 2026.",
+  "normative_assertions": [
+    {
+      "action": {
+        "canonical": "keep_registry",
+        "confidence": 0.87,
+        "metadata": {},
+        "raw": "vodi evidenciju"
+      },
+      "actor": {
+        "canonical": "competent_authority",
+        "confidence": 0.86,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "nadlezni organ"
+      },
+      "assertion_id": "cff9b556-b60a-5970-9c52-0229b07f1d2c",
+      "assertion_type": "norm",
+      "condition": null,
+      "confidence": 0.72,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa dodatnim proverama.txt",
+      "legal_unit_id": "8ba83365-df8d-4ce6-a8cd-8dfd3a0bc1ac",
+      "metadata": {
+        "unit_type": "article"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "8b6418f1-62a1-4f88-84db-6f7cdfe51841",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.87,
+        "actor": 0.86
+      },
+      "source_path": "article:1",
+      "source_quote": "Nadlezni organ vodi evidenciju od 31.",
+      "source_uri": "draft-review://8b6418f1-62a1-4f88-84db-6f7cdfe51841"
+    },
+    {
+      "action": {
+        "canonical": "keep_registry",
+        "confidence": 0.87,
+        "metadata": {},
+        "raw": "vodi evidenciju"
+      },
+      "actor": {
+        "canonical": "competent_authority",
+        "confidence": 0.86,
+        "metadata": {
+          "broader_than": []
+        },
+        "raw": "nadlezni organ"
+      },
+      "assertion_id": "5c5a7178-7e66-52d9-8657-6acb908912bd",
+      "assertion_type": "norm",
+      "condition": null,
+      "confidence": 0.72,
+      "corpus_id": null,
+      "deadline": null,
+      "document_id": null,
+      "domain": null,
+      "exception": null,
+      "extraction_method": "rules",
+      "filename": "Nacrt sa dodatnim proverama.txt",
+      "legal_unit_id": "16a92aad-ad4d-443e-8424-630ef1c7cdf6",
+      "metadata": {
+        "unit_type": "paragraph"
+      },
+      "modality": null,
+      "object": null,
+      "pipeline_run_id": "8b6418f1-62a1-4f88-84db-6f7cdfe51841",
+      "sanction": null,
+      "slot_confidence": {
+        "action": 0.87,
+        "actor": 0.86
+      },
+      "source_path": "article:1/paragraph:1",
+      "source_quote": "Nadlezni organ vodi evidenciju od 31.",
+      "source_uri": "draft-review://8b6418f1-62a1-4f88-84db-6f7cdfe51841"
+    }
+  ],
+  "parsed_document": {
+    "document_type": "unknown",
+    "filename": "Nacrt sa dodatnim proverama.txt",
+    "language_code": "sr",
+    "legal_units": [
+      {
+        "content_text": "Nadlezni organ vodi evidenciju od 31. februar 2026.",
+        "heading": "NACRT",
+        "legal_unit_id": "8ba83365-df8d-4ce6-a8cd-8dfd3a0bc1ac",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": null,
+        "path": "article:1",
+        "unit_type": "article"
+      },
+      {
+        "content_text": "Nadlezni organ vodi evidenciju od 31. februar 2026.",
+        "heading": null,
+        "legal_unit_id": "16a92aad-ad4d-443e-8424-630ef1c7cdf6",
+        "metadata": {},
+        "number": "1",
+        "ordinal": 1,
+        "parent_legal_unit_id": "8ba83365-df8d-4ce6-a8cd-8dfd3a0bc1ac",
+        "path": "article:1/paragraph:1",
+        "unit_type": "paragraph"
+      }
+    ],
+    "metadata": {
+      "alinea_count": 0,
+      "article_count": 1,
+      "item_count": 0,
+      "paragraph_count": 1,
+      "section_count": 0,
+      "subitem_count": 0
+    },
+    "source_uri": "draft-review://8b6418f1-62a1-4f88-84db-6f7cdfe51841",
+    "title": "NACRT"
+  },
+  "references": {
+    "references": []
+  },
+  "resolved_references": {
+    "resolved_references": []
+  },
+  "retrieval_results": []
+}

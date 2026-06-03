@@ -1,0 +1,119 @@
+{
+  "artifact_id": "b62a9ffc-2a15-48b4-b5f9-3fe1fb0c2899",
+  "artifact_type": "normative_assertions",
+  "created_at": "2026-06-03T18:33:27.471334Z",
+  "name": "normative_assertions",
+  "payload": [
+    {
+      "assertions": [
+        {
+          "action": {
+            "canonical": "issue_decision",
+            "confidence": 0.7999999999999999,
+            "metadata": {},
+            "raw": "odlucuje"
+          },
+          "actor": {
+            "canonical": "competent_authority",
+            "confidence": 0.86,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "nadlezni organ"
+          },
+          "assertion_id": "65746e05-d29c-5f1c-bf2e-6016f4bf6ef7",
+          "assertion_type": "deadline",
+          "condition": null,
+          "confidence": 0.84,
+          "corpus_id": "3efc214d-26b6-437d-8880-38c2ba7fd1e0",
+          "deadline": {
+            "calendar_type": "calendar_day",
+            "confidence": 0.86,
+            "end_event": null,
+            "raw": "u roku od 30 dana",
+            "start_event": null,
+            "unit": "day",
+            "value": 30
+          },
+          "document_id": "df92caae-e7fb-5d4a-a9a1-12c2fd0d8ace",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "e8662b26-627b-46fd-8654-0d71f9afae35",
+          "metadata": {
+            "unit_type": "article"
+          },
+          "modality": null,
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.7999999999999999,
+            "actor": 0.86,
+            "deadline": 0.86
+          },
+          "source_path": "article:1",
+          "source_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_deadlin0/deadline-corpus/zakon-rok.txt"
+        },
+        {
+          "action": {
+            "canonical": "issue_decision",
+            "confidence": 0.7999999999999999,
+            "metadata": {},
+            "raw": "odlucuje"
+          },
+          "actor": {
+            "canonical": "competent_authority",
+            "confidence": 0.86,
+            "metadata": {
+              "broader_than": []
+            },
+            "raw": "nadlezni organ"
+          },
+          "assertion_id": "31ceb9c3-1e74-5bf1-8482-521e18edea7f",
+          "assertion_type": "deadline",
+          "condition": null,
+          "confidence": 0.84,
+          "corpus_id": "3efc214d-26b6-437d-8880-38c2ba7fd1e0",
+          "deadline": {
+            "calendar_type": "calendar_day",
+            "confidence": 0.86,
+            "end_event": null,
+            "raw": "u roku od 30 dana",
+            "start_event": null,
+            "unit": "day",
+            "value": 30
+          },
+          "document_id": "df92caae-e7fb-5d4a-a9a1-12c2fd0d8ace",
+          "domain": null,
+          "exception": null,
+          "extraction_method": "rules",
+          "filename": "zakon-rok.txt",
+          "legal_unit_id": "bb1f2657-9ede-45ca-8eba-014f85cc38f1",
+          "metadata": {
+            "unit_type": "paragraph"
+          },
+          "modality": null,
+          "object": null,
+          "pipeline_run_id": null,
+          "sanction": null,
+          "slot_confidence": {
+            "action": 0.7999999999999999,
+            "actor": 0.86,
+            "deadline": 0.86
+          },
+          "source_path": "article:1/paragraph:1",
+          "source_quote": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_deadlin0/deadline-corpus/zakon-rok.txt"
+        }
+      ],
+      "filename": "zakon-rok.txt",
+      "metadata": {
+        "assertion_count": 2
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_slot_engine_flags_deadlin0/deadline-corpus/zakon-rok.txt"
+    }
+  ]
+}

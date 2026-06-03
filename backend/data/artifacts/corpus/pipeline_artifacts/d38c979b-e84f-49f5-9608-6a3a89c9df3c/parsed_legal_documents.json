@@ -1,0 +1,47 @@
+{
+  "artifact_id": "37c1366c-450a-4581-bcd3-973bf150780e",
+  "artifact_type": "parsed_legal_documents",
+  "created_at": "2026-06-03T18:33:27.830289Z",
+  "name": "parsed_legal_documents",
+  "payload": [
+    {
+      "document_type": "law",
+      "filename": "rok.txt",
+      "language_code": "sr",
+      "legal_units": [
+        {
+          "content_text": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "heading": "Zakon o roku",
+          "legal_unit_id": "bf404f27-cf24-4aad-bf53-59e1da56d9ae",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": null,
+          "path": "article:1",
+          "unit_type": "article"
+        },
+        {
+          "content_text": "Nadlezni organ odlucuje u roku od 30 dana.",
+          "heading": null,
+          "legal_unit_id": "ff4eef4e-f138-4141-a08c-ddebb91f9778",
+          "metadata": {},
+          "number": "1",
+          "ordinal": 1,
+          "parent_legal_unit_id": "bf404f27-cf24-4aad-bf53-59e1da56d9ae",
+          "path": "article:1/paragraph:1",
+          "unit_type": "paragraph"
+        }
+      ],
+      "metadata": {
+        "alinea_count": 0,
+        "article_count": 1,
+        "item_count": 0,
+        "paragraph_count": 1,
+        "section_count": 0,
+        "subitem_count": 0
+      },
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_corpus_import_writes_norm0/corpus/rok.txt",
+      "title": "Zakon o roku"
+    }
+  ]
+}

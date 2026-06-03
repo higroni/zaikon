@@ -1,0 +1,58 @@
+{
+  "artifact_id": "c7302391-8b39-4056-b9ed-14e7b65a0036",
+  "artifact_type": "canonical_documents",
+  "created_at": "2026-06-03T18:33:29.113180Z",
+  "name": "canonical_documents",
+  "payload": [
+    {
+      "canonical_json": {
+        "document": {
+          "document_type": "law",
+          "filename": "zakon-o-sumama.txt",
+          "language_code": "sr",
+          "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_flags_author0/authority/zakon-o-sumama.txt",
+          "title": "Zakon o sumama"
+        },
+        "legal_units": [
+          {
+            "content_text": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+            "heading": "Zakon o sumama",
+            "legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+            "metadata": {},
+            "number": "45",
+            "ordinal": 1,
+            "parent_legal_unit_id": null,
+            "path": "article:45",
+            "unit_type": "article"
+          },
+          {
+            "content_text": "Obelezavanje drveca za secu vrsi ovlasceno preduzece u skladu sa zakonom i planom gazdovanja sumama.",
+            "heading": null,
+            "legal_unit_id": "bee8b41e-f599-44cf-8af4-834d8046b742",
+            "metadata": {},
+            "number": "1",
+            "ordinal": 1,
+            "parent_legal_unit_id": "5786101e-6f73-4005-bb86-9d391813bf04",
+            "path": "article:45/paragraph:1",
+            "unit_type": "paragraph"
+          }
+        ],
+        "metadata": {
+          "alinea_count": 0,
+          "article_count": 1,
+          "canonical_unit_count": 2,
+          "item_count": 0,
+          "paragraph_count": 1,
+          "section_count": 0,
+          "subitem_count": 0
+        },
+        "schema_version": "0.1"
+      },
+      "document_type": "law",
+      "filename": "zakon-o-sumama.txt",
+      "language_code": "sr",
+      "source_uri": "file:///C:/Users/brank/AppData/Local/Temp/pytest-of-brank/pytest-127/test_draft_review_flags_author0/authority/zakon-o-sumama.txt",
+      "title": "Zakon o sumama"
+    }
+  ]
+}
