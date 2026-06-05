@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "language": "sr",
+  "actors": {
+    "employer": {
+      "labels": ["poslodavac"],
+      "broader_than": ["company_director", "business_owner"],
+      "domains": ["labor_law"]
+    },
+    "employee": {
+      "labels": ["zaposleni", "radnik"],
+      "domains": ["labor_law"]
+    },
+    "labor_inspector": {
+      "labels": ["inspektor rada", "inspektorat rada"],
+      "domains": ["labor_law"]
+    },
+    "ministry_of_labor": {
+      "labels": ["ministarstvo rada", "ministarstvo nadlezno za rad"],
+      "domains": ["labor_law"]
+    }
+  },
+  "actions": {
+    "pay_salary": {
+      "labels": ["isplati zaradu", "isplacuje zaradu", "isplata zarade"]
+    },
+    "terminate_contract": {
+      "labels": ["raskine ugovor", "raskida ugovor", "raskid ugovora"]
+    },
+    "inspect_workplace": {
+      "labels": ["vrsi kontrolu", "kontrolise", "inspekcijski nadzor"]
+    }
+  },
+  "objects": {
+    "salary": {
+      "labels": ["zarada", "plata"],
+      "domains": ["labor_law"]
+    },
+    "employment_contract": {
+      "labels": ["ugovor o radu", "radni ugovor"],
+      "domains": ["labor_law"]
+    },
+    "work_records": {
+      "labels": ["evidencija o radu", "evidencija radnog vremena"],
+      "domains": ["labor_law"]
+    }
+  },
+  "domains": {
+    "labor_law": {
+      "labels": ["radni odnosi", "radno pravo", "zaposlenje"]
+    }
+  }
+}

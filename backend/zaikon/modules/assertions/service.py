@@ -1,9 +1,11 @@
 """Rule-based extraction of normative assertions from canonical documents."""
 
 from functools import lru_cache
+import logging
 import re
 from uuid import NAMESPACE_URL, UUID, uuid5
 
+from zaikon.core.config import settings
 from zaikon.modules.assertions.schemas import (
     DeadlineSlot,
     ExtractAssertionsRequest,
@@ -14,6 +16,8 @@ from zaikon.modules.assertions.schemas import (
 from zaikon.modules.canonical.schemas import CanonicalDocument
 from zaikon.modules.ontology.schemas import OntologyMatch
 from zaikon.modules.ontology.service import get_ontology_service, normalize_legal_text
+
+logger = logging.getLogger(__name__)
 
 
 _DEADLINE_RE = re.compile(
@@ -116,9 +120,60 @@ class AssertionExtractionService:
 
         ontology = get_ontology_service()
         normalized = normalize_legal_text(content_text)
+        
+        # Try ontology first (fast, precise)
         actor = self._slot(ontology.match_actor(content_text))
         action = self._slot(ontology.match_action(content_text))
         obj = self._slot(ontology.match_object(content_text))
+        
+        # Fallback to NER if ontology didn't find slots
+        if settings.ner_enabled and settings.ner_fallback_to_ontology:
+            if actor is None or action is None or obj is None:
+                try:
+                    from zaikon.modules.ner.service import get_ner_service
+                    from zaikon.modules.ontology.auto_learning_service import get_auto_learning_service
+                    
+                    ner_service = get_ner_service()
+                    auto_learning = get_auto_learning_service()
+                    
+                    if ner_service.is_enabled():
+                        ner_result = ner_service.extract(content_text)
+                        
+                        # Use NER results if ontology didn't find anything
+                        if actor is None and ner_result.actors:
+                            # Use first actor with highest confidence
+                            best_actor = max(ner_result.actors, key=lambda x: x.confidence)
+                            actor = LegalSlot(
+                                raw=best_actor.text,
+                                canonical=best_actor.lemma,
+                                confidence=best_actor.confidence
+                            )
+                            # Learn from NER extraction
+                            auto_learning.learn_from_ner_slot(best_actor, "actor")
+                        
+                        if action is None and ner_result.actions:
+                            best_action = max(ner_result.actions, key=lambda x: x.confidence)
+                            action = LegalSlot(
+                                raw=best_action.text,
+                                canonical=best_action.lemma,
+                                confidence=best_action.confidence
+                            )
+                            # Learn from NER extraction
+                            auto_learning.learn_from_ner_slot(best_action, "action")
+                        
+                        if obj is None and ner_result.objects:
+                            best_obj = max(ner_result.objects, key=lambda x: x.confidence)
+                            obj = LegalSlot(
+                                raw=best_obj.text,
+                                canonical=best_obj.lemma,
+                                confidence=best_obj.confidence
+                            )
+                            # Learn from NER extraction
+                            auto_learning.learn_from_ner_slot(best_obj, "object")
+                except Exception as e:
+                    logger.warning(f"NER extraction failed, using ontology only: {e}")
+        
+        # Legacy fallback for "kontrola"
         if action is None and "kontrol" in normalized:
             action = LegalSlot(raw="kontrola", canonical="inspect", confidence=0.74)
         domain = self._domain_slot(content_text, actor, obj)
