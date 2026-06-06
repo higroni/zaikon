@@ -28,13 +28,14 @@ Ovaj dokument definiše production-ready domain model sa:
 │ - id         │  has    │ - id         │         │ - id         │
 │ - name       │         │ - domain_id  │         │ - name       │
 │ - desc       │         │ - version    │         │ - domain_id  │
-└──────┬───────┘         │ - name       │         │ - status     │
+└──────┬───────┘         │ - name       │         │ - language   │
+       │                 │ - language   │         │ - status     │
        │                 │ - created_at │         └──────┬───────┘
        │                 └──────┬───────┘                │
-       │ 1                      │                        │
-       │                        │ 1                      │ 1
-       │ *                      │                        │
-┌──────┴───────┐                │ *                      │ *
+       │ 1                      │                        │ 1
+       │                        │ 1                      │
+       │ *                      │                        │ *
+┌──────┴───────┐                │ *                      │
 │ConflictRule  │         ┌──────┴───────┐        ┌──────┴───────┐
 │     Set      │         │ OntologyTerm │        │  CorpusRun   │
 │              │         │              │        │              │
@@ -42,36 +43,34 @@ Ovaj dokument definiše production-ready domain model sa:
 │ - domain_id  │         │ - set_id     │        │ - corpus_id  │
 │ - name       │         │ - name       │        │ - param_set  │
 │ - version    │         │ - term       │        │ - ontology   │
-│ - desc       │         │ - rule       │        │ - conflict   │
-└──────┬───────┘         │ - type       │        │ - status     │
-       │                 └──────────────┘        │ - started_at │
-       │ 1                                       │ - ended_at   │
-       │                                         └──────┬───────┘
-       │ *                                              │
-┌──────┴───────┐                                        │ 1
-│ConflictRule  │                                        │
-│              │                                        │ *
-│ - id         │                                  ┌─────┴────────┐
-│ - set_id     │                                  │  Document    │
-│ - type       │                                  │              │
-│ - pattern    │                                  │ - id         │
-│ - severity   │                                  │ - corpus_id  │
-└──────────────┘                                  │ - run_id     │
-                                                  │ - filename   │
-       ┌──────────────┐                          │ - title      │
-       │   ParamSet   │                          │ - type       │
-       │              │                          │ - is_draft   │
-       │ - id         │                          └──────┬───────┘
+│ - desc       │         │ - language   │        │ - conflict   │
+└──────┬───────┘         │ - rule       │        │ - status     │
+       │                 │ - type       │        │ - started_at │
+       │ 1               └──────────────┘        │ - ended_at   │
+       │                                         └──────────────┘
+       │ *
+┌──────┴───────┐
+│ConflictRule  │                                  ┌─────────────┐
+│              │                                  │  Document   │
+│ - id         │                                  │             │
+│ - set_id     │                                  │ - id        │
+│ - type       │                                  │ - corpus_id │
+│ - pattern    │                                  │ - language  │
+│ - severity   │                                  │ - filename  │
+└──────────────┘                                  │ - title     │
+                                                  │ - type      │
+       ┌──────────────┐                          │ - is_draft  │
+       │   ParamSet   │                          └──────┬──────┘
+       │              │                                 │
+       │ - id         │                                 │ 1
        │ - name       │                                 │
-       │ - llm_model  │                                 │ 1
-       │ - llm_temp   │                                 │
-       │ - ontology   │                                 │ *
-       │ - conflict   │                           ┌─────┴────────┐
-       │ - created_at │                           │  LegalUnit   │
-       └──────────────┘                           │              │
-                                                  │ - id         │
-                                                  │ - doc_id     │
-                                                  │ - run_id     │
+       │ - llm_model  │                                 │ *
+       │ - llm_temp   │                           ┌─────┴────────┐
+       │ - ontology   │                           │  LegalUnit   │
+       │ - conflict   │                           │              │
+       │ - created_at │                           │ - id         │
+       └──────────────┘                           │ - doc_id     │
+                                                  │ - language   │
                                                   │ - unit_type  │
                                                   │ - number     │
                                                   │ - title      │
@@ -86,7 +85,7 @@ Ovaj dokument definiše production-ready domain model sa:
                                                   │              │
                                                   │ - id         │
                                                   │ - unit_id    │
-                                                  │ - run_id     │
+                                                  │ - language   │
                                                   │ - type       │
                                                   │ - content    │
                                                   │ - entities   │
@@ -100,7 +99,7 @@ Ovaj dokument definiše production-ready domain model sa:
                                                   │              │
                                                   │ - id         │
                                                   │ - assert_id  │
-                                                  │ - run_id     │
+                                                  │ - language   │
                                                   │ - vector     │
                                                   │ - model      │
                                                   └──────────────┘
@@ -131,6 +130,7 @@ Ovaj dokument definiše production-ready domain model sa:
 - `domain_id` (UUID) - Domen kome pripada
 - `version` (string) - Verzija (npr. "1.0", "2.1")
 - `name` (string) - Naziv (npr. "Radno pravo - osnovna verzija")
+- `language` (string) - Jezik (npr. "sr", "en", "de")
 - `description` (text) - Opis izmena u ovoj verziji
 - `created_at` (timestamp) - Vreme kreiranja
 - `created_by` (string) - Ko je kreirao
@@ -142,6 +142,7 @@ Ovaj dokument definiše production-ready domain model sa:
   "domain_id": "dom-001",
   "version": "1.0",
   "name": "Radno pravo - osnovna verzija",
+  "language": "sr",
   "description": "Početna verzija sa osnovnim terminima",
   "created_at": "2026-01-15T10:00:00Z",
   "created_by": "admin"
@@ -163,7 +164,8 @@ Ovaj dokument definiše production-ready domain model sa:
 - `id` (UUID) - Jedinstveni identifikator
 - `set_id` (UUID) - OntologySet kome pripada
 - `name` (string) - Naziv termina (npr. "radni_odnos")
-- `term` (string) - Termin na srpskom (npr. "radni odnos")
+- `term` (string) - Termin (npr. "radni odnos")
+- `language` (string) - Jezik (npr. "sr", "en", "de")
 - `rule` (text) - Pravilo ili definicija (opciono)
 - `type` (enum) - Tip: "entity", "relation", "rule"
 - `metadata` (JSON) - Dodatni podaci
@@ -175,6 +177,7 @@ Ovaj dokument definiše production-ready domain model sa:
   "set_id": "ont-set-001",
   "name": "radni_odnos",
   "term": "radni odnos",
+  "language": "sr",
   "rule": "Odnos između poslodavca i zaposlenog",
   "type": "entity",
   "metadata": {
@@ -326,26 +329,42 @@ Ovaj dokument definiše production-ready domain model sa:
 - `CorpusRun` → `ParamSet` (N:1) - Run koristi set parametara
 - `CorpusRun` → `OntologySet` (N:1) - Run koristi verziju ontologije
 - `CorpusRun` → `ConflictRuleSet` (N:1) - Run koristi verziju pravila
-- `CorpusRun` → `Document` (1:N) - Run kreira dokumente
-- `CorpusRun` → `LegalUnit` (1:N) - Run kreira pravne jedinice
-- `CorpusRun` → `Assertion` (1:N) - Run kreira asercije
-- `CorpusRun` → `Embedding` (1:N) - Run kreira embeddings
 
 ---
 
 ## Ažurirani Postojeći Entiteti
 
-### Document (sa corpus_run_id)
+### Corpus (sa language)
 
 **Novi Atributi**:
-- `corpus_run_id` (UUID) - Run koji je kreirao dokument
+- `language` (string) - Jezik korpusa (npr. "sr", "en", "de")
+
+**Primer**:
+```json
+{
+  "id": "corpus-001",
+  "name": "Radno pravo - Srbija",
+  "domain_id": "dom-001",
+  "language": "sr",
+  "status": "active"
+}
+```
+
+---
+
+### Document (sa language, bez corpus_run_id)
+
+**Novi Atributi**:
+- `language` (string) - Jezik dokumenta (npr. "sr", "en", "de")
+
+**Napomena**: `corpus_run_id` je uklonjen - Document je povezan samo sa Corpus
 
 **Primer**:
 ```json
 {
   "id": "doc-001",
   "corpus_id": "corpus-001",
-  "corpus_run_id": "run-001",
+  "language": "sr",
   "filename": "zakon_o_radu.txt",
   "title": "Zakon o radu",
   "type": "zakon",
@@ -355,17 +374,19 @@ Ovaj dokument definiše production-ready domain model sa:
 
 ---
 
-### LegalUnit (sa corpus_run_id)
+### LegalUnit (sa language, bez corpus_run_id)
 
 **Novi Atributi**:
-- `corpus_run_id` (UUID) - Run koji je kreirao pravnu jedinicu
+- `language` (string) - Jezik pravne jedinice (npr. "sr", "en", "de")
+
+**Napomena**: `corpus_run_id` je uklonjen
 
 **Primer**:
 ```json
 {
   "id": "unit-001",
   "document_id": "doc-001",
-  "corpus_run_id": "run-001",
+  "language": "sr",
   "unit_type": "clan",
   "number": "15",
   "title": "Radno vreme",
@@ -375,17 +396,19 @@ Ovaj dokument definiše production-ready domain model sa:
 
 ---
 
-### Assertion (sa corpus_run_id)
+### Assertion (sa language, bez corpus_run_id)
 
 **Novi Atributi**:
-- `corpus_run_id` (UUID) - Run koji je kreirao aserciju
+- `language` (string) - Jezik asercije (npr. "sr", "en", "de")
+
+**Napomena**: `corpus_run_id` je uklonjen
 
 **Primer**:
 ```json
 {
   "id": "assert-001",
   "legal_unit_id": "unit-001",
-  "corpus_run_id": "run-001",
+  "language": "sr",
   "type": "obligation",
   "content": "Puno radno vreme iznosi 40 časova nedeljno",
   "entities": ["radno_vreme", "40_casova"]
@@ -394,17 +417,19 @@ Ovaj dokument definiše production-ready domain model sa:
 
 ---
 
-### Embedding (sa corpus_run_id)
+### Embedding (sa language, bez corpus_run_id)
 
 **Novi Atributi**:
-- `corpus_run_id` (UUID) - Run koji je kreirao embedding
+- `language` (string) - Jezik embedding-a (npr. "sr", "en", "de")
+
+**Napomena**: `corpus_run_id` je uklonjen
 
 **Primer**:
 ```json
 {
   "id": "emb-001",
   "assertion_id": "assert-001",
-  "corpus_run_id": "run-001",
+  "language": "sr",
   "vector": [0.123, -0.456, ...],
   "model": "text-embedding-3-large"
 }
@@ -562,6 +587,7 @@ CREATE TABLE ontology_sets (
     domain_id TEXT NOT NULL,
     version TEXT NOT NULL,
     name TEXT NOT NULL,
+    language TEXT NOT NULL,
     description TEXT,
     created_at TIMESTAMP NOT NULL,
     created_by TEXT NOT NULL,
@@ -573,6 +599,7 @@ CREATE TABLE ontology_terms (
     set_id TEXT NOT NULL,
     name TEXT NOT NULL,
     term TEXT NOT NULL,
+    language TEXT NOT NULL,
     rule TEXT,
     type TEXT NOT NULL,
     metadata TEXT,
@@ -644,10 +671,11 @@ CREATE TABLE corpus_runs (
 );
 
 -- Ažurirane tabele
-ALTER TABLE documents ADD COLUMN corpus_run_id TEXT;
-ALTER TABLE legal_units ADD COLUMN corpus_run_id TEXT;
-ALTER TABLE assertions ADD COLUMN corpus_run_id TEXT;
-ALTER TABLE embeddings ADD COLUMN corpus_run_id TEXT;
+ALTER TABLE corpora ADD COLUMN language TEXT NOT NULL DEFAULT 'sr';
+ALTER TABLE documents ADD COLUMN language TEXT NOT NULL DEFAULT 'sr';
+ALTER TABLE legal_units ADD COLUMN language TEXT NOT NULL DEFAULT 'sr';
+ALTER TABLE assertions ADD COLUMN language TEXT NOT NULL DEFAULT 'sr';
+ALTER TABLE embeddings ADD COLUMN language TEXT NOT NULL DEFAULT 'sr';
 ALTER TABLE draft_reviews ADD COLUMN param_set_id TEXT;
 ```
 
@@ -727,14 +755,14 @@ corpus_run = {
 }
 POST /api/v1/corpus-runs
 
-# 3. Pipeline kreira entitete sa corpus_run_id
+# 3. Pipeline kreira entitete sa language atributom
 for document in corpus:
-    doc = create_document(corpus_run_id="run-001")
+    doc = create_document(corpus_id="corpus-001", language="sr")
     for legal_unit in extract_units(doc):
-        unit = create_legal_unit(corpus_run_id="run-001")
+        unit = create_legal_unit(document_id=doc.id, language="sr")
         for assertion in extract_assertions(unit):
-            assert = create_assertion(corpus_run_id="run-001")
-            emb = create_embedding(assert, corpus_run_id="run-001")
+            assert = create_assertion(legal_unit_id=unit.id, language="sr")
+            emb = create_embedding(assertion_id=assert.id, language="sr")
 
 # 4. Završi CorpusRun
 PATCH /api/v1/corpus-runs/run-001
@@ -767,7 +795,7 @@ POST /api/v1/corpus-runs/import
     "assertions": [...],
     "embeddings": [...]
 }
-# Kreira novi corpus_run_id i importuje sve
+# Kreira novi CorpusRun i importuje sve entitete
 ```
 
 ### 3. Poređenje Parametara
@@ -814,9 +842,15 @@ GET /api/v1/param-sets/compare?param_set_1=param-001&param_set_2=param-002
 - **Migracija**: Lak prenos između sistema
 - **Backup**: Jednostavan backup i restore
 
-### 4. Tracking
+### 4. Multi-Language Support
 
-- **corpus_run_id**: Svaki entitet zna iz kog run-a potiče
+- **language atribut**: Corpus, Document, LegalUnit, Assertion, Embedding, OntologySet, OntologyTerm
+- **Fleksibilnost**: Podrška za više jezika (sr, en, de, itd.)
+- **Izolacija**: Svaki jezik ima svoje ontologije i termine
+
+### 5. Tracking
+
+- **CorpusRun**: Tracking svih run-ova sa parametrima
 - **Performance**: Tracking performansi različitih konfiguracija
 - **Debugging**: Lakše debugovanje problema
 
@@ -848,7 +882,8 @@ CREATE TABLE corpus_runs (...);
 default_ontology_set = create_ontology_set(
     domain_id="dom-001",
     version="1.0",
-    name="Default Ontology"
+    name="Default Ontology",
+    language="sr"
 )
 
 # 2. Migruj postojeće termine
@@ -856,7 +891,8 @@ for term in old_ontology_terms:
     create_ontology_term(
         set_id=default_ontology_set.id,
         name=term.name,
-        term=term.term
+        term=term.term,
+        language="sr"
     )
 
 # 3. Kreiraj default ConflictRuleSet
@@ -882,19 +918,22 @@ default_param_set = create_param_set(
     ...
 )
 
-# 6. Kreiraj CorpusRun za postojeće korpuse
+# 6. Dodaj language atribut svim entitetima
+UPDATE corpora SET language = 'sr' WHERE language IS NULL;
+UPDATE documents SET language = 'sr' WHERE language IS NULL;
+UPDATE legal_units SET language = 'sr' WHERE language IS NULL;
+UPDATE assertions SET language = 'sr' WHERE language IS NULL;
+UPDATE embeddings SET language = 'sr' WHERE language IS NULL;
+
+# 7. Kreiraj CorpusRun za postojeće korpuse
 for corpus in existing_corpora:
     corpus_run = create_corpus_run(
         corpus_id=corpus.id,
         param_set_id=default_param_set.id,
+        ontology_set_id=default_ontology_set.id,
+        conflict_rule_set_id=default_rule_set.id,
         status="completed"
     )
-    
-    # Ažuriraj corpus_run_id u svim entitetima
-    UPDATE documents SET corpus_run_id = corpus_run.id WHERE corpus_id = corpus.id
-    UPDATE legal_units SET corpus_run_id = corpus_run.id WHERE document_id IN (...)
-    UPDATE assertions SET corpus_run_id = corpus_run.id WHERE legal_unit_id IN (...)
-    UPDATE embeddings SET corpus_run_id = corpus_run.id WHERE assertion_id IN (...)
 ```
 
 ### Faza 3: Ažuriraj API
@@ -913,7 +952,7 @@ Domain Model V3 dodaje:
 1. **Verzionisanje**: OntologySet, ConflictRuleSet, CorpusRun
 2. **Parametrizaciju**: ParamSet za tracking parametara
 3. **Export/Import**: Mogućnost izvoza i uvoza "knowledge sets"
-4. **Tracking**: corpus_run_id u svim entitetima
+4. **Multi-Language Support**: language atribut u Corpus, Document, LegalUnit, Assertion, Embedding, OntologySet, OntologyTerm
 5. **Poređenje**: Poređenje različitih konfiguracija
 
 Ovo omogućava:
@@ -922,3 +961,4 @@ Ovo omogućava:
 - Laku migraciju između sistema
 - Tracking performansi
 - Rollback na prethodne verzije
+- Podrška za više jezika (sr, en, de, itd.)
