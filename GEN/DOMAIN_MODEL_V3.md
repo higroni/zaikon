@@ -119,6 +119,117 @@ Ovaj dokument definiše production-ready domain model sa:
 
 ---
 
+## Osnovni Entiteti
+
+### 0. Domain (Domen)
+
+**Svrha**: Predstavlja pravnu oblast ili domenu (npr. Radno pravo, Šumarstvo, Bezbednost hrane).
+
+**Atributi**:
+- `id` (UUID) - Jedinstveni identifikator
+- `name` (string) - Naziv domena (npr. "Radno pravo", "Forestry Law", "Lebensmittelsicherheit")
+- `description` (text) - Opis domena
+- `created_at` (timestamp) - Vreme kreiranja
+- `created_by` (string) - Ko je kreirao
+
+**Kompletan Spisak Pravnih Domena (50 kategorija)**:
+
+### I. USTAVNO I UPRAVNO PRAVO
+1. Ustavno pravo - Ustav, ustavni zakoni, ljudska prava
+2. Upravno pravo - Upravni postupak, upravni akti
+3. Lokalna samouprava - Opštine, gradovi, pokrajine
+
+### II. GRAĐANSKO PRAVO
+4. Obligaciono pravo - Ugovori, obligacije, odgovornost
+5. Stvarno pravo - Svojina, posed, službenosti
+6. Porodično pravo - Brak, razvod, starateljstvo
+7. Nasledno pravo - Testamenti, zakonsko nasleđivanje
+
+### III. PRIVREDNO PRAVO
+8. Privredno pravo - Privredna društva, trgovina
+9. Radno pravo - Radni odnosi, zaposleni, poslodavci
+10. Intelektualna svojina - Patenti, žigovi, autorska prava
+11. Bankovno pravo - Banke, hartije od vrednosti
+12. Pravo osiguranja - Životno, imovinsko osiguranje
+
+### IV. KRIVIČNO PRAVO
+13. Krivično materijalno pravo - Krivična dela, kazne
+14. Krivično procesno pravo - Krivični postupak
+15. Izvršenje krivičnih sankcija - Zatvorski sistem
+
+### V. JAVNE FINANSIJE
+16. Budžetski sistem - Državni i lokalni budžeti
+17. Poreski sistem - Porez na dohodak, PDV, akcize
+18. Javne nabavke - Postupci nabavki, ugovori
+
+### VI. SOCIJALNA ZAŠTITA
+19. Socijalna zaštita - Socijalna pomoć, dečja zaštita
+20. Penzijsko osiguranje - Penzije, invalidnine
+21. Zdravstveno osiguranje - Obavezno i dopunsko
+
+### VII. OBRAZOVANJE I KULTURA
+22. Obrazovanje - Predškolsko, osnovno, srednje, visoko
+23. Nauka i tehnologija - Naučnoistraživački rad
+24. Kultura i umetnost - Kulturna dobra, muzeji
+25. Sport - Sportske organizacije
+
+### VIII. INFRASTRUKTURA
+26. Saobraćaj - Drumski, železnički, vazdušni, rečni
+27. Telekomunikacije - Elektronske komunikacije
+28. Energetika - Električna energija, gas, obnovljivi izvori
+29. Građevinarstvo - Izgradnja, urbanizam, prostorno planiranje
+
+### IX. ŽIVOTNA SREDINA
+30. Zaštita životne sredine - Vazduh, voda, zemljište, otpad
+31. Šumarstvo - Šume, gazdovanje šumama
+32. Vodoprivreda - Vodotokovi, vodne dozvole
+33. Poljoprivreda - Poljoprivredno zemljište, subvencije
+34. Lovstvo i ribarstvo - Lovišta, ribolovna područja
+
+### X. ZDRAVSTVO I BEZBEDNOST
+35. Zdravstvena zaštita - Zdravstvene ustanove, lekovi
+36. Bezbednost hrane - Proizvodnja, distribucija hrane
+37. Veterinarstvo - Zdravlje životinja
+38. Zaštita od požara - Protivpožarna zaštita
+39. Zaštita od nepogoda - Poplave, zemljotresi
+
+### XI. BEZBEDNOST I ODBRANA
+40. Odbrana - Vojska, vojna obaveza
+41. Unutrašnji poslovi - Policija, javni red i mir
+42. Bezbednosne službe - BIA, VOA
+
+### XII. SPOLJNI POSLOVI
+43. Spoljni poslovi - Diplomatski odnosi
+44. Međunarodni ugovori - Ratifikacija ugovora
+
+### XIII. PRAVOSUĐE
+45. Sudski sistem - Organizacija sudova, sudije
+46. Javno tužilaštvo - Tužioci, krivično gonjenje
+47. Advokatska komora - Advokati, pravna pomoć
+48. Izvršenje i obezbeđenje - Izvršitelji, prinudno izvršenje
+
+### XIV. MEDIJI I INFORMISANJE
+49. Mediji - Štampa, radio, televizija
+50. Slobodan pristup informacijama - Javnost rada
+
+**Primer JSON**:
+```json
+{
+  "id": "dom-001",
+  "name": "Radno pravo",
+  "description": "Propisi koji regulišu odnose između poslodavaca i zaposlenih",
+  "created_at": "2026-01-15T10:00:00Z",
+  "created_by": "admin"
+}
+```
+
+**Relacioni Odnosi**:
+- `Domain` → `OntologySet` (1:N) - Domen ima više verzija ontologije
+- `Domain` → `ConflictRuleSet` (1:N) - Domen ima više verzija pravila
+- `Domain` → `Corpus` (1:N) - Domen ima više korpusa
+
+---
+
 ## Novi Entiteti u V3
 
 ### 1. OntologySet (Verzionisana Ontologija)
