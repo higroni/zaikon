@@ -116,7 +116,33 @@ This folder contains complete documentation for regenerating the ZAIKON AI-assis
 
 **Use this as**: Understanding the complete data model, how entities relate to each other, and how data flows through the system.
 
-### 9. [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
+### 9. [DOMAIN_MODEL_V2.md](DOMAIN_MODEL_V2.md)
+**Refined domain model (V2)** - Simplified architecture with unified entities:
+- **Unified Document/LegalUnit/Assertion** - Single entities with `is_draft` flag (40% less code)
+- **Ontology as Dictionary** - Simplified from N:M to 1:N with Domain
+- **Independent ConflictSet** - Reusable across domains (N:M relationship)
+- **Flexible Finding** - Connects any 2 assertions (draft vs corpus, draft vs draft, corpus vs corpus)
+- **Combined Resolution** - Merged Resolution and Decision into single entity
+- **Serbian Language Support** - Parser handles Latin and Cyrillic
+- **Hybrid Search** - Vector (45%) + Keyword (35%) + Graph (20%)
+
+**Use this as**: Understanding the refined architecture with less duplication and more flexibility.
+
+### 10. [DOMAIN_MODEL_V3.md](DOMAIN_MODEL_V3.md) ⭐ **LATEST**
+**Production-ready domain model (V3)** - Versioning and parameterization:
+- **NEW: OntologySet** - Versioned ontology instances (v1.0, v2.0, etc.)
+- **NEW: OntologyTerm** - Individual ontology objects (terms, rules)
+- **NEW: ConflictRuleSet** - Versioned conflict rule sets (renamed from ConflictSet)
+- **NEW: ParamSet** - Parameter tracking (LLM temp, ontology version, weights, etc.)
+- **NEW: CorpusRun** - Run tracking with parameters for reproducibility
+- **Export/Import** - Export complete "knowledge sets" for migration
+- **corpus_run_id** - Added to Document, LegalUnit, Assertion, Embedding for tracking
+- **A/B Testing** - Compare different parameter configurations
+- **Rollback** - Return to previous versions of ontology/rules
+
+**Use this as**: Production-ready architecture with versioning, parameterization, and export/import capabilities. **Use this for new implementations.**
+
+### 11. [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
 **Lessons learned and best practices** - Critical knowledge from development:
 - **Top 5 Critical Errors** that cost the most time:
   - StoreAssertionsStep in wrong chain (4h)
