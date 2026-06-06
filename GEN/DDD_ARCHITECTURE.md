@@ -700,7 +700,85 @@ class ImportCorpusUseCase:
         )
 ```
 
-### 7.2 Analyze Draft Use Case
+### 7.2 Search Corpus Use Case
+
+```python
+class SearchCorpusUseCase:
+    """Application service za pretragu korpusa i chatbot funkcionalnost"""
+    
+    def __init__(self,
+                 corpus_repository: CorpusRepository,
+                 assertion_repository: AssertionRepository,
+                 embedding_repository: EmbeddingRepository,
+                 retrieval_service: RetrievalService,
+                 llm_service: LLMService):
+        self.corpus_repository = corpus_repository
+        self.assertion_repository = assertion_repository
+        self.embedding_repository = embedding_repository
+        self.retrieval_service = retrieval_service
+        self.llm_service = llm_service
+    
+    async def execute(self, request: SearchCorpusRequest) -> SearchCorpusResponse:
+        """Pretraži korpus i generiši odgovor"""
+        # 1. Validate corpus exists
+        corpus = await self.corpus_repository.get(request.corpus_id)
+        if not corpus:
+            raise ValueError(f"Corpus {request.corpus_id} not found")
+        
+        # 2. Perform hybrid search (semantic + keyword + graph)
+        search_results = await self.retrieval_service.search(
+            query=request.query,
+            corpus_id=request.corpus_id,
+            top_k=request.top_k or 10,
+            filters=request.filters
+        )
+        
+        # 3. Rerank results for precision
+        reranked_results = await self.retrieval_service.rerank(
+            query=request.query,
+            results=search_results,
+            top_k=request.top_k or 5
+        )
+        
+        # 4. Generate AI response with citations (if chatbot mode)
+        ai_response = None
+        if request.generate_answer:
+            context = self._build_context(reranked_results)
+            ai_response = await self.llm_service.generate_answer(
+                query=request.query,
+                context=context,
+                language=corpus.metadata.language
+            )
+        
+        # 5. Build response
+        return SearchCorpusResponse(
+            query=request.query,
+            results=[
+                SearchResult(
+                    assertion_id=r.assertion_id,
+                    document_id=r.document_id,
+                    legal_unit_id=r.legal_unit_id,
+                    text=r.text,
+                    relevance_score=r.score,
+                    citation=r.citation
+                )
+                for r in reranked_results
+            ],
+            ai_answer=ai_response,
+            total_results=len(search_results)
+        )
+    
+    def _build_context(self, results: List[SearchResult]) -> str:
+        """Izgradi kontekst za LLM"""
+        context_parts = []
+        for i, result in enumerate(results, 1):
+            context_parts.append(
+                f"[{i}] {result.citation}\n{result.text}\n"
+            )
+        return "\n".join(context_parts)
+```
+
+### 7.3 Analyze Draft Use Case
 
 ```python
 class AnalyzeDraftUseCase:
@@ -773,6 +851,7 @@ class AnalyzeDraftUseCase:
 │                    Application Layer                         │
 │  (Use Cases, Application Services, DTOs)                     │
 │  - ImportCorpusUseCase                                       │
+│  - SearchCorpusUseCase                                       │
 │  - AnalyzeDraftUseCase                                       │
 │  - GenerateReportUseCase                                     │
 └─────────────────────────────────────────────────────────────┘
@@ -858,6 +937,7 @@ backend/
 │   │   ├── __init__.py
 │   │   ├── use_cases/
 │   │   │   ├── import_corpus.py         # ImportCorpusUseCase
+│   │   │   ├── search_corpus.py         # SearchCorpusUseCase
 │   │   │   ├── analyze_draft.py         # AnalyzeDraftUseCase
 │   │   │   ├── generate_report.py       # GenerateReportUseCase
 │   │   │   └── ...

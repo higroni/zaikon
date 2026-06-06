@@ -149,7 +149,10 @@ This folder contains complete documentation for regenerating the ZAIKON AI-assis
 - **Value Objects**: DocumentMetadata, ConflictScore, VectorRepresentation, etc.
 - **Domain Events**: DocumentImported, ConflictDetected, CorpusRunCompleted, etc.
 - **Domain Services**: ConflictDetectionService, LegalParserService, EmbeddingGenerationService
-- **Application Services (Use Cases)**: ImportCorpusUseCase, AnalyzeDraftUseCase
+- **Application Services (Use Cases)**:
+  - **ImportCorpusUseCase** - Import and index legal documents
+  - **SearchCorpusUseCase** - Search corpus and chatbot functionality
+  - **AnalyzeDraftUseCase** - Analyze draft and detect conflicts
 - **Layered Architecture**: Presentation → Application → Domain → Infrastructure
 - **Complete folder structure** for DDD implementation
 - **Migration plan**: 7-week roadmap from current to DDD architecture
