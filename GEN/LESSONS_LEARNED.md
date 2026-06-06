@@ -227,6 +227,552 @@ def migrate_json_to_sqlite():
         store.save_findings(data)
         
         # Obriši JSON
+
+---
+
+### 1.6 Nedostatak Debug Output-a ⏱️ **Vreme izgubljeno: 8+ sati**
+
+**Problem:**
+```python
+# ❌ POGREŠNO - Nema debug output-a
+def process_document(doc_id: str):
+    doc = load_document(doc_id)
+    parsed = parse_document(doc)
+    assertions = extract_assertions(parsed)
+    save_assertions(assertions)
+    return {"status": "completed"}
+```
+
+**Simptomi:**
+- Funkcija vraća "completed" ali nešto ne radi
+- Nema uvida šta je ulaz, šta je izlaz
+- Teško je pronaći gde je problem
+- Mora se debugovati sa breakpoint-ima
+
+**Root Cause:**
+- Nema logovanja ulaza/izlaza svake faze
+- Nema merenja vremena izvršavanja
+- Nema validacije međurezultata
+- Tihi failure-i
+
+**Rešenje:**
+```python
+# ✅ ISPRAVNO - Opširan debug output
+import logging
+import time
+from typing import Any
+
+logger = logging.getLogger(__name__)
+
+def process_document(doc_id: str, verbose: bool = True):
+    """Process document with comprehensive debug output"""
+    
+    if verbose:
+        logger.info("="*80)
+        logger.info(f"PROCESSING DOCUMENT: {doc_id}")
+        logger.info("="*80)
+    
+    # Faza 1: Load
+    start = time.time()
+    doc = load_document(doc_id)
+    elapsed = time.time() - start
+    
+    if verbose:
+        logger.info(f"✓ Phase 1: Load Document")
+        logger.info(f"  Input: doc_id={doc_id}")
+        logger.info(f"  Output: {len(doc.text)} chars, {doc.pages} pages")
+        logger.info(f"  Time: {elapsed:.3f}s")
+        logger.info(f"  Sample: {doc.text[:100]}...")
+    
+    # Faza 2: Parse
+    start = time.time()
+    parsed = parse_document(doc)
+    elapsed = time.time() - start
+    
+    if verbose:
+        logger.info(f"✓ Phase 2: Parse Document")
+        logger.info(f"  Input: {len(doc.text)} chars")
+        logger.info(f"  Output: {len(parsed.legal_units)} legal units")
+        logger.info(f"  Time: {elapsed:.3f}s")
+        logger.info(f"  Units: {[u.type for u in parsed.legal_units[:5]]}")
+    
+    # Validacija
+    if len(parsed.legal_units) == 0:
+        logger.warning("⚠ WARNING: No legal units parsed!")
+        logger.warning(f"  Document text sample: {doc.text[:200]}")
+    
+    # Faza 3: Extract Assertions
+    start = time.time()
+    assertions = extract_assertions(parsed)
+    elapsed = time.time() - start
+    
+    if verbose:
+        logger.info(f"✓ Phase 3: Extract Assertions")
+        logger.info(f"  Input: {len(parsed.legal_units)} legal units")
+        logger.info(f"  Output: {len(assertions)} assertions")
+        logger.info(f"  Time: {elapsed:.3f}s")
+        logger.info(f"  Types: {set(a.type for a in assertions)}")
+    
+    # Validacija
+    if len(assertions) == 0:
+        logger.warning("⚠ WARNING: No assertions extracted!")
+    
+    # Faza 4: Save
+    start = time.time()
+    saved_count = save_assertions(assertions)
+    elapsed = time.time() - start
+    
+    if verbose:
+        logger.info(f"✓ Phase 4: Save Assertions")
+        logger.info(f"  Input: {len(assertions)} assertions")
+        logger.info(f"  Output: {saved_count} saved to DB")
+        logger.info(f"  Time: {elapsed:.3f}s")
+    
+    # Finalna validacija
+    if saved_count != len(assertions):
+        logger.error(f"✗ ERROR: Mismatch! {len(assertions)} extracted but {saved_count} saved")
+    
+    if verbose:
+        logger.info("="*80)
+        logger.info(f"COMPLETED: {doc_id}")
+        logger.info("="*80)
+    
+    return {
+        "status": "completed",
+        "document_id": doc_id,
+        "legal_units": len(parsed.legal_units),
+        "assertions": len(assertions),
+        "saved": saved_count
+    }
+```
+
+**Konfigurabilni Verbosity:**
+```python
+# settings.py
+class Settings:
+    # Verbosity levels
+    VERBOSITY_SILENT = 0   # Samo errors
+    VERBOSITY_NORMAL = 1   # Info + warnings + errors
+    VERBOSITY_DEBUG = 2    # Sve + debug output
+    VERBOSITY_TRACE = 3    # Sve + ulaz/izlaz svake funkcije
+    
+    verbosity: int = VERBOSITY_NORMAL
+
+# Korišćenje
+if settings.verbosity >= settings.VERBOSITY_DEBUG:
+    logger.debug(f"Intermediate result: {data}")
+```
+
+**Lekcija:**
+- ⚠️ **Uvek loguj ulaz i izlaz svake faze**
+- ⚠️ **Meraj vreme izvršavanja na svim bitnim tačkama**
+- ⚠️ **Validuj međurezultate i upozoravaj na anomalije**
+- ⚠️ **Omogući konfigurabilni verbosity nivo**
+- ⚠️ **Loguj u konzolu I u fajl**
+
+**Logging Setup:**
+```python
+import logging
+import sys
+
+def setup_logging(verbosity: int = 1):
+    """Setup logging sa console i file output"""
+    
+    # Determine log level
+    if verbosity == 0:
+        level = logging.ERROR
+    elif verbosity == 1:
+        level = logging.INFO
+    elif verbosity == 2:
+        level = logging.DEBUG
+    else:
+        level = logging.DEBUG
+    
+    # Format
+    formatter = logging.Formatter(
+        '%(asctime)s | %(levelname)-8s | %(name)s | %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+    
+    # Console handler
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(level)
+    console_handler.setFormatter(formatter)
+    
+    # File handler
+    file_handler = logging.FileHandler('logs/zaikon.log')
+    file_handler.setLevel(logging.DEBUG)  # Uvek DEBUG u fajl
+    file_handler.setFormatter(formatter)
+    
+    # Root logger
+    root_logger = logging.getLogger()
+    root_logger.setLevel(logging.DEBUG)
+    root_logger.addHandler(console_handler)
+    root_logger.addHandler(file_handler)
+```
+
+---
+
+### 1.7 Ponavljanje Dugotrajnih Faza ⏱️ **Vreme izgubljeno: 10+ sati**
+
+**Problem:**
+```python
+# ❌ POGREŠNO - Svaki test pokreće sve od početka
+def test_conflict_detection():
+    # Ovo traje 5 minuta!
+    corpus_id = import_corpus("data/corpus/")  
+    
+    # Ovo traje 3 minuta!
+    generate_embeddings(corpus_id)
+    
+    # Ovo je ono što želimo da testiramo (10 sekundi)
+    conflicts = detect_conflicts(draft, corpus_id)
+    
+    assert len(conflicts) > 0
+```
+
+**Simptomi:**
+- Svaki test traje 8+ minuta
+- 90% vremena se troši na setup
+- Teško je iterativno razvijati
+- Frustrirajuće čekanje
+
+**Root Cause:**
+- Nema reuse-a prethodno procesiranih podataka
+- Nema caching mehanizma
+- Nema "skip if exists" logike
+- Sve se pokreće od nule
+
+**Rešenje:**
+```python
+# ✅ ISPRAVNO - Reuse postojećih podataka
+
+class TestDataManager:
+    """Manages test data with caching and reuse"""
+    
+    def __init__(self, cache_dir: Path = Path("test_cache")):
+        self.cache_dir = cache_dir
+        self.cache_dir.mkdir(exist_ok=True)
+    
+    def get_or_create_corpus(
+        self, 
+        name: str, 
+        source_dir: Path,
+        force_recreate: bool = False
+    ) -> str:
+        """Get existing corpus or create new one"""
+        
+        cache_file = self.cache_dir / f"corpus_{name}.json"
+        
+        # Check if cached
+        if cache_file.exists() and not force_recreate:
+            logger.info(f"✓ Using cached corpus: {name}")
+            with open(cache_file) as f:
+                data = json.load(f)
+            return data["corpus_id"]
+        
+        # Create new
+        logger.info(f"Creating new corpus: {name} (this may take a while...)")
+        start = time.time()
+        
+        corpus_id = import_corpus(source_dir)
+        
+        elapsed = time.time() - start
+        logger.info(f"✓ Corpus created in {elapsed:.1f}s")
+        
+        # Cache it
+        with open(cache_file, "w") as f:
+            json.dump({
+                "corpus_id": corpus_id,
+                "created_at": datetime.now().isoformat(),
+                "source_dir": str(source_dir)
+            }, f)
+        
+        return corpus_id
+    
+    def get_or_create_embeddings(
+        self,
+        corpus_id: str,
+        force_recreate: bool = False
+    ) -> bool:
+        """Generate embeddings if not exist"""
+        
+        # Check if embeddings exist in Qdrant
+        collection_name = f"corpus_{corpus_id}"
+        
+        if not force_recreate:
+            try:
+                info = qdrant_client.get_collection(collection_name)
+                if info.points_count > 0:
+                    logger.info(f"✓ Using existing embeddings: {info.points_count} vectors")
+                    return True
+            except Exception:
+                pass
+        
+        # Generate new
+        logger.info(f"Generating embeddings for corpus {corpus_id}...")
+        start = time.time()
+        
+        generate_embeddings(corpus_id)
+        
+        elapsed = time.time() - start
+        logger.info(f"✓ Embeddings generated in {elapsed:.1f}s")
+        
+        return True
+
+# Korišćenje u testovima
+test_data = TestDataManager()
+
+def test_conflict_detection():
+    """Test conflict detection - BRZO!"""
+    
+    # Ovo je instant ako već postoji (prvi put 5 min)
+    corpus_id = test_data.get_or_create_corpus(
+        name="test_corpus",
+        source_dir=Path("data/test_corpus")
+    )
+    
+    # Ovo je instant ako već postoji (prvi put 3 min)
+    test_data.get_or_create_embeddings(corpus_id)
+    
+    # Ovo je ono što testiramo (10 sekundi)
+    conflicts = detect_conflicts(draft, corpus_id)
+    
+    assert len(conflicts) > 0
+
+# Cleanup kada treba
+def test_cleanup():
+    """Očisti cache kada treba fresh start"""
+    test_data = TestDataManager()
+    shutil.rmtree(test_data.cache_dir)
+```
+
+**Environment Variable za Force Recreate:**
+```python
+# .env
+FORCE_RECREATE_TEST_DATA=false
+
+# U kodu
+force = os.getenv("FORCE_RECREATE_TEST_DATA", "false").lower() == "true"
+corpus_id = test_data.get_or_create_corpus(
+    name="test_corpus",
+    source_dir=Path("data/test_corpus"),
+    force_recreate=force
+)
+```
+
+**Lekcija:**
+- ⚠️ **Implementiraj caching za dugotrajne operacije**
+- ⚠️ **Omogući reuse postojećih podataka**
+- ⚠️ **Dodaj "skip if exists" logiku**
+- ⚠️ **Omogući force recreate kada je potrebno**
+- ⚠️ **Jasno loguj da li se koriste cached podaci**
+
+**Rezultat:**
+- Prvi test run: 8 minuta
+- Svi sledeći: 10 sekundi (48x brže!)
+- Iterativni razvoj mnogo brži
+
+---
+
+### 1.8 Prekompleksan i Ružan UI ⏱️ **Vreme izgubljeno: 12+ sati**
+
+**Problem:**
+```tsx
+// ❌ POGREŠNO - Svaka komponenta ima svoj custom stil
+function CorpusCard({ corpus }) {
+  return (
+    <div style={{
+      border: "2px solid #3498db",
+      borderRadius: "8px",
+      padding: "20px",
+      margin: "10px",
+      boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+      background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    }}>
+      <h3 style={{ color: "#fff", fontSize: "18px" }}>{corpus.name}</h3>
+      {/* ... */}
+    </div>
+  );
+}
+
+function DraftCard({ draft }) {
+  return (
+    <div style={{
+      border: "1px solid #e74c3c",
+      borderRadius: "12px",
+      padding: "15px",
+      margin: "8px",
+      boxShadow: "0 2px 4px rgba(0,0,0,0.15)",
+      background: "#f8f9fa"
+    }}>
+      {/* Potpuno drugačiji stil! */}
+    </div>
+  );
+}
+```
+
+**Simptomi:**
+- Svaka komponenta izgleda drugačije
+- Nema konzistentnosti
+- Teško održavanje
+- Ružan izgled
+- Korisnici zbunjeni
+
+**Root Cause:**
+- Nema UI design sistema
+- Nema standardnih komponenti
+- Svaki developer radi kako hoće
+- Nema style guide-a
+
+**Rešenje:**
+```tsx
+// ✅ ISPRAVNO - Koristi standardni UI framework
+
+// 1. Izaberi framework (npr. shadcn/ui, Chakra UI, Material-UI)
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+
+// 2. Definiši standardne komponente
+function CorpusCard({ corpus }) {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>{corpus.name}</CardTitle>
+        <Badge variant={corpus.status === "ready" ? "success" : "warning"}>
+          {corpus.status}
+        </Badge>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-muted-foreground">
+          {corpus.documents_count} documents
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
+
+// 3. Isti pattern za sve kartice
+function DraftCard({ draft }) {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>{draft.name}</CardTitle>
+        <Badge variant={draft.status === "completed" ? "success" : "warning"}>
+          {draft.status}
+        </Badge>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-muted-foreground">
+          {draft.findings_count} findings
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
+```
+
+**Standardni Layout Template:**
+```tsx
+// ✅ Layout template za sve stranice
+import { AppShell, Header, Navbar, Main } from "@/components/layout"
+
+function StandardLayout({ children }) {
+  return (
+    <AppShell>
+      <Header>
+        <Logo />
+        <Navigation />
+        <UserMenu />
+      </Header>
+      
+      <div className="flex">
+        <Navbar>
+          <NavLink to="/corpora">Korpusi</NavLink>
+          <NavLink to="/drafts">Nacrti</NavLink>
+          <NavLink to="/search">Pretraga</NavLink>
+          <NavLink to="/settings">Podešavanja</NavLink>
+        </Navbar>
+        
+        <Main className="flex-1 p-6">
+          {children}
+        </Main>
+      </div>
+    </AppShell>
+  );
+}
+
+// Sve stranice koriste isti layout
+function CorpusListPage() {
+  return (
+    <StandardLayout>
+      <PageHeader title="Korpusi" />
+      <CorpusList />
+    </StandardLayout>
+  );
+}
+```
+
+**Design System Pravila:**
+```tsx
+// design-system.ts
+export const designSystem = {
+  // Boje
+  colors: {
+    primary: "#3b82f6",
+    secondary: "#64748b",
+    success: "#22c55e",
+    warning: "#f59e0b",
+    error: "#ef4444",
+  },
+  
+  // Spacing
+  spacing: {
+    xs: "0.25rem",
+    sm: "0.5rem",
+    md: "1rem",
+    lg: "1.5rem",
+    xl: "2rem",
+  },
+  
+  // Typography
+  typography: {
+    h1: "text-3xl font-bold",
+    h2: "text-2xl font-semibold",
+    h3: "text-xl font-medium",
+    body: "text-base",
+    small: "text-sm",
+  },
+  
+  // Components
+  components: {
+    card: "rounded-lg border bg-card shadow-sm",
+    button: "rounded-md px-4 py-2 font-medium",
+    input: "rounded-md border px-3 py-2",
+  }
+};
+```
+
+**Lekcija:**
+- ⚠️ **Koristi standardni UI framework od početka**
+- ⚠️ **Definiši design system pre kodiranja**
+- ⚠️ **Kreiraj reusable komponente**
+- ⚠️ **Enforceuj konzistentnost kroz code review**
+- ⚠️ **Jednostavnost > Kompleksnost**
+
+**Preporučeni UI Frameworks:**
+1. **shadcn/ui** - Najbolji za React + Tailwind
+2. **Chakra UI** - Dobar balans jednostavnosti i moći
+3. **Material-UI** - Ako želiš Material Design
+
+**Rezultat:**
+- Konzistentan izgled
+- Brži razvoj (reusable komponente)
+- Lakše održavanje
+- Profesionalan UI
+- Zadovoljni korisnici
+
         json_file.unlink()
 ```
 
@@ -751,12 +1297,15 @@ class Metrics:
 
 ## 7. Ključne Lekcije - Rezime
 
-### Top 5 Grešaka:
-1. **StoreAssertionsStep u pogrešnom lancu** (4h) - Razumej kontekst izvršavanja
-2. **JSON umesto SQLite** (6h) - Koristi pravu bazu podataka
-3. **Ćirilica nije podržana** (2h) - Testiraj sa oba pisma
-4. **Batch size previše veliki** (2h) - Optimizuj za dostupan VRAM
-5. **Artifact validation previše striktna** (3h) - Fleksibilna validacija
+### Top 8 Grešaka:
+1. **Prekompleksan i ružan UI** (12h) - Koristi standardni UI framework od početka
+2. **Ponavljanje dugotrajnih faza** (10h) - Implementiraj caching i reuse
+3. **Nedostatak debug output-a** (8h) - Loguj ulaz/izlaz svake faze
+4. **JSON umesto SQLite** (6h) - Koristi pravu bazu podataka
+5. **StoreAssertionsStep u pogrešnom lancu** (4h) - Razumej kontekst izvršavanja
+6. **Artifact validation previše striktna** (3h) - Fleksibilna validacija
+7. **Ćirilica nije podržana** (2h) - Testiraj sa oba pisma
+8. **Batch size previše veliki** (2h) - Optimizuj za dostupan VRAM
 
 ### Top 5 Optimizacija:
 1. **Hibridna pretraga 45-35-20** - Najbolji balans brzine i kvaliteta
@@ -765,12 +1314,15 @@ class Metrics:
 4. **Caching** - 45x brži ponovljeni upiti
 5. **Database indexing** - 100x brži upiti
 
-### Top 5 Best Practices:
-1. **Centralizovana SQLite baza** - Jedna `zaikon.db` za sve
-2. **Lazy loading modela** - Brži startup
-3. **Graceful degradation** - Fallback strategije
-4. **Structured logging** - Lakše debugovanje
-5. **Comprehensive testing** - Unit + Integration + Performance
+### Top 8 Best Practices:
+1. **Standardni UI framework** - shadcn/ui, Chakra UI, ili Material-UI
+2. **Caching & Reuse** - TestDataManager za dugotrajne operacije
+3. **Opširan debug output** - Loguj ulaz/izlaz, meraj vreme, validuj rezultate
+4. **Konfigurabilni verbosity** - SILENT, NORMAL, DEBUG, TRACE nivoi
+5. **Centralizovana SQLite baza** - Jedna `zaikon.db` za sve
+6. **Lazy loading modela** - Brži startup
+7. **Graceful degradation** - Fallback strategije
+8. **Comprehensive testing** - Unit + Integration + Performance
 
 ---
 
@@ -781,6 +1333,13 @@ Ovaj dokument je **živi dokument** - ažuriraj ga sa novim lekcijama!
 **Ključna poruka:** 
 > "Greške su neizbežne, ali ih ne ponavljaj. Dokumentuj, nauči, i primeni u sledećoj iteraciji."
 
-**Vreme uštede u sledećoj iteraciji:** ~20+ sati
+**Vreme uštede u sledećoj iteraciji:** ~50+ sati
+
+**Najvažnije lekcije:**
+1. 🎨 **UI Design System** - Koristi framework, ne custom CSS (ušteda: 12h)
+2. 🔄 **Caching & Reuse** - Ne ponavljaj dugotrajne operacije (ušteda: 10h)
+3. 🐛 **Debug Output** - Loguj sve, meraj sve, validuj sve (ušteda: 8h)
+4. 💾 **SQLite > JSON** - Koristi pravu bazu podataka (ušteda: 6h)
+5. 📝 **Verbosity Levels** - Omogući konfigurabilni debug output (ušteda: 4h)
 
 **ROI dokumentacije:** Besplatno! 🎉
