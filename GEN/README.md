@@ -102,7 +102,21 @@ This folder contains complete documentation for regenerating the ZAIKON AI-assis
 
 **Use this as**: Understanding how to integrate and configure all AI models (embeddings, reranker, NER, LLM) and hybrid search strategy.
 
-### 8. [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
+### 8. [DOMAIN_MODEL.md](DOMAIN_MODEL.md)
+**Domain model and component architecture** - Complete entity relationship model:
+- **12 Core Entities**: Domain, Corpus, Document, LegalUnit, Assertion, Ontology, DraftReview, DraftUnit, DraftAssertion, Finding, ConflictRule, Embedding
+- **Entity Relationship Diagram** with ASCII art visualization
+- **Detailed descriptions** of each entity with attributes and examples
+- **Relationships** between entities (1:1, 1:N, N:M) with cardinalities
+- **Data flow examples**: Import corpus, Draft review, Semantic search
+- **Storage mapping**: SQLite tables, Qdrant collections, JSON files
+- **API endpoints mapping** for each entity
+- **Design decisions** and rationale
+- **Scalability considerations** and caching strategies
+
+**Use this as**: Understanding the complete data model, how entities relate to each other, and how data flows through the system.
+
+### 9. [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
 **Lessons learned and best practices** - Critical knowledge from development:
 - **Top 5 Critical Errors** that cost the most time:
   - StoreAssertionsStep in wrong chain (4h)
@@ -135,28 +149,30 @@ This folder contains complete documentation for regenerating the ZAIKON AI-assis
 I need to build the ZAIKON system - an AI-assisted legislative compliance review platform.
 
 Please read and understand these documents in order:
-1. LESSONS_LEARNED.md - CRITICAL: Read this FIRST to avoid common mistakes and save 20+ hours
-2. COMPLETE_SYSTEM_PROMPT.md - for overall architecture
-3. USER_SCENARIOS.md - for understanding user needs and use cases
-4. DATA_IMPORT_PROCESS.md - for understanding data processing pipeline
-5. LLM_INTEGRATION.md - for AI models setup (embeddings, reranker, LLM, hybrid search)
-6. IMPLEMENTATION_GUIDE.md - for step-by-step instructions
-7. CONFLICT_TYPES_SPECIFICATION.md - for conflict detection details
-8. API_SPECIFICATION.md - for API implementation
+1. LESSONS_LEARNED.md - CRITICAL: Read this FIRST to avoid common mistakes and save 50+ hours
+2. DOMAIN_MODEL.md - for understanding entities and their relationships
+3. COMPLETE_SYSTEM_PROMPT.md - for overall architecture
+4. USER_SCENARIOS.md - for understanding user needs and use cases
+5. DATA_IMPORT_PROCESS.md - for understanding data processing pipeline
+6. LLM_INTEGRATION.md - for AI models setup (embeddings, reranker, LLM, hybrid search)
+7. IMPLEMENTATION_GUIDE.md - for step-by-step instructions
+8. CONFLICT_TYPES_SPECIFICATION.md - for conflict detection details
+9. API_SPECIFICATION.md - for API implementation
 
 Start with Phase 1 from the Implementation Guide and proceed systematically through all phases.
 ```
 
 ### For Human Developers
 
-1. **Read** `LESSONS_LEARNED.md` **FIRST** - Critical mistakes and best practices (saves 20+ hours!)
-2. **Read** `COMPLETE_SYSTEM_PROMPT.md` to understand the system
-3. **Read** `USER_SCENARIOS.md` to understand user needs and workflows
-4. **Read** `DATA_IMPORT_PROCESS.md` to understand data processing
-5. **Read** `LLM_INTEGRATION.md` to understand AI models setup (embeddings, reranker, LLM, hybrid search)
-6. **Follow** `IMPLEMENTATION_GUIDE.md` for step-by-step implementation
-7. **Reference** `CONFLICT_TYPES_SPECIFICATION.md` when implementing conflict detection
-8. **Use** `API_SPECIFICATION.md` for API development and testing
+1. **Read** `LESSONS_LEARNED.md` **FIRST** - Critical mistakes and best practices (saves 50+ hours!)
+2. **Read** `DOMAIN_MODEL.md` - Understand all entities and their relationships
+3. **Read** `COMPLETE_SYSTEM_PROMPT.md` to understand the system
+4. **Read** `USER_SCENARIOS.md` to understand user needs and workflows
+5. **Read** `DATA_IMPORT_PROCESS.md` to understand data processing
+6. **Read** `LLM_INTEGRATION.md` to understand AI models setup (embeddings, reranker, LLM, hybrid search)
+7. **Follow** `IMPLEMENTATION_GUIDE.md` for step-by-step implementation
+8. **Reference** `CONFLICT_TYPES_SPECIFICATION.md` when implementing conflict detection
+9. **Use** `API_SPECIFICATION.md` for API development and testing
 
 ---
 
@@ -359,13 +375,14 @@ steps = [
 
 For questions or issues during implementation:
 1. **Check `LESSONS_LEARNED.md` FIRST** - Most common issues are documented here
-2. Check `COMPLETE_SYSTEM_PROMPT.md` for architecture details
-3. Review `USER_SCENARIOS.md` for user requirements and workflows
-4. Review `DATA_IMPORT_PROCESS.md` for data processing pipeline
-5. Review `LLM_INTEGRATION.md` for AI models setup and hybrid search
-6. Follow `IMPLEMENTATION_GUIDE.md` for step-by-step instructions
-7. Consult `CONFLICT_TYPES_SPECIFICATION.md` for conflict detection
-8. Reference `API_SPECIFICATION.md` for API details
+2. **Check `DOMAIN_MODEL.md`** - Understand entity relationships and data flow
+3. Check `COMPLETE_SYSTEM_PROMPT.md` for architecture details
+4. Review `USER_SCENARIOS.md` for user requirements and workflows
+5. Review `DATA_IMPORT_PROCESS.md` for data processing pipeline
+6. Review `LLM_INTEGRATION.md` for AI models setup and hybrid search
+7. Follow `IMPLEMENTATION_GUIDE.md` for step-by-step instructions
+8. Consult `CONFLICT_TYPES_SPECIFICATION.md` for conflict detection
+9. Reference `API_SPECIFICATION.md` for API details
 
 ---
 
@@ -379,30 +396,39 @@ This documentation is provided for system regeneration purposes.
 
 ### For Beginners
 1. **Start with `LESSONS_LEARNED.md`** - Learn from mistakes (CRITICAL!)
-2. Read `COMPLETE_SYSTEM_PROMPT.md` - understand the big picture
-3. Read `USER_SCENARIOS.md` - understand what users need
-4. Read `DATA_IMPORT_PROCESS.md` - understand how data flows through the system
-5. Read `LLM_INTEGRATION.md` - understand AI models setup (embeddings, reranker, LLM, hybrid search)
-6. Read `IMPLEMENTATION_GUIDE.md` Phase 1 - set up the project
-7. Follow each phase sequentially
-8. Test after each phase
+2. **Read `DOMAIN_MODEL.md`** - Understand all entities and relationships
+3. Read `COMPLETE_SYSTEM_PROMPT.md` - understand the big picture
+4. Read `USER_SCENARIOS.md` - understand what users need
+5. Read `DATA_IMPORT_PROCESS.md` - understand how data flows through the system
+6. Read `LLM_INTEGRATION.md` - understand AI models setup (embeddings, reranker, LLM, hybrid search)
+7. Read `IMPLEMENTATION_GUIDE.md` Phase 1 - set up the project
+8. Follow each phase sequentially
+9. Test after each phase
 
 ### For Experienced Developers
-1. **Read `LESSONS_LEARNED.md`** - Critical mistakes and optimizations (saves 20+ hours!)
-2. Skim `COMPLETE_SYSTEM_PROMPT.md` - get architecture overview
-3. Review `USER_SCENARIOS.md` - understand user workflows
-4. Review `DATA_IMPORT_PROCESS.md` - understand data processing technologies
-5. Review `LLM_INTEGRATION.md` - understand AI models and hybrid search
-6. Jump to specific sections in `IMPLEMENTATION_GUIDE.md`
-7. Reference `API_SPECIFICATION.md` and `CONFLICT_TYPES_SPECIFICATION.md` as needed
-8. Implement in parallel where possible
+1. **Read `LESSONS_LEARNED.md`** - Critical mistakes and optimizations (saves 50+ hours!)
+2. **Read `DOMAIN_MODEL.md`** - Quick overview of entities and data flow
+3. Skim `COMPLETE_SYSTEM_PROMPT.md` - get architecture overview
+4. Review `USER_SCENARIOS.md` - understand user workflows
+5. Review `DATA_IMPORT_PROCESS.md` - understand data processing technologies
+6. Review `LLM_INTEGRATION.md` - understand AI models and hybrid search
+7. Jump to specific sections in `IMPLEMENTATION_GUIDE.md`
+8. Reference `API_SPECIFICATION.md` and `CONFLICT_TYPES_SPECIFICATION.md` as needed
+9. Implement in parallel where possible
 
 ---
 
 ## 🔄 Version History
 
+- **v1.2** (2024-06-06) - Added domain model and extended lessons learned
+  - **NEW**: Domain model with 12 core entities and relationship diagram
+  - **NEW**: Extended lessons learned with debugging, caching, and UI lessons (50h savings)
+  - Complete entity descriptions with examples
+  - Data flow examples and storage mapping
+  - Design decisions and scalability considerations
+  
 - **v1.1** (2024-06-06) - Added lessons learned and best practices
-  - **NEW**: Lessons learned document with critical mistakes and optimizations
+  - Lessons learned document with critical mistakes and optimizations
   - Updated LLM integration guide with hybrid search strategy (45-35-20 weights)
   - Updated README with proper document ordering (lessons learned first!)
   
@@ -417,4 +443,4 @@ This documentation is provided for system regeneration purposes.
 
 ---
 
-**Ready to build ZAIKON? Start with `LESSONS_LEARNED.md` to avoid common mistakes, then proceed to `COMPLETE_SYSTEM_PROMPT.md`!**
+**Ready to build ZAIKON? Start with `LESSONS_LEARNED.md` to avoid common mistakes, then `DOMAIN_MODEL.md` to understand the data model, then proceed to `COMPLETE_SYSTEM_PROMPT.md`!**
