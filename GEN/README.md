@@ -142,7 +142,21 @@ This folder contains complete documentation for regenerating the ZAIKON AI-assis
 
 **Use this as**: Production-ready architecture with versioning, parameterization, and export/import capabilities. **Use this for new implementations.**
 
-### 11. [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
+### 11. [DDD_ARCHITECTURE.md](DDD_ARCHITECTURE.md) ⭐ **NEW**
+**Domain-Driven Design architecture** - Complete DDD specification:
+- **6 Bounded Contexts**: Document Management, Corpus Management, Knowledge Representation, Conflict Detection, Draft Review, Configuration
+- **Aggregates**: Document, Corpus, OntologySet, ConflictRuleSet, Finding, DraftReview, ParamSet
+- **Value Objects**: DocumentMetadata, ConflictScore, VectorRepresentation, etc.
+- **Domain Events**: DocumentImported, ConflictDetected, CorpusRunCompleted, etc.
+- **Domain Services**: ConflictDetectionService, LegalParserService, EmbeddingGenerationService
+- **Application Services (Use Cases)**: ImportCorpusUseCase, AnalyzeDraftUseCase
+- **Layered Architecture**: Presentation → Application → Domain → Infrastructure
+- **Complete folder structure** for DDD implementation
+- **Migration plan**: 7-week roadmap from current to DDD architecture
+
+**Use this as**: Blueprint for refactoring ZAIKON to Domain-Driven Design architecture with clear bounded contexts, aggregates, and domain events.
+
+### 12. [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
 **Lessons learned and best practices** - Critical knowledge from development:
 - **Top 5 Critical Errors** that cost the most time:
   - StoreAssertionsStep in wrong chain (4h)
